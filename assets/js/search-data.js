@@ -25,7 +25,7 @@ ninja.data = [{
           },
         },{id: "nav-projects",
           title: "projects",
-          description: "A growing collection of your cool projects.",
+          description: "Key research projects in autonomous driving and AI.",
           section: "Navigation",
           handler: () => {
             window.location.href = "/projects/";
@@ -429,30 +429,33 @@ ninja.data = [{
           description: "",
           section: "Books",handler: () => {
               window.location.href = "/books/the_godfather/";
-            },},{id: "news-a-simple-inline-announcement",
-          title: 'A simple inline announcement.',
+            },},{id: "news-our-paper-drivevlm-the-convergence-of-autonomous-driving-and-large-vision-language-models-is-now-available-on-arxiv-this-work-integrates-lvlms-with-autonomous-driving-systems-for-more-intuitive-human-vehicle-interaction",
+          title: 'Our paper “DriveVLM: The Convergence of Autonomous Driving and Large Vision-Language Models” is...',
           description: "",
-          section: "News",},{id: "news-a-long-announcement-with-details",
-          title: 'A long announcement with details',
+          section: "News",},{id: "news-our-paper-tod3cap-towards-3d-dense-captioning-in-outdoor-scenes-has-been-accepted-to-eccv-2024-this-work-enhances-scene-understanding-for-autonomous-systems-through-detailed-3d-captioning",
+          title: 'Our paper “TOD3Cap: Towards 3D Dense Captioning in Outdoor Scenes” has been accepted...',
+          description: "",
+          section: "News",},{id: "news-street-gaussians-accepted-to-eccv-2024",
+          title: 'Street Gaussians accepted to ECCV 2024',
           description: "",
           section: "News",handler: () => {
               window.location.href = "/news/announcement_2/";
-            },},{id: "news-a-simple-inline-announcement-with-markdown-emoji-sparkles-smile",
-          title: 'A simple inline announcement with Markdown emoji! :sparkles: :smile:',
+            },},{id: "news-new-preprint-planagent-a-multi-modal-large-language-agent-for-closed-loop-vehicle-motion-planning-is-now-available-on-arxiv-this-work-introduces-a-novel-approach-for-autonomous-vehicle-planning-using-large-language-models",
+          title: 'New preprint: “PlanAgent: A Multi-modal Large Language Agent for Closed-loop Vehicle Motion Planning”...',
           description: "",
-          section: "News",},{id: "projects-project-1",
-          title: 'project 1',
-          description: "with background image",
+          section: "News",},{id: "projects-drivevlm",
+          title: 'DriveVLM',
+          description: "The convergence of autonomous driving and large vision-language models",
           section: "Projects",handler: () => {
               window.location.href = "/projects/1_project/";
-            },},{id: "projects-project-2",
-          title: 'project 2',
-          description: "a project with a background image and giscus comments",
+            },},{id: "projects-street-gaussians",
+          title: 'Street Gaussians',
+          description: "Modeling dynamic urban scenes with gaussian splatting",
           section: "Projects",handler: () => {
               window.location.href = "/projects/2_project/";
-            },},{id: "projects-project-3-with-very-long-name",
-          title: 'project 3 with very long name',
-          description: "a project that redirects to another website",
+            },},{id: "projects-planagent",
+          title: 'PlanAgent',
+          description: "A multi-modal large language agent for closed-loop vehicle motion planning",
           section: "Projects",handler: () => {
               window.location.href = "/projects/3_project/";
             },},{id: "projects-project-4",
@@ -490,14 +493,7 @@ ninja.data = [{
         title: 'email',
         section: 'Socials',
         handler: () => {
-          window.open("mailto:%79%6F%75@%65%78%61%6D%70%6C%65.%63%6F%6D", "_blank");
-        },
-      },{
-        id: 'social-inspire',
-        title: 'Inspire HEP',
-        section: 'Socials',
-        handler: () => {
-          window.open("https://inspirehep.net/authors/1010907", "_blank");
+          window.open("mailto:%7A%6B_%31%30%32%38@%61%6C%69%79%75%6E.%63%6F%6D", "_blank");
         },
       },{
         id: 'social-rss',
@@ -511,7 +507,14 @@ ninja.data = [{
         title: 'Google Scholar',
         section: 'Socials',
         handler: () => {
-          window.open("https://scholar.google.com/citations?user=qc6CJjYAAAAJ", "_blank");
+          window.open("https://scholar.google.com/citations?user=1J061HIAAAAJ", "_blank");
+        },
+      },{
+        id: 'social-whatsapp',
+        title: 'whatsapp',
+        section: 'Socials',
+        handler: () => {
+          window.open("https://wa.me/15210600944", "_blank");
         },
       },{
         id: 'social-custom_social',
