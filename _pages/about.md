@@ -10,7 +10,7 @@ profile:
   image_circular: true # crops the image to make it circular
   more_info: >
     <p>📧 zk_1028@aliyun.com</p>
-    <p>📱 15210600944</p>
+    <p>📱 KevinZhan1990</p>
     <p>Beijing, China</p>
 
 selected_papers: true # includes a list of papers marked as "selected={true}"
@@ -68,24 +68,24 @@ latest_posts:
 
 ### 代表性论文 | Selected Publications
 
-1. **Drivevlm: The convergence of autonomous driving and large vision-language models** (2024)  
-   X Tian, J Gu, B Li, Y Liu, Y Wang, Z Zhao, **K Zhan**, P Jia, X Lang, H Zhao  
+1. **Drivevlm: The convergence of autonomous driving and large vision-language models** (2024)
+   X Tian, J Gu, B Li, Y Liu, Y Wang, Z Zhao, **K Zhan**, P Jia, X Lang, H Zhao
    *arXiv preprint arXiv:2402.12289* | 引用: 107
 
-2. **Street gaussians: Modeling dynamic urban scenes with gaussian splatting** (2024)  
-   Y Yan, H Lin, C Zhou, W Wang, H Sun, **K Zhan**, X Lang, X Zhou, S Peng  
+2. **Street gaussians: Modeling dynamic urban scenes with gaussian splatting** (2024)
+   Y Yan, H Lin, C Zhou, W Wang, H Sun, **K Zhan**, X Lang, X Zhou, S Peng
    *European Conference on Computer Vision, 156-173* | 引用: 102
 
-3. **Planagent: A multi-modal large language agent for closed-loop vehicle motion planning** (2024)  
-   Y Zheng, Z Xing, Q Zhang, B Jin, P Li, Y Zheng, Z Xia, **K Zhan**, X Lang, D Zhao  
+3. **Planagent: A multi-modal large language agent for closed-loop vehicle motion planning** (2024)
+   Y Zheng, Z Xing, Q Zhang, B Jin, P Li, Y Zheng, Z Xia, **K Zhan**, X Lang, D Zhao
    *arXiv preprint arXiv:2406.01587* | 引用: 12
 
-4. **Tod3cap: Towards 3d dense captioning in outdoor scenes** (2024)  
-   B Jin, Y Zheng, P Li, W Li, Y Zheng, S Hu, X Liu, J Zhu, Z Yan, H Sun, **K Zhan**, X Lang, P Jia  
+4. **Tod3cap: Towards 3d dense captioning in outdoor scenes** (2024)
+   B Jin, Y Zheng, P Li, W Li, Y Zheng, S Hu, X Liu, J Zhu, Z Yan, H Sun, **K Zhan**, X Lang, P Jia
    *European Conference on Computer Vision, 367-384* | 引用: 10
 
-5. **Unleashing generalization of end-to-end autonomous driving with controllable long video generation** (2024)  
-   E Ma, L Zhou, T Tang, Z Zhang, D Han, J Jiang, **K Zhan**, P Jia, X Lang, K Yu  
+5. **Unleashing generalization of end-to-end autonomous driving with controllable long video generation** (2024)
+   E Ma, L Zhou, T Tang, Z Zhang, D Han, J Jiang, **K Zhan**, P Jia, X Lang, K Yu
    *arXiv preprint arXiv:2406.01349* | 引用: 9
 
 ### 专利 | Patents
