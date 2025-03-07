@@ -3,7 +3,7 @@ layout: page
 title: projects
 permalink: /projects/
 description: Key research projects in autonomous driving and AI.
-nav: true
+nav: false
 nav_order: 3
 display_categories: [autonomous driving, computer vision, large language models]
 horizontal: false
