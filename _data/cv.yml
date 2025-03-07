@@ -2,96 +2,83 @@
   type: map
   contents:
     - name: Full Name
-      value: Albert Einstein
-    - name: Date of Birth
-      value: 14th March 1879
+      value: Kun Zhan (詹锟)
+    - name: Contact
+      value: zk_1028@aliyun.com | 15210600944
     - name: Languages
-      value: English, German
+      value: Chinese, English
 
 - title: Education
   type: time_table
   contents:
-    - title: PhD
-      institution: University of Zurich, Zurich, Switzerland
-      year: 1905
+    - title: Master's Degree
+      institution: Beihang University (Beijing University of Aeronautics and Astronautics)
+      year: 2013 - 2016
       description:
-        - Description 1.
-        - Description 2.
-        - title: Description 3.
-          contents:
-            - Sub-description 1.
-            - Sub-description 2.
-    - title: Federal teaching diploma
-      institution: Eidgenössische Technische Hochschule, Zurich, Switzerland
-      year: 1900
+        - Navigation, Guidance and Control
+        - Research focus on object recognition and tracking
+    - title: Bachelor's Degree
+      institution: University of Science and Technology Beijing
+      year: 2009 - 2013
       description:
-        - Description 1.
-        - Description 2.
+        - Automation
 
 - title: Experience
   type: time_table
   contents:
-    - title: Professor of Theoretical Physics
-      institution: Institute for Advanced Study, Princeton University
-      year: 1933 - 1955
+    - title: Cognitive Intelligence Lead
+      institution: Li Auto
+      year: 2021 - Present
       description:
-        - Description 1.
-        - Description 2.
-        - title: Description 3.
-          contents:
-            - Sub-description 1.
-            - Sub-description 2.
-    - title: Visiting Professor
-      institution: California Institute of Technology, Pasadena, California, US
-      year: 1933
+        - Leading a team focused on cognitive models, world models, and reinforcement learning
+        - Developing and implementing cutting-edge AI technologies for autonomous driving
+        - Bridging research innovations with practical applications in automotive industry
+    - title: Autonomous Driving Researcher
+      institution: Baidu
+      year: 2016 - 2021
       description:
-        - Description 1.
-        - Description 2.
+        - Worked on autonomous driving technologies
+        - Developed computer vision and AI solutions for self-driving vehicles
 
-    - title: Director
-      institution: Kaiser Wilhelm Institute for Physics, Berlin, Germany.
-      year: 1917-1933
-
-    - title: Professor of Theoretical Physics
-      institution: Karl-Ferdinand University, Prague, Czechoslovakia
-      year: 1911 - 1917
-      description:
-
-    - title: Associate Professor of Theoretical Physics
-      institution: University of Zurich, Zurich, Switzerland
-      year: 1909 - 1911
-
-- title: Open Source Projects
-  type: time_table
-  contents:
-    - title: <a href="https://github.com/alshedivat/al-folio">al-folio</a>
-      year: 2015-now
-      description: A beautiful, simple, clean, and responsive Jekyll theme for academics.
-
-- title: Honors and Awards
-  type: time_table
-  contents:
-    - year: 1921
-      items:
-        - Nobel Prize in Physics
-        - Matteucci Medal
-    - year: 2029
-      items:
-        - Max Planck Medal
-
-- title: Academic Interests
+- title: Research Interests
   type: nested_list
   contents:
-    - title: Topic 1.
+    - title: Autonomous Driving
       items:
-        - Description 1.
-        - Description 2.
-    - title: Topic 2.
+        - End-to-end autonomous driving systems
+        - Decision making and planning for autonomous vehicles
+    - title: Computer Vision
       items:
-        - Description 1.
-        - Description 2.
+        - 3D vision and perception
+        - Object detection and tracking
+    - title: AI and Machine Learning
+      items:
+        - Large language models and their applications
+        - World models and cognitive intelligence
+        - Reinforcement learning
+
+- title: Academic Achievements
+  type: time_table
+  contents:
+    - title: Publications
+      year: 
+      description:
+        - 286+ citations
+        - h-index: 7
+        - i10-index: 6
+        - 8 US and Chinese patents pending
+
+- title: Selected Publications
+  type: list
+  contents:
+    - "Drivevlm: The convergence of autonomous driving and large vision-language models (2024)"
+    - "Street gaussians: Modeling dynamic urban scenes with gaussian splatting (2024)"
+    - "Planagent: A multi-modal large language agent for closed-loop vehicle motion planning (2024)"
+    - "Tod3cap: Towards 3d dense captioning in outdoor scenes (2024)"
+    - "Unleashing generalization of end-to-end autonomous driving with controllable long video generation (2024)"
 
 - title: Other Interests
   type: list
   contents:
-    - <u>Hobbies:</u> Hobby 1, Hobby 2, etc.
+    - Exploring cutting-edge AI technologies and their applications in robotics and autonomous systems
+    - Turning science fiction concepts into practical reality through technological innovation
