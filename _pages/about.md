@@ -85,4 +85,12 @@ Autonomous Driving Researcher, involved in developing computer vision and artifi
    *arXiv preprint arXiv:2406.01349* | Citations: 9
 
 ### Patents
-- Eight U.S. and Chinese patents pending
+- 16 Chinese Patents
+- 2 US Patents
+
+### Academic Service
+- **Program Committee/Reviewer**: CVPR, ICCV, ECCV, NeurIPS, AAAI
+- **Journal Reviewer**: IEEE Transactions on Pattern Analysis and Machine Intelligence (TPAMI), IEEE Transactions on Intelligent Transportation Systems (T-ITS), IEEE Transactions on Intelligent Vehicles (T-IV)
+- **Workshop Organizer**: Autonomous Driving Workshop at CVPR 2023
+
+
