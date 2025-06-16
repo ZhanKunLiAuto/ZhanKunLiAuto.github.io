@@ -387,22 +387,7 @@ ninja.data = [{
             },},{id: "news-new-preprint-planagent-a-multi-modal-large-language-agent-for-closed-loop-vehicle-motion-planning-is-now-available-on-arxiv-this-work-introduces-a-novel-approach-for-autonomous-vehicle-planning-using-large-language-models",
           title: 'New preprint: “PlanAgent: A Multi-modal Large Language Agent for Closed-loop Vehicle Motion Planning”...',
           description: "",
-          section: "News",},{id: "projects-drivevlm",
-          title: 'DriveVLM',
-          description: "The convergence of autonomous driving and large vision-language models",
-          section: "Projects",handler: () => {
-              window.location.href = "/projects/1_project/";
-            },},{id: "projects-street-gaussians",
-          title: 'Street Gaussians',
-          description: "Modeling dynamic urban scenes with gaussian splatting",
-          section: "Projects",handler: () => {
-              window.location.href = "/projects/2_project/";
-            },},{id: "projects-planagent",
-          title: 'PlanAgent',
-          description: "A multi-modal large language agent for closed-loop vehicle motion planning",
-          section: "Projects",handler: () => {
-              window.location.href = "/projects/3_project/";
-            },},{
+          section: "News",},{
         id: 'social-email',
         title: 'email',
         section: 'Socials',
