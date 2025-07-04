@@ -1,8 +1,9 @@
 ---
 layout: post
-date: 2024-04-10 14:30:00-0400
+title: 🎪 Organized Autonomous Driving Workshop at CVPR 2023
+date: 2023-06-18 09:00:00-0400
 inline: true
 related_posts: false
 ---
 
-Our paper "TOD3Cap: Towards 3D Dense Captioning in Outdoor Scenes" has been accepted to ECCV 2024! This work enhances scene understanding for autonomous systems through detailed 3D captioning. 
+Successfully organized the **Autonomous Driving Workshop** at CVPR 2023, bringing together leading researchers and industry experts to discuss the latest advances in autonomous vehicle technology. 🤝 

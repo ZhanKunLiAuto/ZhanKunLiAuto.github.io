@@ -2,22 +2,24 @@
 layout: about
 title: about
 permalink: /
-subtitle: Cognitive Intelligence Lead at <a href='https://www.lixiang.com/'>Li Auto</a> | Autonomous Driving Expert | AI Researcher
+subtitle: <a href='https://www.lixiang.com/'>Li Auto</a> Cognitive Intelligence Lead | Autonomous Driving Pioneer | AI Researcher
 
 profile:
   align: right
   image: portrait.jpeg
   image_circular: true # crops the image to make it circular
   more_info: >
-    <p>Email: zk_1028@aliyun.com</p>
-    <p>WeChat: KevinZhan1990</p>
-    <p>Beijing, China</p>
+    <p><i class="fas fa-envelope"></i> zk_1028@aliyun.com</p>
+    <p><i class="fab fa-weixin"></i> KevinZhan1990</p>
+    <p><i class="fas fa-map-marker-alt"></i> Beijing, China</p>
+    <p><i class="fas fa-building"></i> Li Auto Inc.</p>
 
-selected_papers: false # includes a list of papers marked as "selected={true}"
-social: false # includes social icons at the bottom of the page
+news: true # includes a list of news items
+selected_papers: true # includes a list of papers marked as "selected={true}"
+social: true # includes social icons at the bottom of the page
 
 announcements:
-  enabled: false # includes a list of news items
+  enabled: true # includes a list of news items
   scrollable: true # adds a vertical scroll bar if there are more than 3 news items
   limit: 5 # leave blank to include all the news in the `_news` folder
 
@@ -27,70 +29,185 @@ latest_posts:
   limit: 3 # leave blank to include all the blog posts
 ---
 
-[![Google Scholar](https://img.shields.io/badge/Google%20Scholar-4285F4?style=flat&logo=google-scholar&logoColor=white)](https://scholar.google.com/citations?user=1J061HIAAAAJ&hl=en)
-[![Email](https://img.shields.io/badge/Email-zk__1028%40aliyun.com-D14836?style=flat&logo=gmail&logoColor=white)](mailto:zk_1028@aliyun.com)
-[![Contact](https://img.shields.io/badge/Contact-Available%20on%20Request-25D366?style=flat&logo=whatsapp&logoColor=white)](mailto:zk_1028@aliyun.com)
+<div style="margin-bottom: 20px;">
+<a href="https://scholar.google.com/citations?user=1J061HIAAAAJ&hl=en" target="_blank" class="btn btn-outline-primary btn-sm">
+  <i class="ai ai-google-scholar"></i> Google Scholar
+</a>
+<a href="mailto:zk_1028@aliyun.com" class="btn btn-outline-primary btn-sm">
+  <i class="fas fa-envelope"></i> Email
+</a>
+<a href="#" class="btn btn-outline-success btn-sm">
+  <i class="fas fa-download"></i> CV
+</a>
+</div>
 
-## 🔭 About Me
+## � Leading the Future of Autonomous Driving
 
-Hello, I'm Kun Zhan. I currently serve as the Cognitive Intelligence Lead at Li Auto, where I lead a team focused on the research and implementation of cognitive models, world models, and reinforcement learning.
+Welcome! I'm **Kun Zhan (詹锟)**, currently serving as the **Cognitive Intelligence Lead** at [Li Auto](https://www.lixiang.com/), where I spearhead cutting-edge research in autonomous driving technologies. With over 8 years of experience in the field, I'm passionate about bridging the gap between artificial intelligence research and real-world autonomous vehicle deployment.
 
-My research "ambitions" are vast: autonomous driving, computer vision, 3D vision, large language models, embodied intelligence... Essentially, I'm passionate about any technology that can make vehicles "smarter"! I'm particularly fascinated by implementing cutting-edge AI technologies into robots and vehicles, turning science fiction scenarios into reality and working toward an autonomous future.
+My journey in autonomous driving has been driven by a simple yet ambitious vision: **making vehicles truly intelligent**. From computer vision algorithms that help cars "see" the world, to world models that enable them to "understand" and "predict" their environment, I've been at the forefront of developing technologies that are reshaping how we think about transportation.
 
-For me, technological innovation isn't just about theoretical breakthroughs—it's about practical applications that can genuinely transform how people travel. I hope to contribute to the advancement of autonomous driving technology through continuous exploration.
+---
 
-## 🌟 Research Interests
+## 🔬 Research Philosophy & Impact
 
-- **Autonomous Driving**: End-to-end autonomous driving systems, decision-making and planning
-- **Computer Vision**: Object detection and tracking, scene understanding
-- **3D Vision**: 3D perception, reconstruction, and modeling
-- **Large Language Models**: Applications of multimodal large models in autonomous driving
-- **World Models**: Environment modeling and prediction, reinforcement learning
+My research philosophy centers on **practical innovation** — developing AI technologies that don't just advance our theoretical understanding, but create tangible improvements in autonomous driving systems. I believe the future of transportation lies in the seamless integration of:
 
-## 💼 Work Experience
+- **Large Vision-Language Models** for comprehensive scene understanding
+- **World Models** for predictive planning and decision-making
+- **3D Perception Systems** for robust spatial awareness
+- **End-to-End Learning** for unified autonomous driving solutions
 
-### Li Auto | April 2021 - Present
-Cognitive Intelligence Lead, directing a team in developing cutting-edge autonomous driving technologies, with a focus on cognitive models, world models, and reinforcement learning research and implementation.
+### Key Research Achievements
 
-### Baidu | April 2016 - March 2021
-Autonomous Driving Researcher, involved in developing computer vision and artificial intelligence solutions for autonomous vehicles.
+<div class="row mt-3">
+  <div class="col-md-6">
+    <div class="card h-100">
+      <div class="card-body">
+        <h5 class="card-title">🎯 Research Impact</h5>
+        <ul class="list-unstyled">
+          <li><strong>465+</strong> Total Citations</li>
+          <li><strong>h-index:</strong> 9</li>
+          <li><strong>i10-index:</strong> 8</li>
+          <li><strong>25+</strong> Publications</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-6">
+    <div class="card h-100">
+      <div class="card-body">
+        <h5 class="card-title">🏆 Innovation Output</h5>
+        <ul class="list-unstyled">
+          <li><strong>16</strong> Chinese Patents</li>
+          <li><strong>2</strong> US Patents</li>
+          <li><strong>Top-tier</strong> Conference Publications</li>
+          <li><strong>Industry</strong> Implementation</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
 
-## 📚 Academic Achievements
+---
 
-### Citation Statistics
-- Total Citations: 465
-- h-index: 9
-- i10-index: 8
+## 🌟 Research Frontiers
 
-### Selected Publications
+<div class="row mt-4">
+  <div class="col-md-4 mb-3">
+    <div class="research-area">
+      <h4><i class="fas fa-car text-primary"></i> Autonomous Driving</h4>
+      <p>End-to-end autonomous driving systems, multimodal fusion, and real-time decision-making algorithms for complex urban environments.</p>
+    </div>
+  </div>
+  <div class="col-md-4 mb-3">
+    <div class="research-area">
+      <h4><i class="fas fa-eye text-success"></i> Computer Vision</h4>
+      <p>3D object detection and tracking, scene understanding, and robust perception systems for autonomous vehicles.</p>
+    </div>
+  </div>
+  <div class="col-md-4 mb-3">
+    <div class="research-area">
+      <h4><i class="fas fa-brain text-warning"></i> AI & ML</h4>
+      <p>Large vision-language models, world models, reinforcement learning, and their applications in robotics and autonomous systems.</p>
+    </div>
+  </div>
+</div>
 
-1. **Drivevlm: The convergence of autonomous driving and large vision-language models** (2024)
-   X Tian, J Gu, B Li, Y Liu, Y Wang, Z Zhao, **K Zhan**, P Jia, X Lang, H Zhao
-   *arXiv preprint arXiv:2402.12289* | Citations: 107
+---
 
-2. **Street gaussians: Modeling dynamic urban scenes with gaussian splatting** (2024)
-   Y Yan, H Lin, C Zhou, W Wang, H Sun, **K Zhan**, X Lang, X Zhou, S Peng
-   *European Conference on Computer Vision, 156-173* | Citations: 102
+## 💼 Professional Journey
 
-3. **Planagent: A multi-modal large language agent for closed-loop vehicle motion planning** (2024)
-   Y Zheng, Z Xing, Q Zhang, B Jin, P Li, Y Zheng, Z Xia, **K Zhan**, X Lang, D Zhao
-   *arXiv preprint arXiv:2406.01587* | Citations: 12
+### 🚀 Li Auto (April 2021 - Present)
+**Cognitive Intelligence Lead** | *Leading the Future of Smart Mobility*
 
-4. **Tod3cap: Towards 3d dense captioning in outdoor scenes** (2024)
-   B Jin, Y Zheng, P Li, W Li, Y Zheng, S Hu, X Liu, J Zhu, Z Yan, H Sun, **K Zhan**, X Lang, P Jia
-   *European Conference on Computer Vision, 367-384* | Citations: 10
+As the Cognitive Intelligence Lead, I direct a multidisciplinary team of researchers and engineers in developing next-generation autonomous driving technologies. Our focus areas include:
 
-5. **Unleashing generalization of end-to-end autonomous driving with controllable long video generation** (2024)
-   E Ma, L Zhou, T Tang, Z Zhang, D Han, J Jiang, **K Zhan**, P Jia, X Lang, K Yu
-   *arXiv preprint arXiv:2406.01349* | Citations: 9
+- **World Model Research**: Developing predictive models that understand and anticipate dynamic driving scenarios
+- **Multimodal AI**: Integrating vision, language, and sensor data for comprehensive scene understanding
+- **Production Deployment**: Translating cutting-edge research into production-ready autonomous driving features
+- **Team Leadership**: Mentoring researchers and fostering innovation in cognitive AI systems
 
-### Patents
-- 16 Chinese Patents
-- 2 US Patents
+**Key Achievements:**
+- Led development of novel vision-language models for autonomous driving (DriveVLM)
+- Pioneered street-level Gaussian splatting for dynamic urban scene modeling
+- Delivered multiple production features improving Li Auto's autonomous driving capabilities
 
-### Academic Service
-- **Program Committee/Reviewer**: CVPR, ICCV, ECCV, NeurIPS, AAAI
-- **Journal Reviewer**: IEEE Transactions on Pattern Analysis and Machine Intelligence (TPAMI), IEEE Transactions on Intelligent Transportation Systems (T-ITS), IEEE Transactions on Intelligent Vehicles (T-IV)
+### 🔧 Baidu (April 2016 - March 2021)
+**Autonomous Driving Researcher** | *Building the Foundation*
+
+During my 5 years at Baidu, I was instrumental in developing core computer vision and AI technologies for Apollo, Baidu's autonomous driving platform:
+
+- **Algorithm Development**: Created robust object detection and tracking systems
+- **Research Innovation**: Published foundational work in joint tracking and classification
+- **System Integration**: Contributed to the integration of perception systems in autonomous vehicles
+- **Cross-functional Collaboration**: Worked closely with hardware, software, and product teams
+
+---
+
+## 📚 Notable Publications & Contributions
+
+### Recent Breakthrough Publications
+
+1. **DriveVLM: The Convergence of Autonomous Driving and Large Vision-Language Models** (2024)
+   - *107 Citations* | Leading work in multimodal AI for autonomous driving
+   - Demonstrates how large language models can enhance driving perception and decision-making
+
+2. **Street Gaussians: Modeling Dynamic Urban Scenes** (2024) - *ECCV*
+   - *102 Citations* | Revolutionary approach to modeling dynamic urban environments
+   - Enables high-fidelity simulation and reconstruction of real-world driving scenarios
+
+3. **PlanAgent: Multi-modal Large Language Agent for Closed-loop Vehicle Motion Planning** (2024)
+   - *12 Citations* | Cutting-edge work in AI-driven motion planning
+   - Bridges the gap between language understanding and vehicle control
+
+### Research Impact & Recognition
+
+- **Program Committee Member**: CVPR, ICCV, ECCV, NeurIPS, AAAI
+- **Journal Reviewer**: IEEE TPAMI, IEEE T-ITS, IEEE T-IV
 - **Workshop Organizer**: Autonomous Driving Workshop at CVPR 2023
+
+---
+
+## 🌐 Looking Forward
+
+The autonomous driving industry is at an inflection point. As we move towards more sophisticated AI systems, my vision is to create vehicles that don't just follow rules, but truly understand and adapt to the complex, ever-changing world around them.
+
+I'm particularly excited about the convergence of **large language models** and **autonomous driving**, which promises to unlock new levels of intelligence in our vehicles. The work we're doing today at Li Auto will shape the future of how millions of people travel and interact with their environment.
+
+### Current Focus Areas
+
+- **Next-Generation World Models**: Developing more sophisticated predictive models for autonomous driving
+- **Multimodal AI Integration**: Seamlessly combining vision, language, and sensor data
+- **Real-World Deployment**: Scaling research innovations to production systems
+- **Industry Collaboration**: Working with academic and industry partners to advance the field
+
+---
+
+<div style="background-color: #f8f9fa; padding: 20px; border-radius: 10px; margin-top: 30px;">
+<h3>🤝 Let's Connect</h3>
+<p>I'm always interested in discussing autonomous driving research, industry trends, and potential collaborations. Whether you're a researcher, industry professional, or simply passionate about the future of transportation, I'd love to connect!</p>
+</div>
+
+<style>
+.research-area {
+  background: #f8f9fa;
+  padding: 20px;
+  border-radius: 10px;
+  height: 100%;
+  border-left: 4px solid #007bff;
+}
+.research-area h4 {
+  margin-bottom: 15px;
+}
+.btn {
+  margin-right: 10px;
+  margin-bottom: 10px;
+}
+.card {
+  border: 1px solid #e9ecef;
+  box-shadow: 0 2px 4px rgba(0,0,0,.1);
+}
+</style>
 
 

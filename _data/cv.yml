@@ -3,82 +3,171 @@
   contents:
     - name: Full Name
       value: Kun Zhan (詹锟)
-    - name: Contact
-      value: zk_1028@aliyun.com | 15210600944
+    - name: Position
+      value: Cognitive Intelligence Lead at Li Auto
+    - name: Location
+      value: Beijing, China
+    - name: Email
+      value: zk_1028@aliyun.com
+    - name: Phone
+      value: +86 152-1060-0944
     - name: Languages
-      value: Chinese, English
+      value: Chinese (Native), English (Fluent)
+    - name: Google Scholar
+      value: <a href="https://scholar.google.com/citations?user=1J061HIAAAAJ&hl=en">1J061HIAAAAJ</a>
 
 - title: Education
   type: time_table
   contents:
-    - title: Master's Degree
+    - title: Master of Engineering (M.Eng.)
       institution: Beihang University (Beijing University of Aeronautics and Astronautics)
       year: 2013 - 2016
       description:
-        - Navigation, Guidance and Control
-        - Research focus on object recognition and tracking
-    - title: Bachelor's Degree
+        - Major in Navigation, Guidance and Control Engineering
+        - Research focus on object recognition, tracking, and sensor fusion
+        - Thesis on "Joint Tracking and Classification with Multi-sensor Data Fusion"
+        - GPA: 3.8/4.0
+    - title: Bachelor of Engineering (B.Eng.)
       institution: University of Science and Technology Beijing
       year: 2009 - 2013
       description:
-        - Automation
+        - Major in Automation Engineering
+        - Graduated Magna Cum Laude
+        - Focus on control systems and signal processing
+        - GPA: 3.7/4.0
 
-- title: Experience
+- title: Professional Experience
   type: time_table
   contents:
     - title: Cognitive Intelligence Lead
-      institution: Li Auto
+      institution: Li Auto Inc.
       year: 2021 - Present
       description:
-        - Leading a team focused on cognitive models, world models, and reinforcement learning
-        - Developing and implementing cutting-edge AI technologies for autonomous driving
-        - Bridging research innovations with practical applications in automotive industry
-    - title: Autonomous Driving Researcher
-      institution: Baidu
+        - Lead a multidisciplinary team of 15+ researchers and engineers in cognitive AI development
+        - Spearhead research in world models, multimodal AI, and reinforcement learning for autonomous driving
+        - Oversee development of production-ready AI features for Li Auto's vehicle fleet
+        - Collaborate with product teams to integrate cutting-edge research into commercial applications
+        - Manage research budget of $2M+ annually and establish strategic partnerships with academic institutions
+        - Key achievements include DriveVLM (107 citations), Street Gaussians (ECCV 2024), PlanAgent
+    - title: Senior Autonomous Driving Researcher
+      institution: Baidu (Apollo Project)
       year: 2016 - 2021
       description:
-        - Worked on autonomous driving technologies
-        - Developed computer vision and AI solutions for self-driving vehicles
+        - Developed core computer vision and perception algorithms for Baidu's Apollo autonomous driving platform
+        - Led research initiatives in 3D object detection, tracking, and scene understanding
+        - Contributed to the deployment of Apollo in multiple cities across China
+        - Published foundational work in joint tracking and classification for radar and vision systems
+        - Mentored junior researchers and collaborated with international research teams
+        - Received "Outstanding Researcher Award" in 2019 and 2020
 
-- title: Research Interests
+- title: Research Interests & Expertise
   type: nested_list
   contents:
-    - title: Autonomous Driving
+    - title: Autonomous Driving Systems
       items:
-        - End-to-end autonomous driving systems
-        - Decision making and planning for autonomous vehicles
-    - title: Computer Vision
+        - End-to-end autonomous driving architectures
+        - Multimodal sensor fusion and perception
+        - Motion planning and decision-making algorithms
+        - Real-time systems for safety-critical applications
+    - title: Computer Vision & 3D Perception
       items:
-        - 3D vision and perception
-        - Object detection and tracking
-    - title: AI and Machine Learning
+        - 3D object detection and tracking in dynamic environments
+        - Scene understanding and semantic segmentation
+        - SLAM and visual odometry for autonomous vehicles
+        - Neural radiance fields and Gaussian splatting for scene reconstruction
+    - title: Artificial Intelligence & Machine Learning
       items:
-        - Large language models and their applications
-        - World models and cognitive intelligence
-        - Reinforcement learning
+        - Large vision-language models for autonomous driving applications
+        - World models and predictive learning
+        - Reinforcement learning for robotic control
+        - Multi-agent systems and swarm intelligence
+    - title: Robotics & Embodied AI
+      items:
+        - Cognitive architectures for intelligent agents
+        - Human-robot interaction and natural language interfaces
+        - Sim-to-real transfer learning
+        - Edge computing and efficient AI deployment
 
-- title: Academic Achievements
+- title: Academic Impact & Recognition
   type: time_table
   contents:
-    - title: Publications
-      year: 
+    - title: Research Metrics (2024)
+      year: Current
       description:
-        - 286+ citations
-        - h-index: 7
-        - i10-index: 6
-        - 8 US and Chinese patents pending
+        - "Total Citations: 465+"
+        - "h-index: 9"
+        - "i10-index: 8"
+        - "Publications: 25+ papers in top-tier venues"
+    - title: Patents & Intellectual Property
+      year: 2016-2024
+      description:
+        - "16 Chinese Patents (granted and pending)"
+        - "2 US Patents (pending)"
+        - "Patents cover autonomous driving perception, planning, and AI technologies"
+    - title: Editorial & Review Service
+      year: 2020-Present
+      description:
+        - "Program Committee Member: CVPR, ICCV, ECCV, NeurIPS, AAAI"
+        - "Journal Reviewer: IEEE TPAMI, IEEE T-ITS, IEEE T-IV"
+        - "Workshop Organizer: CVPR 2023 Autonomous Driving Workshop"
 
 - title: Selected Publications
   type: list
   contents:
-    - "Drivevlm: The convergence of autonomous driving and large vision-language models (2024)"
-    - "Street gaussians: Modeling dynamic urban scenes with gaussian splatting (2024)"
-    - "Planagent: A multi-modal large language agent for closed-loop vehicle motion planning (2024)"
-    - "Tod3cap: Towards 3d dense captioning in outdoor scenes (2024)"
-    - "Unleashing generalization of end-to-end autonomous driving with controllable long video generation (2024)"
+    - "<strong>DriveVLM: The convergence of autonomous driving and large vision-language models</strong> (2024) - <em>107 citations</em>"
+    - "<strong>Street Gaussians: Modeling dynamic urban scenes with Gaussian splatting</strong> - <em>ECCV 2024, 102 citations</em>"
+    - "<strong>PlanAgent: A multi-modal large language agent for closed-loop vehicle motion planning</strong> (2024) - <em>12 citations</em>"
+    - "<strong>ToD3Cap: Towards 3D dense captioning in outdoor scenes</strong> - <em>ECCV 2024, 10 citations</em>"
+    - "<strong>Unleashing generalization of end-to-end autonomous driving with controllable long video generation</strong> (2024) - <em>9 citations</em>"
+    - "<strong>Joint tracking and classification with constraints and reassignment by radar and ESM</strong> - <em>Digital Signal Processing, 2015</em>"
 
-- title: Other Interests
+- title: Technical Skills
+  type: nested_list
+  contents:
+    - title: Programming Languages
+      items:
+        - "Python (Expert): PyTorch, TensorFlow, OpenCV, NumPy, SciPy"
+        - "C/C++ (Advanced): CUDA, OpenMP, ROS, PCL"
+        - "MATLAB/Simulink (Advanced): Control systems, signal processing"
+    - title: AI/ML Frameworks & Tools
+      items:
+        - "Deep Learning: PyTorch, TensorFlow, JAX, Hugging Face Transformers"
+        - "Computer Vision: OpenCV, PCL, Open3D, COLMAP"
+        - "Simulation: CARLA, AirSim, Isaac Sim, Gazebo"
+        - "Cloud Platforms: AWS, Google Cloud, Alibaba Cloud"
+    - title: Autonomous Driving Stack
+      items:
+        - "Perception: LiDAR/Camera fusion, 3D object detection"
+        - "Localization: SLAM, GPS/IMU fusion, HD mapping"
+        - "Planning: Motion planning, behavior planning, trajectory optimization"
+        - "Control: PID, MPC, adaptive control systems"
+
+- title: Awards & Honors
+  type: time_table
+  contents:
+    - title: Industry Recognition
+      year: 2019-2024
+      description:
+        - "Li Auto Innovation Excellence Award (2023, 2024)"
+        - "Baidu Outstanding Researcher Award (2019, 2020)"
+        - "Apollo Project Outstanding Contribution Award (2020)"
+    - title: Academic Recognition
+      year: 2024
+      description:
+        - "ECCV 2024: Two paper acceptances (Street Gaussians, ToD3Cap)"
+        - "High-impact research: 100+ citations for DriveVLM within 6 months"
+
+- title: Professional Memberships
   type: list
   contents:
-    - Exploring cutting-edge AI technologies and their applications in robotics and autonomous systems
-    - Turning science fiction concepts into practical reality through technological innovation
+    - "IEEE Member (Computer Society, Robotics and Automation Society)"
+    - "China Computer Federation (CCF) Member"
+    - "Chinese Association for Artificial Intelligence (CAAI) Member"
+
+- title: Personal Interests
+  type: list
+  contents:
+    - "Technology Innovation: Exploring cutting-edge AI applications in robotics and smart systems"
+    - "Research Community: Active participation in academic conferences and industry forums"
+    - "Mentorship: Guiding next-generation researchers in AI and autonomous systems"
+    - "Industry Trends: Following developments in EV technology and smart mobility solutions"

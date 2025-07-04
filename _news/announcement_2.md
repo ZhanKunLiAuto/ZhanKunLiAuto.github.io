@@ -1,10 +1,12 @@
 ---
 layout: post
-title: Street Gaussians accepted to ECCV 2024
-date: 2024-05-15 16:11:00-0400
-inline: false
+title: 🏆 Two Papers Accepted at ECCV 2024
+date: 2024-07-15 10:00:00-0400
+inline: true
 related_posts: false
 ---
+
+Excited to announce that our two papers "Street Gaussians" and "ToD3Cap" have been accepted at **ECCV 2024**! These works advance 3D scene understanding and captioning for autonomous driving applications. 🌟
 
 I'm excited to announce that our paper "Street Gaussians: Modeling Dynamic Urban Scenes with Gaussian Splatting" has been accepted to the European Conference on Computer Vision (ECCV) 2024!
 
