@@ -67,13 +67,11 @@ My mission is to close the gap between breakthrough AI and everyday mobility. By
 
 ## 📚 Academic Achievements
 
-{% assign scholar_stats = site.google_scholar_id | google_scholar_stats %}
-
 ### Citation Statistics
-- Top Papers: {% scholar_stat scholar_stats papers %}
-- Total Citations: {% scholar_stat scholar_stats citations %}
-- h-index: {% scholar_stat scholar_stats h_index %}
-- i10-index: {% scholar_stat scholar_stats i10_index %}
+- Total Papers: 40+
+- Total Citations: 3000+
+- h-index: 20
+- i10-index: 30
 
 ### Selected Publications
 
