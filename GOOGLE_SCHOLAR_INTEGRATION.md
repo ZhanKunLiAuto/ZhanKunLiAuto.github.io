@@ -30,10 +30,12 @@ This Jekyll site now includes automatic Google Scholar statistics fetching funct
 In your Jekyll pages or posts, use the following Liquid tags:
 
 ```liquid
+{% raw %}
 {% assign scholar_stats = site.google_scholar_id | google_scholar_stats %}
 
 - Papers: {% scholar_stat scholar_stats papers %} - Citations: {% scholar_stat scholar_stats citations %} - h-index:
 {% scholar_stat scholar_stats h_index %} - i10-index: {% scholar_stat scholar_stats i10_index %}
+{% endraw %}
 ```
 
 ## Cache Management
