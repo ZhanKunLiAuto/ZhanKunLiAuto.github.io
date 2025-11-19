@@ -3,8 +3,8 @@ const ninja = document.querySelector('ninja-keys');
 
 // add the home and posts menu items
 ninja.data = [{
-    id: "nav-about",
-    title: "about",
+    id: "nav-kun-zhan-li-auto-vla",
+    title: "Kun Zhan | Li Auto VLA",
     section: "Navigation",
     handler: () => {
       window.location.href = "/";
