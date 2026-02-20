@@ -3,8 +3,8 @@ layout: about
 title: Kun Zhan | Li Auto VLA
 permalink: /
 lang: en
-subtitle: Senior Director of VLA Models at <a href='https://www.lixiang.com/'>Li Auto</a>
-description: Kun Zhan is Senior Director of the Vision-Language-Action organization at Li Auto, leading mass-production autonomous-driving systems and foundation models.
+subtitle: Head of Foundation Model Team at <a href='https://www.lixiang.com/'>Li Auto</a>
+description: Kun Zhan is Head of the Foundation Model Team at Li Auto, leading the R&D of VLA models, self-developed chip fusion, and mass-production autonomous-driving systems.
 keywords:
   - Kun Zhan
   - Li Auto
@@ -53,7 +53,7 @@ latest_posts:
 
 ## 🔭 About Me
 
-I’m **Kun Zhan**, Senior Director of Li Auto’s Vision-Language-Action (VLA) organization and Site Manager of the company’s Silicon Valley R&D center. I build scalable teams that take frontier research in multimodal models, reinforcement learning, and world modeling all the way into mass-production vehicles.
+I’m **Kun Zhan**, Head of the Foundation Model Team at Li Auto and Site Manager of the company’s Silicon Valley R&D center. I lead the R&D of VLA (Vision-Language-Action) foundation models and their fusion with self-developed chips, providing core AI capabilities for autonomous driving, smart cabins, and future robotics.
 
 My journey started with a master’s degree in Automation from Beihang University, followed by leading Baidu Apollo’s behavior prediction team. Since joining Li Auto in 2021, I have been responsible for architecting and deploying three generations of autonomous-driving stacks, culminating in the current VLA framework that unifies large-model cognition with automotive-grade reliability.
 
@@ -75,7 +75,8 @@ My journey started with a master’s degree in Automation from Beihang Universit
 ## 💼 Work Experience
 
 ### **Li Auto** | Apr 2021 – Present
-**Senior Director, Head of VLA Models & Algorithm Owner**
+**Head of Foundation Model Team & Site Manager**
+- Lead the R&D of VLA foundation models and coordinate the integration with self-developed autonomous driving chips, supporting smart driving, smart cabins, and future robotics.
 - Built Li Auto’s end-to-end autonomous stack from scratch, progressing from E2E → VLM → VLA architectures that now operate on hundreds of thousands of customer vehicles.
 - Assemble and mentor a 100+ member org across perception, planning, foundation models, simulation, and on-vehicle deployment with a strong applied-research culture.
 - Established a dedicated world-model and RL group to accelerate closed-loop learning and reduce real-world testing costs by double digits.
