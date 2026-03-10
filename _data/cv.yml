@@ -4,81 +4,85 @@
     - name: Full Name
       value: Kun Zhan (詹锟)
     - name: Contact
-      value: zk_1028@aliyun.com | 15210600944
+      value: zk_1028@aliyun.com | +86 152 1060 0944
     - name: Languages
       value: Chinese, English
 
-- title: Education
-  type: time_table
+- title: Profile
+  type: list
   contents:
-    - title: Master's Degree
-      institution: Beihang University (Beijing University of Aeronautics and Astronautics)
-      year: 2013 - 2016
-      description:
-        - Navigation, Guidance and Control
-        - Research focus on object recognition and tracking
-    - title: Bachelor's Degree
-      institution: University of Science and Technology Beijing
-      year: 2009 - 2013
-      description:
-        - Automation
+    - Autonomous driving and AI leader with industry experience across perception, planning, multimodal learning, world models, and foundation models.
+    - Focused on turning frontier research into production-ready capabilities for intelligent driving systems.
 
 - title: Experience
   type: time_table
   contents:
-    - title: Cognitive Intelligence Lead
+    - title: Head of Foundation Model Team
       institution: Li Auto
       year: 2021 - Present
       description:
-        - Leading a team focused on cognitive models, world models, and reinforcement learning
-        - Developing and implementing cutting-edge AI technologies for autonomous driving
-        - Bridging research innovations with practical applications in automotive industry
+        - Lead foundation model and cognitive intelligence initiatives for autonomous driving.
+        - Drive research across vision-language models, world models, reinforcement learning, and end-to-end driving.
+        - Bridge advanced research with scalable, product-oriented applications for intelligent vehicle systems.
     - title: Autonomous Driving Researcher
       institution: Baidu
       year: 2016 - 2021
       description:
-        - Worked on autonomous driving technologies
-        - Developed computer vision and AI solutions for self-driving vehicles
+        - Conducted research on autonomous driving algorithms spanning computer vision and machine learning.
+        - Built perception and AI solutions for self-driving systems, including object understanding and tracking.
+        - Contributed to translating research prototypes into deployable capabilities for autonomous driving platforms.
+
+- title: Education
+  type: time_table
+  contents:
+    - title: M.S. in Navigation, Guidance and Control
+      institution: Beihang University (Beijing University of Aeronautics and Astronautics)
+      year: 2013 - 2016
+      description:
+        - Research focused on object recognition and tracking.
+    - title: B.Eng. in Automation
+      institution: University of Science and Technology Beijing
+      year: 2009 - 2013
 
 - title: Research Interests
   type: nested_list
   contents:
     - title: Autonomous Driving
       items:
-        - End-to-end autonomous driving systems
-        - Decision making and planning for autonomous vehicles
-    - title: Computer Vision
+        - Foundation models and end-to-end driving systems
+        - Motion planning, decision-making, and embodied intelligence
+    - title: Multimodal and 3D Perception
       items:
-        - 3D vision and perception
-        - Object detection and tracking
-    - title: AI and Machine Learning
+        - Vision-language learning for driving
+        - 3D vision, scene understanding, and object tracking
+    - title: Learning-Based Intelligence
       items:
-        - Large language models and their applications
         - World models and cognitive intelligence
-        - Reinforcement learning
+        - Reinforcement learning and generative modeling
 
-- title: Academic Achievements
+- title: Research Highlights
   type: time_table
   contents:
-    - title: Publications
-      year: 
+    - title: Scholarly Impact
+      year: Latest sync
       description:
+        - 27 publications in the Scholar-synced bibliography
         - 286+ citations
         - h-index: 7
         - i10-index: 6
-        - 8 US and Chinese patents pending
+        - 8 pending patents across the United States and China
 
 - title: Selected Publications
   type: list
   contents:
-    - "Drivevlm: The convergence of autonomous driving and large vision-language models (2024)"
-    - "Street gaussians: Modeling dynamic urban scenes with gaussian splatting (2024)"
-    - "Planagent: A multi-modal large language agent for closed-loop vehicle motion planning (2024)"
-    - "Tod3cap: Towards 3d dense captioning in outdoor scenes (2024)"
-    - "Unleashing generalization of end-to-end autonomous driving with controllable long video generation (2024)"
+    - "ReconDreamer: Crafting World Models for Driving Scene Reconstruction via Online Restoration (2025)"
+    - "StreetCrafter: Street View Synthesis with Controllable Video Diffusion Models (2025)"
+    - "DriveVLM: The Convergence of Autonomous Driving and Large Vision-Language Models (2024)"
+    - "PlanAgent: A Multi-Modal Large Language Agent for Closed-Loop Vehicle Motion Planning (2024)"
+    - "Unleashing Generalization of End-to-End Autonomous Driving with Controllable Long Video Generation (2024)"
 
-- title: Other Interests
+- title: Additional Interests
   type: list
   contents:
-    - Exploring cutting-edge AI technologies and their applications in robotics and autonomous systems
-    - Turning science fiction concepts into practical reality through technological innovation
+    - Building practical, reliable AI systems for robotics and autonomous agents.
+    - Translating long-horizon research ideas into real-world products and user value.
