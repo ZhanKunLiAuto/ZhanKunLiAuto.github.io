@@ -204,36 +204,20 @@ jobs:
         with:
           node-version: 20
 
-      - name: Setup Chrome
-        id: setup-chrome
-        uses: browser-actions/setup-chrome@v2
-        with:
-          install-chromedriver: true
-
       - name: Install accessibility tooling
         run: |
-          npm install -g @axe-core/cli http-server
+          npm install -g http-server
+          npm install --no-save @axe-core/playwright playwright
+          npx playwright install --with-deps chromium
 
-      - name: Run axe
+      - name: Run accessibility checks
         run: |
           http-server _site -p 8080 > /tmp/http-server.log 2>&1 &
           SERVER_PID=$!
           trap "kill $SERVER_PID || true" EXIT
           sleep 3
 
-          for page in / /about/ /blog/ /projects/ /publications/ /cv/; do
-            if [ "$page" = "/" ]; then
-              file="_site/index.html"
-            else
-              file="_site${page}index.html"
-            fi
-
-            if [ -f "$file" ]; then
-              axe --chromedriver-path "${{ steps.setup-chrome.outputs.chromedriver-path }}" "http://127.0.0.1:8080${page}" --load-delay=1500 --exit
-            else
-              echo "Skipping missing page ${page}"
-            fi
-          done
+          node tests/accessibility-check.mjs
 
   gate:
     name: CI Gate
