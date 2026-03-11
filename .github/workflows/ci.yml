@@ -206,18 +206,12 @@ jobs:
 
       - name: Setup Chrome
         id: setup-chrome
-        uses: browser-actions/setup-chrome@v1
-
-      - name: Detect installed Chrome version
-        run: |
-          CHROME_BIN="$(command -v chrome || command -v google-chrome || command -v google-chrome-stable)"
-          CHROME_MAJOR="$("$CHROME_BIN" --version | sed -E 's/.* ([0-9]+)\..*/\1/')"
-          echo "CHROME_BIN=$CHROME_BIN" >> "$GITHUB_ENV"
-          echo "CHROME_MAJOR=$CHROME_MAJOR" >> "$GITHUB_ENV"
+        uses: browser-actions/setup-chrome@v2
+        with:
+          install-chromedriver: true
 
       - name: Install accessibility tooling
         run: |
-          npm install -g chromedriver@${CHROME_MAJOR}
           npm install -g @axe-core/cli http-server
 
       - name: Run axe
@@ -235,7 +229,7 @@ jobs:
             fi
 
             if [ -f "$file" ]; then
-              axe --chromedriver-path "$(npm root -g)/chromedriver/bin/chromedriver" "http://127.0.0.1:8080${page}" --load-delay=1500 --exit
+              axe --chromedriver-path "${{ steps.setup-chrome.outputs.chromedriver-path }}" "http://127.0.0.1:8080${page}" --load-delay=1500 --exit
             else
               echo "Skipping missing page ${page}"
             fi
