@@ -67,7 +67,7 @@ jobs:
           if [ -f requirements.txt ]; then
             python -m pip install -r requirements.txt
           fi
-          python -m pip install pytest
+          python -m pip install pytest requests PyYAML
 
       - name: Run pytest
         if: ${{ hashFiles('tests/**/*.py', 'test/**/*.py') != '' }}
@@ -204,19 +204,20 @@ jobs:
         with:
           node-version: 20
 
-      - name: Get Chromium version
-        run: |
-          CHROMIUM_VERSION=$(wget -qO- https://googlechromelabs.github.io/chrome-for-testing/LATEST_RELEASE_STABLE | cut -d. -f1)
-          echo "CHROMIUM_VERSION=$CHROMIUM_VERSION" >> "$GITHUB_ENV"
-
       - name: Setup Chrome
+        id: setup-chrome
         uses: browser-actions/setup-chrome@v1
-        with:
-          chrome-version: ${{ env.CHROMIUM_VERSION }}
+
+      - name: Detect installed Chrome version
+        run: |
+          CHROME_BIN="$(command -v chrome || command -v google-chrome || command -v google-chrome-stable)"
+          CHROME_MAJOR="$("$CHROME_BIN" --version | sed -E 's/.* ([0-9]+)\..*/\1/')"
+          echo "CHROME_BIN=$CHROME_BIN" >> "$GITHUB_ENV"
+          echo "CHROME_MAJOR=$CHROME_MAJOR" >> "$GITHUB_ENV"
 
       - name: Install accessibility tooling
         run: |
-          npm install -g chromedriver@${CHROMIUM_VERSION}
+          npm install -g chromedriver@${CHROME_MAJOR}
           npm install -g @axe-core/cli http-server
 
       - name: Run axe
