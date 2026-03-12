@@ -921,14 +921,21 @@ footer.sticky-bottom {
 
   ul {
     justify-content: center;
-    display: flow-root;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem 0;
 
-    p,
     li {
       list-style: none;
       display: inline-block;
       padding: 1rem 0.5rem;
-      color: var(--global-text-color-light);
+      color: var(--global-text-color);
+    }
+
+    li + li::before {
+      color: var(--global-text-color);
+      content: "\2022";
+      margin-right: 1rem;
     }
   }
 }
@@ -951,13 +958,13 @@ footer.sticky-bottom {
     padding-bottom: 2rem;
 
     .post-meta {
-      color: var(--global-text-color-light);
+      color: var(--global-text-color);
       font-size: 0.875rem;
       margin-bottom: 0;
     }
 
     .post-tags {
-      color: var(--global-text-color-light);
+      color: var(--global-text-color);
       font-size: 0.875rem;
       padding-top: 0.25rem;
       padding-bottom: 0;
@@ -1039,7 +1046,7 @@ footer.sticky-bottom {
   }
 
   h2.category {
-    color: var(--global-divider-color);
+    color: var(--global-text-color);
     border-bottom: 1px solid var(--global-divider-color);
     padding-top: 0.5rem;
     margin-top: 2rem;
@@ -1070,7 +1077,7 @@ footer.sticky-bottom {
   }
 
   h2.bibliography {
-    color: var(--global-divider-color);
+    color: var(--global-text-color);
     border-top: 1px solid var(--global-divider-color);
     padding-top: 1rem;
     margin-top: 2rem;
@@ -1266,19 +1273,19 @@ html.transition *:after {
 // Extra Markdown style (post Customization)
 .post {
   .post-meta {
-    color: var(--global-text-color-light);
+    color: var(--global-text-color);
     font-size: 0.875rem;
     margin-bottom: 0;
   }
 
   .post-tags {
-    color: var(--global-text-color-light);
+    color: var(--global-text-color);
     font-size: 0.875rem;
     padding-top: 0.25rem;
     padding-bottom: 1rem;
 
     a {
-      color: var(--global-text-color-light);
+      color: var(--global-text-color);
       text-decoration: none;
 
       &:hover {

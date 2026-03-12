@@ -3,7 +3,7 @@ layout: default
 ---
 {% unless site.data.resume %}
   <div class="post">
-    <header class="post-header">
+    <div class="post-header">
       <h1 class="post-title">
         {{ page.title }}
         {% if page.cv_pdf %}
@@ -24,14 +24,14 @@ layout: default
       {% if page.description %}
         <p class="post-description">{{ page.description }}</p>
       {% endif %}
-    </header>
+    </div>
 
     <article>
       <div class="cv">
         {% for entry in site.data.cv %}
           <a class="anchor" id="{{ entry.title }}"></a>
           <div class="card mt-3 p-3">
-            <h3 class="card-title font-weight-medium">{{ entry.title }}</h3>
+            <h2 class="card-title font-weight-medium">{{ entry.title }}</h2>
             <div>
               {% if entry.type == 'list' %}
                 {% include cv/list.liquid %}
@@ -54,7 +54,7 @@ layout: default
   </div>
 {% else %}
   <div class="post">
-    <header class="post-header">
+    <div class="post-header">
       <h1 class="post-title">
         {{ page.title }}
         {% if page.cv_pdf %}
@@ -75,7 +75,7 @@ layout: default
       {% if page.description %}
         <p class="post-description">{{ page.description }}</p>
       {% endif %}
-    </header>
+    </div>
 
     <article>
       <div class="cv">
@@ -88,7 +88,7 @@ layout: default
           {% if data[0] == 'meta' or data[1].size == 0 %} {% continue %} {% endif %}
           <a class="anchor" id="{{ data[0] }}"></a>
           <div class="card mt-3 p-3">
-            <h3 class="card-title font-weight-medium">{{ data[0] | capitalize }}</h3>
+            <h2 class="card-title font-weight-medium">{{ data[0] | capitalize }}</h2>
             <div>
               {% case data[0] %}
                 {% when 'basics' %}
