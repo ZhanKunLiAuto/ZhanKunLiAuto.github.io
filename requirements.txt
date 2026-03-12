@@ -1,1 +1,3 @@
 nbconvert
+PyYAML
+requests
