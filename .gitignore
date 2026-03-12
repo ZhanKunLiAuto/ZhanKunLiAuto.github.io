@@ -13,3 +13,4 @@ vendor
 .idea
 .cursor
 .google_scholar_cache.json
+.pyc
