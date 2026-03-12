@@ -385,7 +385,7 @@ ul.task-list input[type="checkbox"] {
 
   p {
     margin-bottom: 0;
-    color: var(--global-text-color-light);
+    color: var(--global-text-color);
   }
 }
 
@@ -394,7 +394,7 @@ ul.task-list input[type="checkbox"] {
 }
 
 .about-section__meta {
-  color: var(--global-text-color-light);
+  color: var(--global-text-color);
   font-size: 0.9rem;
 }
 
@@ -447,7 +447,7 @@ ul.task-list input[type="checkbox"] {
 .about-highlight-card p,
 .about-interest-card span {
   margin-bottom: 0;
-  color: var(--global-text-color-light);
+  color: var(--global-text-color);
 }
 
 .about-interest-card {
@@ -462,7 +462,7 @@ ul.task-list input[type="checkbox"] {
 
 .scholar-stat-card__label {
   font-size: 0.85rem;
-  color: var(--global-text-color-light);
+  color: var(--global-text-color);
   text-transform: uppercase;
   letter-spacing: 0.04em;
 }
@@ -503,7 +503,7 @@ ul.task-list input[type="checkbox"] {
   p,
   span {
     margin-bottom: 0;
-    color: var(--global-text-color-light);
+    color: var(--global-text-color);
   }
 }
 
@@ -572,7 +572,7 @@ ul.task-list input[type="checkbox"] {
     padding: 0.28rem 0.55rem;
     border-radius: 999px;
     background: rgba(18, 96, 160, 0.08);
-    color: var(--global-text-color-light);
+    color: var(--global-text-color);
     font-size: 0.78rem;
   }
 }
@@ -580,7 +580,7 @@ ul.task-list input[type="checkbox"] {
 .scholar-paper-card__authors,
 .about-empty-state {
   margin-bottom: 0;
-  color: var(--global-text-color-light);
+  color: var(--global-text-color);
 }
 
 @media (max-width: 767px) {
