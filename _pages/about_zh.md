@@ -27,6 +27,7 @@ latest_posts:
   scrollable: true
   limit: 3
 ---
+
 <section class="about-hero">
   <div class="about-hero__content">
     <span class="about-kicker">面向物理世界智能的基座模型</span>
@@ -164,6 +165,7 @@ latest_posts:
         <li>推动规划控制模块和车端深度学习组件落地，支持百度自动驾驶车队在北京、广州等城市运行。</li>
       </ul>
     </article>
+
   </div>
 </section>
 
