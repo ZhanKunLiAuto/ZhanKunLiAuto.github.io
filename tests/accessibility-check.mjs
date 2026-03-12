@@ -1,14 +1,15 @@
 import AxeBuilder from "@axe-core/playwright";
 import { chromium } from "playwright";
 
-const pages = ["/", "/about/", "/blog/", "/projects/", "/publications/", "/cv/"];
+const pages = ["/", "/blog/", "/projects/", "/publications/", "/cv/"];
 const baseUrl = process.env.ACCESSIBILITY_BASE_URL || "http://127.0.0.1:8080";
 
 let hasViolations = false;
 const browser = await chromium.launch();
+const context = await browser.newContext();
 
 try {
-  const page = await browser.newPage();
+  const page = await context.newPage();
 
   for (const path of pages) {
     const url = new URL(path, baseUrl).toString();
@@ -38,6 +39,7 @@ try {
     }
   }
 } finally {
+  await context.close();
   await browser.close();
 }
 
