@@ -1465,7 +1465,7 @@ nav[data-toggle="toc"] {
 
 .featured-posts {
   a {
-    color: var(--global-text-color-light);
+    color: var(--global-text-color);
     text-decoration: none;
 
     .card-text {
@@ -1484,7 +1484,7 @@ nav[data-toggle="toc"] {
   }
 
   .post-meta {
-    color: var(--global-text-color-light);
+    color: var(--global-text-color);
     font-size: 0.875rem;
     margin-bottom: 0;
     padding-top: 0.5rem;
