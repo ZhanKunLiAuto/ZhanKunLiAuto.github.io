@@ -4,25 +4,25 @@
 {% assign top_publications = scholar.top_publications | default: empty %}
 
 {% if is_zh %}
-  {% assign achievements_title = "学术成果" %}
-  {% assign achievements_desc = "手动触发同步的 Google Scholar 快照" %}
-  {% assign stats_labels = "论文数|总引用|h-index|i10-index" | split: "|" %}
-  {% assign publications_title = "Top 5 引用论文" %}
-  {% assign publications_desc = "按 Google Scholar 引用量排序，更新时间见卡片上方。" %}
-  {% assign updated_prefix = "最近更新：" %}
-  {% assign external_label = "论文链接" %}
-  {% assign scholar_label = "Scholar" %}
-  {% assign empty_state = "尚未生成 Scholar 数据，先运行手动更新工作流即可。" %}
+  {% assign achievements_title = '学术成果' %}
+  {% assign achievements_desc = '手动触发同步的 Google Scholar 快照' %}
+  {% assign stats_labels = '论文数|总引用|h-index|i10-index' | split: '|' %}
+  {% assign publications_title = 'Top 5 引用论文' %}
+  {% assign publications_desc = '按 Google Scholar 引用量排序，更新时间见卡片上方。' %}
+  {% assign updated_prefix = '最近更新：' %}
+  {% assign external_label = '论文链接' %}
+  {% assign scholar_label = 'Scholar' %}
+  {% assign empty_state = '尚未生成 Scholar 数据，先运行手动更新工作流即可。' %}
 {% else %}
-  {% assign achievements_title = "Academic Achievements" %}
-  {% assign achievements_desc = "Google Scholar snapshot refreshed via manual workflow" %}
-  {% assign stats_labels = "Papers|Citations|h-index|i10-index" | split: "|" %}
-  {% assign publications_title = "Top 5 Cited Publications" %}
-  {% assign publications_desc = "Ranked by Google Scholar citations and refreshed by manual update." %}
-  {% assign updated_prefix = "Last updated: " %}
-  {% assign external_label = "Article" %}
-  {% assign scholar_label = "Scholar" %}
-  {% assign empty_state = "Scholar data has not been generated yet. Run the manual update workflow first." %}
+  {% assign achievements_title = 'Academic Achievements' %}
+  {% assign achievements_desc = 'Google Scholar snapshot refreshed via manual workflow' %}
+  {% assign stats_labels = 'Papers|Citations|h-index|i10-index' | split: '|' %}
+  {% assign publications_title = 'Top 5 Cited Publications' %}
+  {% assign publications_desc = 'Ranked by Google Scholar citations and refreshed by manual update.' %}
+  {% assign updated_prefix = 'Last updated: ' %}
+  {% assign external_label = 'Article' %}
+  {% assign scholar_label = 'Scholar' %}
+  {% assign empty_state = 'Scholar data has not been generated yet. Run the manual update workflow first.' %}
 {% endif %}
 
 <section class="about-section about-section--scholar">
@@ -32,26 +32,29 @@
       <p>{{ achievements_desc }}</p>
     </div>
     {% if profile.updated_at %}
-      <span class="about-section__meta">{{ updated_prefix }}{{ profile.updated_at | date: "%Y-%m-%d" }}</span>
+      <span class="about-section__meta">
+        {{- updated_prefix -}}
+        {{- profile.updated_at | date: '%Y-%m-%d' -}}
+      </span>
     {% endif %}
   </div>
 
   <div class="scholar-stats">
     <article class="scholar-stat-card">
       <span class="scholar-stat-card__label">{{ stats_labels[0] }}</span>
-      <strong class="scholar-stat-card__value">{{ profile.papers | default: "N/A" }}</strong>
+      <strong class="scholar-stat-card__value">{{ profile.papers | default: 'N/A' }}</strong>
     </article>
     <article class="scholar-stat-card">
       <span class="scholar-stat-card__label">{{ stats_labels[1] }}</span>
-      <strong class="scholar-stat-card__value">{{ profile.citations | default: "N/A" }}</strong>
+      <strong class="scholar-stat-card__value">{{ profile.citations | default: 'N/A' }}</strong>
     </article>
     <article class="scholar-stat-card">
       <span class="scholar-stat-card__label">{{ stats_labels[2] }}</span>
-      <strong class="scholar-stat-card__value">{{ profile.h_index | default: "N/A" }}</strong>
+      <strong class="scholar-stat-card__value">{{ profile.h_index | default: 'N/A' }}</strong>
     </article>
     <article class="scholar-stat-card">
       <span class="scholar-stat-card__label">{{ stats_labels[3] }}</span>
-      <strong class="scholar-stat-card__value">{{ profile.i10_index | default: "N/A" }}</strong>
+      <strong class="scholar-stat-card__value">{{ profile.i10_index | default: 'N/A' }}</strong>
     </article>
   </div>
 
@@ -60,9 +63,7 @@
       <h3>{{ publications_title }}</h3>
       <p>{{ publications_desc }}</p>
     </div>
-    <a class="about-link" href="https://scholar.google.com/citations?user={{ site.data.socials.scholar_userid }}&hl=en">
-      Google Scholar
-    </a>
+    <a class="about-link" href="https://scholar.google.com/citations?user={{ site.data.socials.scholar_userid }}&hl=en"> Google Scholar </a>
   </div>
 
   {% if top_publications.size > 0 %}
@@ -85,12 +86,14 @@
 
           <div class="scholar-paper-card__content">
             <div class="scholar-paper-card__meta">
-              <span>{{ paper.venue | default: "Google Scholar" }}</span>
+              <span>{{ paper.venue | default: 'Google Scholar' }}</span>
               {% if paper.year %}
                 <span>{{ paper.year }}</span>
               {% endif %}
               {% if paper.citation_count %}
-                <span>{% if is_zh %}引用 {{ paper.citation_count }}{% else %}{{ paper.citation_count }} citations{% endif %}</span>
+                <span>
+                  {%- if is_zh %}引用 {{ paper.citation_count }}{% else %}{{ paper.citation_count }} citations{% endif -%}
+                </span>
               {% endif %}
             </div>
 
