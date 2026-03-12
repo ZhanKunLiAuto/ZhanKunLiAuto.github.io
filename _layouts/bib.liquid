@@ -25,11 +25,15 @@
           <abbr class="badge rounded w-100">{{ entry.abbr }}</abbr>
         {% endif %}
       {% endif %}
-      {% if entry.preview %}
-        {% if entry.preview contains '://' %}
-          <img class="preview z-depth-1 rounded" src="{{ entry.preview }}">
+      {% assign entry_preview = entry.preview | default: entry.thumbnail %}
+      {% if entry_preview %}
+        {% if entry_preview contains '://' %}
+          <img class="preview z-depth-1 rounded" src="{{ entry_preview }}" alt="{{ entry.title }}">
         {% else %}
-          {% assign entry_path = entry.preview | prepend: '/assets/img/publication_preview/' %}
+          {% assign entry_path = entry_preview %}
+          {% unless entry_path contains '/' %}
+            {% assign entry_path = entry_preview | prepend: '/assets/img/publication_preview/' %}
+          {% endunless %}
           {%
             include figure.liquid
             loading="eager"
@@ -37,7 +41,7 @@
             sizes = "200px"
             class="preview z-depth-1 rounded"
             zoomable=true
-            alt=entry.preview
+            alt=entry.title
           %}
         {% endif %}
       {% endif %}

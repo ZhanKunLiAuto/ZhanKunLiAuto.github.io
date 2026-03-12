@@ -7,6 +7,7 @@ import re
 import sys
 import unicodedata
 from dataclasses import dataclass, field
+from datetime import UTC, datetime
 from pathlib import Path
 from typing import Iterable
 from urllib.parse import unquote
@@ -16,17 +17,35 @@ import yaml
 
 DATA_FILE = Path("_data/socials.yml")
 BIB_FILE = Path("_bibliography/papers.bib")
+SCHOLAR_DATA_FILE = Path("_data/scholar.yml")
 
 SCHOLAR_URL = (
     "https://r.jina.ai/http://scholar.google.com/citations"
     "?user={scholar_id}&hl=en&cstart=0&pagesize=100&sortby=pubdate"
+)
+SCHOLAR_PROFILE_URL = "https://scholar.google.com/citations?user={scholar_id}&hl=en"
+SCHOLAR_DETAIL_URL = (
+    "https://scholar.google.com/citations"
+    "?view_op=view_citation&hl=en&user={scholar_id}&citation_for_view={scholar_id}:{article_id}"
 )
 PUBLICATIONS_FALLBACK_URL = os.getenv(
     "SCHOLAR_PUBLICATIONS_FALLBACK_URL",
     "https://zhankunliauto.github.io/publications/",
 )
 REQUEST_TIMEOUT = 30
-FIELD_ORDER = ["title", "author", "year", "html", "doi", "google_scholar_id"]
+FIELD_ORDER = [
+    "title",
+    "author",
+    "year",
+    "note",
+    "html",
+    "doi",
+    "arxiv",
+    "pdf",
+    "preview",
+    "thumbnail",
+    "google_scholar_id",
+]
 
 
 class ScholarFetchError(RuntimeError):
@@ -61,11 +80,17 @@ class BibEntry:
 
 
 def read_socials() -> dict:
-    return yaml.safe_load(DATA_FILE.read_text()) or {}
+    return yaml.safe_load(DATA_FILE.read_text(encoding="utf-8")) or {}
 
 
 def read_scholar_id() -> str:
     return str(read_socials().get("scholar_userid") or "").strip()
+
+
+def read_existing_scholar_data() -> dict:
+    if not SCHOLAR_DATA_FILE.exists():
+        return {}
+    return yaml.safe_load(SCHOLAR_DATA_FILE.read_text(encoding="utf-8")) or {}
 
 
 def http_get(url: str) -> str:
@@ -84,8 +109,7 @@ def http_get(url: str) -> str:
     return response.text
 
 
-def fetch_scholar_markdown(scholar_id: str) -> str:
-    text = http_get(SCHOLAR_URL.format(scholar_id=scholar_id))
+def ensure_not_blocked(text: str) -> None:
     lowered = text.lower()
     blocked_markers = [
         "target url returned error 403",
@@ -94,7 +118,12 @@ def fetch_scholar_markdown(scholar_id: str) -> str:
         "sorry...",
     ]
     if any(marker in lowered for marker in blocked_markers):
-        raise ScholarFetchError("Google Scholar blocked the profile fetch")
+        raise ScholarFetchError("Google Scholar blocked the request")
+
+
+def fetch_scholar_markdown(scholar_id: str) -> str:
+    text = http_get(SCHOLAR_URL.format(scholar_id=scholar_id))
+    ensure_not_blocked(text)
     return text
 
 
@@ -104,10 +133,32 @@ def fetch_publications_fallback() -> str:
     return http_get(PUBLICATIONS_FALLBACK_URL)
 
 
+def fetch_profile_stats(scholar_id: str) -> dict[str, int | str]:
+    html_text = http_get(SCHOLAR_PROFILE_URL.format(scholar_id=scholar_id))
+    ensure_not_blocked(html_text)
+    return parse_profile_stats(html_text)
+
+
+def fetch_publication_details(scholar_id: str, article_id: str) -> dict[str, int | str]:
+    html_text = http_get(SCHOLAR_DETAIL_URL.format(scholar_id=scholar_id, article_id=article_id))
+    ensure_not_blocked(html_text)
+
+    details: dict[str, int | str] = {
+        "citation_count": parse_citation_count(html_text),
+        "external_url": extract_title_link_from_html(html_text),
+        "pdf_url": extract_pdf_link_from_html(html_text),
+    }
+    return {key: value for key, value in details.items() if value not in ("", None)}
+
+
 def normalize_text(value: str) -> str:
     value = html.unescape(value)
     value = value.replace("\xa0", " ")
     return re.sub(r"\s+", " ", value).strip()
+
+
+def strip_html_tags(value: str) -> str:
+    return normalize_text(re.sub(r"<[^>]+>", " ", value))
 
 
 def normalize_title(value: str) -> str:
@@ -115,6 +166,14 @@ def normalize_title(value: str) -> str:
     normalized = normalized.encode("ascii", "ignore").decode("ascii").lower()
     normalized = re.sub(r"[^a-z0-9]+", " ", normalized)
     return re.sub(r"\s+", " ", normalized).strip()
+
+
+def normalize_venue(value: str, year: str) -> str:
+    cleaned = strip_html_tags(value)
+    if year:
+        cleaned = re.sub(rf"[\s,;/()-]*\b{re.escape(year)}\b[\s,;/()-]*", " ", cleaned)
+    cleaned = cleaned.strip(" ,;:-")
+    return normalize_text(cleaned)
 
 
 def slugify_key(title: str, year: str) -> str:
@@ -141,6 +200,69 @@ def extract_year(value: str) -> str:
 def extract_scholar_id(url: str) -> str:
     match = re.search(r"citation_for_view=[^:]+:([^&\s]+)", url)
     return match.group(1) if match else ""
+
+
+def scholar_citation_url(scholar_id: str, article_id: str) -> str:
+    return SCHOLAR_DETAIL_URL.format(scholar_id=scholar_id, article_id=article_id)
+
+
+def parse_profile_stats(text: str) -> dict[str, int | str]:
+    def stat_for(label: str) -> int:
+        pattern = re.compile(
+            rf"<tr[^>]*>\s*<td[^>]*>\s*{re.escape(label)}\s*</td>\s*<td[^>]*>\s*([\d,]+)\s*</td>",
+            re.I | re.S,
+        )
+        match = pattern.search(text)
+        if not match:
+            raise ScholarFetchError(f"Could not parse Scholar stat: {label}")
+        return int(match.group(1).replace(",", ""))
+
+    paper_rows = re.findall(r'class="gsc_a_tr"', text)
+    papers = len(paper_rows)
+    if papers == 0:
+        range_match = re.search(r'class="gsc_a_nn"[^>]*>\s*[\d-]+\s*of\s*(\d+)\s*<', text, re.I)
+        if range_match:
+            papers = int(range_match.group(1))
+    if papers == 0:
+        raise ScholarFetchError("Could not determine total paper count")
+
+    return {
+        "papers": papers,
+        "citations": stat_for("Citations"),
+        "h_index": stat_for("h-index"),
+        "i10_index": stat_for("i10-index"),
+    }
+
+
+def parse_citation_count(text: str) -> int | None:
+    match = re.search(r"Cited by\s+([\d,]+)", text, re.I)
+    if not match:
+        return None
+    return int(match.group(1).replace(",", ""))
+
+
+def extract_title_link_from_html(text: str) -> str:
+    match = re.search(r'class="gsc_oci_title_link"[^>]*href="([^"]+)"', text, re.I)
+    return normalize_text(match.group(1)) if match else ""
+
+
+def extract_pdf_link_from_html(text: str) -> str:
+    match = re.search(r'class="gsc_oci_title_ggi"[^>]*>.*?href="([^"]+)"', text, re.I | re.S)
+    return normalize_text(match.group(1)) if match else ""
+
+
+def extract_open_graph_image(text: str) -> str:
+    patterns = [
+        r'<meta[^>]+property=["\']og:image["\'][^>]+content=["\']([^"\']+)["\']',
+        r'<meta[^>]+content=["\']([^"\']+)["\'][^>]+property=["\']og:image["\']',
+        r'<meta[^>]+name=["\']twitter:image["\'][^>]+content=["\']([^"\']+)["\']',
+        r'<meta[^>]+content=["\']([^"\']+)["\'][^>]+name=["\']twitter:image["\']',
+    ]
+    for pattern in patterns:
+        match = re.search(pattern, text, re.I)
+        if match:
+            return normalize_text(match.group(1))
+    return ""
 
 
 def parse_publications_from_markdown(text: str) -> list[BibEntry]:
@@ -181,18 +303,24 @@ def parse_publications_from_markdown(text: str) -> list[BibEntry]:
                     info_lines.append(normalize_text(candidate))
             cursor += 1
 
-        year = extract_year(" ".join(info_lines))
+        raw_info = normalize_text(" ".join(info_lines))
+        year = extract_year(raw_info)
+        note = normalize_venue(raw_info, year)
+        fields = {
+            "title": title,
+            "author": authors,
+            "year": year,
+            "html": link,
+            "google_scholar_id": extract_scholar_id(link),
+        }
+        if note:
+            fields["note"] = note
+
         publications.append(
             BibEntry(
                 entry_type="misc",
                 key="",
-                fields={
-                    "title": title,
-                    "author": authors,
-                    "year": year,
-                    "html": link,
-                    "google_scholar_id": extract_scholar_id(link),
-                },
+                fields=fields,
                 field_order=FIELD_ORDER.copy(),
             )
         )
@@ -218,18 +346,24 @@ def parse_publications_from_site(text: str) -> list[BibEntry]:
         link = normalize_text(unquote(links[0])) if links else ""
         title = normalize_text(match.group("title"))
         author = normalize_text(re.sub(r"<[^>]+>", " ", match.group("author")))
-        year = extract_year(normalize_text(match.group("year")))
+        raw_periodical = strip_html_tags(match.group("year"))
+        year = extract_year(raw_periodical)
+        note = normalize_venue(raw_periodical, year)
+        fields = {
+            "title": title,
+            "author": author,
+            "year": year,
+            "html": link,
+            "google_scholar_id": extract_scholar_id(link),
+        }
+        if note:
+            fields["note"] = note
+
         publications.append(
             BibEntry(
                 entry_type="misc",
                 key=normalize_text(match.group("key")),
-                fields={
-                    "title": title,
-                    "author": author,
-                    "year": year,
-                    "html": link,
-                    "google_scholar_id": extract_scholar_id(link),
-                },
+                fields=fields,
                 field_order=FIELD_ORDER.copy(),
             )
         )
@@ -291,7 +425,7 @@ def parse_bib_entry(block: str) -> BibEntry | None:
 def parse_existing_bib() -> list[BibEntry]:
     if not BIB_FILE.exists():
         return []
-    text = BIB_FILE.read_text()
+    text = BIB_FILE.read_text(encoding="utf-8")
     entries: list[BibEntry] = []
     for block in split_bib_entries(text):
         entry = parse_bib_entry(block)
@@ -379,7 +513,14 @@ def format_bib_entry(entry: BibEntry) -> str:
 
 def write_bib(entries: list[BibEntry]) -> None:
     body = "\n\n".join(format_bib_entry(entry) for entry in entries)
-    BIB_FILE.write_text(f"---\n---\n\n{body}\n")
+    BIB_FILE.write_text(f"---\n---\n\n{body}\n", encoding="utf-8")
+
+
+def write_scholar_data(data: dict) -> None:
+    SCHOLAR_DATA_FILE.write_text(
+        yaml.safe_dump(data, allow_unicode=True, sort_keys=False),
+        encoding="utf-8",
+    )
 
 
 def load_publications(scholar_id: str) -> tuple[str, list[BibEntry]]:
@@ -393,20 +534,195 @@ def load_publications(scholar_id: str) -> tuple[str, list[BibEntry]]:
         return "fallback", publications
 
 
+def entry_lookup_key(fields: dict[str, str]) -> str:
+    scholar_id = fields.get("google_scholar_id", "").strip()
+    if scholar_id:
+        return scholar_id
+    return normalize_title(fields.get("title", ""))
+
+
+def record_lookup_key(record: dict) -> str:
+    scholar_id = str(record.get("google_scholar_id") or "").strip()
+    if scholar_id:
+        return scholar_id
+    return normalize_title(str(record.get("title") or ""))
+
+
+def publication_sort_key(record: dict) -> tuple[int, int, str]:
+    citation_value = record.get("citation_count")
+    if citation_value in (None, "", "N/A"):
+        citations = -1
+    else:
+        citations = int(citation_value)
+    year_value = record.get("year")
+    year = int(year_value) if str(year_value or "").isdigit() else 0
+    return (citations, year, normalize_title(str(record.get("title") or "")))
+
+
+def preferred_external_url(fields: dict[str, str], scholar_url: str) -> str:
+    html_url = fields.get("html", "").strip()
+    if html_url and "scholar.google.com" not in html_url:
+        return html_url
+    doi = fields.get("doi", "").strip()
+    if doi:
+        return doi if "://" in doi else f"https://doi.org/{doi}"
+    arxiv = fields.get("arxiv", "").strip()
+    if arxiv:
+        return arxiv if "://" in arxiv else f"https://arxiv.org/abs/{arxiv}"
+    return scholar_url
+
+
+def preferred_pdf_url(fields: dict[str, str]) -> str:
+    pdf_url = fields.get("pdf", "").strip()
+    if pdf_url:
+        return pdf_url if "://" in pdf_url else f"/assets/pdf/{pdf_url}"
+    arxiv = fields.get("arxiv", "").strip()
+    if arxiv and "://" not in arxiv:
+        return f"https://arxiv.org/pdf/{arxiv}.pdf"
+    return ""
+
+
+def preferred_preview_image(fields: dict[str, str]) -> str:
+    preview = fields.get("preview", "").strip()
+    if preview:
+        return preview if preview.startswith("/") or "://" in preview else f"/assets/img/publication_preview/{preview}"
+    thumbnail = fields.get("thumbnail", "").strip()
+    if thumbnail:
+        return thumbnail
+    return ""
+
+
+def resolve_preview_image(record: dict, previous_record: dict | None = None) -> str:
+    if record.get("preview_image"):
+        return str(record["preview_image"])
+
+    candidates = [
+        str(record.get("external_url") or "").strip(),
+        str(record.get("pdf_url") or "").strip(),
+    ]
+    for candidate in candidates:
+        if not candidate.startswith("http"):
+            continue
+        try:
+            og_image = extract_open_graph_image(http_get(candidate))
+        except requests.RequestException:
+            og_image = ""
+        if og_image:
+            return og_image
+
+    if previous_record and previous_record.get("preview_image"):
+        return str(previous_record["preview_image"])
+    return ""
+
+
+def build_publication_record(
+    entry: BibEntry,
+    scholar_id: str,
+    previous_record: dict | None = None,
+) -> dict:
+    fields = entry.fields
+    article_id = fields.get("google_scholar_id", "").strip()
+    scholar_url = scholar_citation_url(scholar_id, article_id) if article_id else fields.get("html", "").strip()
+    details: dict[str, int | str] = {}
+
+    if article_id:
+        try:
+            details = fetch_publication_details(scholar_id, article_id)
+        except (requests.RequestException, ScholarFetchError):
+            details = {}
+
+    note = fields.get("note", "").strip()
+    external_url = str(details.get("external_url") or "").strip() or preferred_external_url(fields, scholar_url)
+    pdf_url = str(details.get("pdf_url") or "").strip() or preferred_pdf_url(fields)
+    preview_image = preferred_preview_image(fields)
+    citation_count = details.get("citation_count")
+
+    if previous_record:
+        if citation_count is None:
+            citation_count = previous_record.get("citation_count")
+        if not external_url or external_url == scholar_url:
+            external_url = str(previous_record.get("external_url") or "").strip()
+        if not pdf_url:
+            pdf_url = str(previous_record.get("pdf_url") or "").strip()
+        if not preview_image:
+            preview_image = str(previous_record.get("preview_image") or "").strip()
+
+    return {
+        "key": entry.key,
+        "title": fields.get("title", "").strip(),
+        "authors": fields.get("author", "").strip(),
+        "year": fields.get("year", "").strip(),
+        "venue": note,
+        "citation_count": citation_count,
+        "scholar_url": scholar_url,
+        "external_url": external_url,
+        "pdf_url": pdf_url,
+        "doi": fields.get("doi", "").strip(),
+        "arxiv": fields.get("arxiv", "").strip(),
+        "preview_image": preview_image,
+        "google_scholar_id": article_id,
+    }
+
+
+def build_scholar_data(
+    entries: list[BibEntry],
+    scholar_id: str,
+    previous_data: dict | None = None,
+) -> dict:
+    previous_data = previous_data or {}
+    previous_publications = previous_data.get("publications") or []
+    previous_by_key = {record_lookup_key(record): record for record in previous_publications}
+
+    publications: list[dict] = []
+    for entry in entries:
+        record = build_publication_record(entry, scholar_id, previous_by_key.get(entry_lookup_key(entry.fields)))
+        publications.append(record)
+
+    publications.sort(key=publication_sort_key, reverse=True)
+    top_publications: list[dict] = []
+    for record in publications[:5]:
+        previous_record = previous_by_key.get(record_lookup_key(record))
+        enriched = dict(record)
+        enriched["preview_image"] = resolve_preview_image(record, previous_record)
+        top_publications.append(enriched)
+
+    try:
+        profile = fetch_profile_stats(scholar_id)
+    except (requests.RequestException, ScholarFetchError):
+        profile = dict(previous_data.get("profile") or {})
+
+    profile["updated_at"] = datetime.now(UTC).replace(microsecond=0).isoformat().replace("+00:00", "Z")
+
+    return {
+        "profile": profile,
+        "publications": publications,
+        "top_publications": top_publications,
+    }
+
+
 def main() -> None:
     scholar_id = read_scholar_id()
     if not scholar_id:
         print(f"No scholar_userid found in {DATA_FILE}")
         raise SystemExit(1)
 
-    source, fetched_entries = load_publications(scholar_id)
+    previous_data = read_existing_scholar_data()
     existing_entries = parse_existing_bib()
+
+    try:
+        source, fetched_entries = load_publications(scholar_id)
+    except (requests.RequestException, ScholarFetchError) as error:
+        print(f"Failed to update Scholar publications: {error}")
+        raise SystemExit(1) from error
+
     merged_entries = merge_entries(
         fetched_entries,
         existing_entries,
         prefer_existing=(source == "fallback"),
     )
+    scholar_data = build_scholar_data(merged_entries, scholar_id, previous_data)
     write_bib(merged_entries)
+    write_scholar_data(scholar_data)
     print(f"Updated {len(merged_entries)} publications from {source}")
 
 
