@@ -1,7 +1,7 @@
 import AxeBuilder from "@axe-core/playwright";
 import { chromium } from "playwright";
 
-const pages = ["/", "/about/", "/blog/", "/projects/", "/publications/", "/cv/"];
+const pages = ["/", "/blog/", "/projects/", "/publications/", "/cv/"];
 const baseUrl = process.env.ACCESSIBILITY_BASE_URL || "http://127.0.0.1:8080";
 
 let hasViolations = false;

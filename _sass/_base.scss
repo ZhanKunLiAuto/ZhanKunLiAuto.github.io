@@ -233,10 +233,12 @@ ul.task-list input[type="checkbox"] {
 
   a {
     color: inherit;
+    text-decoration: underline;
+    text-underline-offset: 0.15em;
 
     &:hover {
       color: var(--global-theme-color);
-      text-decoration: none;
+      text-decoration-thickness: 2px;
     }
   }
 }
@@ -485,10 +487,12 @@ footer.fixed-bottom {
 
   a {
     color: var(--global-footer-link-color);
+    text-decoration: underline;
+    text-underline-offset: 0.15em;
 
     &:hover {
       color: var(--global-theme-color);
-      text-decoration: none;
+      text-decoration-thickness: 2px;
     }
   }
 }
@@ -501,6 +505,15 @@ footer.sticky-bottom {
 
   .container {
     text-align: center;
+  }
+
+  a {
+    text-decoration: underline;
+    text-underline-offset: 0.15em;
+
+    &:hover {
+      text-decoration-thickness: 2px;
+    }
   }
 }
 
@@ -567,12 +580,11 @@ footer.sticky-bottom {
     justify-content: center;
     display: flow-root;
 
-    p,
     li {
       list-style: none;
       display: inline-block;
       padding: 1rem 0.5rem;
-      color: var(--global-text-color-light);
+      color: var(--global-text-color);
     }
   }
 }
@@ -595,13 +607,13 @@ footer.sticky-bottom {
     padding-bottom: 2rem;
 
     .post-meta {
-      color: var(--global-text-color-light);
+      color: var(--global-text-color);
       font-size: 0.875rem;
       margin-bottom: 0;
     }
 
     .post-tags {
-      color: var(--global-text-color-light);
+      color: var(--global-text-color);
       font-size: 0.875rem;
       padding-top: 0.25rem;
       padding-bottom: 0;
@@ -683,8 +695,8 @@ footer.sticky-bottom {
   }
 
   h2.category {
-    color: var(--global-divider-color);
-    border-bottom: 1px solid var(--global-divider-color);
+    color: var(--global-text-color);
+    border-bottom: 1px solid var(--global-text-color-light);
     padding-top: 0.5rem;
     margin-top: 2rem;
     margin-bottom: 1rem;
@@ -714,8 +726,8 @@ footer.sticky-bottom {
   }
 
   h2.bibliography {
-    color: var(--global-divider-color);
-    border-top: 1px solid var(--global-divider-color);
+    color: var(--global-text-color);
+    border-top: 1px solid var(--global-text-color-light);
     padding-top: 1rem;
     margin-top: 2rem;
     text-align: right;
@@ -910,20 +922,21 @@ html.transition *:after {
 // Extra Markdown style (post Customization)
 .post {
   .post-meta {
-    color: var(--global-text-color-light);
+    color: var(--global-text-color);
     font-size: 0.875rem;
     margin-bottom: 0;
   }
 
   .post-tags {
-    color: var(--global-text-color-light);
+    color: var(--global-text-color);
     font-size: 0.875rem;
     padding-top: 0.25rem;
     padding-bottom: 1rem;
 
     a {
-      color: var(--global-text-color-light);
-      text-decoration: none;
+      color: var(--global-text-color);
+      text-decoration: underline;
+      text-underline-offset: 0.15em;
 
       &:hover {
         color: var(--global-theme-color);
@@ -1102,8 +1115,7 @@ nav[data-toggle="toc"] {
 
 .featured-posts {
   a {
-    color: var(--global-text-color-light);
-    text-decoration: none;
+    color: var(--global-text-color);
 
     .card-text {
       overflow: hidden;
@@ -1121,10 +1133,15 @@ nav[data-toggle="toc"] {
   }
 
   .post-meta {
-    color: var(--global-text-color-light);
+    color: var(--global-text-color);
     font-size: 0.875rem;
     margin-bottom: 0;
     padding-top: 0.5rem;
+  }
+
+  .card-title-link {
+    text-decoration: underline;
+    text-underline-offset: 0.15em;
   }
 }
 
