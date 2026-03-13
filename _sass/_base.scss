@@ -349,14 +349,25 @@ ul.task-list input[type="checkbox"] {
   justify-content: center;
   gap: 0.55rem;
   width: 100%;
+  min-width: 0;
   padding: 0.7rem 0.9rem;
   border-radius: 999px;
   background: var(--global-card-bg-color);
   border: 1px solid var(--global-divider-color);
   color: var(--global-text-color);
   text-decoration: none !important;
+  font-size: 1rem;
+  line-height: 1.2;
+
+  span {
+    min-width: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
 
   i {
+    flex: 0 0 auto;
     color: var(--global-theme-color);
   }
 }
@@ -616,6 +627,13 @@ ul.task-list input[type="checkbox"] {
   .about-contact-strip,
   .about-highlight-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (min-width: 1024px) {
+  .about-contact-pill {
+    padding: 0.65rem 0.8rem;
+    font-size: 0.9rem;
   }
 }
 
