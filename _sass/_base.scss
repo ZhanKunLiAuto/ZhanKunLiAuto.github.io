@@ -600,6 +600,33 @@ ul.task-list input[type="checkbox"] {
 }
 
 @media (max-width: 767px) {
+  .about-page {
+    .profile.float-right,
+    .profile.float-left {
+      float: none;
+      width: 100%;
+      margin: 0 0 1rem !important;
+    }
+
+    .profile {
+      display: grid;
+      justify-items: center;
+      gap: 0.75rem;
+
+      img {
+        max-width: min(13rem, 68vw);
+      }
+
+      .more-info {
+        display: none;
+      }
+    }
+
+    .about-content {
+      clear: both;
+    }
+  }
+
   .about-section__header,
   .about-timeline-card__header {
     grid-template-columns: 1fr;
@@ -612,8 +639,32 @@ ul.task-list input[type="checkbox"] {
     padding: 1.1rem;
   }
 
+  .about-kicker {
+    max-width: 100%;
+    font-size: 0.72rem;
+    line-height: 1.2;
+    white-space: normal;
+  }
+
+  .about-hero__content h2 {
+    font-size: clamp(1.55rem, 9vw, 2.2rem);
+  }
+
+  .about-hero__actions {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+
+  .about-button {
+    width: 100%;
+  }
+
   .about-contact-strip {
     grid-template-columns: 1fr;
+  }
+
+  .about-contact-pill {
+    justify-content: flex-start;
   }
 
   .about-highlight-grid,
