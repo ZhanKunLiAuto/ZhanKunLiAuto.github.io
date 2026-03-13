@@ -130,7 +130,7 @@ publications:
     pdf_url: ""
     doi: ""
     arxiv: ""
-    preview_image: ""
+    preview_image: /assets/img/publication_preview/finetuning2025-preview.png
     google_scholar_id: MXK_kJrjxJIC
   - key: drivingsphere2025
     title: "Drivingsphere: Building a high-fidelity 4d world for closed-loop simulation"
@@ -559,7 +559,7 @@ top_publications:
     pdf_url: ""
     doi: ""
     arxiv: ""
-    preview_image: ""
+    preview_image: /assets/img/publication_preview/finetuning2025-preview.png
     google_scholar_id: MXK_kJrjxJIC
   - key: drivingsphere2025
     title: "Drivingsphere: Building a high-fidelity 4d world for closed-loop simulation"
