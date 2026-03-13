@@ -30,7 +30,7 @@ publications:
     pdf_url: https://drive.google.com/file/d/1oX7YhBlVWORrUq1n2LLVgP5sTwDnepjL/view
     doi: ""
     arxiv: ""
-    preview_image: ""
+    preview_image: /assets/img/publication_preview/street2024-preview.png
     google_scholar_id: IjCSPb-OGe4C
   - key: recondreamer2025
     title: "Recondreamer: Crafting world models for driving scene reconstruction via
@@ -459,7 +459,7 @@ top_publications:
     pdf_url: https://drive.google.com/file/d/1oX7YhBlVWORrUq1n2LLVgP5sTwDnepjL/view
     doi: ""
     arxiv: ""
-    preview_image: /assets/img/publication_preview/street2024-pdf-preview.png
+    preview_image: /assets/img/publication_preview/street2024-preview.png
     google_scholar_id: IjCSPb-OGe4C
   - key: recondreamer2025
     title: "Recondreamer: Crafting world models for driving scene reconstruction via
