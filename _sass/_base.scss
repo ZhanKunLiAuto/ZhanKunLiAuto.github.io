@@ -419,9 +419,12 @@ ul.task-list input[type="checkbox"] {
   gap: 1rem;
 }
 
-.about-highlight-grid,
+.about-highlight-grid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
 .scholar-stats {
-  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  grid-template-columns: repeat(2, minmax(0, 1fr));
 }
 
 .about-interest-grid {
@@ -513,7 +516,7 @@ ul.task-list input[type="checkbox"] {
 }
 
 .scholar-publications {
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  grid-template-columns: repeat(2, minmax(0, 1fr));
 }
 
 .scholar-paper-card {
@@ -594,6 +597,18 @@ ul.task-list input[type="checkbox"] {
   .about-hero,
   .about-section {
     padding: 1.1rem;
+  }
+
+  .about-highlight-grid,
+  .scholar-stats,
+  .scholar-publications {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+  .about-highlight-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }
 

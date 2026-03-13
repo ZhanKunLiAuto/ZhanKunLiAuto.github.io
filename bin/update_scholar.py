@@ -15,15 +15,24 @@ from urllib.parse import unquote
 import requests
 import yaml
 
+try:
+    import fitz
+except ModuleNotFoundError:
+    fitz = None
+
 DATA_FILE = Path("_data/socials.yml")
 BIB_FILE = Path("_bibliography/papers.bib")
 SCHOLAR_DATA_FILE = Path("_data/scholar.yml")
+PREVIEW_IMAGE_DIR = Path("assets/img/publication_preview")
+TOP_PUBLICATIONS_LIMIT = 10
+MAX_DETAIL_FETCH_FAILURES = 3
 
 SCHOLAR_URL = (
     "https://r.jina.ai/http://scholar.google.com/citations"
     "?user={scholar_id}&hl=en&cstart=0&pagesize=100&sortby=pubdate"
 )
 SCHOLAR_PROFILE_URL = "https://scholar.google.com/citations?user={scholar_id}&hl=en"
+SCHOLAR_PROFILE_LIST_URL = "https://scholar.google.com/citations?user={scholar_id}&hl=en&cstart=0&pagesize=100&sortby=pubdate"
 SCHOLAR_DETAIL_URL = (
     "https://scholar.google.com/citations"
     "?view_op=view_citation&hl=en&user={scholar_id}&citation_for_view={scholar_id}:{article_id}"
@@ -46,6 +55,8 @@ FIELD_ORDER = [
     "thumbnail",
     "google_scholar_id",
 ]
+DETAIL_FETCH_FAILURES = 0
+DETAIL_FETCH_DISABLED = False
 
 
 class ScholarFetchError(RuntimeError):
@@ -109,6 +120,22 @@ def http_get(url: str) -> str:
     return response.text
 
 
+def http_get_bytes(url: str) -> bytes:
+    response = requests.get(
+        url,
+        timeout=REQUEST_TIMEOUT,
+        headers={
+            "User-Agent": (
+                "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) "
+                "AppleWebKit/537.36 (KHTML, like Gecko) "
+                "Chrome/122.0.0.0 Safari/537.36"
+            )
+        },
+    )
+    response.raise_for_status()
+    return response.content
+
+
 def ensure_not_blocked(text: str) -> None:
     lowered = text.lower()
     blocked_markers = [
@@ -123,6 +150,12 @@ def ensure_not_blocked(text: str) -> None:
 
 def fetch_scholar_markdown(scholar_id: str) -> str:
     text = http_get(SCHOLAR_URL.format(scholar_id=scholar_id))
+    ensure_not_blocked(text)
+    return text
+
+
+def fetch_scholar_profile_html(scholar_id: str) -> str:
+    text = http_get(SCHOLAR_PROFILE_LIST_URL.format(scholar_id=scholar_id))
     ensure_not_blocked(text)
     return text
 
@@ -265,6 +298,22 @@ def extract_open_graph_image(text: str) -> str:
     return ""
 
 
+def parse_optional_int(value: object) -> int | None:
+    normalized = str(value or "").strip().replace(",", "")
+    if not normalized.isdigit():
+        return None
+    return int(normalized)
+
+
+def absolute_url(url: str, *, base: str) -> str:
+    normalized = normalize_text(url)
+    if normalized.startswith("//"):
+        return f"https:{normalized}"
+    if normalized.startswith("/"):
+        return f"{base}{normalized}"
+    return normalized
+
+
 def parse_publications_from_markdown(text: str) -> list[BibEntry]:
     lines = [line.strip() for line in text.splitlines()]
     try:
@@ -326,6 +375,61 @@ def parse_publications_from_markdown(text: str) -> list[BibEntry]:
         )
         index = cursor
 
+    return publications
+
+
+def parse_publications_from_profile_html(text: str) -> list[BibEntry]:
+    row_pattern = re.compile(r'<tr[^>]*class="gsc_a_tr"[^>]*>(.*?)</tr>', re.I | re.S)
+    publications: list[BibEntry] = []
+
+    for row_html in row_pattern.findall(text):
+        title_match = re.search(r'class="gsc_a_at"[^>]*href="([^"]+)"[^>]*>(.*?)</a>', row_html, re.I | re.S)
+        if not title_match:
+            continue
+
+        title = strip_html_tags(title_match.group(2))
+        if not title:
+            continue
+
+        gs_gray_matches = re.findall(r'<div[^>]*class="gs_gray"[^>]*>(.*?)</div>', row_html, re.I | re.S)
+        authors = strip_html_tags(gs_gray_matches[0]) if gs_gray_matches else ""
+        raw_info = strip_html_tags(gs_gray_matches[1]) if len(gs_gray_matches) > 1 else ""
+
+        year_match = re.search(r'class="gsc_a_h[^"]*"[^>]*>\s*(\d{4})\s*<', row_html, re.I | re.S)
+        year = year_match.group(1) if year_match else extract_year(raw_info)
+        note = normalize_venue(raw_info, year)
+
+        citation_match = re.search(
+            r'class="gsc_a_ac[^"]*"[^>]*>\s*(?:<a[^>]*>)?\s*([\d,]+)\s*(?:</a>)?\s*<',
+            row_html,
+            re.I | re.S,
+        )
+        citation_count = parse_optional_int(citation_match.group(1) if citation_match else "")
+
+        link = absolute_url(title_match.group(1), base="https://scholar.google.com")
+        fields = {
+            "title": title,
+            "author": authors,
+            "year": year,
+            "html": link,
+            "google_scholar_id": extract_scholar_id(link),
+        }
+        if note:
+            fields["note"] = note
+        if citation_count is not None:
+            fields["citation_count"] = str(citation_count)
+
+        publications.append(
+            BibEntry(
+                entry_type="misc",
+                key="",
+                fields=fields,
+                field_order=FIELD_ORDER.copy(),
+            )
+        )
+
+    if not publications:
+        raise ScholarFetchError("Could not parse Scholar publications from profile HTML")
     return publications
 
 
@@ -525,12 +629,18 @@ def write_scholar_data(data: dict) -> None:
 
 def load_publications(scholar_id: str) -> tuple[str, list[BibEntry]]:
     try:
+        profile_html = fetch_scholar_profile_html(scholar_id)
+        return "scholar-html", parse_publications_from_profile_html(profile_html)
+    except (requests.RequestException, ScholarFetchError) as html_error:
+        html_failure = html_error
+
+    try:
         markdown = fetch_scholar_markdown(scholar_id)
         return "scholar", parse_publications_from_markdown(markdown)
     except (requests.RequestException, ScholarFetchError) as scholar_error:
         fallback_page = fetch_publications_fallback()
         publications = parse_publications_from_site(fallback_page)
-        sys.stderr.write(f"Scholar fetch failed, used fallback: {scholar_error}\n")
+        sys.stderr.write(f"Scholar fetch failed, used fallback: {html_failure}; {scholar_error}\n")
         return "fallback", publications
 
 
@@ -592,9 +702,108 @@ def preferred_preview_image(fields: dict[str, str]) -> str:
     return ""
 
 
+def local_file_from_url(url: str) -> Path | None:
+    normalized = str(url or "").strip()
+    if not normalized:
+        return None
+    if normalized.startswith("http://") or normalized.startswith("https://"):
+        return None
+    local_value = normalized[1:] if normalized.startswith("/") else normalized
+    path = Path(local_value)
+    return path if path.exists() else None
+
+
+def load_pdf_bytes(pdf_url: str) -> bytes:
+    local_path = local_file_from_url(pdf_url)
+    if local_path is not None:
+        return local_path.read_bytes()
+    if not pdf_url.startswith("http"):
+        raise ScholarFetchError(f"Unsupported PDF URL: {pdf_url}")
+    return http_get_bytes(pdf_url)
+
+
+def extract_best_pdf_preview(pdf_bytes: bytes) -> tuple[bytes, str] | None:
+    if fitz is None:
+        return None
+
+    document = fitz.open(stream=pdf_bytes, filetype="pdf")
+    try:
+        best_image: tuple[int, bytes, str] | None = None
+        for page_index in range(min(3, document.page_count)):
+            page = document.load_page(page_index)
+            for image_info in page.get_images(full=True):
+                xref = image_info[0]
+                try:
+                    extracted = document.extract_image(xref)
+                except RuntimeError:
+                    continue
+
+                image_bytes = extracted.get("image")
+                width = int(extracted.get("width") or 0)
+                height = int(extracted.get("height") or 0)
+                if not image_bytes or width * height < 120_000:
+                    continue
+
+                extension = str(extracted.get("ext") or "png").lower()
+                score = width * height
+                if best_image is None or score > best_image[0]:
+                    best_image = (score, image_bytes, extension)
+
+        if best_image is not None:
+            _, image_bytes, extension = best_image
+            return image_bytes, extension
+
+        first_page = document.load_page(0)
+        page_rect = first_page.rect
+        clip = fitz.Rect(page_rect.x0, page_rect.y0, page_rect.x1, page_rect.y0 + page_rect.height * 0.58)
+        pixmap = first_page.get_pixmap(matrix=fitz.Matrix(2, 2), clip=clip, alpha=False)
+        return pixmap.tobytes("png"), "png"
+    finally:
+        document.close()
+
+
+def preview_asset_name(record: dict, extension: str) -> str:
+    base_key = str(record.get("key") or normalize_title(str(record.get("title") or "")) or "paper")
+    safe_key = re.sub(r"[^a-zA-Z0-9._-]+", "-", base_key).strip("-") or "paper"
+    return f"{safe_key}-pdf-preview.{extension}"
+
+
+def generate_pdf_preview(record: dict) -> str:
+    pdf_url = str(record.get("pdf_url") or "").strip()
+    if not pdf_url:
+        return ""
+
+    for extension in ("png", "jpg", "jpeg", "webp"):
+        existing_path = PREVIEW_IMAGE_DIR / preview_asset_name(record, extension)
+        if existing_path.exists():
+            return f"/{existing_path.as_posix()}"
+
+    try:
+        pdf_bytes = load_pdf_bytes(pdf_url)
+        preview = extract_best_pdf_preview(pdf_bytes)
+    except (OSError, RuntimeError, ScholarFetchError, requests.RequestException, ValueError):
+        return ""
+
+    if preview is None:
+        return ""
+
+    image_bytes, extension = preview
+    PREVIEW_IMAGE_DIR.mkdir(parents=True, exist_ok=True)
+    output_path = PREVIEW_IMAGE_DIR / preview_asset_name(record, extension)
+    output_path.write_bytes(image_bytes)
+    return f"/{output_path.as_posix()}"
+
+
 def resolve_preview_image(record: dict, previous_record: dict | None = None) -> str:
-    if record.get("preview_image"):
-        return str(record["preview_image"])
+    current_preview = str(record.get("preview_image") or "").strip()
+    previous_preview = str(previous_record.get("preview_image") or "").strip() if previous_record else ""
+
+    if current_preview:
+        return current_preview
+
+    generated_preview = generate_pdf_preview(record)
+    if generated_preview:
+        return generated_preview
 
     candidates = [
         str(record.get("external_url") or "").strip(),
@@ -607,11 +816,11 @@ def resolve_preview_image(record: dict, previous_record: dict | None = None) -> 
             og_image = extract_open_graph_image(http_get(candidate))
         except requests.RequestException:
             og_image = ""
-        if og_image:
+        if og_image and not og_image.lower().endswith(".svg"):
             return og_image
 
-    if previous_record and previous_record.get("preview_image"):
-        return str(previous_record["preview_image"])
+    if previous_preview:
+        return previous_preview
     return ""
 
 
@@ -620,22 +829,37 @@ def build_publication_record(
     scholar_id: str,
     previous_record: dict | None = None,
 ) -> dict:
+    global DETAIL_FETCH_DISABLED
+    global DETAIL_FETCH_FAILURES
+
     fields = entry.fields
     article_id = fields.get("google_scholar_id", "").strip()
     scholar_url = scholar_citation_url(scholar_id, article_id) if article_id else fields.get("html", "").strip()
     details: dict[str, int | str] = {}
+    citation_count = parse_optional_int(fields.get("citation_count"))
+    external_url = preferred_external_url(fields, scholar_url)
+    pdf_url = preferred_pdf_url(fields)
+    preview_image = preferred_preview_image(fields)
 
-    if article_id:
+    needs_detail_fetch = article_id and not DETAIL_FETCH_DISABLED and (
+        citation_count is None or external_url == scholar_url or not pdf_url
+    )
+
+    if needs_detail_fetch:
         try:
             details = fetch_publication_details(scholar_id, article_id)
-        except (requests.RequestException, ScholarFetchError):
+        except (requests.RequestException, ScholarFetchError) as error:
             details = {}
+            DETAIL_FETCH_FAILURES += 1
+            if isinstance(error, ScholarFetchError) or DETAIL_FETCH_FAILURES >= MAX_DETAIL_FETCH_FAILURES:
+                DETAIL_FETCH_DISABLED = True
 
     note = fields.get("note", "").strip()
-    external_url = str(details.get("external_url") or "").strip() or preferred_external_url(fields, scholar_url)
-    pdf_url = str(details.get("pdf_url") or "").strip() or preferred_pdf_url(fields)
-    preview_image = preferred_preview_image(fields)
-    citation_count = details.get("citation_count")
+    external_url = str(details.get("external_url") or "").strip() or external_url
+    pdf_url = str(details.get("pdf_url") or "").strip() or pdf_url
+    citation_count = details.get("citation_count") or citation_count
+    if citation_count is None:
+        citation_count = None
 
     if previous_record:
         if citation_count is None:
@@ -644,8 +868,6 @@ def build_publication_record(
             external_url = str(previous_record.get("external_url") or "").strip()
         if not pdf_url:
             pdf_url = str(previous_record.get("pdf_url") or "").strip()
-        if not preview_image:
-            preview_image = str(previous_record.get("preview_image") or "").strip()
 
     return {
         "key": entry.key,
@@ -680,7 +902,7 @@ def build_scholar_data(
 
     publications.sort(key=publication_sort_key, reverse=True)
     top_publications: list[dict] = []
-    for record in publications[:5]:
+    for record in publications[:TOP_PUBLICATIONS_LIMIT]:
         previous_record = previous_by_key.get(record_lookup_key(record))
         enriched = dict(record)
         enriched["preview_image"] = resolve_preview_image(record, previous_record)

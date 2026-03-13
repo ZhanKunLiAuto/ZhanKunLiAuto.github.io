@@ -5,9 +5,9 @@
 
 {% if is_zh %}
   {% assign achievements_title = '学术成果' %}
-  {% assign achievements_desc = '手动触发同步的 Google Scholar 快照' %}
+  {% assign achievements_desc = '基于 Google Scholar 的论文与引用快照' %}
   {% assign stats_labels = '论文数|总引用|h-index|i10-index' | split: '|' %}
-  {% assign publications_title = 'Top 5 引用论文' %}
+  {% assign publications_title = 'Top 10 引用论文' %}
   {% assign publications_desc = '按 Google Scholar 引用量排序，更新时间见卡片上方。' %}
   {% assign updated_prefix = '最近更新：' %}
   {% assign external_label = '论文链接' %}
@@ -15,10 +15,10 @@
   {% assign empty_state = '尚未生成 Scholar 数据，先运行手动更新工作流即可。' %}
 {% else %}
   {% assign achievements_title = 'Academic Achievements' %}
-  {% assign achievements_desc = 'Google Scholar snapshot refreshed via manual workflow' %}
+  {% assign achievements_desc = 'Publication and citation snapshot based on Google Scholar' %}
   {% assign stats_labels = 'Papers|Citations|h-index|i10-index' | split: '|' %}
-  {% assign publications_title = 'Top 5 Cited Publications' %}
-  {% assign publications_desc = 'Ranked by Google Scholar citations and refreshed by manual update.' %}
+  {% assign publications_title = 'Top 10 Cited Publications' %}
+  {% assign publications_desc = 'Ranked by Google Scholar citations, with the latest refresh date shown above.' %}
   {% assign updated_prefix = 'Last updated: ' %}
   {% assign external_label = 'Article' %}
   {% assign scholar_label = 'Scholar' %}
