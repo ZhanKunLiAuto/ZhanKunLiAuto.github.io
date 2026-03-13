@@ -1,6 +1,6 @@
 # Google Scholar Integration
 
-This Jekyll site now includes automatic Google Scholar statistics fetching functionality.
+This Jekyll site includes a Google Scholar snapshot workflow for publication metadata, citation metrics, and homepage-ready preview cards.
 
 ## Features
 
@@ -9,6 +9,8 @@ This Jekyll site now includes automatic Google Scholar statistics fetching funct
   - Total citations
   - h-index
   - i10-index
+- Builds homepage publication cards from `_data/scholar.yml`
+- Can generate local preview images from linked paper PDFs
 - Caches results for 24 hours to avoid excessive API requests
 - Graceful error handling with fallback values
 
@@ -26,6 +28,21 @@ This Jekyll site now includes automatic Google Scholar statistics fetching funct
 2. The plugin is already installed in `_plugins/google-scholar-stats.rb`
 
 ## Usage
+
+### Refresh the Scholar snapshot
+
+Use either of these maintainer flows:
+
+1. Local refresh:
+
+   ```bash
+   python bin/update_scholar.py
+   ```
+
+2. GitHub Actions refresh:
+   - Open `Actions`
+   - Select `Update Scholar Data`
+   - Click `Run workflow`
 
 The plugin can be used either as a Liquid **filter** or **tag**.
 
@@ -60,7 +77,8 @@ The plugin can be used either as a Liquid **filter** or **tag**.
 To test the Google Scholar integration locally:
 
 1. Make sure you have Ruby and required gems installed
-2. Run the test script: `ruby test_google_scholar.rb`
+2. Install Python dependencies from `requirements.txt`
+3. Run `pytest tests/test_update_scholar.py`
 
 ## Troubleshooting
 

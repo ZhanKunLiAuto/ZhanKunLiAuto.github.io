@@ -29,6 +29,7 @@ def make_entry(
     doi="",
     arxiv="",
     pdf="",
+    citation_count="",
 ):
     fields = {
         "title": title,
@@ -49,6 +50,8 @@ def make_entry(
         fields["arxiv"] = arxiv
     if pdf:
         fields["pdf"] = pdf
+    if citation_count != "":
+        fields["citation_count"] = str(citation_count)
     return update_scholar.BibEntry(
         entry_type="misc",
         key=key,
@@ -120,6 +123,32 @@ Conference Track 2023
 def test_parse_publications_from_markdown_raises_without_marker():
     with pytest.raises(update_scholar.ScholarFetchError):
         update_scholar.parse_publications_from_markdown("no scholar content here")
+
+
+def test_parse_publications_from_profile_html_extracts_citations():
+    html = """
+    <table id="gsc_a_t">
+      <tr class="gsc_a_tr">
+        <td class="gsc_a_t">
+          <a class="gsc_a_at" href="/citations?view_op=view_citation&hl=en&user=user123&citation_for_view=user123:gsid123">DriveVLM</a>
+          <div class="gs_gray">Alice Smith, Bob Jones</div>
+          <div class="gs_gray">CoRL 2024</div>
+        </td>
+        <td class="gsc_a_c"><a class="gsc_a_ac gs_ibl">128</a></td>
+        <td class="gsc_a_y"><span class="gsc_a_h gsc_a_hc gs_ibl">2024</span></td>
+      </tr>
+    </table>
+    """
+
+    publications = update_scholar.parse_publications_from_profile_html(html)
+
+    assert len(publications) == 1
+    assert publications[0].fields["title"] == "DriveVLM"
+    assert publications[0].fields["author"] == "Alice Smith, Bob Jones"
+    assert publications[0].fields["note"] == "CoRL"
+    assert publications[0].fields["year"] == "2024"
+    assert publications[0].fields["citation_count"] == "128"
+    assert publications[0].fields["google_scholar_id"] == "gsid123"
 
 
 def test_parse_profile_stats_extracts_expected_fields():
@@ -212,8 +241,31 @@ def test_build_publication_record_uses_existing_fallbacks(monkeypatch):
     assert record["citation_count"] == 91
     assert record["external_url"] == "https://previous.example/paper"
     assert record["pdf_url"] == "https://previous.example/paper.pdf"
-    assert record["preview_image"] == "https://previous.example/cover.png"
+    assert record["preview_image"] == ""
     assert record["venue"] == "CoRL"
+
+
+def test_resolve_preview_image_prefers_generated_pdf_preview_before_previous_fallback(monkeypatch):
+    monkeypatch.setattr(update_scholar, "generate_pdf_preview", lambda record: "/assets/img/publication_preview/generated.png")
+    monkeypatch.setattr(update_scholar, "http_get", lambda url: "")
+
+    preview = update_scholar.resolve_preview_image(
+        {"key": "paper", "title": "Paper", "pdf_url": "https://example.com/paper.pdf", "preview_image": ""},
+        {"preview_image": "https://previous.example/cover.png"},
+    )
+
+    assert preview == "/assets/img/publication_preview/generated.png"
+
+
+def test_resolve_preview_image_keeps_explicit_preview(monkeypatch):
+    monkeypatch.setattr(update_scholar, "generate_pdf_preview", lambda record: "/assets/img/publication_preview/generated.png")
+
+    preview = update_scholar.resolve_preview_image(
+        {"key": "paper", "title": "Paper", "preview_image": "/assets/img/publication_preview/manual.png"},
+        {"preview_image": "https://previous.example/cover.png"},
+    )
+
+    assert preview == "/assets/img/publication_preview/manual.png"
 
 
 def test_build_scholar_data_sorts_top_publications_and_resolves_preview(monkeypatch):
@@ -261,6 +313,34 @@ def test_build_scholar_data_sorts_top_publications_and_resolves_preview(monkeypa
     assert scholar_data["top_publications"][1]["title"] == "Paper Low"
     assert scholar_data["top_publications"][1]["preview_image"] == "https://example.com/high-og.png"
     assert scholar_data["profile"]["updated_at"].endswith("Z")
+
+
+def test_build_scholar_data_limits_top_publications_to_ten(monkeypatch):
+    entries = [
+        make_entry(
+            f"paper-{index}",
+            title=f"Paper {index}",
+            author="Author",
+            year="2024",
+            html=f"https://example.com/paper-{index}",
+            citation_count=index,
+        )
+        for index in range(12)
+    ]
+
+    monkeypatch.setattr(update_scholar, "fetch_publication_details", lambda scholar_id, article_id: {})
+    monkeypatch.setattr(
+        update_scholar,
+        "fetch_profile_stats",
+        lambda scholar_id: {"papers": 12, "citations": 660, "h_index": 12, "i10_index": 10},
+    )
+    monkeypatch.setattr(update_scholar, "resolve_preview_image", lambda record, previous: record["preview_image"])
+
+    scholar_data = update_scholar.build_scholar_data(entries, "user123", {})
+
+    assert len(scholar_data["top_publications"]) == update_scholar.TOP_PUBLICATIONS_LIMIT
+    assert scholar_data["top_publications"][0]["title"] == "Paper 11"
+    assert scholar_data["top_publications"][-1]["title"] == "Paper 2"
 
 
 def test_write_bib_writes_expected_bibliography(tmp_path, monkeypatch):
