@@ -201,6 +201,12 @@ def normalize_title(value: str) -> str:
     return re.sub(r"\s+", " ", normalized).strip()
 
 
+def normalize_authors(value: str) -> str:
+    cleaned = normalize_text(value)
+    cleaned = re.sub(r"\[\]\(https?://[^)]+\)", "", cleaned)
+    return cleaned.strip(" ,;")
+
+
 def normalize_venue(value: str, year: str) -> str:
     cleaned = strip_html_tags(value)
     if year:
@@ -228,6 +234,10 @@ def unique_key(preferred_key: str, used_keys: set[str]) -> str:
 def extract_year(value: str) -> str:
     match = re.search(r"\b(19|20)\d{2}\b", value)
     return match.group(0) if match else ""
+
+
+def is_valid_year(value: str) -> bool:
+    return bool(re.fullmatch(r"(19|20)\d{2}", str(value or "").strip()))
 
 
 def extract_scholar_id(url: str) -> str:
@@ -347,7 +357,7 @@ def parse_publications_from_markdown(text: str) -> list[BibEntry]:
                 break
             if candidate:
                 if not authors:
-                    authors = normalize_text(candidate)
+                    authors = normalize_authors(candidate)
                 else:
                     info_lines.append(normalize_text(candidate))
             cursor += 1
@@ -392,7 +402,7 @@ def parse_publications_from_profile_html(text: str) -> list[BibEntry]:
             continue
 
         gs_gray_matches = re.findall(r'<div[^>]*class="gs_gray"[^>]*>(.*?)</div>', row_html, re.I | re.S)
-        authors = strip_html_tags(gs_gray_matches[0]) if gs_gray_matches else ""
+        authors = normalize_authors(strip_html_tags(gs_gray_matches[0]) if gs_gray_matches else "")
         raw_info = strip_html_tags(gs_gray_matches[1]) if len(gs_gray_matches) > 1 else ""
 
         year_match = re.search(r'class="gsc_a_h[^"]*"[^>]*>\s*(\d{4})\s*<', row_html, re.I | re.S)
@@ -449,7 +459,7 @@ def parse_publications_from_site(text: str) -> list[BibEntry]:
         links = re.findall(r'href="([^"]+)"', links_html)
         link = normalize_text(unquote(links[0])) if links else ""
         title = normalize_text(match.group("title"))
-        author = normalize_text(re.sub(r"<[^>]+>", " ", match.group("author")))
+        author = normalize_authors(re.sub(r"<[^>]+>", " ", match.group("author")))
         raw_periodical = strip_html_tags(match.group("year"))
         year = extract_year(raw_periodical)
         note = normalize_venue(raw_periodical, year)
@@ -591,6 +601,12 @@ def merge_entries(
             continue
         entry.key = unique_key(entry.key, used_output_keys)
         merged.append(entry)
+
+    merged = [
+        entry
+        for entry in merged
+        if is_valid_year(entry.fields.get("year", "").strip())
+    ]
 
     merged.sort(
         key=lambda entry: (

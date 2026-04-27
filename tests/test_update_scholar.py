@@ -217,6 +217,37 @@ def test_merge_entries_prefers_existing_fields_when_requested():
     assert merged[0].fields["html"] == "https://old.example/paper"
 
 
+def test_merge_entries_drops_records_without_valid_year():
+    fetched = [
+        make_entry(
+            "",
+            title="Valid Paper",
+            author="Author A",
+            year="2024",
+            html="https://example.com/valid",
+            scholar_id="valid",
+        ),
+        make_entry(
+            "",
+            title="No Year Paper",
+            author="Author B",
+            year="",
+            html="https://example.com/no-year",
+            scholar_id="noyear",
+        ),
+    ]
+
+    merged = update_scholar.merge_entries(fetched, [], prefer_existing=False)
+
+    assert len(merged) == 1
+    assert merged[0].fields["title"] == "Valid Paper"
+
+
+def test_normalize_authors_strips_empty_markdown_links():
+    raw = "A Author, B Author, ...[](http://scholar.google.com/citations?foo=bar)"
+    assert update_scholar.normalize_authors(raw) == "A Author, B Author, ..."
+
+
 def test_build_publication_record_uses_existing_fallbacks(monkeypatch):
     entry = make_entry(
         "drivevlm2024",
