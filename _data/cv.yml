@@ -64,12 +64,12 @@
   type: time_table
   contents:
     - title: Scholarly Impact
-      year: Latest sync
+      year: Synced on 2026-04-27
       description:
-        - 27 publications in the Scholar-synced bibliography
-        - 286+ citations
-        - h-index: 7
-        - i10-index: 6
+        - 49 publications in the Scholar-synced bibliography
+        - 1,335 total citations
+        - h-index: 15
+        - i10-index: 21
         - 8 pending patents across the United States and China
 
 - title: Selected Publications
@@ -78,7 +78,7 @@
     - "ReconDreamer: Crafting World Models for Driving Scene Reconstruction via Online Restoration (2025)"
     - "StreetCrafter: Street View Synthesis with Controllable Video Diffusion Models (2025)"
     - "DriveVLM: The Convergence of Autonomous Driving and Large Vision-Language Models (2024)"
-    - "PlanAgent: A Multi-Modal Large Language Agent for Closed-Loop Vehicle Motion Planning (2024)"
+    - "PlanAgent: A Multi-Modal Large Language Agent for Closed-Loop Vehicle Motion Planning (2026)"
     - "Unleashing Generalization of End-to-End Autonomous Driving with Controllable Long Video Generation (2024)"
 
 - title: Additional Interests
