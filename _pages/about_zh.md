@@ -1,9 +1,19 @@
 ---
 layout: about
-title: 主页
+title: "詹锟 | 理想汽车基座模型与自动驾驶"
 permalink: /zh/
 lang: zh
-subtitle: 理想汽车基座模型团队负责人 | 自动驾驶专家 | AI 研究员
+subtitle: "<a href='https://www.lixiang.com/'>理想汽车</a>基座模型与自动驾驶负责人"
+description: "詹锟负责理想汽车基座模型与自动驾驶团队，推动理想同学 VLA、Mind GPT-Pro、Mind GPT-Edge 以及量产级具身智能系统的研发与落地。"
+keywords:
+  - 詹锟
+  - 理想汽车
+  - 理想同学 VLA
+  - Mind GPT
+  - 视觉-语言-动作模型
+  - 自动驾驶
+  - 具身智能
+  - Livis 发布会
 
 profile:
   align: right
@@ -27,14 +37,12 @@ latest_posts:
   scrollable: true
   limit: 3
 ---
-
 <section class="about-hero">
   <div class="about-hero__content">
-    <span class="about-kicker">面向物理世界智能的基座模型</span>
-    <h2>从自动驾驶出发，构建通向机器人时代的具身智能系统</h2>
+    <span class="about-kicker">面向具身智能的基座模型</span>
+    <h2>构建从感知、语言到行动的整车级 AI 技术栈</h2>
     <p>
-      我负责理想汽车 MindVLA 与 MindGPT 团队，工作覆盖行为智能、认知智能以及量产级系统落地，重点推动自动驾驶、
-      智能座舱与未来机器人场景中的基座模型研发与部署。
+      我负责理想汽车基座模型与自动驾驶业务，打造理想同学 VLA 与 Mind GPT 模型家族，并将其作为可靠的物理世界智能系统部署到量产车上。
     </p>
   </div>
 
@@ -66,15 +74,16 @@ latest_posts:
 <section class="about-section">
   <h2>关于我</h2>
   <p>
-    我是 <strong>詹锟</strong>，现负责理想汽车 MindVLA 与 MindGPT 团队，并兼任硅谷研发中心负责人。我的工作横跨行为智能与认知智能，
-    聚焦于自动驾驶 VLA、智能座舱 LLM/VLM 以及语音系统等基座模型的研发，并推动这些能力以车规级可靠性落地到真实产品中。
+    我是 <strong>詹锟</strong>，现任理想汽车基座模型与自动驾驶负责人。我的工作聚焦于将机器智能与语言智能统一为量产级具身系统：以 <strong>理想同学 VLA</strong> 实现三维感知、决策与行动，以 <strong>Mind GPT-Pro</strong> / <strong>Mind GPT-Edge</strong> 实现云端与端侧的 Agent 推理。
   </p>
   <p>
-    我毕业于北京航空航天大学自动化专业，随后在百度 Apollo 负责行为预测团队。自 2021 年加入理想汽车以来，我主导了三代自动驾驶技术栈的架构与部署，
-    正在推动系统从感知、推理、规划到动作形成统一的基座模型框架，并从驾驶场景逐步扩展到更广泛的具身智能系统。
+    自 2021 年加入理想汽车以来，我一直负责自动驾驶核心架构的演进，推动系统从高速 NoA、城市 NoA 发展至端到端、VLM 辅助和 VLA 架构。目前，我的工作覆盖模型研究、数据引擎、强化学习、世界模型、芯片与模型协同设计、车端推理，以及汽车规模的 OTA 部署。
+  </p>
+  <p>
+    此前，我于北京航空航天大学获得自动化专业硕士学位，并在百度 Apollo 负责行为预测工作，为 L4 自动驾驶项目打造大规模运动预测与规划系统。
   </p>
   <blockquote class="about-quote">
-    我的长期目标是以自动驾驶为起点，实现能够感知、思考、规划并执行的物理世界 AGI，并持续扩展到机器人与更广泛的真实世界智能。
+    我的使命是打造物理世界 AGI，以自动驾驶为起点，逐步拓展至机器人、智能空间以及更广阔的真实世界具身智能。
   </blockquote>
 </section>
 
@@ -82,22 +91,49 @@ latest_posts:
   <div class="about-section__header">
     <div>
       <h2>核心亮点</h2>
-      <p>我重点关注的，是把研究能力转化为可规模化交付的产品系统。</p>
+      <p>贯穿完整具身智能技术栈的团队领导、模型发布与量产落地。</p>
     </div>
   </div>
 
   <div class="about-highlight-grid">
     <article class="about-highlight-card">
-      <h3>大规模团队管理</h3>
-      <p>领导理想汽车基座模型团队，覆盖 VLA、VLM、LLM 与世界模型，从前沿研究、大规模训练到车端落地形成闭环。</p>
+      <h3>统一 AI 业务领导</h3>
+      <p>负责理想汽车基座模型与自动驾驶路线图，覆盖理想同学 VLA、Mind GPT、3D ViT、世界模型、强化学习、模型基础设施与车端部署。</p>
     </article>
     <article class="about-highlight-card">
-      <h3>量产系统交付</h3>
-      <p>持续推动高速 NoA（2022）、城市 NoA（2023）、End-to-End + VLM 双系统（2024）以及 VLA 架构（2025）落地量产。</p>
+      <h3>模型产品发布</h3>
+      <p>推动理想同学 VLA 与 Mind GPT-Pro / Mind GPT-Edge 模型家族发布，为车辆、座舱和未来具身产品连接语言智能与机器智能。</p>
     </article>
     <article class="about-highlight-card">
-      <h3>全球化执行</h3>
-      <p>搭建理想汽车美国研发中心，推动硅谷前沿探索与北京总部工程执行高效联动。</p>
+      <h3>全栈量产交付</h3>
+      <p>通过模型、芯片、操作系统与域控制器的一体化，将研究系统转化为用户可用的产品能力，包括围绕理想自研 M100 AI 芯片和 Livis 车型构建的部署方案。</p>
+    </article>
+  </div>
+</section>
+
+<section class="about-section">
+  <div class="about-section__header">
+    <div>
+      <h2>近期里程碑</h2>
+      <p>近期公开发布与演讲，呈现我当前工作的方向。</p>
+    </div>
+  </div>
+
+  <div class="about-highlight-grid">
+    <article class="about-highlight-card">
+      <h3>Livis 发布会主题演讲</h3>
+      <p>作为理想汽车软件与具身智能发布会主讲人，发布全新理想同学模型技术栈，并阐述从智能汽车走向具身智能产品的路径。</p>
+      <a class="about-link" href="https://www.youtube.com/watch?v=E8DX3SZcUfA">观看发布会回放</a>
+    </article>
+    <article class="about-highlight-card">
+      <h3>理想同学 VLA</h3>
+      <p>发布理想汽车基于 VLA 的下一代自动驾驶架构，通过扩展模仿学习、强化学习、模型规模与算力，让真实道路驾驶更安全、更高效。</p>
+      <a class="about-link" href="https://www.ithome.com/0/964/508.htm">阅读发布报道</a>
+    </article>
+    <article class="about-highlight-card">
+      <h3>Mind GPT</h3>
+      <p>发布面向云端与端侧 Agent 智能的 Mind GPT-Pro 和 Mind GPT-Edge 模型家族，实现原生车辆控制、多模态交互与持续在线的本地感知。</p>
+      <a class="about-link" href="https://finance.sina.com.cn/tech/shenji/2026-06-16/doc-inicqhiw6274956.shtml">阅读模型报道</a>
     </article>
   </div>
 </section>
@@ -106,17 +142,17 @@ latest_posts:
   <div class="about-section__header">
     <div>
       <h2>研究方向</h2>
-      <p>这些主题构成了我当前研究和工程工作的主轴。</p>
+      <p>构成我当前研究与工程工作的主要方向。</p>
     </div>
   </div>
 
   <div class="about-interest-grid">
-    <div class="about-interest-card"><strong>自动驾驶</strong><span>VLA 模型、端到端驾驶、决策与规划</span></div>
-    <div class="about-interest-card"><strong>计算机视觉</strong><span>检测、跟踪、场景理解、BEV 感知</span></div>
-    <div class="about-interest-card"><strong>3D 与世界模型</strong><span>动态重建、生成式仿真、车队级强化学习</span></div>
-    <div class="about-interest-card"><strong>多模态大模型</strong><span>推理、规划与人车交互</span></div>
-    <div class="about-interest-card"><strong>Agent 模型</strong><span>从推理到动作的工具使用、安全与可靠性</span></div>
-    <div class="about-interest-card"><strong>机器人</strong><span>具身智能、人形机器人、真实世界操作与导航</span></div>
+    <div class="about-interest-card"><strong>物理世界基座模型</strong><span>VLA、世界模型、3D ViT、强化学习、实时决策与行动</span></div>
+    <div class="about-interest-card"><strong>自动驾驶</strong><span>端到端驾驶、安全、规划与闭环部署</span></div>
+    <div class="about-interest-card"><strong>Agent LLM/VLM 系统</strong><span>云端与边缘 Agent、工具使用、多模态交互、人车协同</span></div>
+    <div class="about-interest-card"><strong>AI 系统与芯片</strong><span>模型与芯片协同设计、编译器与运行时、车端推理、低成本部署</span></div>
+    <div class="about-interest-card"><strong>仿真与数据引擎</strong><span>车队级数据飞轮、合成数据、闭环评测与训练基础设施</span></div>
+    <div class="about-interest-card"><strong>机器人与具身智能</strong><span>从车辆泛化至空间智能、人形机器人、操作与导航</span></div>
   </div>
 </section>
 
@@ -137,17 +173,18 @@ latest_posts:
         </div>
         <span>北京 / 圣何塞</span>
       </div>
-      <div class="about-timeline-card__role">基座模型团队负责人</div>
+      <div class="about-timeline-card__role">基座模型与自动驾驶负责人</div>
       <ul>
-        <li>负责 VLA 基座模型研发，并推进其与自研自动驾驶芯片、智能驾驶、智能座舱和未来机器人能力的融合。</li>
-        <li>从零搭建理想自动驾驶技术栈，推动架构从 E2E 演进到 VLM，再到 VLA，并在大规模量产车队中部署。</li>
-        <li>管理 100+ 规模的团队，覆盖感知、规划、基座模型、仿真与车端部署。</li>
-        <li>建立世界模型与强化学习方向团队，加快闭环学习，降低真实道路测试成本。</li>
+        <li>负责理想汽车基座模型与自动驾驶团队，统一理想同学 VLA、Mind GPT、3D ViT、世界模型、强化学习、数据基础设施与车端部署。</li>
+        <li>发布理想同学 VLA 与 Mind GPT-Pro / Mind GPT-Edge 具身智能模型系列，并将其量产集成至 Livis 车型和理想汽车全栈 AI 平台。</li>
+        <li>围绕自研 AI 芯片、车辆操作系统和域控制器，推动芯片与模型协同设计及量产部署。</li>
+        <li>从高速 NoA 和城市 NoA 开始，构建理想汽车自动驾驶技术栈，并演进至在数十万辆车上运行的端到端、VLM 辅助与 VLA 架构。</li>
+        <li>指导由感知、规划、基座模型、仿真、数据与部署等方向组成的 100+ 人团队。</li>
       </ul>
       <div class="about-timeline-card__role">美国研发中心负责人</div>
       <ul>
-        <li>负责海外研究团队建设，包括策略、预算与关键人才引进。</li>
-        <li>通过跨时区项目评审与路线图管理，连接硅谷探索和北京总部执行。</li>
+        <li>从零建立理想汽车海外研究中心，负责当地战略、预算与人才招聘。</li>
+        <li>通过跨境项目评审与路线图对齐，连接硅谷创新与北京执行。</li>
       </ul>
     </article>
 
@@ -159,13 +196,12 @@ latest_posts:
         </div>
         <span>北京，中国</span>
       </div>
-      <div class="about-timeline-card__role">L4 Prediction &amp; Planning 算法负责人</div>
+      <div class="about-timeline-card__role">L4 预测与规划算法负责人</div>
       <ul>
-        <li>负责 RoboTaxi 场景中的 L4 预测与前决策算法，提升复杂城市场景下的行为预测可靠性。</li>
-        <li>推动规划控制模块和车端深度学习组件落地，支持百度自动驾驶车队在北京、广州等城市运行。</li>
+        <li>负责 RoboTaxi 试点项目的 L4 预测与前决策算法，提升复杂城市场景中的运动预测能力。</li>
+        <li>交付规划控制模块和深度学习车端组件，支持自动驾驶车队在北京和广州运行。</li>
       </ul>
     </article>
-
   </div>
 </section>
 
@@ -174,23 +210,23 @@ latest_posts:
 <section class="about-section">
   <div class="about-section__header">
     <div>
-      <h2>专利与学术服务</h2>
-      <p>除了量产系统交付之外，我也持续参与技术沉淀与学术社区建设。</p>
+      <h2>专利、学术服务与社区</h2>
+      <p>量产技术栈之外的研究服务与技术转化。</p>
     </div>
   </div>
 
   <div class="about-highlight-grid">
     <article class="about-highlight-card">
       <h3>专利</h3>
-      <p>已授权或公开专利 20 项，其中中国 18 项、美国 2 项，覆盖感知、规划和高精地图等方向。</p>
+      <p>已授权或公开专利 20 项，其中中国 18 项、美国 2 项，覆盖感知、规划和高精地图流程。</p>
     </article>
     <article class="about-highlight-card">
       <h3>审稿服务</h3>
-      <p>担任 CVPR、ICCV、ECCV、NeurIPS、AAAI、IROS 以及 TPAMI、T-ITS、T-IV 等会议期刊审稿人。</p>
+      <p>担任 CVPR、ICCV、ECCV、NeurIPS、AAAI、IROS，以及 TPAMI、T-ITS、T-IV 等期刊的审稿人。</p>
     </article>
     <article class="about-highlight-card">
-      <h3>学术组织</h3>
-      <p>参与组织 CVPR 2023 Autonomous Driving Workshop，并持续分享 VLA 在量产环境中的技术实践。</p>
+      <h3>社区</h3>
+      <p>Livis 发布会主题演讲嘉宾、CVPR 2023 Autonomous Driving Workshop 组织者，并持续分享 VLA 在量产环境中的部署实践。</p>
     </article>
   </div>
 </section>
