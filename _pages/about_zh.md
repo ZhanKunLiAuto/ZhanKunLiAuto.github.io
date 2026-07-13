@@ -37,6 +37,7 @@ latest_posts:
   scrollable: true
   limit: 3
 ---
+
 <section class="about-hero">
   <div class="about-hero__content">
     <span class="about-kicker">面向具身智能的基座模型</span>
@@ -202,6 +203,7 @@ latest_posts:
         <li>交付规划控制模块和深度学习车端组件，支持自动驾驶车队在北京和广州运行。</li>
       </ul>
     </article>
+
   </div>
 </section>
 
