@@ -466,18 +466,6 @@ ul.task-list input[type="checkbox"] {
   color: var(--global-text-color);
 }
 
-.progress-card__meta {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.35rem 0.75rem;
-  margin-bottom: 0.8rem;
-  color: var(--global-text-color-light);
-  font-size: 0.78rem;
-  font-weight: 600;
-  letter-spacing: 0.04em;
-  text-transform: uppercase;
-}
-
 .about-interest-card {
   display: grid;
   gap: 0.4rem;

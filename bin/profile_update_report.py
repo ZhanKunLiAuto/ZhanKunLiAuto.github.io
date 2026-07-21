@@ -8,10 +8,9 @@ from pathlib import Path
 import yaml
 
 SCHOLAR_FILE = Path("_data/scholar.yml")
-PROGRESS_FILE = Path("_data/progress.yml")
 STAT_LABELS = {
-    "papers": "Papers",
-    "citations": "Citations",
+    "papers": "论文数量",
+    "citations": "总引用量",
     "h_index": "h-index",
     "i10_index": "i10-index",
 }
@@ -44,15 +43,11 @@ def publication_key(record: dict) -> str:
     ).strip()
 
 
-def progress_key(record: dict) -> str:
-    return str(record.get("id") or record.get("url") or record.get("title") or "").strip()
-
-
 def signed_delta(before: object, after: object) -> str:
     if not isinstance(before, int) or not isinstance(after, int):
         return ""
     delta = after - before
-    return f" ({delta:+d})" if delta else ""
+    return f"（{delta:+d}）" if delta else "（无变化）"
 
 
 def profile_lines(before: dict, after: dict) -> list[str]:
@@ -74,7 +69,7 @@ def new_publication_lines(before: dict, after: dict) -> list[str]:
         if publication_key(record) not in old_keys
     ]
     if not additions:
-        return ["- No new publications"]
+        return ["- 无新增论文"]
 
     lines: list[str] = []
     for record in additions[:10]:
@@ -98,37 +93,39 @@ def citation_lines(before: dict, after: dict) -> list[str]:
         if not isinstance(old_value, int) or not isinstance(new_value, int) or old_value == new_value:
             continue
         title = str(record.get("title") or "Untitled")
-        changes.append((new_value - old_value, f"- {title}: {old_value} → {new_value} ({new_value - old_value:+d})"))
+        changes.append((new_value - old_value, f"- {title}：{old_value} → {new_value}（{new_value - old_value:+d}）"))
 
     if not changes:
-        return ["- No per-paper citation changes"]
+        return ["- 无单篇论文引用变化"]
     changes.sort(key=lambda item: item[0], reverse=True)
     return [line for _, line in changes[:10]]
 
 
-def progress_lines(before: dict, after: dict) -> list[str]:
-    old_keys = {progress_key(record) for record in before.get("items") or []}
-    additions = [
+def removed_publication_lines(before: dict, after: dict) -> list[str]:
+    new_keys = {publication_key(record) for record in after.get("publications") or []}
+    removals = [
         record
-        for record in after.get("items") or []
-        if progress_key(record) not in old_keys
+        for record in before.get("publications") or []
+        if publication_key(record) not in new_keys
     ]
-    if not additions:
-        return ["- No new personal or company updates"]
+    if not removals:
+        return ["- 无移除论文"]
 
-    lines: list[str] = []
-    for record in additions[:10]:
-        title = str(record.get("title") or "Untitled")
-        category = str(record.get("category") or "update").title()
-        url = str(record.get("url") or "")
-        label = f"{category} · {title}"
-        lines.append(f"- [{label}]({url})" if url else f"- {label}")
-    return lines
+    return [f"- {record.get('title') or 'Untitled'}" for record in removals[:10]]
 
 
 def changed_files(ref: str) -> list[str]:
     result = subprocess.run(
-        ["git", "diff", "--stat", ref, "--", "_bibliography", "_data", "assets/img/publication_preview"],
+        [
+            "git",
+            "diff",
+            "--stat",
+            ref,
+            "--",
+            "_bibliography/papers.bib",
+            "_data/scholar.yml",
+            "assets/img/publication_preview",
+        ],
         check=True,
         capture_output=True,
         text=True,
@@ -139,28 +136,26 @@ def changed_files(ref: str) -> list[str]:
 def build_report(base_ref: str) -> str:
     before_scholar = read_yaml_from_git(base_ref, SCHOLAR_FILE)
     after_scholar = read_yaml(SCHOLAR_FILE)
-    before_progress = read_yaml_from_git(base_ref, PROGRESS_FILE)
-    after_progress = read_yaml(PROGRESS_FILE)
-    file_lines = changed_files(base_ref) or ["No generated files changed."]
+    file_lines = changed_files(base_ref) or ["没有生成文件发生变化。"]
 
     sections = [
-        "## Profile update proposal",
+        "## Google Scholar 每周更新提案",
         "",
-        "Nothing in this proposal is published until the repository owner approves it.",
+        "本提案仅包含 Google Scholar 数据；在仓库所有者批准前不会发布到个人主页。",
         "",
-        "### Scholar metrics",
+        "### 核心指标",
         *profile_lines(before_scholar, after_scholar),
         "",
-        "### New publications",
+        "### 新增论文",
         *new_publication_lines(before_scholar, after_scholar),
         "",
-        "### Citation changes",
+        "### 单篇引用变化",
         *citation_lines(before_scholar, after_scholar),
         "",
-        "### Personal and company progress",
-        *progress_lines(before_progress, after_progress),
+        "### 移除或缺失的论文",
+        *removed_publication_lines(before_scholar, after_scholar),
         "",
-        "### Generated file summary",
+        "### 文件变更摘要",
         "```text",
         *file_lines,
         "```",
@@ -169,7 +164,7 @@ def build_report(base_ref: str) -> str:
 
 
 def parse_args() -> argparse.Namespace:
-    parser = argparse.ArgumentParser(description="Summarize a generated profile update")
+    parser = argparse.ArgumentParser(description="Summarize a generated Google Scholar update")
     parser.add_argument("--base", default="HEAD", help="Git ref to compare against")
     parser.add_argument("--output", type=Path, help="Write Markdown to this file")
     return parser.parse_args()

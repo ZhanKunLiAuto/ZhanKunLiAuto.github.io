@@ -1,4 +1,4 @@
-name: Propose Profile Update
+name: Propose Google Scholar Update
 
 on:
   schedule:
@@ -18,7 +18,7 @@ permissions:
   pull-requests: write
 
 concurrency:
-  group: profile-update-${{ github.repository }}
+  group: scholar-update-${{ github.repository }}
   cancel-in-progress: false
 
 env:
@@ -48,6 +48,12 @@ jobs:
           python-version: "3.13"
           cache: pip
 
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+
       - name: Setup Ruby
         uses: ruby/setup-ruby@v1
         with:
@@ -60,19 +66,21 @@ jobs:
           sudo apt-get install -y imagemagick
           python -m pip install --upgrade pip
           python -m pip install -r requirements.txt pytest
+          npm ci
 
-      - name: Collect Scholar and progress candidates
-        run: |
-          python bin/update_scholar.py
-          python bin/update_progress.py
+      - name: Collect Google Scholar candidate
+        run: python bin/update_scholar.py
+
+      - name: Format generated Scholar data
+        run: npx prettier _data/scholar.yml --write
 
       - name: Detect generated changes
         id: changes
         run: |
-          CHANGES="$(git status --porcelain -- _bibliography/papers.bib _data/scholar.yml _data/progress.yml assets/img/publication_preview)"
+          CHANGES="$(git status --porcelain -- _bibliography/papers.bib _data/scholar.yml assets/img/publication_preview)"
           if [ -z "$CHANGES" ]; then
             echo "changed=false" >> "$GITHUB_OUTPUT"
-            echo "No profile changes detected."
+            echo "No Google Scholar changes detected."
           else
             echo "changed=true" >> "$GITHUB_OUTPUT"
           fi
@@ -83,7 +91,7 @@ jobs:
 
       - name: Build review summary
         if: steps.changes.outputs.changed == 'true'
-        run: python bin/profile_update_report.py --base HEAD --output "$RUNNER_TEMP/profile-update-summary.md"
+        run: python bin/profile_update_report.py --base HEAD --output "$RUNNER_TEMP/scholar-update-summary.md"
 
       - name: Run unit tests
         if: steps.changes.outputs.changed == 'true'
@@ -101,12 +109,12 @@ jobs:
         env:
           RUN_ID: ${{ github.run_id }}
         run: |
-          BRANCH="automation/profile-update-${RUN_ID}"
+          BRANCH="automation/scholar-update-${RUN_ID}"
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git switch -c "$BRANCH"
-          git add _bibliography/papers.bib _data/scholar.yml _data/progress.yml assets/img/publication_preview
-          git commit -m "chore: propose profile update"
+          git add _bibliography/papers.bib _data/scholar.yml assets/img/publication_preview
+          git commit -m "chore: propose Google Scholar update"
           git push origin "$BRANCH"
           echo "name=$BRANCH" >> "$GITHUB_OUTPUT"
 
@@ -117,25 +125,25 @@ jobs:
           BRANCH: ${{ steps.branch.outputs.name }}
           GH_TOKEN: ${{ github.token }}
         run: |
-          gh label create profile-update --color 1D76DB --description "Automated personal profile update" --force
-          gh label create profile-update:emailed --color 0E8A16 --description "Confirmation email delivered" --force
+          gh label create scholar-update --color 1D76DB --description "Automated Google Scholar update" --force
+          gh label create scholar-update:emailed --color 0E8A16 --description "Scholar confirmation email delivered" --force
 
-          cp "$RUNNER_TEMP/profile-update-summary.md" "$RUNNER_TEMP/profile-update-pr.md"
-          cat >> "$RUNNER_TEMP/profile-update-pr.md" <<'EOF'
+          cp "$RUNNER_TEMP/scholar-update-summary.md" "$RUNNER_TEMP/scholar-update-pr.md"
+          cat >> "$RUNNER_TEMP/scholar-update-pr.md" <<'EOF'
 
-          ### Confirmation
+          ### 审核操作
 
-          This PR is a candidate only. To publish it, the repository owner must review the diff and add an exact `/approve` comment. Add `/reject` to cancel it.
+          本 PR 只是 Google Scholar 候选更新。仓库所有者审阅差异后，评论精确的 `/approve` 才会发布；评论 `/reject` 可取消。
 
-          The approval workflow verifies the owner, branch, label, and candidate status before merging.
+          合并前，审批工作流会验证操作者、分支、标签和候选状态。
           EOF
 
           PR_URL="$(gh pr create \
             --base "${{ github.event.repository.default_branch }}" \
             --head "$BRANCH" \
-            --title "Profile update proposal · $(date -u +%Y-%m-%d)" \
-            --body-file "$RUNNER_TEMP/profile-update-pr.md" \
-            --label profile-update \
+            --title "Google Scholar update proposal · $(date -u +%Y-%m-%d)" \
+            --body-file "$RUNNER_TEMP/scholar-update-pr.md" \
+            --label scholar-update \
             --draft)"
           echo "url=$PR_URL" >> "$GITHUB_OUTPUT"
           echo "number=${PR_URL##*/}" >> "$GITHUB_OUTPUT"
@@ -145,7 +153,7 @@ jobs:
         run: >-
           python bin/send_profile_update_email.py
           --status proposal
-          --summary "$RUNNER_TEMP/profile-update-summary.md"
+          --summary "$RUNNER_TEMP/scholar-update-summary.md"
           --review-url "${{ steps.pull_request.outputs.url }}"
 
       - name: Mark candidate as confirmable
@@ -155,10 +163,10 @@ jobs:
           PR_NUMBER: ${{ steps.pull_request.outputs.number }}
           PR_URL: ${{ steps.pull_request.outputs.url }}
         run: |
-          gh pr edit "$PR_NUMBER" --add-label profile-update:emailed
+          gh pr edit "$PR_NUMBER" --add-label scholar-update:emailed
           gh pr ready "$PR_NUMBER"
 
-          gh pr list --state open --label profile-update --json number --jq ".[] | select(.number != ${PR_NUMBER}) | .number" |
+          gh pr list --state open --label scholar-update --json number --jq ".[] | select(.number != ${PR_NUMBER}) | .number" |
             while read -r OLD_PR; do
               [ -z "$OLD_PR" ] && continue
               gh pr close "$OLD_PR" --comment "Superseded by ${PR_URL}." --delete-branch

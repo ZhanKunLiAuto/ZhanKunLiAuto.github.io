@@ -50,12 +50,14 @@ def test_smtp_config_rejects_missing_password(monkeypatch):
 def test_message_content_requires_explicit_approval():
     subject, plain, html_body = send_profile_update_email.message_content(
         "proposal",
-        "## Profile update\n- Citations: 10 → 12 (+2)",
+        "## Google Scholar 更新\n- 总引用量：10 → 12（+2）",
         "https://github.com/example/repo/pull/1",
     )
 
     assert "需要确认" in subject
+    assert "Google Scholar" in subject
     assert "/approve" in plain
     assert "尚未发布" in plain
+    assert "不会修改其他个人主页内容" in plain
     assert "https://github.com/example/repo/pull/1" in html_body
     assert "<code>/approve</code>" in html_body

@@ -61,16 +61,16 @@ def summary_html(summary: str) -> str:
 
 def message_content(status: str, summary: str, review_url: str) -> tuple[str, str, str]:
     if status == "proposal":
-        subject = "[需要确认] 个人主页定期更新提案"
-        intro = "系统发现了可同步到个人主页的新内容。当前只是候选更新，尚未发布。"
+        subject = "[需要确认] Google Scholar 每周更新"
+        intro = "系统发现了 Google Scholar 候选更新。当前尚未发布，也不会修改其他个人主页内容。"
         action = f"请在 GitHub 审阅变更：{review_url}\n确认无误后，在 PR 中评论 /approve。"
     elif status == "published":
-        subject = "[已发布] 个人主页定期更新"
-        intro = "你批准的个人主页更新已经合并并进入发布流程。"
+        subject = "[已发布] Google Scholar 每周更新"
+        intro = "你批准的 Google Scholar 更新已经合并并进入发布流程。"
         action = f"查看已合并的更新：{review_url}"
     else:
-        subject = "[已取消] 个人主页定期更新"
-        intro = "本次个人主页候选更新已取消，没有发布。"
+        subject = "[已取消] Google Scholar 每周更新"
+        intro = "本次 Google Scholar 候选更新已取消，没有发布。"
         action = f"查看记录：{review_url}"
 
     plain = f"{intro}\n\n{summary.strip()}\n\n{action}\n"
@@ -103,7 +103,7 @@ def send_email(config: dict[str, str | int], message: EmailMessage) -> None:
 
 
 def parse_args() -> argparse.Namespace:
-    parser = argparse.ArgumentParser(description="Send profile update review emails")
+    parser = argparse.ArgumentParser(description="Send Google Scholar update review emails")
     parser.add_argument("--check-config", action="store_true")
     parser.add_argument("--status", choices=["proposal", "published", "rejected"], default="proposal")
     parser.add_argument("--summary", type=Path)

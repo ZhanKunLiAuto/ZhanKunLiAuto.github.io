@@ -13,7 +13,7 @@ sys.modules[SPEC.name] = profile_update_report
 SPEC.loader.exec_module(profile_update_report)
 
 
-def test_build_report_summarizes_metrics_publications_and_progress(monkeypatch):
+def test_build_report_summarizes_only_google_scholar_changes(monkeypatch):
     before_scholar = {
         "profile": {"papers": 10, "citations": 100, "h_index": 5, "i10_index": 4},
         "publications": [
@@ -33,27 +33,15 @@ def test_build_report_summarizes_metrics_publications_and_progress(monkeypatch):
             },
         ],
     }
-    before_progress = {"items": []}
-    after_progress = {
-        "items": [
-            {
-                "id": "progress-new",
-                "category": "company",
-                "title": "VLA launch",
-                "url": "https://example.com/news",
-            }
-        ]
-    }
-
     monkeypatch.setattr(
         profile_update_report,
         "read_yaml_from_git",
-        lambda ref, path: before_scholar if path == profile_update_report.SCHOLAR_FILE else before_progress,
+        lambda ref, path: before_scholar,
     )
     monkeypatch.setattr(
         profile_update_report,
         "read_yaml",
-        lambda path: after_scholar if path == profile_update_report.SCHOLAR_FILE else after_progress,
+        lambda path: after_scholar,
     )
     monkeypatch.setattr(
         profile_update_report,
@@ -63,15 +51,38 @@ def test_build_report_summarizes_metrics_publications_and_progress(monkeypatch):
 
     report = profile_update_report.build_report("HEAD")
 
-    assert "Papers: 10 → 11 (+1)" in report
-    assert "Citations: 100 → 112 (+12)" in report
+    assert "论文数量: 10 → 11（+1）" in report
+    assert "总引用量: 100 → 112（+12）" in report
     assert "[New paper (2026)](https://example.com/paper)" in report
-    assert "Old paper: 10 → 15 (+5)" in report
-    assert "[Company · VLA launch](https://example.com/news)" in report
-    assert "Nothing in this proposal is published" in report
+    assert "Old paper：10 → 15（+5）" in report
+    assert "个人和公司" not in report
+    assert "仅包含 Google Scholar 数据" in report
 
 
 def test_signed_delta_ignores_non_integer_values():
     assert profile_update_report.signed_delta("N/A", 10) == ""
-    assert profile_update_report.signed_delta(10, 10) == ""
-    assert profile_update_report.signed_delta(10, 8) == " (-2)"
+    assert profile_update_report.signed_delta(10, 10) == "（无变化）"
+    assert profile_update_report.signed_delta(10, 8) == "（-2）"
+
+
+def test_removed_publications_are_called_out():
+    before = {
+        "publications": [
+            {"google_scholar_id": "kept", "title": "Kept"},
+            {"google_scholar_id": "removed", "title": "Removed paper"},
+        ]
+    }
+    after = {"publications": [{"google_scholar_id": "kept", "title": "Kept"}]}
+
+    assert profile_update_report.removed_publication_lines(before, after) == ["- Removed paper"]
+
+
+def test_workflow_formats_only_generated_scholar_data():
+    workflow = (
+        Path(__file__).resolve().parents[1] / ".github" / "workflows" / "update-scholar.yml"
+    ).read_text(encoding="utf-8")
+
+    assert "python bin/update_scholar.py" in workflow
+    assert "npx prettier _data/scholar.yml --write" in workflow
+    assert "update_progress" not in workflow
+    assert "_data/progress.yml" not in workflow

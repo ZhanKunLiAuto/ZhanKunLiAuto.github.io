@@ -129,7 +129,41 @@ latest_posts:
   </div>
 </section>
 
-{% include about/progress_section.liquid %}
+<section class="about-section">
+  <div class="about-section__header">
+    <div>
+      <h2>Recent Milestones</h2>
+      <p>Public releases and talks that reflect the current direction of my work.</p>
+    </div>
+  </div>
+
+  <div class="about-highlight-grid">
+    <article class="about-highlight-card">
+      <h3>Livis Day keynote</h3>
+      <p>
+        Main speaker for Li Auto's software and embodied-intelligence launch, presenting the Mach model stack and the
+        path from intelligent vehicles to embodied-intelligence products.
+      </p>
+      <a class="about-link" href="https://www.youtube.com/watch?v=E8DX3SZcUfA">Watch event replay</a>
+    </article>
+    <article class="about-highlight-card">
+      <h3>Mach VLA</h3>
+      <p>
+        Announced the next evolution of Li Auto's VLA-based autonomous-driving architecture, scaling imitation learning,
+        reinforcement learning, model size, and compute for safer and more efficient real-world driving.
+      </p>
+      <a class="about-link" href="https://www.ithome.com/0/964/508.htm">Read launch coverage</a>
+    </article>
+    <article class="about-highlight-card">
+      <h3>Mach Mind</h3>
+      <p>
+        Released the Mach Mind-Pro and Mach Mind-Edge model family for cloud and on-device agentic intelligence, enabling
+        native vehicle control, multimodal interaction, and always-on local perception.
+      </p>
+      <a class="about-link" href="https://finance.sina.com.cn/tech/shenji/2026-06-16/doc-inicqhiw6274956.shtml">Read model coverage</a>
+    </article>
+  </div>
+</section>
 
 <section class="about-section">
   <div class="about-section__header">
