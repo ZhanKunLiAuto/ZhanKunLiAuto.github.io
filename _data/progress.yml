@@ -1,32 +1,56 @@
-updated_at: "2026-06-18T00:00:00Z"
+updated_at: '2026-07-21T18:32:50Z'
 items:
-  - id: livis-day-keynote
-    managed: false
-    category: personal
-    date: "2026-06-18"
-    title: Livis Day keynote
-    title_zh: Livis 发布会主题演讲
-    summary: Main speaker for Li Auto's software and embodied-intelligence launch, presenting the Mach model stack and the path from intelligent vehicles to embodied-intelligence products.
-    summary_zh: 作为理想汽车软件与具身智能发布会主讲人，发布全新理想同学模型技术栈，并阐述从智能汽车走向具身智能产品的路径。
-    url: https://www.youtube.com/watch?v=E8DX3SZcUfA
-    source: Li Auto
-  - id: mach-vla-launch
-    managed: false
-    category: company
-    date: "2026-06-17"
-    title: Mach VLA
-    title_zh: 理想同学 VLA
-    summary: Announced the next evolution of Li Auto's VLA-based autonomous-driving architecture, scaling imitation learning, reinforcement learning, model size, and compute for safer and more efficient real-world driving.
-    summary_zh: 发布理想汽车基于 VLA 的下一代自动驾驶架构，通过扩展模仿学习、强化学习、模型规模与算力，让真实道路驾驶更安全、更高效。
-    url: https://www.ithome.com/0/964/508.htm
-    source: IT之家
-  - id: mach-mind-launch
-    managed: false
-    category: company
-    date: "2026-06-16"
-    title: Mach Mind
-    title_zh: Mind GPT
-    summary: Released the Mach Mind-Pro and Mach Mind-Edge model family for cloud and on-device agentic intelligence, enabling native vehicle control, multimodal interaction, and always-on local perception.
-    summary_zh: 发布面向云端与端侧 Agent 智能的 Mind GPT-Pro 和 Mind GPT-Edge 模型家族，实现原生车辆控制、多模态交互与持续在线的本地感知。
-    url: https://finance.sina.com.cn/tech/shenji/2026-06-16/doc-inicqhiw6274956.shtml
-    source: 新浪科技
+- id: feed-c545978615443aee
+  managed: true
+  source_key: li-auto-ai-news
+  category: company
+  date: '2026-07-20'
+  title: 李想划下具身智能分水岭：一个堪比“电动化上下半场”的产业新定义 - 新浪财经
+  summary: 李想划下具身智能分水岭：一个堪比“电动化上下半场”的产业新定义 新浪财经
+  url: https://news.google.com/rss/articles/CBMitgRBVV95cUxPM1FlUEgxaDJRTC1PNm5mOWpEb2NVMXM2QlBnZXpZbkhFN2V4RU40Z3Q1TGhNM245b19sOElhYnNIb1NyWnhGbGRWNVhoT1dKZTF0Q09ndURSNmMtcWNlYVFVVzZtMy1nY0FfUDdZcV9pLUNmUF90X0J6SlBwWGFuTkIzRWcyVUhlekVkd1drOENObWxJRVhCUFhjX185UWN0NGtUaWl2WXl4d1FNMkN1XzdiR2gwQ25xbE9rdTVFUGxFdk5zYTkzQ21FVjgwTE9ZZTM0dUxTUWVxSHQtSlh3RTQ2eHVGZ2F6MGJvU0JkRzlNWmZZcjZpbF9LbHNuYVVYRWNoVnV5RGtORkN3VmduV2x2UXZWUExPYVdPSENJUjN5SkE3RWkwTndscEpfUFdQWXU5SVBFZkdpenlFbGR3a0lmSGJSdGlfbFMwWmJENW9SS1I4TGt6Tlc0Q3FXZTh6dGlYdGhXV2c5ZXZtS3lYdXkteHh5TzRvMFZ4aVhXWFdDN1Aydzdzb2FLYzkyZl9adFZSaG1yQnByaXZ4SWF0YWVmTlhhaFJHNTJ6RjhGUC1peGJGUHZXcU4xUW1zelVzZDNfTG83MTBRVGRvelhkU0x5TmFfajJtWk16SzZHTW85UWpLbEdzUDRuTHRvLWZNT1VsSW4xd3E0a2hHc1ZYYjJDVnpiUy13Q2NKS2tmd2VGU2dTNXdvMU1GekxSZ1JJclpzek9CVGV2NThRZG9lallVY3lmdw?oc=5
+  source: Li Auto AI news
+- id: feed-94abef3853b46823
+  managed: true
+  source_key: li-auto-ai-news
+  category: company
+  date: '2026-07-19'
+  title: 理想汽车发布新一代理想L6 搭载自研马赫M100芯片与VLA司机大模型 - 新浪财经
+  summary: 理想汽车发布新一代理想L6 搭载自研马赫M100芯片与VLA司机大模型 新浪财经
+  url: https://news.google.com/rss/articles/CBMieEFVX3lxTE14dl9FaVlnSDBTNXVCekxUQ2VFMDItR2c1b0VYZmhsZGNEWGJHdktLS1VXY1lWb0FMSEo1MVk3SkNBc1FGVERmSWlHdFE5clI1UVpwSG1WOWJtekVoNkNPTTR5aDBMdEt1LTBqcTViZkFhV25CSDBaZA?oc=5
+  source: Li Auto AI news
+- id: feed-2fbfb423147e78e3
+  managed: true
+  source_key: li-auto-ai-news
+  category: company
+  date: '2026-07-18'
+  title: 李想重画具身智能 - 新浪财经
+  summary: 李想重画具身智能 新浪财经
+  url: https://news.google.com/rss/articles/CBMigApBVV95cUxQUHRaVFplcTUtYi15NzdKdGlkdXpJemhlTlFvdjV4U2REVEFuMmhJWVBhZ3BsUFd4UkYzSkpweFNmWDFVR1VEZmRrUTc1QlFFMm9FR1NfaUoya2E2NlluV25ldWdLcVBObG5EblpPckRQSC1HdEllMkJRWF9HRjZNSVhZSGdBSUNTeE4tN1NPaUpHQTJ6Q0NCMXlDNVpZc25zcktoVFhCOTh4VXljUDdydjI1WmdYdC01TFdKVjNKODZUcFl6elh4LVpDV1gwT3JvcDRGeDNVcVNMQ01xNVpTQ0tUaFc1YThYQ3BDSkMyTGtUNHZ1aFlZZGJMR0hJdTllZnhja1daTmtUbDdLZDBNY01UTWZUZkRiWm5jc2gwVGJEb01WX3hPZ0hzZGlWMzJ4M2c3b3ZPU01MNTV1cVNJbVJmR3l4NEs0MDF6aHNJTEZMNnY0a01tR0laOTd3azBQN0Y2SFZadGt5UVRDZlB6ZlB4dkJhbkVOME15dGVFZWpjYXJNR0pkZEpPck1WUENySWs4M01xdTJqclRlU204dmlXYmhPbkZRRWxsdGF1R25CdGFsLVRiOGkwa3dXcjBrMEFJcHhscWNHM3E2WkUxVHpORFBhNnVjRkRzYmdiOWJWSWZ1YW9TdldXMlNQa3EzWXdRa1lsQVZrZ3JhZUxuZTZZSnpCbkJsclo0RTNpQjBOal9IUzlXbzRKMm9nU1FveUQ2WFExUUZlVjBwN2FsTFJWRjVwNmsxY05icUgtWklscXdOd1JLdGppLVBseHVCc0ZFMFRtQkE3TGQ0N1lQejNicTF4bUFmcm1nRkczQWl6Z01QcHdUUVJXS0JvMDcwem9FUFYyUzVVNlRxZlhBNVFXUkE3bVFENVN2eHpxcG1CSTBpVFNuc3BRWWpsb2p2WUlOeDBRUFZkdHEyWWhpMHRkWkc2YV9TYXBkcERiSjJoWmdTbno0SC14ZWNZQ3RRTDFDX1p6Y0pHMFRtMUdNWmhSY0JGUm1CeHQ0b01US2VQNnJHS1JEbDIxZjZ2UzV6MUQycTlORkxHWlR0OHM5M0s1SEpnTTVQa2VLVDdZN0VXQ1hIcGRPdGp4T21xZENyWFNkcmNTTEtOUTBzT0ljVHlCT3A4U3ptN3Jkc2FTbFVLTjdaTUg0c2ZXM1ZoZFBlVHcycV80cWJXa2VIMTVmSk9iYmZ6eUd3NERNRmhWNTAwdktBLVNxZ1pGT2d4TmxtQnlna2hmYTVHTkFHdXQ0R1daZ0JDNDlFS096aDZpRWNMT2NJMWlFN2xKVjVlOVpucHhIVTNNZE5JWXpBc2g5VDJUdF9IWGFKMzRJb1JZVWFmRG9BUG10TDJrN3NaRmd0RlotX2ZWUi1laFo5ZlJZMmlVbWNydzNUNFhwQW5sc2dMOEZhRkN6RXNQRWtCX3dzQzBnOFF4UmJIUzY2dVdsaDd4YUg1UG5QcmhlOHU1SFk1ZVZqSTNtdHNYeldNNUdkZ1U0ZnBMQXpCWlNuS1VuWFpIYkZYeU4ySW1CYy1uM1Bqc1VkQXo2MUh0U3E2UHVXNXZXd0lUTFMwV2xKd2FSZHMtZzdtdkJJUWVFNUV0RzBnQ3M2c3lWVHhLRTRZR25ONlpYenNJU2VNWGF0d2puNlJ4SkF6NUUtRE1oNEJpQ3NCMVZCY2RLMnItT2hPMWFTQVR0WVpxbXNrNlRMSUdoQQ?oc=5
+  source: Li Auto AI news
+- id: feed-dd15c0cefada2dc1
+  managed: true
+  source_key: li-auto-ai-news
+  category: company
+  date: '2026-07-17'
+  title: 拆解李想的具身智能战略：上半场造车、下半场造人 - 新浪财经
+  summary: 拆解李想的具身智能战略：上半场造车、下半场造人 新浪财经
+  url: https://news.google.com/rss/articles/CBMi3wRBVV95cUxPanlOVkY5cldWWC1uZ09lTzRFeXRYSll1WThqOGlVblpuZ2kydnBQT2tMUkpmazhPa3BRblUwcElaMGdzQl9SNzgtOE81Wkp5MVUyTGtVTmdGLTdXdzNQelUxOGM1SjRBeDFXTklSUjBkN2FQXzRSSGVFNzA0WmNzNDdPRU1CTGNNRFQwZ1E3VEQ4dFM3d2M5Sm01YUdERWtTS0JaQVdaMDUwZTB5bXBYeGZnN0RYcDRIdzVzTGVObDktYmNhMkVaRXA5VFBqY3dFVlVkd3R3RmV2YUNBRmZvZ0R1Wm8tMFFLLVNEQ1hKSXZnbGEtRkxHY0FoalY2M19ZTmJwSzNqQmxUMmpjVUZLMG5sbU1wMTYyTlJSOUd6U2NSckNJNWFsRUV6b3RJQjMwUkk5MkZxeGt5WmU4SGh0TkZCeXZ0ZDFxUHB2ZU9nZGVxTDhjLTVnMmxKLVQwbV9kR1BuTW5DY1Z2STBwck40MGQtZk9WM3ViSmVDVWxlOXBBS0xwUk90a1dZa2NyQmZVeXJvX1V0bkJhNmtyaVhfV24xVm1aYW0xMHJXOGpwRHM1M0NsMW5sVXR6OWN0MG9NNDRKUmFQN0s4amVpdjg0MTBkajNQTWpVbTdzUHV5UmpMczcyRVFJOUJYdFFwenBvSEd0Y3NQcEdnd1o2WXFUQVU1S1Yyd3dKQzNSSFMxMzE5eUN5TXhpSzJiVUxRTzJZNmctbTFFQWcwMUV5S29sRW1uSlN2QWpRN1RtMUJGR1FJU2c5ZUhwVkRFZ2lvdEE3SEhCWlJjYVR5aHByd0dJ?oc=5
+  source: Li Auto AI news
+- id: feed-6daca03785166a8e
+  managed: true
+  source_key: li-auto-ai-news
+  category: company
+  date: '2026-07-15'
+  title: 李想划下具身智能分水岭：一个堪比“电动化上下半场”的产业新定义 - 新浪财经
+  summary: 李想划下具身智能分水岭：一个堪比“电动化上下半场”的产业新定义 新浪财经
+  url: https://news.google.com/rss/articles/CBMi2gJBVV95cUxNVjdYOUlYZ2RaNy1tcVdlMVF1aXZfMkVVQjdOWVhmNGpMNEdISldheE9kTGZGb1c2aWQzVkI0azlRVlFpMEJBMXVPUnRvSWtBVnhCTjI2cFhXMEwtRnhEMXdYc29IYld0SHNCMVY4cW9ZSEVIZHUzTzBwUlIyQjhMNHV1aWhqelotZFJDeHlPZlhTcVgxNzdWRkZGMGg1WWZ5Yzk3VGxMMXA2YUtQZFRRM01obWpXV0hHOEh1d3RGZ08yU1R3Mm1tWkFVNHhWWjhjR0JuaFdnSEJ1dmxIeXEwa19iMWRaOUhXNERFUTlsUVpDV2d2SWdydTM0bXRxN0FnNlVvZm12MnpmNTM5Mk8xT29wTkRROGk2NUtyVERuV0VmektVR1dyc0RlM3NMRjgwdHE1VlJPV3lWTWdBcWI3bTYwZi0yblpTX2FZZTBmeTlMSURRc0JWUHpB?oc=5
+  source: Li Auto AI news
+- id: feed-66f4d6ed529c69f1
+  managed: true
+  source_key: li-auto-ai-news
+  category: company
+  date: '2026-07-13'
+  title: 李想：自动驾驶是具身智能的上半场，通用人形机器人是具身智能的下半场 - 新浪财经
+  summary: 李想：自动驾驶是具身智能的上半场，通用人形机器人是具身智能的下半场 新浪财经
+  url: https://news.google.com/rss/articles/CBMiwwFBVV95cUxOQlNWTi1xSlZBUEhRT1lPQTh1TWZjRy1tYnU5bVVhTHUtRjF2OVNXVFJwdEhJaGNqMG1tV241U3hXUWhhZEVwQjBlUG53SHUxQ1FYREVUbU9ZS2Fmb0gzN2FrMjFvc3hOREdfTUYzblJyX09RZzdTNFh4RlMxcjZTMVlHcmxOVEV5NFRTUTV5WDZLd2ZQaGMzWmxoaG9SRkFwbEJpSnl2RkZrbkxRSDFlbVFOUC1JbFV1MkpMYVpWWnpMN3M?oc=5
+  source: Li Auto AI news

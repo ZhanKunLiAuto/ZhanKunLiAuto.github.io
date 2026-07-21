@@ -3,960 +3,960 @@ profile:
   citations: 1941
   h_index: 18
   i10_index: 28
-  updated_at: "2026-06-27T11:22:13Z"
+  updated_at: '2026-07-21T18:32:50Z'
 publications:
-  - key: drivevlm2024
-    title: "Drivevlm: The convergence of autonomous driving and large vision-language
-      models"
-    authors: X Tian, J Gu, B Li, Y Liu, Y Wang, Z Zhao, K Zhan, P Jia, X Lang, H Zhao
-    year: "2024"
-    venue: arXiv preprint arXiv:2402.12289
-    citation_count: 658
-    scholar_url: https://scholar.google.com/citations?view_op=view_citation&hl=en&user=1J061HIAAAAJ&citation_for_view=1J061HIAAAAJ:zYLM7Y9cAGgC
-    external_url: https://arxiv.org/abs/2402.12289
-    pdf_url: https://arxiv.org/pdf/2402.12289
-    doi: ""
-    arxiv: ""
-    preview_image: /assets/img/publication_preview/drivevlm2024.png
-    google_scholar_id: zYLM7Y9cAGgC
-  - key: street2024
-    title: "Street gaussians: Modeling dynamic urban scenes with gaussian splatting"
-    authors: Y Yan, H Lin, C Zhou, W Wang, H Sun, K Zhan, X Lang, X Zhou, S Peng
-    year: "2024"
-    venue: European Conference on Computer Vision, 156-173
-    citation_count: 468
-    scholar_url: https://scholar.google.com/citations?view_op=view_citation&hl=en&user=1J061HIAAAAJ&citation_for_view=1J061HIAAAAJ:IjCSPb-OGe4C
-    external_url: https://link.springer.com/chapter/10.1007/978-3-031-73464-9_10
-    pdf_url: https://drive.google.com/file/d/1oX7YhBlVWORrUq1n2LLVgP5sTwDnepjL/view
-    doi: ""
-    arxiv: ""
-    preview_image: /assets/img/publication_preview/street2024-preview.png
-    google_scholar_id: IjCSPb-OGe4C
-  - key: recondreamer2025
-    title: "Recondreamer: Crafting world models for driving scene reconstruction via
-      online restoration"
-    authors: C Ni, G Zhao, X Wang, Z Zhu, W Qin, G Huang, C Liu, Y Chen, Y Wang, ...
-    year: "2025"
-    venue: Proceedings of the Computer Vision and Pattern Recognition Conference, 1559-1569
-    citation_count: 101
-    scholar_url: https://scholar.google.com/citations?view_op=view_citation&hl=en&user=1J061HIAAAAJ&citation_for_view=1J061HIAAAAJ:LkGwnXOMwfcC
-    external_url: https://openaccess.thecvf.com/content/CVPR2025/html/Ni_ReconDreamer_Crafting_World_Models_for_Driving_Scene_Reconstruction_via_Online_CVPR_2025_paper.html
-    pdf_url: https://openaccess.thecvf.com/content/CVPR2025/papers/Ni_ReconDreamer_Crafting_World_Models_for_Driving_Scene_Reconstruction_via_Online_CVPR_2025_paper.pdf
-    doi: ""
-    arxiv: ""
-    preview_image: /assets/img/publication_preview/recondreamer2025-pdf-preview.png
-    google_scholar_id: LkGwnXOMwfcC
-  - key: planagent2024
-    title: "Planagent: A multi-modal large language agent for closed-loop vehicle motion
-      planning"
-    authors: Y Zheng, Z Xing, Q Zhang, B Jin, P Li, Y Zheng, Z Xia, Y Chen, D Zhao
-    year: "2026"
-    venue: IEEE Transactions on Cognitive and Developmental Systems
-    citation_count: 71
-    scholar_url: https://scholar.google.com/citations?view_op=view_citation&hl=en&user=1J061HIAAAAJ&citation_for_view=1J061HIAAAAJ:Tyk-4Ss8FVUC
-    external_url: https://ieeexplore.ieee.org/abstract/document/11394788/
-    pdf_url: https://arxiv.org/pdf/2406.01587
-    doi: ""
-    arxiv: ""
-    preview_image: /assets/img/publication_preview/planagent2024-pdf-preview.png
-    google_scholar_id: Tyk-4Ss8FVUC
-  - key: unleashing2024
-    title: Unleashing generalization of end-to-end autonomous driving with controllable
-      long video generation
-    authors: E Ma, L Zhou, T Tang, Z Zhang, D Han, J Jiang, K Zhan, P Jia, X Lang, ...
-    year: "2024"
-    venue: arXiv preprint arXiv:2406.01349
-    citation_count: 57
-    scholar_url: https://scholar.google.com/citations?view_op=view_citation&hl=en&user=1J061HIAAAAJ&citation_for_view=1J061HIAAAAJ:W7OEmFMy1HYC
-    external_url: https://arxiv.org/abs/2406.01349
-    pdf_url: https://arxiv.org/pdf/2406.01349
-    doi: ""
-    arxiv: ""
-    preview_image: /assets/img/publication_preview/unleashing2024-pdf-preview.png
-    google_scholar_id: W7OEmFMy1HYC
-  - key: streetcrafter2025
-    title: "Streetcrafter: Street view synthesis with controllable video diffusion models"
-    authors: Y Yan, Z Xu, H Lin, H Jin, H Guo, Y Wang, K Zhan, X Lang, H Bao, X Zhou,
-      ...
-    year: "2025"
-    venue: Proceedings of the Computer Vision and Pattern Recognition Conference, 822-832
-    citation_count: 48
-    scholar_url: https://scholar.google.com/citations?view_op=view_citation&hl=en&user=1J061HIAAAAJ&citation_for_view=1J061HIAAAAJ:Se3iqnhoufwC
-    external_url: https://openaccess.thecvf.com/content/CVPR2025/html/Yan_StreetCrafter_Street_View_Synthesis_with_Controllable_Video_Diffusion_Models_CVPR_2025_paper.html
-    pdf_url: https://openaccess.thecvf.com/content/CVPR2025/papers/Yan_StreetCrafter_Street_View_Synthesis_with_Controllable_Video_Diffusion_Models_CVPR_2025_paper.pdf
-    doi: ""
-    arxiv: ""
-    preview_image: /assets/img/publication_preview/streetcrafter2025-pdf-preview.jpeg
-    google_scholar_id: Se3iqnhoufwC
-  - key: tod3cap2024
-    title: "Tod3cap: Towards 3d dense captioning in outdoor scenes"
-    authors: B Jin, Y Zheng, P Li, W Li, Y Zheng, S Hu, X Liu, J Zhu, Z Yan, H Sun,
-      ...
-    year: "2024"
-    venue: European Conference on Computer Vision, 367-384
-    citation_count: 46
-    scholar_url: https://scholar.google.com/citations?view_op=view_citation&hl=en&user=1J061HIAAAAJ&citation_for_view=1J061HIAAAAJ:ufrVoPGSRksC
-    external_url: https://link.springer.com/chapter/10.1007/978-3-031-72649-1_21
-    pdf_url: https://arxiv.org/pdf/2403.19589?
-    doi: ""
-    arxiv: ""
-    preview_image: /assets/img/publication_preview/tod3cap2024-pdf-preview.jpeg
-    google_scholar_id: ufrVoPGSRksC
-  - key: drivingsphere2025
-    title: "Drivingsphere: Building a high-fidelity 4d world for closed-loop simulation"
-    authors: T Yan, D Wu, W Han, J Jiang, X Zhou, K Zhan, C Xu, J Shen
-    year: "2025"
-    venue: Proceedings of the Computer Vision and Pattern Recognition Conference, 27531
-      …
-    citation_count: 38
-    scholar_url: https://scholar.google.com/citations?view_op=view_citation&hl=en&user=1J061HIAAAAJ&citation_for_view=1J061HIAAAAJ:UebtZRa9Y70C
-    external_url: https://openaccess.thecvf.com/content/CVPR2025/html/Yan_DrivingSphere_Building_a_High-fidelity_4D_World_for_Closed-loop_Simulation_CVPR_2025_paper.html
-    pdf_url: https://openaccess.thecvf.com/content/CVPR2025/papers/Yan_DrivingSphere_Building_a_High-fidelity_4D_World_for_Closed-loop_Simulation_CVPR_2025_paper.pdf
-    doi: ""
-    arxiv: ""
-    preview_image: /assets/img/publication_preview/drivingsphere2025-pdf-preview.jpeg
-    google_scholar_id: UebtZRa9Y70C
-  - key: dive2024
-    title: "Dive: Dit-based video generation with enhanced control"
-    authors: J Jiang, G Hong, L Zhou, E Ma, H Hu, X Zhou, J Xiang, F Liu, K Yu, H Sun,
-      ...
-    year: "2024"
-    venue: arXiv preprint arXiv:2409.01595
-    citation_count: 33
-    scholar_url: https://scholar.google.com/citations?view_op=view_citation&hl=en&user=1J061HIAAAAJ&citation_for_view=1J061HIAAAAJ:YsMSGLbcyi4C
-    external_url: https://arxiv.org/abs/2409.01595
-    pdf_url: https://arxiv.org/pdf/2409.01595
-    doi: ""
-    arxiv: ""
-    preview_image: /assets/img/publication_preview/dive2024-pdf-preview.jpeg
-    google_scholar_id: YsMSGLbcyi4C
-  - key: finetuning2025
-    title: Finetuning generative trajectory model with reinforcement learning from human
-      feedback
-    authors: D Li, J Ren, Y Wang, X Wen, P Li, L Xu, K Zhan, Z Xia, P Jia, X Lang, N
-      Xu, ...
-    year: "2025"
-    venue: "arXiv e-prints, arXiv: 2503.10434"
-    citation_count: 32
-    scholar_url: https://scholar.google.com/citations?view_op=view_citation&hl=en&user=1J061HIAAAAJ&citation_for_view=1J061HIAAAAJ:MXK_kJrjxJIC
-    external_url: https://ui.adsabs.harvard.edu/abs/2025arXiv250310434L/abstract
-    pdf_url: ""
-    doi: ""
-    arxiv: ""
-    preview_image: /assets/img/publication_preview/finetuning2025-preview.png
-    google_scholar_id: MXK_kJrjxJIC
-  - key: thebetter2025
-    title: "The better you learn, the smarter you prune: Towards efficient vision-language-action
-      models via differentiable token pruning"
-    authors: T Jiang, X Jiang, Y Ma, X Wen, B Li, K Zhan, P Jia, Y Liu, S Sun, X Lang
-    year: "2025"
-    venue: arXiv preprint arXiv:2509.12594
-    citation_count: 29
-    scholar_url: https://scholar.google.com/citations?view_op=view_citation&hl=en&user=1J061HIAAAAJ&citation_for_view=1J061HIAAAAJ:aqlVkmm33-oC
-    external_url: https://arxiv.org/abs/2509.12594
-    pdf_url: https://arxiv.org/pdf/2509.12594?
-    doi: ""
-    arxiv: ""
-    preview_image: ""
-    google_scholar_id: aqlVkmm33-oC
-  - key: 3drealcar2024
-    title: "3drealcar: An in-the-wild rgb-d car dataset with 360-degree views"
-    authors: X Du, Y Wang, H Sun, Z Wu, H Sheng, S Wang, J Ying, M Lu, T Zhu, ...
-    year: "2025"
-    venue: Proceedings of the IEEE/CVF International Conference on Computer Vision …
-    citation_count: 28
-    scholar_url: https://scholar.google.com/citations?view_op=view_citation&hl=en&user=1J061HIAAAAJ&citation_for_view=1J061HIAAAAJ:Y0pCki6q_DkC
-    external_url: https://openaccess.thecvf.com/content/ICCV2025/html/Du_3DRealCar_An_In-the-wild_RGB-D_Car_Dataset_with_360-degree_Views_ICCV_2025_paper.html
-    pdf_url: https://openaccess.thecvf.com/content/ICCV2025/papers/Du_3DRealCar_An_In-the-wild_RGB-D_Car_Dataset_with_360-degree_Views_ICCV_2025_paper.pdf
-    doi: ""
-    arxiv: ""
-    preview_image: ""
-    google_scholar_id: Y0pCki6q_DkC
-  - key: generalizing2024
-    title: Generalizing motion planners with mixture of experts for autonomous driving
-    authors: Q Sun, H Wang, J Zhan, F Nie, X Wen, L Xu, K Zhan, P Jia, X Lang, ...
-    year: "2025"
-    venue: IEEE International Conference on Robotics and Automation (ICRA), 6033-6039
-    citation_count: 27
-    scholar_url: https://scholar.google.com/citations?view_op=view_citation&hl=en&user=1J061HIAAAAJ&citation_for_view=1J061HIAAAAJ:_FxGoFyzp5QC
-    external_url: https://ieeexplore.ieee.org/abstract/document/11127274/
-    pdf_url: https://arxiv.org/pdf/2410.15774?
-    doi: ""
-    arxiv: ""
-    preview_image: ""
-    google_scholar_id: _FxGoFyzp5QC
-  - key: transdiffuser2025
-    title: "Transdiffuser: End-to-end trajectory generation with decorrelated multi-modal
-      representation for autonomous driving"
-    authors: X Jiang, Y Ma, P Li, L Xu, X Wen, K Zhan, Z Xia, P Jia, XP Lang, S Sun
-    year: "2025"
-    venue: "arXiv e-prints, arXiv: 2505.09315"
-    citation_count: 25
-    scholar_url: https://scholar.google.com/citations?view_op=view_citation&hl=en&user=1J061HIAAAAJ&citation_for_view=1J061HIAAAAJ:Zph67rFs4hoC
-    external_url: https://ui.adsabs.harvard.edu/abs/2025arXiv250509315J/abstract
-    pdf_url: ""
-    doi: ""
-    arxiv: ""
-    preview_image: ""
-    google_scholar_id: Zph67rFs4hoC
-  - key: bevclip2024
-    title: "Bev-clip: Multi-modal bev retrieval methodology for complex scene in autonomous
-      driving"
-    authors: Z Jia, T Gao, C Cai, C Hou, P Jia, F JingChen, Y ZHAO, K Zhan, FU LIU,
-      ...
-    year: "2024"
-    venue: ""
-    citation_count: 24
-    scholar_url: https://scholar.google.com/citations?view_op=view_citation&hl=en&user=1J061HIAAAAJ&citation_for_view=1J061HIAAAAJ:0EnyYjriUFMC
-    external_url: https://openreview.net/forum?id=wlqkRFRkYc
-    pdf_url: https://openreview.net/pdf?id=wlqkRFRkYc
-    doi: ""
-    arxiv: ""
-    preview_image: ""
-    google_scholar_id: 0EnyYjriUFMC
-  - key: bevtsr2025
-    title: "Bev-tsr: Text-scene retrieval in bev space for autonomous driving"
-    authors: T Tang, D Wei, Z Jia, T Gao, C Cai, C Hou, P Jia, K Zhan, H Sun, ...
-    year: "2025"
-    venue: Proceedings of the AAAI Conference on Artificial Intelligence 39 (7), 7275-7283
-    citation_count: 20
-    scholar_url: https://scholar.google.com/citations?view_op=view_citation&hl=en&user=1J061HIAAAAJ&citation_for_view=1J061HIAAAAJ:eQOLeE2rZwMC
-    external_url: https://ojs.aaai.org/index.php/AAAI/article/view/32782
-    pdf_url: https://ojs.aaai.org/index.php/AAAI/article/download/32782/34937
-    doi: ""
-    arxiv: ""
-    preview_image: ""
-    google_scholar_id: eQOLeE2rZwMC
-  - key: worldrftlatent2026
-    title: "Worldrft: Latent world model planning with reinforcement fine-tuning for
-      autonomous driving"
-    authors: P Yang, B Lu, Z Xia, C Han, Y Gao, T Zhang, K Zhan, XP Lang, Y Zheng, ...
-    year: "2026"
-    venue: Proceedings of the AAAI Conference on Artificial Intelligence 40 (14), 11649
-      …
-    citation_count: 18
-    scholar_url: https://scholar.google.com/citations?view_op=view_citation&hl=en&user=1J061HIAAAAJ&citation_for_view=1J061HIAAAAJ:hC7cP41nSMkC
-    external_url: https://ojs.aaai.org/index.php/AAAI/article/view/38149
-    pdf_url: https://ojs.aaai.org/index.php/AAAI/article/download/38149/42111
-    doi: ""
-    arxiv: ""
-    preview_image: ""
-    google_scholar_id: hC7cP41nSMkC
-  - key: geodrive2025
-    title: "Geodrive: 3d geometry-informed driving world model with precise action control"
-    authors: A Chen, W Zheng, Y Wang, X Zhang, K Zhan, P Jia, K Keutzer, S Zhang
-    year: "2025"
-    venue: arXiv preprint arXiv:2505.22421
-    citation_count: 18
-    scholar_url: https://scholar.google.com/citations?view_op=view_citation&hl=en&user=1J061HIAAAAJ&citation_for_view=1J061HIAAAAJ:YOwf2qJgpHMC
-    external_url: https://arxiv.org/abs/2505.22421
-    pdf_url: https://arxiv.org/pdf/2505.22421
-    doi: ""
-    arxiv: ""
-    preview_image: ""
-    google_scholar_id: YOwf2qJgpHMC
-  - key: joint2015
-    title: Joint tracking and classification with constraints and reassignment by radar
-      and ESM
-    authors: H Jiang, K Zhan, L Xu
-    year: "2015"
-    venue: Digital Signal Processing 40, 213-223
-    citation_count: 17
-    scholar_url: https://scholar.google.com/citations?view_op=view_citation&hl=en&user=1J061HIAAAAJ&citation_for_view=1J061HIAAAAJ:2osOgNQ5qMEC
-    external_url: https://www.sciencedirect.com/science/article/pii/S105120041500024X
-    pdf_url: https://www.researchgate.net/profile/Kun-Zhan-4/publication/272522907_Joint_tracking_and_classification_with_constraints_and_reassignment_by_radar_and_ESM/links/5dd4aa18458515cd48ac0bc6/Joint-tracking-and-classification-with-constraints-and-reassignment-by-radar-and-ESM.pdf
-    doi: ""
-    arxiv: ""
-    preview_image: ""
-    google_scholar_id: 2osOgNQ5qMEC
-  - key: balanced2024
-    title: "Balanced 3DGS: Gaussian-wise parallelism rendering with fine-grained tiling"
-    authors: H Gui, L Hu, R Chen, M Huang, Y Yin, J Yang, Y Wu, C Liu, Z Sun, ...
-    year: "2024"
-    venue: arXiv preprint arXiv:2412.17378
-    citation_count: 16
-    scholar_url: https://scholar.google.com/citations?view_op=view_citation&hl=en&user=1J061HIAAAAJ&citation_for_view=1J061HIAAAAJ:roLk4NBRz8UC
-    external_url: https://arxiv.org/abs/2412.17378
-    pdf_url: https://arxiv.org/pdf/2412.17378?
-    doi: ""
-    arxiv: ""
-    preview_image: ""
-    google_scholar_id: roLk4NBRz8UC
-  - key: discretediffusion2025
-    title: Discrete diffusion for reflective vision-language-action models in autonomous
-      driving
-    authors: P Li, Y Zheng, Y Wang, H Wang, H Zhao, J Liu, X Zhan, K Zhan, X Lang
-    year: "2025"
-    venue: arXiv preprint arXiv:2509.20109
-    citation_count: 15
-    scholar_url: https://scholar.google.com/citations?view_op=view_citation&hl=en&user=1J061HIAAAAJ&citation_for_view=1J061HIAAAAJ:Wp0gIr-vW9MC
-    external_url: https://arxiv.org/abs/2509.20109
-    pdf_url: https://arxiv.org/pdf/2509.20109?
-    doi: ""
-    arxiv: ""
-    preview_image: ""
-    google_scholar_id: Wp0gIr-vW9MC
-  - key: joint2014
-    title: Joint tracking and classification based on aerodynamic model and radar cross
-      section
-    authors: H Jiang, L Xu, K Zhan
-    year: "2014"
-    venue: Pattern recognition 47 (9), 3096-3105
-    citation_count: 15
-    scholar_url: https://scholar.google.com/citations?view_op=view_citation&hl=en&user=1J061HIAAAAJ&citation_for_view=1J061HIAAAAJ:qjMakFHDy7sC
-    external_url: https://www.sciencedirect.com/science/article/pii/S0031320314000715
-    pdf_url: ""
-    doi: ""
-    arxiv: ""
-    preview_image: ""
-    google_scholar_id: qjMakFHDy7sC
-  - key: adr12025
-    title: "Ad-r1: Closed-loop reinforcement learning for end-to-end autonomous driving
-      with impartial world models"
-    authors: T Yan, T Tang, X Gui, Y Li, J Zheng, W Huang, L Kong, W Han, X Zhou, ...
-    year: "2026"
-    venue: Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern …
-    citation_count: 12
-    scholar_url: https://scholar.google.com/citations?view_op=view_citation&hl=en&user=1J061HIAAAAJ&citation_for_view=1J061HIAAAAJ:IWHjjKOFINEC
-    external_url: https://arxiv.org/abs/2511.20325
-    pdf_url: https://arxiv.org/pdf/2511.20325
-    doi: ""
-    arxiv: ""
-    preview_image: ""
-    google_scholar_id: IWHjjKOFINEC
-  - key: driveagentr120252
-    title: "DriveAgent-R1: Advancing VLM-based autonomous driving with hybrid thinking
-      and active perception"
-    authors: W Zheng, X Mao, N Ye, P Li, K Zhan, X Lang, H Zhao
-    year: "2025"
-    venue: "arXiv e-prints, arXiv: 2507.20879"
-    citation_count: 11
-    scholar_url: https://scholar.google.com/citations?view_op=view_citation&hl=en&user=1J061HIAAAAJ&citation_for_view=1J061HIAAAAJ:qxL8FJ1GzNcC
-    external_url: https://ui.adsabs.harvard.edu/abs/2025arXiv250720879Z/abstract
-    pdf_url: ""
-    doi: ""
-    arxiv: ""
-    preview_image: ""
-    google_scholar_id: qxL8FJ1GzNcC
-  - key: dive1961
-    title: "Dive: Efficient multi-view driving scenes generation based on video diffusion
-      transformer"
-    authors: J Jiang, G Hong, M Zhang, H Hu, K Zhan, R Shao, L Nie
-    year: "2025"
-    venue: arXiv preprint arXiv:2504.19614
-    citation_count: 11
-    scholar_url: https://scholar.google.com/citations?view_op=view_citation&hl=en&user=1J061HIAAAAJ&citation_for_view=1J061HIAAAAJ:3fE2CSJIrl8C
-    external_url: https://arxiv.org/abs/2504.19614
-    pdf_url: https://arxiv.org/pdf/2504.19614
-    doi: ""
-    arxiv: ""
-    preview_image: ""
-    google_scholar_id: 3fE2CSJIrl8C
-  - key: uatrack2024
-    title: "Ua-track: Uncertainty-aware end-to-end 3d multi-object tracking"
-    authors: L Zhou, T Tang, P Hao, Z He, K Ho, S Gu, W Hou, Z Hao, H Sun, K Zhan, ...
-    year: "2024"
-    venue: "arXiv e-prints, arXiv: 2406.02147"
-    citation_count: 11
-    scholar_url: https://scholar.google.com/citations?view_op=view_citation&hl=en&user=1J061HIAAAAJ&citation_for_view=1J061HIAAAAJ:WF5omc3nYNoC
-    external_url: https://scholar.google.com/scholar?cluster=15720233251267028580&hl=en&oi=scholarr
-    pdf_url: ""
-    doi: ""
-    arxiv: ""
-    preview_image: ""
-    google_scholar_id: WF5omc3nYNoC
-  - key: street2023
-    title: Street gaussians for modeling dynamic urban scenes.(2023)
-    authors: Y Yan, H Lin, C Zhou, W Wang, H Sun, K Zhan, X Lang, X Zhou, S Peng
-    year: "2023"
-    venue: arXiv preprint arXiv:2401.01339
-    citation_count: 11
-    scholar_url: https://scholar.google.com/citations?view_op=view_citation&hl=en&user=1J061HIAAAAJ&citation_for_view=1J061HIAAAAJ:5nxA0vEk-isC
-    external_url: https://scholar.google.com/scholar?cluster=2617111234141021442&hl=en&oi=scholarr
-    pdf_url: ""
-    doi: ""
-    arxiv: ""
-    preview_image: ""
-    google_scholar_id: 5nxA0vEk-isC
-  - key: rlgf2025
-    title: "Rlgf: Reinforcement learning with geometric feedback for autonomous driving
-      video generation"
-    authors: T Yan, W Han, X Zhang, K Zhan, CZ Xu, J Shen
-    year: "2026"
-    venue: Advances in Neural Information Processing Systems 38, 128659-128684
-    citation_count: 10
-    scholar_url: https://scholar.google.com/citations?view_op=view_citation&hl=en&user=1J061HIAAAAJ&citation_for_view=1J061HIAAAAJ:4DMP91E08xMC
-    external_url: https://doi.org/10.48550/arXiv.2509.16500
-    pdf_url: https://arxiv.org/pdf/2509.16500
-    doi: 10.48550/arXiv.2509.16500
-    arxiv: ""
-    preview_image: ""
-    google_scholar_id: 4DMP91E08xMC
-  - key: driveagentr12025
-    title: "DriveAgent-R1: Advancing VLM-based Autonomous Driving with Active Perception
-      and Hybrid Thinking"
-    authors: W Zheng, X Mao, N Ye, P Li, K Zhan, X Lang, H Zhao
-    year: "2025"
-    venue: arXiv preprint arXiv:2507.20879
-    citation_count: 8
-    scholar_url: https://scholar.google.com/citations?view_op=view_citation&hl=en&user=1J061HIAAAAJ&citation_for_view=1J061HIAAAAJ:dhFuZR0502QC
-    external_url: https://arxiv.org/abs/2507.20879
-    pdf_url: https://arxiv.org/pdf/2507.20879
-    doi: ""
-    arxiv: ""
-    preview_image: ""
-    google_scholar_id: dhFuZR0502QC
-  - key: robopearls2025
-    title: "RoboPearls: editable video simulation for robot manipulation"
-    authors: T Tao, L Zhang, Y Wen, K Zhang, JW Bian, X Zhou, T Yan, K Zhan, P Jia,
-      ...
-    year: "2025"
-    venue: Proceedings of the IEEE/CVF International Conference on Computer Vision …
-    citation_count: 6
-    scholar_url: https://scholar.google.com/citations?view_op=view_citation&hl=en&user=1J061HIAAAAJ&citation_for_view=1J061HIAAAAJ:_kc_bZDykSQC
-    external_url: https://doi.org/10.48550/arXiv.2506.22756
-    pdf_url: https://openaccess.thecvf.com/content/ICCV2025/papers/Tao_RoboPearls_Editable_Video_Simulation_for_Robot_Manipulation_ICCV_2025_paper.pdf
-    doi: 10.48550/arXiv.2506.22756
-    arxiv: ""
-    preview_image: ""
-    google_scholar_id: _kc_bZDykSQC
-  - key: omnigen2025
-    title: "Omnigen: Unified multimodal sensor generation for autonomous driving"
-    authors: T Tang, E Ma, X Zhou, L Wang, T Yan, X Zhang, K Zhan, P Jia, X Lang, ...
-    year: "2025"
-    venue: Proceedings of the 33rd ACM International Conference on Multimedia, 9365-9374
-    citation_count: 6
-    scholar_url: https://scholar.google.com/citations?view_op=view_citation&hl=en&user=1J061HIAAAAJ&citation_for_view=1J061HIAAAAJ:mVmsd5A6BfQC
-    external_url: https://doi.org/10.48550/arXiv.2512.14225
-    pdf_url: https://dl.acm.org/doi/pdf/10.1145/3746027.3754772
-    doi: 10.48550/arXiv.2512.14225
-    arxiv: ""
-    preview_image: ""
-    google_scholar_id: mVmsd5A6BfQC
-  - key: xiaoxiaolong2024
-    title: "Xiaoxiao Long, Yilun Chen, and Hao Zhao. Tod3cap: Towards 3d dense captioning
-      in outdoor scenes"
-    authors: B Jin, Y Zheng, P Li, W Li, Y Zheng, S Hu, X Liu, J Zhu, Z Yan, H Sun,
-      ...
-    year: "2024"
-    venue: Computer Vision–ECCV, 367-384
-    citation_count: 6
-    scholar_url: https://scholar.google.com/citations?view_op=view_citation&hl=en&user=1J061HIAAAAJ&citation_for_view=1J061HIAAAAJ:M3ejUd6NZC8C
-    external_url: https://scholar.google.com/scholar?cluster=7647393139940744594&hl=en&oi=scholarr
-    pdf_url: ""
-    doi: ""
-    arxiv: ""
-    preview_image: ""
-    google_scholar_id: M3ejUd6NZC8C
-  - key: s2track2024
-    title: "S2-track: A simple yet strong approach for end-to-end 3d multi-object tracking"
-    authors: T Tang, L Zhou, P Hao, Z He, K Ho, S Gu, Z Hao, H Sun, K Zhan, P Jia, ...
-    year: "2024"
-    venue: arXiv preprint arXiv:2406.02147
-    citation_count: 6
-    scholar_url: https://scholar.google.com/citations?view_op=view_citation&hl=en&user=1J061HIAAAAJ&citation_for_view=1J061HIAAAAJ:ULOm3_A8WrAC
-    external_url: https://arxiv.org/abs/2406.02147
-    pdf_url: https://arxiv.org/pdf/2406.02147
-    doi: ""
-    arxiv: ""
-    preview_image: ""
-    google_scholar_id: ULOm3_A8WrAC
-  - key: joint20142
-    title: Joint tracking and classification on aerodynamic model and RCS by ground-based
-      passive radar
-    authors: L Xu, K Zhan, H Jiang, L Bai, M Wu
-    year: "2014"
-    venue: Proceedings of IEEE Chinese Guidance, Navigation and Control Conference …
-    citation_count: 6
-    scholar_url: https://scholar.google.com/citations?view_op=view_citation&hl=en&user=1J061HIAAAAJ&citation_for_view=1J061HIAAAAJ:9yKSN-GCB0IC
-    external_url: https://ieeexplore.ieee.org/abstract/document/7007306/
-    pdf_url: ""
-    doi: ""
-    arxiv: ""
-    preview_image: ""
-    google_scholar_id: 9yKSN-GCB0IC
-  - key: evolvingfrom2026
-    title: Evolving from Tool User to Creator via Training-Free Experience Reuse in
-      Multimodal Reasoning
-    authors: X Shen, J Chen, L Zheng, H Ma, T Wei, K Zhan
-    year: "2026"
-    venue: arXiv preprint arXiv:2602.01983
-    citation_count: 5
-    scholar_url: https://scholar.google.com/citations?view_op=view_citation&hl=en&user=1J061HIAAAAJ&citation_for_view=1J061HIAAAAJ:hFOr9nPyWt4C
-    external_url: https://arxiv.org/abs/2602.01983
-    pdf_url: https://arxiv.org/pdf/2602.01983
-    doi: ""
-    arxiv: ""
-    preview_image: ""
-    google_scholar_id: hFOr9nPyWt4C
-  - key: posepilot2025
-    title: "PosePilot: Steering camera pose for generative world models with self-supervised
-      depth"
-    authors: B Jin, W Li, B Yang, Z Zhu, J Jiang, H Gao, H Sun, K Zhan, H Hu, X Zhang,
-      ...
-    year: "2025"
-    venue: IEEE/RSJ International Conference on Intelligent Robots and Systems …
-    citation_count: 5
-    scholar_url: https://scholar.google.com/citations?view_op=view_citation&hl=en&user=1J061HIAAAAJ&citation_for_view=1J061HIAAAAJ:kNdYIx-mwKoC
-    external_url: https://ieeexplore.ieee.org/abstract/document/11247293/
-    pdf_url: https://arxiv.org/pdf/2505.01729
-    doi: ""
-    arxiv: ""
-    preview_image: ""
-    google_scholar_id: kNdYIx-mwKoC
-  - key: learningpersonalized2025
-    title: Learning Personalized Driving Styles via Reinforcement Learning from Human
-      Feedback
-    authors: D Li, C Li, Y Wang, J Ren, X Wen, P Li, L Xu, K Zhan, P Jia, X Lang, N
-      Xu, ...
-    year: "2025"
-    venue: arXiv preprint arXiv:2503.10434
-    citation_count: 5
-    scholar_url: https://scholar.google.com/citations?view_op=view_citation&hl=en&user=1J061HIAAAAJ&citation_for_view=1J061HIAAAAJ:mB3voiENLucC
-    external_url: https://arxiv.org/abs/2503.10434
-    pdf_url: https://arxiv.org/pdf/2503.10434
-    doi: ""
-    arxiv: ""
-    preview_image: ""
-    google_scholar_id: mB3voiENLucC
-  - key: transdiffuserdiverse2025
-    title: "Transdiffuser: Diverse trajectory generation with decorrelated multi-modal
-      representation for end-to-end autonomous driving"
-    authors: X Jiang, Y Ma, P Li, L Xu, X Wen, K Zhan, Z Xia, P Jia, X Lang, S Sun
-    year: "2025"
-    venue: arXiv preprint arXiv:2505.09315
-    citation_count: 4
-    scholar_url: https://scholar.google.com/citations?view_op=view_citation&hl=en&user=1J061HIAAAAJ&citation_for_view=1J061HIAAAAJ:HDshCWvjkbEC
-    external_url: https://arxiv.org/abs/2505.09315
-    pdf_url: https://arxiv.org/pdf/2505.09315
-    doi: ""
-    arxiv: ""
-    preview_image: ""
-    google_scholar_id: HDshCWvjkbEC
-  - key: particle2014
-    title: Particle filter based joint tracking and classification
-    authors: K Zhan, L Xu, H Jiang, L Bai, M Wu
-    year: "2014"
-    venue: Proceedings of IEEE Chinese Guidance, Navigation and Control Conference …
-    citation_count: 3
-    scholar_url: https://scholar.google.com/citations?view_op=view_citation&hl=en&user=1J061HIAAAAJ&citation_for_view=1J061HIAAAAJ:UeHWp8X0CEIC
-    external_url: https://ieeexplore.ieee.org/abstract/document/7007307/
-    pdf_url: ""
-    doi: ""
-    arxiv: ""
-    preview_image: ""
-    google_scholar_id: UeHWp8X0CEIC
-  - key: unifyinglanguage2026
-    title: Unifying language-action understanding and generation for autonomous driving
-    authors: X Wang, Q Liu, W Ding, Z Yang, W Li, C Liu, B Li, K Zhan, X Lang, ...
-    year: "2026"
-    venue: Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern …
-    citation_count: 2
-    scholar_url: https://scholar.google.com/citations?view_op=view_citation&hl=en&user=1J061HIAAAAJ&citation_for_view=1J061HIAAAAJ:e5wmG9Sq2KIC
-    external_url: https://arxiv.org/abs/2603.01441
-    pdf_url: https://arxiv.org/pdf/2603.01441
-    doi: ""
-    arxiv: ""
-    preview_image: ""
-    google_scholar_id: e5wmG9Sq2KIC
-  - key: streamingclawtechnical2026
-    title: Streamingclaw technical report
-    authors: J Chen, Z Chen, C Du, M He, W He, H Li, Q Li, Z Liu, H Ma, X Pan, C Ren,
-      ...
-    year: "2026"
-    venue: arXiv preprint arXiv:2603.22120
-    citation_count: 2
-    scholar_url: https://scholar.google.com/citations?view_op=view_citation&hl=en&user=1J061HIAAAAJ&citation_for_view=1J061HIAAAAJ:RHpTSmoSYBkC
-    external_url: https://arxiv.org/abs/2603.22120
-    pdf_url: https://arxiv.org/pdf/2603.22120
-    doi: ""
-    arxiv: ""
-    preview_image: ""
-    google_scholar_id: RHpTSmoSYBkC
-  - key: streetforwardperceiving2026
-    title: "StreetForward: Perceiving Dynamic Street with Feedforward Causal Attention"
-    authors: Z Yu, Z Wang, Y Xie, Y Wang, X Zhang, Y Zhan, K Zhan
-    year: "2026"
-    venue: arXiv preprint arXiv:2603.19552
-    citation_count: 1
-    scholar_url: https://scholar.google.com/citations?view_op=view_citation&hl=en&user=1J061HIAAAAJ&citation_for_view=1J061HIAAAAJ:j3f4tGmQtD8C
-    external_url: https://arxiv.org/abs/2603.19552
-    pdf_url: https://arxiv.org/pdf/2603.19552
-    doi: ""
-    arxiv: ""
-    preview_image: ""
-    google_scholar_id: j3f4tGmQtD8C
-  - key: reflectdrive22026
-    title: "ReflectDrive-2: Reinforcement-Learning-Aligned Self-Editing for Discrete
-      Diffusion Driving"
-    authors: H Wang, Y Wang, B Cui, P Li, B Lu, M Wang, T Wang, C Tang, T Zhang, ...
-    year: "2026"
-    venue: arXiv preprint arXiv:2605.04647
-    citation_count: 1
-    scholar_url: https://scholar.google.com/citations?view_op=view_citation&hl=en&user=1J061HIAAAAJ&citation_for_view=1J061HIAAAAJ:bEWYMUwI8FkC
-    external_url: https://scholar.google.com/citations?view_op=view_citation&hl=en&user=1J061HIAAAAJ&citation_for_view=1J061HIAAAAJ:bEWYMUwI8FkC
-    pdf_url: ""
-    doi: ""
-    arxiv: ""
-    preview_image: ""
-    google_scholar_id: bEWYMUwI8FkC
-  - key: hardwareco2026
-    title: Hardware Co-Design Scaling Laws via Roofline Modelling for On-Device LLMs
-    authors: L Sun, J Jiang, Y Ding, F Li, Y Song, H Zhang, J Ying, L Ren, K Zhan, ...
-    year: "2026"
-    venue: arXiv preprint arXiv:2602.10377
-    citation_count: 1
-    scholar_url: https://scholar.google.com/citations?view_op=view_citation&hl=en&user=1J061HIAAAAJ&citation_for_view=1J061HIAAAAJ:r0BpntZqJG4C
-    external_url: https://arxiv.org/abs/2602.10377
-    pdf_url: https://arxiv.org/pdf/2602.10377
-    doi: ""
-    arxiv: ""
-    preview_image: ""
-    google_scholar_id: r0BpntZqJG4C
-  - key: correctada2026
-    title: "Correctad: A self-correcting agentic system to improve end-to-end planning
-      in autonomous driving"
-    authors: E Ma, L Zhou, T Tang, J Zhang, J Jiang, Z Zhang, D Han, K Zhan, X Zhang,
-      ...
-    year: "2026"
-    venue: Proceedings of the AAAI Conference on Artificial Intelligence 40 (10), 7755-7763
-    citation_count: 1
-    scholar_url: https://scholar.google.com/citations?view_op=view_citation&hl=en&user=1J061HIAAAAJ&citation_for_view=1J061HIAAAAJ:7PzlFSSx8tAC
-    external_url: https://ojs.aaai.org/index.php/AAAI/article/view/37718
-    pdf_url: https://ojs.aaai.org/index.php/AAAI/article/view/37718/41680
-    doi: ""
-    arxiv: ""
-    preview_image: ""
-    google_scholar_id: 7PzlFSSx8tAC
-  - key: styledstreets2025
-    title: "StyledStreets: Multi-style Street Simulator with Spatial and Temporal Consistency"
-    authors: Y Chen, Y Wang, X Zhang, K Zhan, P Jia, Y Zhan, X Lang
-    year: "2025"
-    venue: arXiv preprint arXiv:2503.21104
-    citation_count: 1
-    scholar_url: https://scholar.google.com/citations?view_op=view_citation&hl=en&user=1J061HIAAAAJ&citation_for_view=1J061HIAAAAJ:hqOjcs7Dif8C
-    external_url: https://arxiv.org/abs/2503.21104
-    pdf_url: https://arxiv.org/pdf/2503.21104?
-    doi: ""
-    arxiv: ""
-    preview_image: ""
-    google_scholar_id: hqOjcs7Dif8C
-  - key: streetgaussians2025
-    title: "Street Gaussians: Modeling Dynamic Urban Scenes With Gaussian Primitives"
-    authors: S Peng, Y Long, Y Yan, H Lin, C Zhou, H Sun, K Zhan, X Lang, H Bao, ...
-    year: "2025"
-    venue: IEEE transactions on pattern analysis and machine intelligence
-    citation_count: 1
-    scholar_url: https://scholar.google.com/citations?view_op=view_citation&hl=en&user=1J061HIAAAAJ&citation_for_view=1J061HIAAAAJ:L8Ckcad2t8MC
-    external_url: https://ieeexplore.ieee.org/abstract/document/11260967/
-    pdf_url: https://drive.google.com/file/d/1NWpnbFzPnxyrFch9aCCbEZxLZn9xCjib/view
-    doi: ""
-    arxiv: ""
-    preview_image: ""
-    google_scholar_id: L8Ckcad2t8MC
-  - key: hierarchyugp2025
-    title: "Hierarchy UGP: Hierarchy Unified Gaussian Primitive for Large-Scale Dynamic
-      Scene Reconstruction"
-    authors: H Sun, Q Yang, J Wang, Z Xu, C Liu, Y Wang, K Zhan, H Bao, X Zhou, ...
-    year: "2025"
-    venue: Proceedings of the IEEE/CVF International Conference on Computer Vision …
-    citation_count: 1
-    scholar_url: https://scholar.google.com/citations?view_op=view_citation&hl=en&user=1J061HIAAAAJ&citation_for_view=1J061HIAAAAJ:QIV2ME_5wuYC
-    external_url: https://openaccess.thecvf.com/content/ICCV2025/html/Sun_Hierarchy_UGP_Hierarchy_Unified_Gaussian_Primitive_for_Large-Scale_Dynamic_Scene_ICCV_2025_paper.html
-    pdf_url: https://openaccess.thecvf.com/content/ICCV2025/papers/Sun_Hierarchy_UGP_Hierarchy_Unified_Gaussian_Primitive_for_Large-Scale_Dynamic_Scene_ICCV_2025_paper.pdf
-    doi: ""
-    arxiv: ""
-    preview_image: ""
-    google_scholar_id: QIV2ME_5wuYC
-  - key: sparseworldtc2025
-    title: "SparseWorld-TC: Trajectory-Conditioned Sparse Occupancy World Model"
-    authors: J Du, Y Zhao, Z Guo, Y Pan, W Hou, Z Hao, K Zhan, Q Chen
-    year: "2026"
-    venue: Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern …
-    citation_count: null
-    scholar_url: https://scholar.google.com/citations?view_op=view_citation&hl=en&user=1J061HIAAAAJ&citation_for_view=1J061HIAAAAJ:qUcmZB5y_30C
-    external_url: https://arxiv.org/abs/2511.22039
-    pdf_url: https://arxiv.org/pdf/2511.22039
-    doi: ""
-    arxiv: ""
-    preview_image: ""
-    google_scholar_id: qUcmZB5y_30C
-  - key: metisa2026
-    title: "Metis: A Generalizable and Efficient World-Action Model for Autonomous Driving
-      and Urban Navigation"
-    authors: J Li, Z Liu, D Hu, J Wu, Z Ma, W Wu, C Han, Z Hao, Z Liu, K Zhan, J Deng,
-      ...
-    year: "2026"
-    venue: arXiv preprint arXiv:2606.15869
-    citation_count: null
-    scholar_url: https://scholar.google.com/citations?view_op=view_citation&hl=en&user=1J061HIAAAAJ&citation_for_view=1J061HIAAAAJ:maZDTaKrznsC
-    external_url: https://scholar.google.com/citations?view_op=view_citation&hl=en&user=1J061HIAAAAJ&citation_for_view=1J061HIAAAAJ:maZDTaKrznsC
-    pdf_url: ""
-    doi: ""
-    arxiv: ""
-    preview_image: ""
-    google_scholar_id: maZDTaKrznsC
-  - key: methodand2026
-    title: Method and apparatus for generating trajectory, electronic device, storage
-      medium
-    authors: B Li, K Zhan, P Jia, X Lang, Y Wang, J GU, Y Jiang, Q Jiang, S Zhao, ...
-    year: "2026"
-    venue: US Patent App. 19/037,583
-    citation_count: null
-    scholar_url: https://scholar.google.com/citations?view_op=view_citation&hl=en&user=1J061HIAAAAJ&citation_for_view=1J061HIAAAAJ:-f6ydRqryjwC
-    external_url: https://patents.google.com/patent/US20260008479A1/en
-    pdf_url: ""
-    doi: ""
-    arxiv: ""
-    preview_image: ""
-    google_scholar_id: -f6ydRqryjwC
-  - key: m2asynergizing2026
-    title: "M2A: Synergizing Mathematical and Agentic Reasoning in Large Language Models"
-    authors: J Wang, X Zhou, Q Xu, K Zhan
-    year: "2026"
-    venue: arXiv preprint arXiv:2605.09879
-    citation_count: null
-    scholar_url: https://scholar.google.com/citations?view_op=view_citation&hl=en&user=1J061HIAAAAJ&citation_for_view=1J061HIAAAAJ:iH-uZ7U-co4C
-    external_url: https://scholar.google.com/citations?view_op=view_citation&hl=en&user=1J061HIAAAAJ&citation_for_view=1J061HIAAAAJ:iH-uZ7U-co4C
-    pdf_url: ""
-    doi: ""
-    arxiv: ""
-    preview_image: ""
-    google_scholar_id: iH-uZ7U-co4C
-  - key: liautogeox2026
-    title: "LiAuto-GeoX: Efficient Grounded Driving Transformer"
-    authors: J Lian, H Sun, Y Wu, L Mu, S Wang, L Hui, N Mao, T Wei, P Zhou, K Zhan,
-      ...
-    year: "2026"
-    venue: arXiv preprint arXiv:2606.05774
-    citation_count: null
-    scholar_url: https://scholar.google.com/citations?view_op=view_citation&hl=en&user=1J061HIAAAAJ&citation_for_view=1J061HIAAAAJ:k_IJM867U9cC
-    external_url: https://scholar.google.com/citations?view_op=view_citation&hl=en&user=1J061HIAAAAJ&citation_for_view=1J061HIAAAAJ:k_IJM867U9cC
-    pdf_url: ""
-    doi: ""
-    arxiv: ""
-    preview_image: ""
-    google_scholar_id: k_IJM867U9cC
-  - key: faarformat2026
-    title: "FAAR: Format-Aware Adaptive Rounding for NVFP4"
-    authors: H Li, S Tian, C Lin, Z Zhao, K Zhan
-    year: "2026"
-    venue: arXiv preprint arXiv:2603.22370
-    citation_count: null
-    scholar_url: https://scholar.google.com/citations?view_op=view_citation&hl=en&user=1J061HIAAAAJ&citation_for_view=1J061HIAAAAJ:4JMBOYKVnBMC
-    external_url: https://arxiv.org/abs/2603.22370
-    pdf_url: https://arxiv.org/pdf/2603.22370
-    doi: ""
-    arxiv: ""
-    preview_image: ""
-    google_scholar_id: 4JMBOYKVnBMC
-  - key: evaluatingthe2026
-    title: Evaluating the Search Agent in a Parallel World
-    authors: J Chen, X Shen, L Zheng, L Mu, H Sun, N Mao, H Ma, T Wei, P Zhou, ...
-    year: "2026"
-    venue: arXiv preprint arXiv:2603.04751
-    citation_count: null
-    scholar_url: https://scholar.google.com/citations?view_op=view_citation&hl=en&user=1J061HIAAAAJ&citation_for_view=1J061HIAAAAJ:_Qo2XoVZTnwC
-    external_url: https://arxiv.org/abs/2603.04751
-    pdf_url: https://arxiv.org/pdf/2603.04751
-    doi: ""
-    arxiv: ""
-    preview_image: ""
-    google_scholar_id: _Qo2XoVZTnwC
-  - key: drivelidar4d2025
-    title: "DriveLiDAR4D: Sequential and Controllable LiDAR Scene Generation for Autonomous
-      Driving"
-    authors: K Cai, X Liu, X Zhou, H Hu, J Xiang, L Zhang, X Zhang, K Zhan, Y Zhan,
-      ...
-    year: "2026"
-    venue: Proceedings of the AAAI Conference on Artificial Intelligence 40 (4), 2525-2533
-    citation_count: null
-    scholar_url: https://scholar.google.com/citations?view_op=view_citation&hl=en&user=1J061HIAAAAJ&citation_for_view=1J061HIAAAAJ:ZeXyd9-uunAC
-    external_url: https://doi.org/10.48550/arXiv.2511.13309
-    pdf_url: https://ojs.aaai.org/index.php/AAAI/article/download/37239/41201
-    doi: 10.48550/arXiv.2511.13309
-    arxiv: ""
-    preview_image: ""
-    google_scholar_id: ZeXyd9-uunAC
-  - key: drivecombobenchmarking2026
-    title: "DriveCombo: Benchmarking Compositional Traffic Rule Reasoning in Autonomous
-      Driving"
-    authors: E Ma, J Zhang, G Zheng, T Tang, SE Li, Y Lu, X Zhou, X Zhang, Y Zhan, ...
-    year: "2026"
-    venue: Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern …
-    citation_count: null
-    scholar_url: https://scholar.google.com/citations?view_op=view_citation&hl=en&user=1J061HIAAAAJ&citation_for_view=1J061HIAAAAJ:R3hNpaxXUhUC
-    external_url: https://arxiv.org/abs/2603.01637
-    pdf_url: https://arxiv.org/pdf/2603.01637
-    doi: ""
-    arxiv: ""
-    preview_image: ""
-    google_scholar_id: R3hNpaxXUhUC
-  - key: closedloop2026
-    title: Closed Loop Dynamic Driving Data Mixture for Real-Synthetic Co-Training
-    authors: H Ruan, P Liu, W Ma, Z Li, X Zhang, J Ma, D Xu, K Zhan
-    year: "2026"
-    venue: arXiv preprint arXiv:2605.21372
-    citation_count: null
-    scholar_url: https://scholar.google.com/citations?view_op=view_citation&hl=en&user=1J061HIAAAAJ&citation_for_view=1J061HIAAAAJ:TFP_iSt0sucC
-    external_url: https://scholar.google.com/citations?view_op=view_citation&hl=en&user=1J061HIAAAAJ&citation_for_view=1J061HIAAAAJ:TFP_iSt0sucC
-    pdf_url: ""
-    doi: ""
-    arxiv: ""
-    preview_image: ""
-    google_scholar_id: TFP_iSt0sucC
-  - key: hineushigh2025
-    title: "HiNeuS: High-fidelity Neural Surface Mitigating Low-texture and Reflective
-      Ambiguity"
-    authors: Y Wang, X Zhang, K Zhan, P Jia, X Lang
-    year: "2025"
-    venue: Proceedings of the IEEE/CVF International Conference on Computer Vision …
-    citation_count: null
-    scholar_url: https://scholar.google.com/citations?view_op=view_citation&hl=en&user=1J061HIAAAAJ&citation_for_view=1J061HIAAAAJ:4TOpqqG69KYC
-    external_url: https://openaccess.thecvf.com/content/ICCV2025/html/Wang_HiNeuS_High-fidelity_Neural_Surface_Mitigating_Low-texture_and_Reflective_Ambiguity_ICCV_2025_paper.html
-    pdf_url: https://openaccess.thecvf.com/content/ICCV2025/papers/Wang_HiNeuS_High-fidelity_Neural_Surface_Mitigating_Low-texture_and_Reflective_Ambiguity_ICCV_2025_paper.pdf
-    doi: ""
-    arxiv: ""
-    preview_image: ""
-    google_scholar_id: 4TOpqqG69KYC
+- key: drivevlm2024
+  title: 'Drivevlm: The convergence of autonomous driving and large vision-language
+    models'
+  authors: X Tian, J Gu, B Li, Y Liu, Y Wang, Z Zhao, K Zhan, P Jia, X Lang, H Zhao
+  year: '2024'
+  venue: arXiv preprint arXiv:2402.12289
+  citation_count: 658
+  scholar_url: https://scholar.google.com/citations?view_op=view_citation&hl=en&user=1J061HIAAAAJ&citation_for_view=1J061HIAAAAJ:zYLM7Y9cAGgC
+  external_url: https://arxiv.org/abs/2402.12289
+  pdf_url: https://arxiv.org/pdf/2402.12289
+  doi: ''
+  arxiv: ''
+  preview_image: /assets/img/publication_preview/drivevlm2024.png
+  google_scholar_id: zYLM7Y9cAGgC
+- key: street2024
+  title: 'Street gaussians: Modeling dynamic urban scenes with gaussian splatting'
+  authors: Y Yan, H Lin, C Zhou, W Wang, H Sun, K Zhan, X Lang, X Zhou, S Peng
+  year: '2024'
+  venue: European Conference on Computer Vision, 156-173
+  citation_count: 468
+  scholar_url: https://scholar.google.com/citations?view_op=view_citation&hl=en&user=1J061HIAAAAJ&citation_for_view=1J061HIAAAAJ:IjCSPb-OGe4C
+  external_url: https://link.springer.com/chapter/10.1007/978-3-031-73464-9_10
+  pdf_url: https://drive.google.com/file/d/1oX7YhBlVWORrUq1n2LLVgP5sTwDnepjL/view
+  doi: ''
+  arxiv: ''
+  preview_image: /assets/img/publication_preview/street2024-preview.png
+  google_scholar_id: IjCSPb-OGe4C
+- key: recondreamer2025
+  title: 'Recondreamer: Crafting world models for driving scene reconstruction via
+    online restoration'
+  authors: C Ni, G Zhao, X Wang, Z Zhu, W Qin, G Huang, C Liu, Y Chen, Y Wang, ...
+  year: '2025'
+  venue: Proceedings of the Computer Vision and Pattern Recognition Conference, 1559-1569
+  citation_count: 101
+  scholar_url: https://scholar.google.com/citations?view_op=view_citation&hl=en&user=1J061HIAAAAJ&citation_for_view=1J061HIAAAAJ:LkGwnXOMwfcC
+  external_url: https://openaccess.thecvf.com/content/CVPR2025/html/Ni_ReconDreamer_Crafting_World_Models_for_Driving_Scene_Reconstruction_via_Online_CVPR_2025_paper.html
+  pdf_url: https://openaccess.thecvf.com/content/CVPR2025/papers/Ni_ReconDreamer_Crafting_World_Models_for_Driving_Scene_Reconstruction_via_Online_CVPR_2025_paper.pdf
+  doi: ''
+  arxiv: ''
+  preview_image: ''
+  google_scholar_id: LkGwnXOMwfcC
+- key: planagent2024
+  title: 'Planagent: A multi-modal large language agent for closed-loop vehicle motion
+    planning'
+  authors: Y Zheng, Z Xing, Q Zhang, B Jin, P Li, Y Zheng, Z Xia, Y Chen, D Zhao
+  year: '2026'
+  venue: IEEE Transactions on Cognitive and Developmental Systems
+  citation_count: 71
+  scholar_url: https://scholar.google.com/citations?view_op=view_citation&hl=en&user=1J061HIAAAAJ&citation_for_view=1J061HIAAAAJ:Tyk-4Ss8FVUC
+  external_url: https://ieeexplore.ieee.org/abstract/document/11394788/
+  pdf_url: https://arxiv.org/pdf/2406.01587
+  doi: ''
+  arxiv: ''
+  preview_image: ''
+  google_scholar_id: Tyk-4Ss8FVUC
+- key: unleashing2024
+  title: Unleashing generalization of end-to-end autonomous driving with controllable
+    long video generation
+  authors: E Ma, L Zhou, T Tang, Z Zhang, D Han, J Jiang, K Zhan, P Jia, X Lang, ...
+  year: '2024'
+  venue: arXiv preprint arXiv:2406.01349
+  citation_count: 57
+  scholar_url: https://scholar.google.com/citations?view_op=view_citation&hl=en&user=1J061HIAAAAJ&citation_for_view=1J061HIAAAAJ:W7OEmFMy1HYC
+  external_url: https://arxiv.org/abs/2406.01349
+  pdf_url: https://arxiv.org/pdf/2406.01349
+  doi: ''
+  arxiv: ''
+  preview_image: ''
+  google_scholar_id: W7OEmFMy1HYC
+- key: streetcrafter2025
+  title: 'Streetcrafter: Street view synthesis with controllable video diffusion models'
+  authors: Y Yan, Z Xu, H Lin, H Jin, H Guo, Y Wang, K Zhan, X Lang, H Bao, X Zhou,
+    ...
+  year: '2025'
+  venue: Proceedings of the Computer Vision and Pattern Recognition Conference, 822-832
+  citation_count: 48
+  scholar_url: https://scholar.google.com/citations?view_op=view_citation&hl=en&user=1J061HIAAAAJ&citation_for_view=1J061HIAAAAJ:Se3iqnhoufwC
+  external_url: https://openaccess.thecvf.com/content/CVPR2025/html/Yan_StreetCrafter_Street_View_Synthesis_with_Controllable_Video_Diffusion_Models_CVPR_2025_paper.html
+  pdf_url: https://openaccess.thecvf.com/content/CVPR2025/papers/Yan_StreetCrafter_Street_View_Synthesis_with_Controllable_Video_Diffusion_Models_CVPR_2025_paper.pdf
+  doi: ''
+  arxiv: ''
+  preview_image: ''
+  google_scholar_id: Se3iqnhoufwC
+- key: tod3cap2024
+  title: 'Tod3cap: Towards 3d dense captioning in outdoor scenes'
+  authors: B Jin, Y Zheng, P Li, W Li, Y Zheng, S Hu, X Liu, J Zhu, Z Yan, H Sun,
+    ...
+  year: '2024'
+  venue: European Conference on Computer Vision, 367-384
+  citation_count: 46
+  scholar_url: https://scholar.google.com/citations?view_op=view_citation&hl=en&user=1J061HIAAAAJ&citation_for_view=1J061HIAAAAJ:ufrVoPGSRksC
+  external_url: https://link.springer.com/chapter/10.1007/978-3-031-72649-1_21
+  pdf_url: https://arxiv.org/pdf/2403.19589?
+  doi: ''
+  arxiv: ''
+  preview_image: ''
+  google_scholar_id: ufrVoPGSRksC
+- key: drivingsphere2025
+  title: 'Drivingsphere: Building a high-fidelity 4d world for closed-loop simulation'
+  authors: T Yan, D Wu, W Han, J Jiang, X Zhou, K Zhan, C Xu, J Shen
+  year: '2025'
+  venue: Proceedings of the Computer Vision and Pattern Recognition Conference, 27531
+    …
+  citation_count: 38
+  scholar_url: https://scholar.google.com/citations?view_op=view_citation&hl=en&user=1J061HIAAAAJ&citation_for_view=1J061HIAAAAJ:UebtZRa9Y70C
+  external_url: https://openaccess.thecvf.com/content/CVPR2025/html/Yan_DrivingSphere_Building_a_High-fidelity_4D_World_for_Closed-loop_Simulation_CVPR_2025_paper.html
+  pdf_url: https://openaccess.thecvf.com/content/CVPR2025/papers/Yan_DrivingSphere_Building_a_High-fidelity_4D_World_for_Closed-loop_Simulation_CVPR_2025_paper.pdf
+  doi: ''
+  arxiv: ''
+  preview_image: ''
+  google_scholar_id: UebtZRa9Y70C
+- key: dive2024
+  title: 'Dive: Dit-based video generation with enhanced control'
+  authors: J Jiang, G Hong, L Zhou, E Ma, H Hu, X Zhou, J Xiang, F Liu, K Yu, H Sun,
+    ...
+  year: '2024'
+  venue: arXiv preprint arXiv:2409.01595
+  citation_count: 33
+  scholar_url: https://scholar.google.com/citations?view_op=view_citation&hl=en&user=1J061HIAAAAJ&citation_for_view=1J061HIAAAAJ:YsMSGLbcyi4C
+  external_url: https://arxiv.org/abs/2409.01595
+  pdf_url: https://arxiv.org/pdf/2409.01595
+  doi: ''
+  arxiv: ''
+  preview_image: ''
+  google_scholar_id: YsMSGLbcyi4C
+- key: finetuning2025
+  title: Finetuning generative trajectory model with reinforcement learning from human
+    feedback
+  authors: D Li, J Ren, Y Wang, X Wen, P Li, L Xu, K Zhan, Z Xia, P Jia, X Lang, N
+    Xu, ...
+  year: '2025'
+  venue: 'arXiv e-prints, arXiv: 2503.10434'
+  citation_count: 32
+  scholar_url: https://scholar.google.com/citations?view_op=view_citation&hl=en&user=1J061HIAAAAJ&citation_for_view=1J061HIAAAAJ:MXK_kJrjxJIC
+  external_url: https://ui.adsabs.harvard.edu/abs/2025arXiv250310434L/abstract
+  pdf_url: ''
+  doi: ''
+  arxiv: ''
+  preview_image: /assets/img/publication_preview/finetuning2025-preview.png
+  google_scholar_id: MXK_kJrjxJIC
+- key: thebetter2025
+  title: 'The better you learn, the smarter you prune: Towards efficient vision-language-action
+    models via differentiable token pruning'
+  authors: T Jiang, X Jiang, Y Ma, X Wen, B Li, K Zhan, P Jia, Y Liu, S Sun, X Lang
+  year: '2025'
+  venue: arXiv preprint arXiv:2509.12594
+  citation_count: 29
+  scholar_url: https://scholar.google.com/citations?view_op=view_citation&hl=en&user=1J061HIAAAAJ&citation_for_view=1J061HIAAAAJ:aqlVkmm33-oC
+  external_url: https://arxiv.org/abs/2509.12594
+  pdf_url: https://arxiv.org/pdf/2509.12594?
+  doi: ''
+  arxiv: ''
+  preview_image: ''
+  google_scholar_id: aqlVkmm33-oC
+- key: 3drealcar2024
+  title: '3drealcar: An in-the-wild rgb-d car dataset with 360-degree views'
+  authors: X Du, Y Wang, H Sun, Z Wu, H Sheng, S Wang, J Ying, M Lu, T Zhu, ...
+  year: '2025'
+  venue: Proceedings of the IEEE/CVF International Conference on Computer Vision …
+  citation_count: 28
+  scholar_url: https://scholar.google.com/citations?view_op=view_citation&hl=en&user=1J061HIAAAAJ&citation_for_view=1J061HIAAAAJ:Y0pCki6q_DkC
+  external_url: https://openaccess.thecvf.com/content/ICCV2025/html/Du_3DRealCar_An_In-the-wild_RGB-D_Car_Dataset_with_360-degree_Views_ICCV_2025_paper.html
+  pdf_url: https://openaccess.thecvf.com/content/ICCV2025/papers/Du_3DRealCar_An_In-the-wild_RGB-D_Car_Dataset_with_360-degree_Views_ICCV_2025_paper.pdf
+  doi: ''
+  arxiv: ''
+  preview_image: ''
+  google_scholar_id: Y0pCki6q_DkC
+- key: generalizing2024
+  title: Generalizing motion planners with mixture of experts for autonomous driving
+  authors: Q Sun, H Wang, J Zhan, F Nie, X Wen, L Xu, K Zhan, P Jia, X Lang, ...
+  year: '2025'
+  venue: IEEE International Conference on Robotics and Automation (ICRA), 6033-6039
+  citation_count: 27
+  scholar_url: https://scholar.google.com/citations?view_op=view_citation&hl=en&user=1J061HIAAAAJ&citation_for_view=1J061HIAAAAJ:_FxGoFyzp5QC
+  external_url: https://ieeexplore.ieee.org/abstract/document/11127274/
+  pdf_url: https://arxiv.org/pdf/2410.15774?
+  doi: ''
+  arxiv: ''
+  preview_image: ''
+  google_scholar_id: _FxGoFyzp5QC
+- key: transdiffuser2025
+  title: 'Transdiffuser: End-to-end trajectory generation with decorrelated multi-modal
+    representation for autonomous driving'
+  authors: X Jiang, Y Ma, P Li, L Xu, X Wen, K Zhan, Z Xia, P Jia, XP Lang, S Sun
+  year: '2025'
+  venue: 'arXiv e-prints, arXiv: 2505.09315'
+  citation_count: 25
+  scholar_url: https://scholar.google.com/citations?view_op=view_citation&hl=en&user=1J061HIAAAAJ&citation_for_view=1J061HIAAAAJ:Zph67rFs4hoC
+  external_url: https://ui.adsabs.harvard.edu/abs/2025arXiv250509315J/abstract
+  pdf_url: ''
+  doi: ''
+  arxiv: ''
+  preview_image: ''
+  google_scholar_id: Zph67rFs4hoC
+- key: bevclip2024
+  title: 'Bev-clip: Multi-modal bev retrieval methodology for complex scene in autonomous
+    driving'
+  authors: Z Jia, T Gao, C Cai, C Hou, P Jia, F JingChen, Y ZHAO, K Zhan, FU LIU,
+    ...
+  year: '2024'
+  venue: ''
+  citation_count: 24
+  scholar_url: https://scholar.google.com/citations?view_op=view_citation&hl=en&user=1J061HIAAAAJ&citation_for_view=1J061HIAAAAJ:0EnyYjriUFMC
+  external_url: https://openreview.net/forum?id=wlqkRFRkYc
+  pdf_url: https://openreview.net/pdf?id=wlqkRFRkYc
+  doi: ''
+  arxiv: ''
+  preview_image: ''
+  google_scholar_id: 0EnyYjriUFMC
+- key: bevtsr2025
+  title: 'Bev-tsr: Text-scene retrieval in bev space for autonomous driving'
+  authors: T Tang, D Wei, Z Jia, T Gao, C Cai, C Hou, P Jia, K Zhan, H Sun, ...
+  year: '2025'
+  venue: Proceedings of the AAAI Conference on Artificial Intelligence 39 (7), 7275-7283
+  citation_count: 20
+  scholar_url: https://scholar.google.com/citations?view_op=view_citation&hl=en&user=1J061HIAAAAJ&citation_for_view=1J061HIAAAAJ:eQOLeE2rZwMC
+  external_url: https://ojs.aaai.org/index.php/AAAI/article/view/32782
+  pdf_url: https://ojs.aaai.org/index.php/AAAI/article/download/32782/34937
+  doi: ''
+  arxiv: ''
+  preview_image: ''
+  google_scholar_id: eQOLeE2rZwMC
+- key: worldrftlatent2026
+  title: 'Worldrft: Latent world model planning with reinforcement fine-tuning for
+    autonomous driving'
+  authors: P Yang, B Lu, Z Xia, C Han, Y Gao, T Zhang, K Zhan, XP Lang, Y Zheng, ...
+  year: '2026'
+  venue: Proceedings of the AAAI Conference on Artificial Intelligence 40 (14), 11649
+    …
+  citation_count: 18
+  scholar_url: https://scholar.google.com/citations?view_op=view_citation&hl=en&user=1J061HIAAAAJ&citation_for_view=1J061HIAAAAJ:hC7cP41nSMkC
+  external_url: https://ojs.aaai.org/index.php/AAAI/article/view/38149
+  pdf_url: https://ojs.aaai.org/index.php/AAAI/article/download/38149/42111
+  doi: ''
+  arxiv: ''
+  preview_image: ''
+  google_scholar_id: hC7cP41nSMkC
+- key: geodrive2025
+  title: 'Geodrive: 3d geometry-informed driving world model with precise action control'
+  authors: A Chen, W Zheng, Y Wang, X Zhang, K Zhan, P Jia, K Keutzer, S Zhang
+  year: '2025'
+  venue: arXiv preprint arXiv:2505.22421
+  citation_count: 18
+  scholar_url: https://scholar.google.com/citations?view_op=view_citation&hl=en&user=1J061HIAAAAJ&citation_for_view=1J061HIAAAAJ:YOwf2qJgpHMC
+  external_url: https://arxiv.org/abs/2505.22421
+  pdf_url: https://arxiv.org/pdf/2505.22421
+  doi: ''
+  arxiv: ''
+  preview_image: ''
+  google_scholar_id: YOwf2qJgpHMC
+- key: joint2015
+  title: Joint tracking and classification with constraints and reassignment by radar
+    and ESM
+  authors: H Jiang, K Zhan, L Xu
+  year: '2015'
+  venue: Digital Signal Processing 40, 213-223
+  citation_count: 17
+  scholar_url: https://scholar.google.com/citations?view_op=view_citation&hl=en&user=1J061HIAAAAJ&citation_for_view=1J061HIAAAAJ:2osOgNQ5qMEC
+  external_url: https://www.sciencedirect.com/science/article/pii/S105120041500024X
+  pdf_url: https://www.researchgate.net/profile/Kun-Zhan-4/publication/272522907_Joint_tracking_and_classification_with_constraints_and_reassignment_by_radar_and_ESM/links/5dd4aa18458515cd48ac0bc6/Joint-tracking-and-classification-with-constraints-and-reassignment-by-radar-and-ESM.pdf
+  doi: ''
+  arxiv: ''
+  preview_image: ''
+  google_scholar_id: 2osOgNQ5qMEC
+- key: balanced2024
+  title: 'Balanced 3DGS: Gaussian-wise parallelism rendering with fine-grained tiling'
+  authors: H Gui, L Hu, R Chen, M Huang, Y Yin, J Yang, Y Wu, C Liu, Z Sun, ...
+  year: '2024'
+  venue: arXiv preprint arXiv:2412.17378
+  citation_count: 16
+  scholar_url: https://scholar.google.com/citations?view_op=view_citation&hl=en&user=1J061HIAAAAJ&citation_for_view=1J061HIAAAAJ:roLk4NBRz8UC
+  external_url: https://arxiv.org/abs/2412.17378
+  pdf_url: https://arxiv.org/pdf/2412.17378?
+  doi: ''
+  arxiv: ''
+  preview_image: ''
+  google_scholar_id: roLk4NBRz8UC
+- key: discretediffusion2025
+  title: Discrete diffusion for reflective vision-language-action models in autonomous
+    driving
+  authors: P Li, Y Zheng, Y Wang, H Wang, H Zhao, J Liu, X Zhan, K Zhan, X Lang
+  year: '2025'
+  venue: arXiv preprint arXiv:2509.20109
+  citation_count: 15
+  scholar_url: https://scholar.google.com/citations?view_op=view_citation&hl=en&user=1J061HIAAAAJ&citation_for_view=1J061HIAAAAJ:Wp0gIr-vW9MC
+  external_url: https://arxiv.org/abs/2509.20109
+  pdf_url: https://arxiv.org/pdf/2509.20109?
+  doi: ''
+  arxiv: ''
+  preview_image: ''
+  google_scholar_id: Wp0gIr-vW9MC
+- key: joint2014
+  title: Joint tracking and classification based on aerodynamic model and radar cross
+    section
+  authors: H Jiang, L Xu, K Zhan
+  year: '2014'
+  venue: Pattern recognition 47 (9), 3096-3105
+  citation_count: 15
+  scholar_url: https://scholar.google.com/citations?view_op=view_citation&hl=en&user=1J061HIAAAAJ&citation_for_view=1J061HIAAAAJ:qjMakFHDy7sC
+  external_url: https://www.sciencedirect.com/science/article/pii/S0031320314000715
+  pdf_url: ''
+  doi: ''
+  arxiv: ''
+  preview_image: ''
+  google_scholar_id: qjMakFHDy7sC
+- key: adr12025
+  title: 'Ad-r1: Closed-loop reinforcement learning for end-to-end autonomous driving
+    with impartial world models'
+  authors: T Yan, T Tang, X Gui, Y Li, J Zheng, W Huang, L Kong, W Han, X Zhou, ...
+  year: '2026'
+  venue: Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern …
+  citation_count: 12
+  scholar_url: https://scholar.google.com/citations?view_op=view_citation&hl=en&user=1J061HIAAAAJ&citation_for_view=1J061HIAAAAJ:IWHjjKOFINEC
+  external_url: https://arxiv.org/abs/2511.20325
+  pdf_url: https://arxiv.org/pdf/2511.20325
+  doi: ''
+  arxiv: ''
+  preview_image: ''
+  google_scholar_id: IWHjjKOFINEC
+- key: driveagentr120252
+  title: 'DriveAgent-R1: Advancing VLM-based autonomous driving with hybrid thinking
+    and active perception'
+  authors: W Zheng, X Mao, N Ye, P Li, K Zhan, X Lang, H Zhao
+  year: '2025'
+  venue: 'arXiv e-prints, arXiv: 2507.20879'
+  citation_count: 11
+  scholar_url: https://scholar.google.com/citations?view_op=view_citation&hl=en&user=1J061HIAAAAJ&citation_for_view=1J061HIAAAAJ:qxL8FJ1GzNcC
+  external_url: https://ui.adsabs.harvard.edu/abs/2025arXiv250720879Z/abstract
+  pdf_url: ''
+  doi: ''
+  arxiv: ''
+  preview_image: ''
+  google_scholar_id: qxL8FJ1GzNcC
+- key: dive1961
+  title: 'Dive: Efficient multi-view driving scenes generation based on video diffusion
+    transformer'
+  authors: J Jiang, G Hong, M Zhang, H Hu, K Zhan, R Shao, L Nie
+  year: '2025'
+  venue: arXiv preprint arXiv:2504.19614
+  citation_count: 11
+  scholar_url: https://scholar.google.com/citations?view_op=view_citation&hl=en&user=1J061HIAAAAJ&citation_for_view=1J061HIAAAAJ:3fE2CSJIrl8C
+  external_url: https://arxiv.org/abs/2504.19614
+  pdf_url: https://arxiv.org/pdf/2504.19614
+  doi: ''
+  arxiv: ''
+  preview_image: ''
+  google_scholar_id: 3fE2CSJIrl8C
+- key: uatrack2024
+  title: 'Ua-track: Uncertainty-aware end-to-end 3d multi-object tracking'
+  authors: L Zhou, T Tang, P Hao, Z He, K Ho, S Gu, W Hou, Z Hao, H Sun, K Zhan, ...
+  year: '2024'
+  venue: 'arXiv e-prints, arXiv: 2406.02147'
+  citation_count: 11
+  scholar_url: https://scholar.google.com/citations?view_op=view_citation&hl=en&user=1J061HIAAAAJ&citation_for_view=1J061HIAAAAJ:WF5omc3nYNoC
+  external_url: https://scholar.google.com/scholar?cluster=15720233251267028580&hl=en&oi=scholarr
+  pdf_url: ''
+  doi: ''
+  arxiv: ''
+  preview_image: ''
+  google_scholar_id: WF5omc3nYNoC
+- key: street2023
+  title: Street gaussians for modeling dynamic urban scenes.(2023)
+  authors: Y Yan, H Lin, C Zhou, W Wang, H Sun, K Zhan, X Lang, X Zhou, S Peng
+  year: '2023'
+  venue: arXiv preprint arXiv:2401.01339
+  citation_count: 11
+  scholar_url: https://scholar.google.com/citations?view_op=view_citation&hl=en&user=1J061HIAAAAJ&citation_for_view=1J061HIAAAAJ:5nxA0vEk-isC
+  external_url: https://scholar.google.com/scholar?cluster=2617111234141021442&hl=en&oi=scholarr
+  pdf_url: ''
+  doi: ''
+  arxiv: ''
+  preview_image: ''
+  google_scholar_id: 5nxA0vEk-isC
+- key: rlgf2025
+  title: 'Rlgf: Reinforcement learning with geometric feedback for autonomous driving
+    video generation'
+  authors: T Yan, W Han, X Zhang, K Zhan, CZ Xu, J Shen
+  year: '2026'
+  venue: Advances in Neural Information Processing Systems 38, 128659-128684
+  citation_count: 10
+  scholar_url: https://scholar.google.com/citations?view_op=view_citation&hl=en&user=1J061HIAAAAJ&citation_for_view=1J061HIAAAAJ:4DMP91E08xMC
+  external_url: https://doi.org/10.48550/arXiv.2509.16500
+  pdf_url: https://arxiv.org/pdf/2509.16500
+  doi: 10.48550/arXiv.2509.16500
+  arxiv: ''
+  preview_image: ''
+  google_scholar_id: 4DMP91E08xMC
+- key: driveagentr12025
+  title: 'DriveAgent-R1: Advancing VLM-based Autonomous Driving with Active Perception
+    and Hybrid Thinking'
+  authors: W Zheng, X Mao, N Ye, P Li, K Zhan, X Lang, H Zhao
+  year: '2025'
+  venue: arXiv preprint arXiv:2507.20879
+  citation_count: 8
+  scholar_url: https://scholar.google.com/citations?view_op=view_citation&hl=en&user=1J061HIAAAAJ&citation_for_view=1J061HIAAAAJ:dhFuZR0502QC
+  external_url: https://arxiv.org/abs/2507.20879
+  pdf_url: https://arxiv.org/pdf/2507.20879
+  doi: ''
+  arxiv: ''
+  preview_image: ''
+  google_scholar_id: dhFuZR0502QC
+- key: robopearls2025
+  title: 'RoboPearls: editable video simulation for robot manipulation'
+  authors: T Tao, L Zhang, Y Wen, K Zhang, JW Bian, X Zhou, T Yan, K Zhan, P Jia,
+    ...
+  year: '2025'
+  venue: Proceedings of the IEEE/CVF International Conference on Computer Vision …
+  citation_count: 6
+  scholar_url: https://scholar.google.com/citations?view_op=view_citation&hl=en&user=1J061HIAAAAJ&citation_for_view=1J061HIAAAAJ:_kc_bZDykSQC
+  external_url: https://doi.org/10.48550/arXiv.2506.22756
+  pdf_url: https://openaccess.thecvf.com/content/ICCV2025/papers/Tao_RoboPearls_Editable_Video_Simulation_for_Robot_Manipulation_ICCV_2025_paper.pdf
+  doi: 10.48550/arXiv.2506.22756
+  arxiv: ''
+  preview_image: ''
+  google_scholar_id: _kc_bZDykSQC
+- key: omnigen2025
+  title: 'Omnigen: Unified multimodal sensor generation for autonomous driving'
+  authors: T Tang, E Ma, X Zhou, L Wang, T Yan, X Zhang, K Zhan, P Jia, X Lang, ...
+  year: '2025'
+  venue: Proceedings of the 33rd ACM International Conference on Multimedia, 9365-9374
+  citation_count: 6
+  scholar_url: https://scholar.google.com/citations?view_op=view_citation&hl=en&user=1J061HIAAAAJ&citation_for_view=1J061HIAAAAJ:mVmsd5A6BfQC
+  external_url: https://doi.org/10.48550/arXiv.2512.14225
+  pdf_url: https://dl.acm.org/doi/pdf/10.1145/3746027.3754772
+  doi: 10.48550/arXiv.2512.14225
+  arxiv: ''
+  preview_image: ''
+  google_scholar_id: mVmsd5A6BfQC
+- key: xiaoxiaolong2024
+  title: 'Xiaoxiao Long, Yilun Chen, and Hao Zhao. Tod3cap: Towards 3d dense captioning
+    in outdoor scenes'
+  authors: B Jin, Y Zheng, P Li, W Li, Y Zheng, S Hu, X Liu, J Zhu, Z Yan, H Sun,
+    ...
+  year: '2024'
+  venue: Computer Vision–ECCV, 367-384
+  citation_count: 6
+  scholar_url: https://scholar.google.com/citations?view_op=view_citation&hl=en&user=1J061HIAAAAJ&citation_for_view=1J061HIAAAAJ:M3ejUd6NZC8C
+  external_url: https://scholar.google.com/scholar?cluster=7647393139940744594&hl=en&oi=scholarr
+  pdf_url: ''
+  doi: ''
+  arxiv: ''
+  preview_image: ''
+  google_scholar_id: M3ejUd6NZC8C
+- key: s2track2024
+  title: 'S2-track: A simple yet strong approach for end-to-end 3d multi-object tracking'
+  authors: T Tang, L Zhou, P Hao, Z He, K Ho, S Gu, Z Hao, H Sun, K Zhan, P Jia, ...
+  year: '2024'
+  venue: arXiv preprint arXiv:2406.02147
+  citation_count: 6
+  scholar_url: https://scholar.google.com/citations?view_op=view_citation&hl=en&user=1J061HIAAAAJ&citation_for_view=1J061HIAAAAJ:ULOm3_A8WrAC
+  external_url: https://arxiv.org/abs/2406.02147
+  pdf_url: https://arxiv.org/pdf/2406.02147
+  doi: ''
+  arxiv: ''
+  preview_image: ''
+  google_scholar_id: ULOm3_A8WrAC
+- key: joint20142
+  title: Joint tracking and classification on aerodynamic model and RCS by ground-based
+    passive radar
+  authors: L Xu, K Zhan, H Jiang, L Bai, M Wu
+  year: '2014'
+  venue: Proceedings of IEEE Chinese Guidance, Navigation and Control Conference …
+  citation_count: 6
+  scholar_url: https://scholar.google.com/citations?view_op=view_citation&hl=en&user=1J061HIAAAAJ&citation_for_view=1J061HIAAAAJ:9yKSN-GCB0IC
+  external_url: https://ieeexplore.ieee.org/abstract/document/7007306/
+  pdf_url: ''
+  doi: ''
+  arxiv: ''
+  preview_image: ''
+  google_scholar_id: 9yKSN-GCB0IC
+- key: evolvingfrom2026
+  title: Evolving from Tool User to Creator via Training-Free Experience Reuse in
+    Multimodal Reasoning
+  authors: X Shen, J Chen, L Zheng, H Ma, T Wei, K Zhan
+  year: '2026'
+  venue: arXiv preprint arXiv:2602.01983
+  citation_count: 5
+  scholar_url: https://scholar.google.com/citations?view_op=view_citation&hl=en&user=1J061HIAAAAJ&citation_for_view=1J061HIAAAAJ:hFOr9nPyWt4C
+  external_url: https://arxiv.org/abs/2602.01983
+  pdf_url: https://arxiv.org/pdf/2602.01983
+  doi: ''
+  arxiv: ''
+  preview_image: ''
+  google_scholar_id: hFOr9nPyWt4C
+- key: posepilot2025
+  title: 'PosePilot: Steering camera pose for generative world models with self-supervised
+    depth'
+  authors: B Jin, W Li, B Yang, Z Zhu, J Jiang, H Gao, H Sun, K Zhan, H Hu, X Zhang,
+    ...
+  year: '2025'
+  venue: IEEE/RSJ International Conference on Intelligent Robots and Systems …
+  citation_count: 5
+  scholar_url: https://scholar.google.com/citations?view_op=view_citation&hl=en&user=1J061HIAAAAJ&citation_for_view=1J061HIAAAAJ:kNdYIx-mwKoC
+  external_url: https://ieeexplore.ieee.org/abstract/document/11247293/
+  pdf_url: https://arxiv.org/pdf/2505.01729
+  doi: ''
+  arxiv: ''
+  preview_image: ''
+  google_scholar_id: kNdYIx-mwKoC
+- key: learningpersonalized2025
+  title: Learning Personalized Driving Styles via Reinforcement Learning from Human
+    Feedback
+  authors: D Li, C Li, Y Wang, J Ren, X Wen, P Li, L Xu, K Zhan, P Jia, X Lang, N
+    Xu, ...
+  year: '2025'
+  venue: arXiv preprint arXiv:2503.10434
+  citation_count: 5
+  scholar_url: https://scholar.google.com/citations?view_op=view_citation&hl=en&user=1J061HIAAAAJ&citation_for_view=1J061HIAAAAJ:mB3voiENLucC
+  external_url: https://arxiv.org/abs/2503.10434
+  pdf_url: https://arxiv.org/pdf/2503.10434
+  doi: ''
+  arxiv: ''
+  preview_image: ''
+  google_scholar_id: mB3voiENLucC
+- key: transdiffuserdiverse2025
+  title: 'Transdiffuser: Diverse trajectory generation with decorrelated multi-modal
+    representation for end-to-end autonomous driving'
+  authors: X Jiang, Y Ma, P Li, L Xu, X Wen, K Zhan, Z Xia, P Jia, X Lang, S Sun
+  year: '2025'
+  venue: arXiv preprint arXiv:2505.09315
+  citation_count: 4
+  scholar_url: https://scholar.google.com/citations?view_op=view_citation&hl=en&user=1J061HIAAAAJ&citation_for_view=1J061HIAAAAJ:HDshCWvjkbEC
+  external_url: https://arxiv.org/abs/2505.09315
+  pdf_url: https://arxiv.org/pdf/2505.09315
+  doi: ''
+  arxiv: ''
+  preview_image: ''
+  google_scholar_id: HDshCWvjkbEC
+- key: particle2014
+  title: Particle filter based joint tracking and classification
+  authors: K Zhan, L Xu, H Jiang, L Bai, M Wu
+  year: '2014'
+  venue: Proceedings of IEEE Chinese Guidance, Navigation and Control Conference …
+  citation_count: 3
+  scholar_url: https://scholar.google.com/citations?view_op=view_citation&hl=en&user=1J061HIAAAAJ&citation_for_view=1J061HIAAAAJ:UeHWp8X0CEIC
+  external_url: https://ieeexplore.ieee.org/abstract/document/7007307/
+  pdf_url: ''
+  doi: ''
+  arxiv: ''
+  preview_image: ''
+  google_scholar_id: UeHWp8X0CEIC
+- key: unifyinglanguage2026
+  title: Unifying language-action understanding and generation for autonomous driving
+  authors: X Wang, Q Liu, W Ding, Z Yang, W Li, C Liu, B Li, K Zhan, X Lang, ...
+  year: '2026'
+  venue: Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern …
+  citation_count: 2
+  scholar_url: https://scholar.google.com/citations?view_op=view_citation&hl=en&user=1J061HIAAAAJ&citation_for_view=1J061HIAAAAJ:e5wmG9Sq2KIC
+  external_url: https://arxiv.org/abs/2603.01441
+  pdf_url: https://arxiv.org/pdf/2603.01441
+  doi: ''
+  arxiv: ''
+  preview_image: ''
+  google_scholar_id: e5wmG9Sq2KIC
+- key: streamingclawtechnical2026
+  title: Streamingclaw technical report
+  authors: J Chen, Z Chen, C Du, M He, W He, H Li, Q Li, Z Liu, H Ma, X Pan, C Ren,
+    ...
+  year: '2026'
+  venue: arXiv preprint arXiv:2603.22120
+  citation_count: 2
+  scholar_url: https://scholar.google.com/citations?view_op=view_citation&hl=en&user=1J061HIAAAAJ&citation_for_view=1J061HIAAAAJ:RHpTSmoSYBkC
+  external_url: https://arxiv.org/abs/2603.22120
+  pdf_url: https://arxiv.org/pdf/2603.22120
+  doi: ''
+  arxiv: ''
+  preview_image: ''
+  google_scholar_id: RHpTSmoSYBkC
+- key: streetforwardperceiving2026
+  title: 'StreetForward: Perceiving Dynamic Street with Feedforward Causal Attention'
+  authors: Z Yu, Z Wang, Y Xie, Y Wang, X Zhang, Y Zhan, K Zhan
+  year: '2026'
+  venue: arXiv preprint arXiv:2603.19552
+  citation_count: 1
+  scholar_url: https://scholar.google.com/citations?view_op=view_citation&hl=en&user=1J061HIAAAAJ&citation_for_view=1J061HIAAAAJ:j3f4tGmQtD8C
+  external_url: https://arxiv.org/abs/2603.19552
+  pdf_url: https://arxiv.org/pdf/2603.19552
+  doi: ''
+  arxiv: ''
+  preview_image: ''
+  google_scholar_id: j3f4tGmQtD8C
+- key: reflectdrive22026
+  title: 'ReflectDrive-2: Reinforcement-Learning-Aligned Self-Editing for Discrete
+    Diffusion Driving'
+  authors: H Wang, Y Wang, B Cui, P Li, B Lu, M Wang, T Wang, C Tang, T Zhang, ...
+  year: '2026'
+  venue: arXiv preprint arXiv:2605.04647
+  citation_count: 1
+  scholar_url: https://scholar.google.com/citations?view_op=view_citation&hl=en&user=1J061HIAAAAJ&citation_for_view=1J061HIAAAAJ:bEWYMUwI8FkC
+  external_url: https://scholar.google.com/citations?view_op=view_citation&hl=en&user=1J061HIAAAAJ&citation_for_view=1J061HIAAAAJ:bEWYMUwI8FkC
+  pdf_url: ''
+  doi: ''
+  arxiv: ''
+  preview_image: ''
+  google_scholar_id: bEWYMUwI8FkC
+- key: hardwareco2026
+  title: Hardware Co-Design Scaling Laws via Roofline Modelling for On-Device LLMs
+  authors: L Sun, J Jiang, Y Ding, F Li, Y Song, H Zhang, J Ying, L Ren, K Zhan, ...
+  year: '2026'
+  venue: arXiv preprint arXiv:2602.10377
+  citation_count: 1
+  scholar_url: https://scholar.google.com/citations?view_op=view_citation&hl=en&user=1J061HIAAAAJ&citation_for_view=1J061HIAAAAJ:r0BpntZqJG4C
+  external_url: https://arxiv.org/abs/2602.10377
+  pdf_url: https://arxiv.org/pdf/2602.10377
+  doi: ''
+  arxiv: ''
+  preview_image: ''
+  google_scholar_id: r0BpntZqJG4C
+- key: correctada2026
+  title: 'Correctad: A self-correcting agentic system to improve end-to-end planning
+    in autonomous driving'
+  authors: E Ma, L Zhou, T Tang, J Zhang, J Jiang, Z Zhang, D Han, K Zhan, X Zhang,
+    ...
+  year: '2026'
+  venue: Proceedings of the AAAI Conference on Artificial Intelligence 40 (10), 7755-7763
+  citation_count: 1
+  scholar_url: https://scholar.google.com/citations?view_op=view_citation&hl=en&user=1J061HIAAAAJ&citation_for_view=1J061HIAAAAJ:7PzlFSSx8tAC
+  external_url: https://ojs.aaai.org/index.php/AAAI/article/view/37718
+  pdf_url: https://ojs.aaai.org/index.php/AAAI/article/view/37718/41680
+  doi: ''
+  arxiv: ''
+  preview_image: ''
+  google_scholar_id: 7PzlFSSx8tAC
+- key: styledstreets2025
+  title: 'StyledStreets: Multi-style Street Simulator with Spatial and Temporal Consistency'
+  authors: Y Chen, Y Wang, X Zhang, K Zhan, P Jia, Y Zhan, X Lang
+  year: '2025'
+  venue: arXiv preprint arXiv:2503.21104
+  citation_count: 1
+  scholar_url: https://scholar.google.com/citations?view_op=view_citation&hl=en&user=1J061HIAAAAJ&citation_for_view=1J061HIAAAAJ:hqOjcs7Dif8C
+  external_url: https://arxiv.org/abs/2503.21104
+  pdf_url: https://arxiv.org/pdf/2503.21104?
+  doi: ''
+  arxiv: ''
+  preview_image: ''
+  google_scholar_id: hqOjcs7Dif8C
+- key: streetgaussians2025
+  title: 'Street Gaussians: Modeling Dynamic Urban Scenes With Gaussian Primitives'
+  authors: S Peng, Y Long, Y Yan, H Lin, C Zhou, H Sun, K Zhan, X Lang, H Bao, ...
+  year: '2025'
+  venue: IEEE transactions on pattern analysis and machine intelligence
+  citation_count: 1
+  scholar_url: https://scholar.google.com/citations?view_op=view_citation&hl=en&user=1J061HIAAAAJ&citation_for_view=1J061HIAAAAJ:L8Ckcad2t8MC
+  external_url: https://ieeexplore.ieee.org/abstract/document/11260967/
+  pdf_url: https://drive.google.com/file/d/1NWpnbFzPnxyrFch9aCCbEZxLZn9xCjib/view
+  doi: ''
+  arxiv: ''
+  preview_image: ''
+  google_scholar_id: L8Ckcad2t8MC
+- key: hierarchyugp2025
+  title: 'Hierarchy UGP: Hierarchy Unified Gaussian Primitive for Large-Scale Dynamic
+    Scene Reconstruction'
+  authors: H Sun, Q Yang, J Wang, Z Xu, C Liu, Y Wang, K Zhan, H Bao, X Zhou, ...
+  year: '2025'
+  venue: Proceedings of the IEEE/CVF International Conference on Computer Vision …
+  citation_count: 1
+  scholar_url: https://scholar.google.com/citations?view_op=view_citation&hl=en&user=1J061HIAAAAJ&citation_for_view=1J061HIAAAAJ:QIV2ME_5wuYC
+  external_url: https://openaccess.thecvf.com/content/ICCV2025/html/Sun_Hierarchy_UGP_Hierarchy_Unified_Gaussian_Primitive_for_Large-Scale_Dynamic_Scene_ICCV_2025_paper.html
+  pdf_url: https://openaccess.thecvf.com/content/ICCV2025/papers/Sun_Hierarchy_UGP_Hierarchy_Unified_Gaussian_Primitive_for_Large-Scale_Dynamic_Scene_ICCV_2025_paper.pdf
+  doi: ''
+  arxiv: ''
+  preview_image: ''
+  google_scholar_id: QIV2ME_5wuYC
+- key: sparseworldtc2025
+  title: 'SparseWorld-TC: Trajectory-Conditioned Sparse Occupancy World Model'
+  authors: J Du, Y Zhao, Z Guo, Y Pan, W Hou, Z Hao, K Zhan, Q Chen
+  year: '2026'
+  venue: Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern …
+  citation_count: null
+  scholar_url: https://scholar.google.com/citations?view_op=view_citation&hl=en&user=1J061HIAAAAJ&citation_for_view=1J061HIAAAAJ:qUcmZB5y_30C
+  external_url: https://arxiv.org/abs/2511.22039
+  pdf_url: https://arxiv.org/pdf/2511.22039
+  doi: ''
+  arxiv: ''
+  preview_image: ''
+  google_scholar_id: qUcmZB5y_30C
+- key: metisa2026
+  title: 'Metis: A Generalizable and Efficient World-Action Model for Autonomous Driving
+    and Urban Navigation'
+  authors: J Li, Z Liu, D Hu, J Wu, Z Ma, W Wu, C Han, Z Hao, Z Liu, K Zhan, J Deng,
+    ...
+  year: '2026'
+  venue: arXiv preprint arXiv:2606.15869
+  citation_count: null
+  scholar_url: https://scholar.google.com/citations?view_op=view_citation&hl=en&user=1J061HIAAAAJ&citation_for_view=1J061HIAAAAJ:maZDTaKrznsC
+  external_url: https://scholar.google.com/citations?view_op=view_citation&hl=en&user=1J061HIAAAAJ&citation_for_view=1J061HIAAAAJ:maZDTaKrznsC
+  pdf_url: ''
+  doi: ''
+  arxiv: ''
+  preview_image: ''
+  google_scholar_id: maZDTaKrznsC
+- key: methodand2026
+  title: Method and apparatus for generating trajectory, electronic device, storage
+    medium
+  authors: B Li, K Zhan, P Jia, X Lang, Y Wang, J GU, Y Jiang, Q Jiang, S Zhao, ...
+  year: '2026'
+  venue: US Patent App. 19/037,583
+  citation_count: null
+  scholar_url: https://scholar.google.com/citations?view_op=view_citation&hl=en&user=1J061HIAAAAJ&citation_for_view=1J061HIAAAAJ:-f6ydRqryjwC
+  external_url: https://patents.google.com/patent/US20260008479A1/en
+  pdf_url: ''
+  doi: ''
+  arxiv: ''
+  preview_image: ''
+  google_scholar_id: -f6ydRqryjwC
+- key: m2asynergizing2026
+  title: 'M2A: Synergizing Mathematical and Agentic Reasoning in Large Language Models'
+  authors: J Wang, X Zhou, Q Xu, K Zhan
+  year: '2026'
+  venue: arXiv preprint arXiv:2605.09879
+  citation_count: null
+  scholar_url: https://scholar.google.com/citations?view_op=view_citation&hl=en&user=1J061HIAAAAJ&citation_for_view=1J061HIAAAAJ:iH-uZ7U-co4C
+  external_url: https://scholar.google.com/citations?view_op=view_citation&hl=en&user=1J061HIAAAAJ&citation_for_view=1J061HIAAAAJ:iH-uZ7U-co4C
+  pdf_url: ''
+  doi: ''
+  arxiv: ''
+  preview_image: ''
+  google_scholar_id: iH-uZ7U-co4C
+- key: liautogeox2026
+  title: 'LiAuto-GeoX: Efficient Grounded Driving Transformer'
+  authors: J Lian, H Sun, Y Wu, L Mu, S Wang, L Hui, N Mao, T Wei, P Zhou, K Zhan,
+    ...
+  year: '2026'
+  venue: arXiv preprint arXiv:2606.05774
+  citation_count: null
+  scholar_url: https://scholar.google.com/citations?view_op=view_citation&hl=en&user=1J061HIAAAAJ&citation_for_view=1J061HIAAAAJ:k_IJM867U9cC
+  external_url: https://scholar.google.com/citations?view_op=view_citation&hl=en&user=1J061HIAAAAJ&citation_for_view=1J061HIAAAAJ:k_IJM867U9cC
+  pdf_url: ''
+  doi: ''
+  arxiv: ''
+  preview_image: ''
+  google_scholar_id: k_IJM867U9cC
+- key: faarformat2026
+  title: 'FAAR: Format-Aware Adaptive Rounding for NVFP4'
+  authors: H Li, S Tian, C Lin, Z Zhao, K Zhan
+  year: '2026'
+  venue: arXiv preprint arXiv:2603.22370
+  citation_count: null
+  scholar_url: https://scholar.google.com/citations?view_op=view_citation&hl=en&user=1J061HIAAAAJ&citation_for_view=1J061HIAAAAJ:4JMBOYKVnBMC
+  external_url: https://arxiv.org/abs/2603.22370
+  pdf_url: https://arxiv.org/pdf/2603.22370
+  doi: ''
+  arxiv: ''
+  preview_image: ''
+  google_scholar_id: 4JMBOYKVnBMC
+- key: evaluatingthe2026
+  title: Evaluating the Search Agent in a Parallel World
+  authors: J Chen, X Shen, L Zheng, L Mu, H Sun, N Mao, H Ma, T Wei, P Zhou, ...
+  year: '2026'
+  venue: arXiv preprint arXiv:2603.04751
+  citation_count: null
+  scholar_url: https://scholar.google.com/citations?view_op=view_citation&hl=en&user=1J061HIAAAAJ&citation_for_view=1J061HIAAAAJ:_Qo2XoVZTnwC
+  external_url: https://arxiv.org/abs/2603.04751
+  pdf_url: https://arxiv.org/pdf/2603.04751
+  doi: ''
+  arxiv: ''
+  preview_image: ''
+  google_scholar_id: _Qo2XoVZTnwC
+- key: drivelidar4d2025
+  title: 'DriveLiDAR4D: Sequential and Controllable LiDAR Scene Generation for Autonomous
+    Driving'
+  authors: K Cai, X Liu, X Zhou, H Hu, J Xiang, L Zhang, X Zhang, K Zhan, Y Zhan,
+    ...
+  year: '2026'
+  venue: Proceedings of the AAAI Conference on Artificial Intelligence 40 (4), 2525-2533
+  citation_count: null
+  scholar_url: https://scholar.google.com/citations?view_op=view_citation&hl=en&user=1J061HIAAAAJ&citation_for_view=1J061HIAAAAJ:ZeXyd9-uunAC
+  external_url: https://doi.org/10.48550/arXiv.2511.13309
+  pdf_url: https://ojs.aaai.org/index.php/AAAI/article/download/37239/41201
+  doi: 10.48550/arXiv.2511.13309
+  arxiv: ''
+  preview_image: ''
+  google_scholar_id: ZeXyd9-uunAC
+- key: drivecombobenchmarking2026
+  title: 'DriveCombo: Benchmarking Compositional Traffic Rule Reasoning in Autonomous
+    Driving'
+  authors: E Ma, J Zhang, G Zheng, T Tang, SE Li, Y Lu, X Zhou, X Zhang, Y Zhan, ...
+  year: '2026'
+  venue: Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern …
+  citation_count: null
+  scholar_url: https://scholar.google.com/citations?view_op=view_citation&hl=en&user=1J061HIAAAAJ&citation_for_view=1J061HIAAAAJ:R3hNpaxXUhUC
+  external_url: https://arxiv.org/abs/2603.01637
+  pdf_url: https://arxiv.org/pdf/2603.01637
+  doi: ''
+  arxiv: ''
+  preview_image: ''
+  google_scholar_id: R3hNpaxXUhUC
+- key: closedloop2026
+  title: Closed Loop Dynamic Driving Data Mixture for Real-Synthetic Co-Training
+  authors: H Ruan, P Liu, W Ma, Z Li, X Zhang, J Ma, D Xu, K Zhan
+  year: '2026'
+  venue: arXiv preprint arXiv:2605.21372
+  citation_count: null
+  scholar_url: https://scholar.google.com/citations?view_op=view_citation&hl=en&user=1J061HIAAAAJ&citation_for_view=1J061HIAAAAJ:TFP_iSt0sucC
+  external_url: https://scholar.google.com/citations?view_op=view_citation&hl=en&user=1J061HIAAAAJ&citation_for_view=1J061HIAAAAJ:TFP_iSt0sucC
+  pdf_url: ''
+  doi: ''
+  arxiv: ''
+  preview_image: ''
+  google_scholar_id: TFP_iSt0sucC
+- key: hineushigh2025
+  title: 'HiNeuS: High-fidelity Neural Surface Mitigating Low-texture and Reflective
+    Ambiguity'
+  authors: Y Wang, X Zhang, K Zhan, P Jia, X Lang
+  year: '2025'
+  venue: Proceedings of the IEEE/CVF International Conference on Computer Vision …
+  citation_count: null
+  scholar_url: https://scholar.google.com/citations?view_op=view_citation&hl=en&user=1J061HIAAAAJ&citation_for_view=1J061HIAAAAJ:4TOpqqG69KYC
+  external_url: https://openaccess.thecvf.com/content/ICCV2025/html/Wang_HiNeuS_High-fidelity_Neural_Surface_Mitigating_Low-texture_and_Reflective_Ambiguity_ICCV_2025_paper.html
+  pdf_url: https://openaccess.thecvf.com/content/ICCV2025/papers/Wang_HiNeuS_High-fidelity_Neural_Surface_Mitigating_Low-texture_and_Reflective_Ambiguity_ICCV_2025_paper.pdf
+  doi: ''
+  arxiv: ''
+  preview_image: ''
+  google_scholar_id: 4TOpqqG69KYC
 top_publications:
-  - key: drivevlm2024
-    title: "Drivevlm: The convergence of autonomous driving and large vision-language
-      models"
-    authors: X Tian, J Gu, B Li, Y Liu, Y Wang, Z Zhao, K Zhan, P Jia, X Lang, H Zhao
-    year: "2024"
-    venue: arXiv preprint arXiv:2402.12289
-    citation_count: 658
-    scholar_url: https://scholar.google.com/citations?view_op=view_citation&hl=en&user=1J061HIAAAAJ&citation_for_view=1J061HIAAAAJ:zYLM7Y9cAGgC
-    external_url: https://arxiv.org/abs/2402.12289
-    pdf_url: https://arxiv.org/pdf/2402.12289
-    doi: ""
-    arxiv: ""
-    preview_image: /assets/img/publication_preview/drivevlm2024.png
-    google_scholar_id: zYLM7Y9cAGgC
-  - key: street2024
-    title: "Street gaussians: Modeling dynamic urban scenes with gaussian splatting"
-    authors: Y Yan, H Lin, C Zhou, W Wang, H Sun, K Zhan, X Lang, X Zhou, S Peng
-    year: "2024"
-    venue: European Conference on Computer Vision, 156-173
-    citation_count: 468
-    scholar_url: https://scholar.google.com/citations?view_op=view_citation&hl=en&user=1J061HIAAAAJ&citation_for_view=1J061HIAAAAJ:IjCSPb-OGe4C
-    external_url: https://link.springer.com/chapter/10.1007/978-3-031-73464-9_10
-    pdf_url: https://drive.google.com/file/d/1oX7YhBlVWORrUq1n2LLVgP5sTwDnepjL/view
-    doi: ""
-    arxiv: ""
-    preview_image: /assets/img/publication_preview/street2024-preview.png
-    google_scholar_id: IjCSPb-OGe4C
-  - key: recondreamer2025
-    title: "Recondreamer: Crafting world models for driving scene reconstruction via
-      online restoration"
-    authors: C Ni, G Zhao, X Wang, Z Zhu, W Qin, G Huang, C Liu, Y Chen, Y Wang, ...
-    year: "2025"
-    venue: Proceedings of the Computer Vision and Pattern Recognition Conference, 1559-1569
-    citation_count: 101
-    scholar_url: https://scholar.google.com/citations?view_op=view_citation&hl=en&user=1J061HIAAAAJ&citation_for_view=1J061HIAAAAJ:LkGwnXOMwfcC
-    external_url: https://openaccess.thecvf.com/content/CVPR2025/html/Ni_ReconDreamer_Crafting_World_Models_for_Driving_Scene_Reconstruction_via_Online_CVPR_2025_paper.html
-    pdf_url: https://openaccess.thecvf.com/content/CVPR2025/papers/Ni_ReconDreamer_Crafting_World_Models_for_Driving_Scene_Reconstruction_via_Online_CVPR_2025_paper.pdf
-    doi: ""
-    arxiv: ""
-    preview_image: /assets/img/publication_preview/recondreamer2025-pdf-preview.png
-    google_scholar_id: LkGwnXOMwfcC
-  - key: planagent2024
-    title: "Planagent: A multi-modal large language agent for closed-loop vehicle motion
-      planning"
-    authors: Y Zheng, Z Xing, Q Zhang, B Jin, P Li, Y Zheng, Z Xia, Y Chen, D Zhao
-    year: "2026"
-    venue: IEEE Transactions on Cognitive and Developmental Systems
-    citation_count: 71
-    scholar_url: https://scholar.google.com/citations?view_op=view_citation&hl=en&user=1J061HIAAAAJ&citation_for_view=1J061HIAAAAJ:Tyk-4Ss8FVUC
-    external_url: https://ieeexplore.ieee.org/abstract/document/11394788/
-    pdf_url: https://arxiv.org/pdf/2406.01587
-    doi: ""
-    arxiv: ""
-    preview_image: /assets/img/publication_preview/planagent2024-pdf-preview.png
-    google_scholar_id: Tyk-4Ss8FVUC
-  - key: unleashing2024
-    title: Unleashing generalization of end-to-end autonomous driving with controllable
-      long video generation
-    authors: E Ma, L Zhou, T Tang, Z Zhang, D Han, J Jiang, K Zhan, P Jia, X Lang, ...
-    year: "2024"
-    venue: arXiv preprint arXiv:2406.01349
-    citation_count: 57
-    scholar_url: https://scholar.google.com/citations?view_op=view_citation&hl=en&user=1J061HIAAAAJ&citation_for_view=1J061HIAAAAJ:W7OEmFMy1HYC
-    external_url: https://arxiv.org/abs/2406.01349
-    pdf_url: https://arxiv.org/pdf/2406.01349
-    doi: ""
-    arxiv: ""
-    preview_image: /assets/img/publication_preview/unleashing2024-pdf-preview.png
-    google_scholar_id: W7OEmFMy1HYC
-  - key: streetcrafter2025
-    title: "Streetcrafter: Street view synthesis with controllable video diffusion models"
-    authors: Y Yan, Z Xu, H Lin, H Jin, H Guo, Y Wang, K Zhan, X Lang, H Bao, X Zhou,
-      ...
-    year: "2025"
-    venue: Proceedings of the Computer Vision and Pattern Recognition Conference, 822-832
-    citation_count: 48
-    scholar_url: https://scholar.google.com/citations?view_op=view_citation&hl=en&user=1J061HIAAAAJ&citation_for_view=1J061HIAAAAJ:Se3iqnhoufwC
-    external_url: https://openaccess.thecvf.com/content/CVPR2025/html/Yan_StreetCrafter_Street_View_Synthesis_with_Controllable_Video_Diffusion_Models_CVPR_2025_paper.html
-    pdf_url: https://openaccess.thecvf.com/content/CVPR2025/papers/Yan_StreetCrafter_Street_View_Synthesis_with_Controllable_Video_Diffusion_Models_CVPR_2025_paper.pdf
-    doi: ""
-    arxiv: ""
-    preview_image: /assets/img/publication_preview/streetcrafter2025-pdf-preview.jpeg
-    google_scholar_id: Se3iqnhoufwC
-  - key: tod3cap2024
-    title: "Tod3cap: Towards 3d dense captioning in outdoor scenes"
-    authors: B Jin, Y Zheng, P Li, W Li, Y Zheng, S Hu, X Liu, J Zhu, Z Yan, H Sun,
-      ...
-    year: "2024"
-    venue: European Conference on Computer Vision, 367-384
-    citation_count: 46
-    scholar_url: https://scholar.google.com/citations?view_op=view_citation&hl=en&user=1J061HIAAAAJ&citation_for_view=1J061HIAAAAJ:ufrVoPGSRksC
-    external_url: https://link.springer.com/chapter/10.1007/978-3-031-72649-1_21
-    pdf_url: https://arxiv.org/pdf/2403.19589?
-    doi: ""
-    arxiv: ""
-    preview_image: /assets/img/publication_preview/tod3cap2024-pdf-preview.jpeg
-    google_scholar_id: ufrVoPGSRksC
-  - key: drivingsphere2025
-    title: "Drivingsphere: Building a high-fidelity 4d world for closed-loop simulation"
-    authors: T Yan, D Wu, W Han, J Jiang, X Zhou, K Zhan, C Xu, J Shen
-    year: "2025"
-    venue: Proceedings of the Computer Vision and Pattern Recognition Conference, 27531
-      …
-    citation_count: 38
-    scholar_url: https://scholar.google.com/citations?view_op=view_citation&hl=en&user=1J061HIAAAAJ&citation_for_view=1J061HIAAAAJ:UebtZRa9Y70C
-    external_url: https://openaccess.thecvf.com/content/CVPR2025/html/Yan_DrivingSphere_Building_a_High-fidelity_4D_World_for_Closed-loop_Simulation_CVPR_2025_paper.html
-    pdf_url: https://openaccess.thecvf.com/content/CVPR2025/papers/Yan_DrivingSphere_Building_a_High-fidelity_4D_World_for_Closed-loop_Simulation_CVPR_2025_paper.pdf
-    doi: ""
-    arxiv: ""
-    preview_image: /assets/img/publication_preview/drivingsphere2025-pdf-preview.jpeg
-    google_scholar_id: UebtZRa9Y70C
-  - key: dive2024
-    title: "Dive: Dit-based video generation with enhanced control"
-    authors: J Jiang, G Hong, L Zhou, E Ma, H Hu, X Zhou, J Xiang, F Liu, K Yu, H Sun,
-      ...
-    year: "2024"
-    venue: arXiv preprint arXiv:2409.01595
-    citation_count: 33
-    scholar_url: https://scholar.google.com/citations?view_op=view_citation&hl=en&user=1J061HIAAAAJ&citation_for_view=1J061HIAAAAJ:YsMSGLbcyi4C
-    external_url: https://arxiv.org/abs/2409.01595
-    pdf_url: https://arxiv.org/pdf/2409.01595
-    doi: ""
-    arxiv: ""
-    preview_image: /assets/img/publication_preview/dive2024-pdf-preview.jpeg
-    google_scholar_id: YsMSGLbcyi4C
-  - key: finetuning2025
-    title: Finetuning generative trajectory model with reinforcement learning from human
-      feedback
-    authors: D Li, J Ren, Y Wang, X Wen, P Li, L Xu, K Zhan, Z Xia, P Jia, X Lang, N
-      Xu, ...
-    year: "2025"
-    venue: "arXiv e-prints, arXiv: 2503.10434"
-    citation_count: 32
-    scholar_url: https://scholar.google.com/citations?view_op=view_citation&hl=en&user=1J061HIAAAAJ&citation_for_view=1J061HIAAAAJ:MXK_kJrjxJIC
-    external_url: https://ui.adsabs.harvard.edu/abs/2025arXiv250310434L/abstract
-    pdf_url: ""
-    doi: ""
-    arxiv: ""
-    preview_image: /assets/img/publication_preview/finetuning2025-preview.png
-    google_scholar_id: MXK_kJrjxJIC
+- key: drivevlm2024
+  title: 'Drivevlm: The convergence of autonomous driving and large vision-language
+    models'
+  authors: X Tian, J Gu, B Li, Y Liu, Y Wang, Z Zhao, K Zhan, P Jia, X Lang, H Zhao
+  year: '2024'
+  venue: arXiv preprint arXiv:2402.12289
+  citation_count: 658
+  scholar_url: https://scholar.google.com/citations?view_op=view_citation&hl=en&user=1J061HIAAAAJ&citation_for_view=1J061HIAAAAJ:zYLM7Y9cAGgC
+  external_url: https://arxiv.org/abs/2402.12289
+  pdf_url: https://arxiv.org/pdf/2402.12289
+  doi: ''
+  arxiv: ''
+  preview_image: /assets/img/publication_preview/drivevlm2024.png
+  google_scholar_id: zYLM7Y9cAGgC
+- key: street2024
+  title: 'Street gaussians: Modeling dynamic urban scenes with gaussian splatting'
+  authors: Y Yan, H Lin, C Zhou, W Wang, H Sun, K Zhan, X Lang, X Zhou, S Peng
+  year: '2024'
+  venue: European Conference on Computer Vision, 156-173
+  citation_count: 468
+  scholar_url: https://scholar.google.com/citations?view_op=view_citation&hl=en&user=1J061HIAAAAJ&citation_for_view=1J061HIAAAAJ:IjCSPb-OGe4C
+  external_url: https://link.springer.com/chapter/10.1007/978-3-031-73464-9_10
+  pdf_url: https://drive.google.com/file/d/1oX7YhBlVWORrUq1n2LLVgP5sTwDnepjL/view
+  doi: ''
+  arxiv: ''
+  preview_image: /assets/img/publication_preview/street2024-preview.png
+  google_scholar_id: IjCSPb-OGe4C
+- key: recondreamer2025
+  title: 'Recondreamer: Crafting world models for driving scene reconstruction via
+    online restoration'
+  authors: C Ni, G Zhao, X Wang, Z Zhu, W Qin, G Huang, C Liu, Y Chen, Y Wang, ...
+  year: '2025'
+  venue: Proceedings of the Computer Vision and Pattern Recognition Conference, 1559-1569
+  citation_count: 101
+  scholar_url: https://scholar.google.com/citations?view_op=view_citation&hl=en&user=1J061HIAAAAJ&citation_for_view=1J061HIAAAAJ:LkGwnXOMwfcC
+  external_url: https://openaccess.thecvf.com/content/CVPR2025/html/Ni_ReconDreamer_Crafting_World_Models_for_Driving_Scene_Reconstruction_via_Online_CVPR_2025_paper.html
+  pdf_url: https://openaccess.thecvf.com/content/CVPR2025/papers/Ni_ReconDreamer_Crafting_World_Models_for_Driving_Scene_Reconstruction_via_Online_CVPR_2025_paper.pdf
+  doi: ''
+  arxiv: ''
+  preview_image: /assets/img/publication_preview/recondreamer2025-pdf-preview.png
+  google_scholar_id: LkGwnXOMwfcC
+- key: planagent2024
+  title: 'Planagent: A multi-modal large language agent for closed-loop vehicle motion
+    planning'
+  authors: Y Zheng, Z Xing, Q Zhang, B Jin, P Li, Y Zheng, Z Xia, Y Chen, D Zhao
+  year: '2026'
+  venue: IEEE Transactions on Cognitive and Developmental Systems
+  citation_count: 71
+  scholar_url: https://scholar.google.com/citations?view_op=view_citation&hl=en&user=1J061HIAAAAJ&citation_for_view=1J061HIAAAAJ:Tyk-4Ss8FVUC
+  external_url: https://ieeexplore.ieee.org/abstract/document/11394788/
+  pdf_url: https://arxiv.org/pdf/2406.01587
+  doi: ''
+  arxiv: ''
+  preview_image: /assets/img/publication_preview/planagent2024-pdf-preview.png
+  google_scholar_id: Tyk-4Ss8FVUC
+- key: unleashing2024
+  title: Unleashing generalization of end-to-end autonomous driving with controllable
+    long video generation
+  authors: E Ma, L Zhou, T Tang, Z Zhang, D Han, J Jiang, K Zhan, P Jia, X Lang, ...
+  year: '2024'
+  venue: arXiv preprint arXiv:2406.01349
+  citation_count: 57
+  scholar_url: https://scholar.google.com/citations?view_op=view_citation&hl=en&user=1J061HIAAAAJ&citation_for_view=1J061HIAAAAJ:W7OEmFMy1HYC
+  external_url: https://arxiv.org/abs/2406.01349
+  pdf_url: https://arxiv.org/pdf/2406.01349
+  doi: ''
+  arxiv: ''
+  preview_image: /assets/img/publication_preview/unleashing2024-pdf-preview.png
+  google_scholar_id: W7OEmFMy1HYC
+- key: streetcrafter2025
+  title: 'Streetcrafter: Street view synthesis with controllable video diffusion models'
+  authors: Y Yan, Z Xu, H Lin, H Jin, H Guo, Y Wang, K Zhan, X Lang, H Bao, X Zhou,
+    ...
+  year: '2025'
+  venue: Proceedings of the Computer Vision and Pattern Recognition Conference, 822-832
+  citation_count: 48
+  scholar_url: https://scholar.google.com/citations?view_op=view_citation&hl=en&user=1J061HIAAAAJ&citation_for_view=1J061HIAAAAJ:Se3iqnhoufwC
+  external_url: https://openaccess.thecvf.com/content/CVPR2025/html/Yan_StreetCrafter_Street_View_Synthesis_with_Controllable_Video_Diffusion_Models_CVPR_2025_paper.html
+  pdf_url: https://openaccess.thecvf.com/content/CVPR2025/papers/Yan_StreetCrafter_Street_View_Synthesis_with_Controllable_Video_Diffusion_Models_CVPR_2025_paper.pdf
+  doi: ''
+  arxiv: ''
+  preview_image: /assets/img/publication_preview/streetcrafter2025-pdf-preview.jpeg
+  google_scholar_id: Se3iqnhoufwC
+- key: tod3cap2024
+  title: 'Tod3cap: Towards 3d dense captioning in outdoor scenes'
+  authors: B Jin, Y Zheng, P Li, W Li, Y Zheng, S Hu, X Liu, J Zhu, Z Yan, H Sun,
+    ...
+  year: '2024'
+  venue: European Conference on Computer Vision, 367-384
+  citation_count: 46
+  scholar_url: https://scholar.google.com/citations?view_op=view_citation&hl=en&user=1J061HIAAAAJ&citation_for_view=1J061HIAAAAJ:ufrVoPGSRksC
+  external_url: https://link.springer.com/chapter/10.1007/978-3-031-72649-1_21
+  pdf_url: https://arxiv.org/pdf/2403.19589?
+  doi: ''
+  arxiv: ''
+  preview_image: /assets/img/publication_preview/tod3cap2024-pdf-preview.jpeg
+  google_scholar_id: ufrVoPGSRksC
+- key: drivingsphere2025
+  title: 'Drivingsphere: Building a high-fidelity 4d world for closed-loop simulation'
+  authors: T Yan, D Wu, W Han, J Jiang, X Zhou, K Zhan, C Xu, J Shen
+  year: '2025'
+  venue: Proceedings of the Computer Vision and Pattern Recognition Conference, 27531
+    …
+  citation_count: 38
+  scholar_url: https://scholar.google.com/citations?view_op=view_citation&hl=en&user=1J061HIAAAAJ&citation_for_view=1J061HIAAAAJ:UebtZRa9Y70C
+  external_url: https://openaccess.thecvf.com/content/CVPR2025/html/Yan_DrivingSphere_Building_a_High-fidelity_4D_World_for_Closed-loop_Simulation_CVPR_2025_paper.html
+  pdf_url: https://openaccess.thecvf.com/content/CVPR2025/papers/Yan_DrivingSphere_Building_a_High-fidelity_4D_World_for_Closed-loop_Simulation_CVPR_2025_paper.pdf
+  doi: ''
+  arxiv: ''
+  preview_image: /assets/img/publication_preview/drivingsphere2025-pdf-preview.jpeg
+  google_scholar_id: UebtZRa9Y70C
+- key: dive2024
+  title: 'Dive: Dit-based video generation with enhanced control'
+  authors: J Jiang, G Hong, L Zhou, E Ma, H Hu, X Zhou, J Xiang, F Liu, K Yu, H Sun,
+    ...
+  year: '2024'
+  venue: arXiv preprint arXiv:2409.01595
+  citation_count: 33
+  scholar_url: https://scholar.google.com/citations?view_op=view_citation&hl=en&user=1J061HIAAAAJ&citation_for_view=1J061HIAAAAJ:YsMSGLbcyi4C
+  external_url: https://arxiv.org/abs/2409.01595
+  pdf_url: https://arxiv.org/pdf/2409.01595
+  doi: ''
+  arxiv: ''
+  preview_image: /assets/img/publication_preview/dive2024-pdf-preview.jpeg
+  google_scholar_id: YsMSGLbcyi4C
+- key: finetuning2025
+  title: Finetuning generative trajectory model with reinforcement learning from human
+    feedback
+  authors: D Li, J Ren, Y Wang, X Wen, P Li, L Xu, K Zhan, Z Xia, P Jia, X Lang, N
+    Xu, ...
+  year: '2025'
+  venue: 'arXiv e-prints, arXiv: 2503.10434'
+  citation_count: 32
+  scholar_url: https://scholar.google.com/citations?view_op=view_citation&hl=en&user=1J061HIAAAAJ&citation_for_view=1J061HIAAAAJ:MXK_kJrjxJIC
+  external_url: https://ui.adsabs.harvard.edu/abs/2025arXiv250310434L/abstract
+  pdf_url: ''
+  doi: ''
+  arxiv: ''
+  preview_image: /assets/img/publication_preview/finetuning2025-preview.png
+  google_scholar_id: MXK_kJrjxJIC
