@@ -1,0 +1,71 @@
+{% assign is_zh = false %}
+{% if page.lang == 'zh' %}
+  {% assign is_zh = true %}
+{% endif %}
+{% assign progress = site.data.progress | default: {} %}
+{% assign progress_items = progress.items | default: empty %}
+
+{% if is_zh %}
+  {% assign section_title = '近期进展' %}
+  {% assign section_desc = '论文、个人动态与公司公开进展；自动发现的内容均经过人工确认后发布。' %}
+  {% assign personal_label = '个人' %}
+  {% assign company_label = '公司' %}
+  {% assign link_label = '查看详情' %}
+  {% assign updated_prefix = '最近更新：' %}
+{% else %}
+  {% assign section_title = 'Recent Progress' %}
+  {% assign section_desc = 'Research, personal milestones, and public company updates, published only after manual approval.' %}
+  {% assign personal_label = 'Personal' %}
+  {% assign company_label = 'Company' %}
+  {% assign link_label = 'View update' %}
+  {% assign updated_prefix = 'Last updated: ' %}
+{% endif %}
+
+{% if progress_items.size > 0 %}
+  <section class="about-section">
+    <div class="about-section__header">
+      <div>
+        <h2>{{ section_title }}</h2>
+        <p>{{ section_desc }}</p>
+      </div>
+      {% if progress.updated_at %}
+        <span class="about-section__meta">
+          {{- updated_prefix -}}
+          {{- progress.updated_at | date: '%Y-%m-%d' -}}
+        </span>
+      {% endif %}
+    </div>
+
+    <div class="about-highlight-grid">
+      {% for item in progress_items limit: 6 %}
+        {% if is_zh %}
+          {% assign item_title = item.title_zh | default: item.title %}
+          {% assign item_summary = item.summary_zh | default: item.summary %}
+        {% else %}
+          {% assign item_title = item.title %}
+          {% assign item_summary = item.summary %}
+        {% endif %}
+        <article class="about-highlight-card">
+          <div class="progress-card__meta">
+            <span>
+              {%- if item.category == 'personal' %}{{ personal_label }}{% else %}{{ company_label }}{% endif -%}
+            </span>
+            {% if item.date -%}
+              <time datetime="{{ item.date | escape }}">{{ item.date | date: '%Y-%m-%d' }}</time>
+            {%- endif %}
+            {% if item.source -%}
+              <span>{{ item.source | escape }}</span>
+            {%- endif %}
+          </div>
+          <h3>{{ item_title | escape }}</h3>
+          {% if item_summary %}
+            <p>{{ item_summary | escape }}</p>
+          {% endif %}
+          {% if item.url %}
+            <a class="about-link" href="{{ item.url | escape }}" rel="noopener noreferrer">{{ link_label }}</a>
+          {% endif %}
+        </article>
+      {% endfor %}
+    </div>
+  </section>
+{% endif %}

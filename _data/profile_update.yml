@@ -1,0 +1,38 @@
+# The GitHub Actions schedule is defined in .github/workflows/update-scholar.yml.
+# Google News results are candidates only: they must pass the filters below and
+# are never published until the repository owner approves the generated PR.
+progress:
+  max_items: 6
+  lookback_days: 120
+  sources:
+    - key: kun-zhan-news
+      name: Kun Zhan in the news
+      category: personal
+      enabled: true
+      limit: 4
+      google_news_query: '"詹锟" OR "Kun Zhan" when:120d'
+      locale:
+        language: zh-CN
+        country: CN
+        edition: CN:zh-Hans
+      include_any:
+        - 詹锟
+        - Kun Zhan
+      exclude_any:
+        - 詹昆
+    - key: li-auto-ai-news
+      name: Li Auto AI news
+      category: company
+      enabled: true
+      limit: 6
+      google_news_query: '"理想汽车" (VLA OR "Mind GPT" OR 具身智能 OR 自动驾驶 OR 基座模型) when:120d'
+      locale:
+        language: zh-CN
+        country: CN
+        edition: CN:zh-Hans
+      include_any:
+        - VLA
+        - Mind GPT
+        - 具身智能
+        - 自动驾驶
+        - 基座模型

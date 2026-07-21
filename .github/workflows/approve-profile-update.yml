@@ -1,0 +1,144 @@
+name: Apply Approved Profile Update
+
+on:
+  issue_comment:
+    types:
+      - created
+
+permissions:
+  actions: write
+  contents: write
+  issues: write
+  pull-requests: write
+
+concurrency:
+  group: profile-update-${{ github.repository }}
+  cancel-in-progress: false
+
+env:
+  PROFILE_UPDATE_EMAIL: ${{ vars.PROFILE_UPDATE_EMAIL || 'zk_1028@aliyun.com' }}
+  SMTP_FROM: ${{ secrets.SMTP_FROM }}
+  SMTP_HOST: ${{ secrets.SMTP_HOST }}
+  SMTP_PASSWORD: ${{ secrets.SMTP_PASSWORD }}
+  SMTP_PORT: ${{ secrets.SMTP_PORT || '465' }}
+  SMTP_SECURITY: ${{ secrets.SMTP_SECURITY || 'ssl' }}
+  SMTP_USERNAME: ${{ secrets.SMTP_USERNAME }}
+
+jobs:
+  apply:
+    if: >-
+      github.event.issue.pull_request &&
+      (github.event.comment.body == '/approve' || github.event.comment.body == '/reject')
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+
+    steps:
+      - name: Validate owner and candidate
+        id: candidate
+        env:
+          COMMAND: ${{ github.event.comment.body }}
+          DEFAULT_BRANCH: ${{ github.event.repository.default_branch }}
+          GH_TOKEN: ${{ github.token }}
+          PR_NUMBER: ${{ github.event.issue.number }}
+          REPOSITORY: ${{ github.repository }}
+          REPOSITORY_OWNER: ${{ github.repository_owner }}
+        run: |
+          if [ "$GITHUB_ACTOR" != "$REPOSITORY_OWNER" ]; then
+            gh pr comment "$PR_NUMBER" --body "This command can only be used by the repository owner."
+            exit 1
+          fi
+
+          PR_JSON="$(gh api "repos/${REPOSITORY}/pulls/${PR_NUMBER}")"
+          BASE_REF="$(jq -r '.base.ref' <<< "$PR_JSON")"
+          HEAD_REF="$(jq -r '.head.ref' <<< "$PR_JSON")"
+          HEAD_REPO="$(jq -r '.head.repo.full_name' <<< "$PR_JSON")"
+          HEAD_SHA="$(jq -r '.head.sha' <<< "$PR_JSON")"
+          STATE="$(jq -r '.state' <<< "$PR_JSON")"
+          LABEL_OK="$(gh pr view "$PR_NUMBER" --json labels --jq 'any(.labels[]; .name == "profile-update:emailed")')"
+
+          if [ "$STATE" != "open" ] || [ "$BASE_REF" != "$DEFAULT_BRANCH" ]; then
+            echo "Candidate is not an open PR against the default branch."
+            exit 1
+          fi
+          if [ "$HEAD_REPO" != "$REPOSITORY" ] || [[ "$HEAD_REF" != automation/profile-update-* ]]; then
+            echo "Candidate branch is not an authorized automation branch."
+            exit 1
+          fi
+          if [ "$LABEL_OK" != "true" ]; then
+            echo "The confirmation email was not successfully delivered for this candidate."
+            exit 1
+          fi
+
+          echo "command=$COMMAND" >> "$GITHUB_OUTPUT"
+          echo "head_ref=$HEAD_REF" >> "$GITHUB_OUTPUT"
+          echo "head_sha=$HEAD_SHA" >> "$GITHUB_OUTPUT"
+          echo "url=${{ github.event.issue.html_url }}" >> "$GITHUB_OUTPUT"
+
+      - name: Checkout trusted automation code
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.repository.default_branch }}
+
+      - name: Save review summary
+        env:
+          GH_TOKEN: ${{ github.token }}
+          PR_NUMBER: ${{ github.event.issue.number }}
+        run: gh pr view "$PR_NUMBER" --json body --jq .body > "$RUNNER_TEMP/profile-update-summary.md"
+
+      - name: Reject candidate
+        if: steps.candidate.outputs.command == '/reject'
+        env:
+          GH_TOKEN: ${{ github.token }}
+          PR_NUMBER: ${{ github.event.issue.number }}
+        run: gh pr close "$PR_NUMBER" --comment "Rejected by the repository owner; no homepage content was published." --delete-branch
+
+      - name: Email rejection receipt
+        if: steps.candidate.outputs.command == '/reject'
+        continue-on-error: true
+        run: >-
+          python bin/send_profile_update_email.py
+          --status rejected
+          --summary "$RUNNER_TEMP/profile-update-summary.md"
+          --review-url "${{ steps.candidate.outputs.url }}"
+
+      - name: Wait for candidate CI
+        if: steps.candidate.outputs.command == '/approve'
+        env:
+          GH_TOKEN: ${{ github.token }}
+          HEAD_REF: ${{ steps.candidate.outputs.head_ref }}
+          HEAD_SHA: ${{ steps.candidate.outputs.head_sha }}
+        run: |
+          RUN_ID=""
+          for ATTEMPT in $(seq 1 12); do
+            RUN_ID="$(gh run list --workflow ci.yml --branch "$HEAD_REF" --event workflow_dispatch --limit 10 --json databaseId,headSha --jq ".[] | select(.headSha == \"${HEAD_SHA}\") | .databaseId" | head -n 1)"
+            [ -n "$RUN_ID" ] && break
+            sleep 5
+          done
+          if [ -n "$RUN_ID" ]; then
+            gh run watch "$RUN_ID" --exit-status
+          else
+            echo "No separately dispatched CI run was found; relying on the validated proposal build."
+          fi
+
+      - name: Merge approved candidate
+        if: steps.candidate.outputs.command == '/approve'
+        env:
+          GH_TOKEN: ${{ github.token }}
+          PR_NUMBER: ${{ github.event.issue.number }}
+        run: gh pr merge "$PR_NUMBER" --squash --delete-branch
+
+      - name: Start homepage deployment
+        if: steps.candidate.outputs.command == '/approve'
+        env:
+          DEFAULT_BRANCH: ${{ github.event.repository.default_branch }}
+          GH_TOKEN: ${{ github.token }}
+        run: gh workflow run deploy.yml --ref "$DEFAULT_BRANCH"
+
+      - name: Email publication receipt
+        if: steps.candidate.outputs.command == '/approve'
+        continue-on-error: true
+        run: >-
+          python bin/send_profile_update_email.py
+          --status published
+          --summary "$RUNNER_TEMP/profile-update-summary.md"
+          --review-url "${{ steps.candidate.outputs.url }}"

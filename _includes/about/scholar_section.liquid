@@ -1,4 +1,7 @@
-{% assign is_zh = page.lang == 'zh' %}
+{% assign is_zh = false %}
+{% if page.lang == 'zh' %}
+  {% assign is_zh = true %}
+{% endif %}
 {% assign scholar = site.data.scholar | default: {} %}
 {% assign profile = scholar.profile | default: {} %}
 {% assign top_publications = scholar.top_publications | default: empty %}

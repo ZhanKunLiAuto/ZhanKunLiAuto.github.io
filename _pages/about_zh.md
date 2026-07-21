@@ -112,32 +112,7 @@ latest_posts:
   </div>
 </section>
 
-<section class="about-section">
-  <div class="about-section__header">
-    <div>
-      <h2>近期里程碑</h2>
-      <p>近期公开发布与演讲，呈现我当前工作的方向。</p>
-    </div>
-  </div>
-
-  <div class="about-highlight-grid">
-    <article class="about-highlight-card">
-      <h3>Livis 发布会主题演讲</h3>
-      <p>作为理想汽车软件与具身智能发布会主讲人，发布全新理想同学模型技术栈，并阐述从智能汽车走向具身智能产品的路径。</p>
-      <a class="about-link" href="https://www.youtube.com/watch?v=E8DX3SZcUfA">观看发布会回放</a>
-    </article>
-    <article class="about-highlight-card">
-      <h3>理想同学 VLA</h3>
-      <p>发布理想汽车基于 VLA 的下一代自动驾驶架构，通过扩展模仿学习、强化学习、模型规模与算力，让真实道路驾驶更安全、更高效。</p>
-      <a class="about-link" href="https://www.ithome.com/0/964/508.htm">阅读发布报道</a>
-    </article>
-    <article class="about-highlight-card">
-      <h3>Mind GPT</h3>
-      <p>发布面向云端与端侧 Agent 智能的 Mind GPT-Pro 和 Mind GPT-Edge 模型家族，实现原生车辆控制、多模态交互与持续在线的本地感知。</p>
-      <a class="about-link" href="https://finance.sina.com.cn/tech/shenji/2026-06-16/doc-inicqhiw6274956.shtml">阅读模型报道</a>
-    </article>
-  </div>
-</section>
+{% include about/progress_section.liquid %}
 
 <section class="about-section">
   <div class="about-section__header">
