@@ -44,7 +44,7 @@ jobs:
           REPOSITORY_OWNER: ${{ github.repository_owner }}
         run: |
           if [ "$GITHUB_ACTOR" != "$REPOSITORY_OWNER" ]; then
-            gh pr comment "$PR_NUMBER" --body "This command can only be used by the repository owner."
+            gh pr comment "$PR_NUMBER" --repo "$REPOSITORY" --body "This command can only be used by the repository owner."
             exit 1
           fi
 
@@ -54,7 +54,7 @@ jobs:
           HEAD_REPO="$(jq -r '.head.repo.full_name' <<< "$PR_JSON")"
           HEAD_SHA="$(jq -r '.head.sha' <<< "$PR_JSON")"
           STATE="$(jq -r '.state' <<< "$PR_JSON")"
-          LABEL_OK="$(gh pr view "$PR_NUMBER" --json labels --jq 'any(.labels[]; .name == "scholar-update:emailed")')"
+          LABEL_OK="$(gh pr view "$PR_NUMBER" --repo "$REPOSITORY" --json labels --jq 'any(.labels[]; .name == "scholar-update:emailed")')"
 
           if [ "$STATE" != "open" ] || [ "$BASE_REF" != "$DEFAULT_BRANCH" ]; then
             echo "Candidate is not an open PR against the default branch."
