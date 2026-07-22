@@ -94,6 +94,177 @@ def test_http_get_returns_response_text(monkeypatch):
     assert "Mozilla/5.0" in calls["headers"]["User-Agent"]
 
 
+def make_serpapi_payload(articles, *, citations=13, h_index=1, i10_index=1, next_page=""):
+    payload = {
+        "search_metadata": {"status": "Success"},
+        "articles": articles,
+        "cited_by": {
+            "table": [
+                {"citations": {"all": citations}},
+                {"h_index": {"all": h_index}},
+                {"i10_index": {"all": i10_index}},
+            ]
+        },
+    }
+    if next_page:
+        payload["serpapi_pagination"] = {"next": next_page}
+    return payload
+
+
+def make_serpapi_article(article_id, title, citations, year="2024"):
+    return {
+        "title": title,
+        "link": (
+            "https://scholar.google.com/citations?view_op=view_citation"
+            f"&user=user123&citation_for_view=user123:{article_id}"
+        ),
+        "citation_id": f"user123:{article_id}",
+        "authors": "Alice Smith, Bob Jones",
+        "publication": f"Journal of Testing, {year}",
+        "cited_by": {"value": citations},
+        "year": year,
+    }
+
+
+def test_fetch_serpapi_page_uses_structured_params(monkeypatch):
+    calls = {}
+    payload = make_serpapi_payload([])
+
+    class DummyResponse:
+        def raise_for_status(self):
+            calls["raised"] = True
+
+        def json(self):
+            return payload
+
+    def fake_get(url, params, timeout, headers):
+        calls.update({"url": url, "params": params, "timeout": timeout, "headers": headers})
+        return DummyResponse()
+
+    monkeypatch.setattr(update_scholar.requests, "get", fake_get)
+
+    result = update_scholar.fetch_serpapi_page("user123", "secret-key", 20)
+
+    assert result == payload
+    assert calls["url"] == update_scholar.SERPAPI_ENDPOINT
+    assert calls["params"] == {
+        "engine": "google_scholar_author",
+        "author_id": "user123",
+        "hl": "en",
+        "sort": "pubdate",
+        "num": update_scholar.SERPAPI_PAGE_SIZE,
+        "start": 20,
+        "api_key": "secret-key",
+    }
+    assert calls["raised"] is True
+
+
+def test_fetch_serpapi_page_does_not_expose_api_key_in_errors(monkeypatch):
+    monkeypatch.setattr(
+        update_scholar.requests,
+        "get",
+        lambda *args, **kwargs: (_ for _ in ()).throw(update_scholar.requests.Timeout("secret-key")),
+    )
+
+    with pytest.raises(update_scholar.ScholarFetchError) as exc_info:
+        update_scholar.fetch_serpapi_page("user123", "secret-key", 0)
+
+    assert "secret-key" not in str(exc_info.value)
+
+
+def test_fetch_serpapi_snapshot_parses_articles_metrics_and_pagination(monkeypatch):
+    first_page = make_serpapi_payload(
+        [make_serpapi_article("first", "First Paper", 12)],
+        citations=13,
+        next_page="https://serpapi.com/search.json?start=1",
+    )
+    second_page = make_serpapi_payload(
+        [make_serpapi_article("second", "Second Paper", 1, year="2023")],
+        citations=13,
+    )
+    calls = []
+
+    def fake_fetch(scholar_id, api_key, start):
+        calls.append((scholar_id, api_key, start))
+        return first_page if start == 0 else second_page
+
+    monkeypatch.setattr(update_scholar, "fetch_serpapi_page", fake_fetch)
+
+    publications, profile = update_scholar.fetch_serpapi_snapshot("user123", "secret-key")
+
+    assert calls == [("user123", "secret-key", 0), ("user123", "secret-key", 1)]
+    assert [entry.fields["google_scholar_id"] for entry in publications] == ["first", "second"]
+    assert [entry.fields["citation_count"] for entry in publications] == ["12", "1"]
+    assert profile == {
+        "papers": 2,
+        "citations": 13,
+        "h_index": 1,
+        "i10_index": 1,
+        "metrics_source": "serpapi",
+        "papers_source": "serpapi",
+    }
+
+
+def test_load_scholar_snapshot_prefers_configured_serpapi(monkeypatch):
+    entries = [
+        make_entry(
+            "paper",
+            title="Paper",
+            author="Author",
+            year="2024",
+            html="https://example.com/paper",
+            scholar_id="paper-id",
+        )
+    ]
+    profile = {"papers": 1, "citations": 12, "h_index": 1, "i10_index": 1}
+    calls = []
+
+    monkeypatch.setenv("SERPAPI_KEY", "secret-key")
+    monkeypatch.setattr(
+        update_scholar,
+        "fetch_serpapi_snapshot",
+        lambda scholar_id, api_key: calls.append((scholar_id, api_key)) or (entries, profile),
+    )
+    monkeypatch.setattr(
+        update_scholar,
+        "load_publications",
+        lambda scholar_id: (_ for _ in ()).throw(AssertionError("fallback should not run")),
+    )
+
+    result = update_scholar.load_scholar_snapshot("user123")
+
+    assert result == ("serpapi", entries, profile)
+    assert calls == [("user123", "secret-key")]
+
+
+def test_load_scholar_snapshot_falls_back_when_serpapi_fails(monkeypatch, capsys):
+    entries = [
+        make_entry(
+            "paper",
+            title="Paper",
+            author="Author",
+            year="2024",
+            html="https://example.com/paper",
+            scholar_id="paper-id",
+        )
+    ]
+
+    monkeypatch.setenv("SERPAPI_KEY", "secret-key")
+    monkeypatch.setattr(
+        update_scholar,
+        "fetch_serpapi_snapshot",
+        lambda scholar_id, api_key: (_ for _ in ()).throw(
+            update_scholar.ScholarFetchError("temporary provider failure")
+        ),
+    )
+    monkeypatch.setattr(update_scholar, "load_publications", lambda scholar_id: ("scholar", entries))
+
+    result = update_scholar.load_scholar_snapshot("user123")
+
+    assert result == ("scholar", entries, None)
+    assert "trying direct sources" in capsys.readouterr().err
+
+
 def test_parse_publications_from_markdown_extracts_entries_and_note():
     text = """
 ignored
@@ -185,6 +356,24 @@ def test_parse_citation_count_and_scholar_links():
     assert update_scholar.parse_citation_count(html) == 128
     assert update_scholar.extract_title_link_from_html(html) == "https://example.com/paper"
     assert update_scholar.extract_pdf_link_from_html(html) == "https://example.com/paper.pdf"
+
+
+def test_fetch_publication_details_treats_missing_cited_by_as_zero(monkeypatch):
+    html = """
+    <div id="gsc_oci_title"><a class="gsc_oci_title_link" href="https://example.com/paper">Paper</a></div>
+    """
+    monkeypatch.setattr(update_scholar, "http_get", lambda url: html)
+
+    details = update_scholar.fetch_publication_details("user123", "gs123")
+
+    assert details["citation_count"] == 0
+
+
+def test_fetch_publication_details_rejects_unexpected_response(monkeypatch):
+    monkeypatch.setattr(update_scholar, "http_get", lambda url: "<html>Consent page</html>")
+
+    with pytest.raises(update_scholar.ScholarFetchError, match="Unexpected Scholar publication"):
+        update_scholar.fetch_publication_details("user123", "gs123")
 
 
 def test_merge_entries_prefers_existing_fields_when_requested():
@@ -374,6 +563,113 @@ def test_build_scholar_data_limits_top_publications_to_ten(monkeypatch):
     assert scholar_data["top_publications"][-1]["title"] == "Paper 2"
 
 
+def test_build_scholar_data_derives_current_metrics_when_profile_fetch_fails(monkeypatch):
+    entries = [
+        make_entry(
+            "paper-high",
+            title="Paper High",
+            author="Author",
+            year="2024",
+            html="https://example.com/high",
+            scholar_id="gs-high",
+            citation_count=12,
+        ),
+        make_entry(
+            "paper-low",
+            title="Paper Low",
+            author="Author",
+            year="2023",
+            html="https://example.com/low",
+            scholar_id="gs-low",
+            citation_count=1,
+        ),
+    ]
+    previous_data = {"profile": {"papers": 3, "citations": 8, "h_index": 1, "i10_index": 0}}
+
+    monkeypatch.setattr(update_scholar, "fetch_publication_details", lambda scholar_id, article_id: {})
+    monkeypatch.setattr(
+        update_scholar,
+        "fetch_profile_stats",
+        lambda scholar_id: (_ for _ in ()).throw(update_scholar.ScholarFetchError("blocked")),
+    )
+    monkeypatch.setattr(update_scholar, "resolve_preview_image", lambda record, previous: "")
+
+    scholar_data = update_scholar.build_scholar_data(entries, "user123", previous_data)
+
+    assert scholar_data["profile"] | {"updated_at": "<ignored>"} == {
+        "papers": 3,
+        "citations": 13,
+        "h_index": 1,
+        "i10_index": 1,
+        "metrics_source": "publication_citations",
+        "papers_source": "previous_profile",
+        "updated_at": "<ignored>",
+    }
+    assert scholar_data["profile"]["updated_at"].endswith("Z")
+    assert update_scholar.CITATION_FRESH_FIELD not in scholar_data["publications"][0]
+
+
+def test_build_scholar_data_uses_supplied_serpapi_profile(monkeypatch):
+    entries = [
+        make_entry(
+            "paper",
+            title="Paper",
+            author="Author",
+            year="2024",
+            html="https://example.com/paper",
+            scholar_id="gs-paper",
+            citation_count=12,
+        )
+    ]
+    profile_stats = {
+        "papers": 1,
+        "citations": 12,
+        "h_index": 1,
+        "i10_index": 1,
+        "metrics_source": "serpapi",
+        "papers_source": "serpapi",
+    }
+
+    monkeypatch.setattr(
+        update_scholar,
+        "fetch_profile_stats",
+        lambda scholar_id: (_ for _ in ()).throw(AssertionError("direct profile fetch should be skipped")),
+    )
+    monkeypatch.setattr(update_scholar, "resolve_preview_image", lambda record, previous: "")
+
+    scholar_data = update_scholar.build_scholar_data(entries, "user123", {}, profile_stats)
+
+    assert scholar_data["profile"]["citations"] == 12
+    assert scholar_data["profile"]["metrics_source"] == "serpapi"
+
+
+def test_build_scholar_data_rejects_incomplete_citation_snapshot(monkeypatch):
+    entries = [
+        make_entry(
+            "paper",
+            title="Paper",
+            author="Author",
+            year="2024",
+            html="https://example.com/paper",
+            scholar_id="gs-paper",
+        )
+    ]
+    previous_data = {
+        "profile": {"papers": 1, "citations": 9, "h_index": 1, "i10_index": 0},
+        "publications": [{"google_scholar_id": "gs-paper", "citation_count": 9}],
+    }
+
+    monkeypatch.setattr(
+        update_scholar,
+        "fetch_publication_details",
+        lambda scholar_id, article_id: (_ for _ in ()).throw(update_scholar.ScholarFetchError("blocked")),
+    )
+    monkeypatch.setattr(update_scholar, "resolve_preview_image", lambda record, previous: "")
+
+    with pytest.raises(update_scholar.ScholarFetchError, match="Citation snapshot is incomplete"):
+        update_scholar.build_scholar_data(entries, "user123", previous_data)
+
+
 def test_write_bib_writes_expected_bibliography(tmp_path, monkeypatch):
     bib_file = tmp_path / "papers.bib"
     monkeypatch.setattr(update_scholar, "BIB_FILE", bib_file)
@@ -423,6 +719,45 @@ def test_main_exits_when_scholar_id_is_missing(monkeypatch, capsys):
     assert "No scholar_userid found" in captured.out
 
 
+def test_main_exits_without_writing_when_metrics_are_incomplete(monkeypatch, capsys):
+    entries = [
+        make_entry(
+            "paper",
+            title="Paper",
+            author="Author",
+            year="2024",
+            html="https://example.com/paper",
+            scholar_id="gs-paper",
+        )
+    ]
+    writes = []
+
+    monkeypatch.setattr(update_scholar, "read_scholar_id", lambda: "scholar-123")
+    monkeypatch.setattr(update_scholar, "read_existing_scholar_data", lambda: {})
+    monkeypatch.setattr(update_scholar, "parse_existing_bib", lambda: [])
+    monkeypatch.setattr(
+        update_scholar,
+        "load_scholar_snapshot",
+        lambda scholar_id: ("scholar", entries, None),
+    )
+    monkeypatch.setattr(
+        update_scholar,
+        "build_scholar_data",
+        lambda entries, scholar_id, previous_data, profile_stats: (_ for _ in ()).throw(
+            update_scholar.ScholarFetchError("Citation snapshot is incomplete")
+        ),
+    )
+    monkeypatch.setattr(update_scholar, "write_bib", lambda entries: writes.append("bib"))
+    monkeypatch.setattr(update_scholar, "write_scholar_data", lambda data: writes.append("data"))
+
+    with pytest.raises(SystemExit) as exc_info:
+        update_scholar.main()
+
+    assert exc_info.value.code == 1
+    assert writes == []
+    assert "Failed to update Scholar metrics: Citation snapshot is incomplete" in capsys.readouterr().out
+
+
 def test_main_loads_merges_and_writes_outputs(monkeypatch, capsys):
     fetched_entries = [
         make_entry(
@@ -456,8 +791,9 @@ def test_main_loads_merges_and_writes_outputs(monkeypatch, capsys):
     monkeypatch.setattr(update_scholar, "parse_existing_bib", lambda: existing_entries)
     monkeypatch.setattr(
         update_scholar,
-        "load_publications",
-        lambda scholar_id: calls.__setitem__("load_publications", scholar_id) or ("scholar", fetched_entries),
+        "load_scholar_snapshot",
+        lambda scholar_id: calls.__setitem__("load_scholar_snapshot", scholar_id)
+        or ("serpapi", fetched_entries, {"citations": 10}),
     )
     monkeypatch.setattr(
         update_scholar,
@@ -471,9 +807,9 @@ def test_main_loads_merges_and_writes_outputs(monkeypatch, capsys):
     monkeypatch.setattr(
         update_scholar,
         "build_scholar_data",
-        lambda entries, scholar_id, previous_data: calls.__setitem__(
+        lambda entries, scholar_id, previous_data, profile_stats: calls.__setitem__(
             "build_scholar_data",
-            (entries, scholar_id, previous_data),
+            (entries, scholar_id, previous_data, profile_stats),
         )
         or scholar_data,
     )
@@ -487,9 +823,14 @@ def test_main_loads_merges_and_writes_outputs(monkeypatch, capsys):
     update_scholar.main()
 
     captured = capsys.readouterr()
-    assert calls["load_publications"] == "scholar-123"
+    assert calls["load_scholar_snapshot"] == "scholar-123"
     assert calls["merge_entries"] == (fetched_entries, existing_entries, False)
-    assert calls["build_scholar_data"] == (merged_entries, "scholar-123", {"profile": {"papers": 1}})
+    assert calls["build_scholar_data"] == (
+        merged_entries,
+        "scholar-123",
+        {"profile": {"papers": 1}},
+        {"citations": 10},
+    )
     assert calls["write_bib"] == merged_entries
     assert calls["write_scholar_data"] == scholar_data
-    assert "Updated 2 publications from scholar" in captured.out
+    assert "Updated 2 publications from serpapi" in captured.out
