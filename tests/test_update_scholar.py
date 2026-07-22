@@ -187,6 +187,24 @@ def test_parse_citation_count_and_scholar_links():
     assert update_scholar.extract_pdf_link_from_html(html) == "https://example.com/paper.pdf"
 
 
+def test_fetch_publication_details_treats_missing_cited_by_as_zero(monkeypatch):
+    html = """
+    <div id="gsc_oci_title"><a class="gsc_oci_title_link" href="https://example.com/paper">Paper</a></div>
+    """
+    monkeypatch.setattr(update_scholar, "http_get", lambda url: html)
+
+    details = update_scholar.fetch_publication_details("user123", "gs123")
+
+    assert details["citation_count"] == 0
+
+
+def test_fetch_publication_details_rejects_unexpected_response(monkeypatch):
+    monkeypatch.setattr(update_scholar, "http_get", lambda url: "<html>Consent page</html>")
+
+    with pytest.raises(update_scholar.ScholarFetchError, match="Unexpected Scholar publication"):
+        update_scholar.fetch_publication_details("user123", "gs123")
+
+
 def test_merge_entries_prefers_existing_fields_when_requested():
     fetched = [
         make_entry(
@@ -374,6 +392,79 @@ def test_build_scholar_data_limits_top_publications_to_ten(monkeypatch):
     assert scholar_data["top_publications"][-1]["title"] == "Paper 2"
 
 
+def test_build_scholar_data_derives_current_metrics_when_profile_fetch_fails(monkeypatch):
+    entries = [
+        make_entry(
+            "paper-high",
+            title="Paper High",
+            author="Author",
+            year="2024",
+            html="https://example.com/high",
+            scholar_id="gs-high",
+            citation_count=12,
+        ),
+        make_entry(
+            "paper-low",
+            title="Paper Low",
+            author="Author",
+            year="2023",
+            html="https://example.com/low",
+            scholar_id="gs-low",
+            citation_count=1,
+        ),
+    ]
+    previous_data = {"profile": {"papers": 3, "citations": 8, "h_index": 1, "i10_index": 0}}
+
+    monkeypatch.setattr(update_scholar, "fetch_publication_details", lambda scholar_id, article_id: {})
+    monkeypatch.setattr(
+        update_scholar,
+        "fetch_profile_stats",
+        lambda scholar_id: (_ for _ in ()).throw(update_scholar.ScholarFetchError("blocked")),
+    )
+    monkeypatch.setattr(update_scholar, "resolve_preview_image", lambda record, previous: "")
+
+    scholar_data = update_scholar.build_scholar_data(entries, "user123", previous_data)
+
+    assert scholar_data["profile"] | {"updated_at": "<ignored>"} == {
+        "papers": 3,
+        "citations": 13,
+        "h_index": 1,
+        "i10_index": 1,
+        "metrics_source": "publication_citations",
+        "papers_source": "previous_profile",
+        "updated_at": "<ignored>",
+    }
+    assert scholar_data["profile"]["updated_at"].endswith("Z")
+    assert update_scholar.CITATION_FRESH_FIELD not in scholar_data["publications"][0]
+
+
+def test_build_scholar_data_rejects_incomplete_citation_snapshot(monkeypatch):
+    entries = [
+        make_entry(
+            "paper",
+            title="Paper",
+            author="Author",
+            year="2024",
+            html="https://example.com/paper",
+            scholar_id="gs-paper",
+        )
+    ]
+    previous_data = {
+        "profile": {"papers": 1, "citations": 9, "h_index": 1, "i10_index": 0},
+        "publications": [{"google_scholar_id": "gs-paper", "citation_count": 9}],
+    }
+
+    monkeypatch.setattr(
+        update_scholar,
+        "fetch_publication_details",
+        lambda scholar_id, article_id: (_ for _ in ()).throw(update_scholar.ScholarFetchError("blocked")),
+    )
+    monkeypatch.setattr(update_scholar, "resolve_preview_image", lambda record, previous: "")
+
+    with pytest.raises(update_scholar.ScholarFetchError, match="Citation snapshot is incomplete"):
+        update_scholar.build_scholar_data(entries, "user123", previous_data)
+
+
 def test_write_bib_writes_expected_bibliography(tmp_path, monkeypatch):
     bib_file = tmp_path / "papers.bib"
     monkeypatch.setattr(update_scholar, "BIB_FILE", bib_file)
@@ -421,6 +512,41 @@ def test_main_exits_when_scholar_id_is_missing(monkeypatch, capsys):
     captured = capsys.readouterr()
     assert exc_info.value.code == 1
     assert "No scholar_userid found" in captured.out
+
+
+def test_main_exits_without_writing_when_metrics_are_incomplete(monkeypatch, capsys):
+    entries = [
+        make_entry(
+            "paper",
+            title="Paper",
+            author="Author",
+            year="2024",
+            html="https://example.com/paper",
+            scholar_id="gs-paper",
+        )
+    ]
+    writes = []
+
+    monkeypatch.setattr(update_scholar, "read_scholar_id", lambda: "scholar-123")
+    monkeypatch.setattr(update_scholar, "read_existing_scholar_data", lambda: {})
+    monkeypatch.setattr(update_scholar, "parse_existing_bib", lambda: [])
+    monkeypatch.setattr(update_scholar, "load_publications", lambda scholar_id: ("scholar", entries))
+    monkeypatch.setattr(
+        update_scholar,
+        "build_scholar_data",
+        lambda entries, scholar_id, previous_data: (_ for _ in ()).throw(
+            update_scholar.ScholarFetchError("Citation snapshot is incomplete")
+        ),
+    )
+    monkeypatch.setattr(update_scholar, "write_bib", lambda entries: writes.append("bib"))
+    monkeypatch.setattr(update_scholar, "write_scholar_data", lambda data: writes.append("data"))
+
+    with pytest.raises(SystemExit) as exc_info:
+        update_scholar.main()
+
+    assert exc_info.value.code == 1
+    assert writes == []
+    assert "Failed to update Scholar metrics: Citation snapshot is incomplete" in capsys.readouterr().out
 
 
 def test_main_loads_merges_and_writes_outputs(monkeypatch, capsys):
