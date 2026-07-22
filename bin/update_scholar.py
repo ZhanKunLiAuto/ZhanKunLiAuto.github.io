@@ -57,6 +57,7 @@ FIELD_ORDER = [
 ]
 DETAIL_FETCH_FAILURES = 0
 DETAIL_FETCH_DISABLED = False
+CITATION_FRESH_FIELD = "_citation_fresh"
 
 
 class ScholarFetchError(RuntimeError):
@@ -176,8 +177,12 @@ def fetch_publication_details(scholar_id: str, article_id: str) -> dict[str, int
     html_text = http_get(SCHOLAR_DETAIL_URL.format(scholar_id=scholar_id, article_id=article_id))
     ensure_not_blocked(html_text)
 
+    if "gsc_oci_title" not in html_text:
+        raise ScholarFetchError("Unexpected Scholar publication detail response")
+
     details: dict[str, int | str] = {
-        "citation_count": parse_citation_count(html_text),
+        # Scholar omits the "Cited by" text for uncited publications.
+        "citation_count": parse_citation_count(html_text) or 0,
         "external_url": extract_title_link_from_html(html_text),
         "pdf_url": extract_pdf_link_from_html(html_text),
     }
@@ -853,6 +858,7 @@ def build_publication_record(
     scholar_url = scholar_citation_url(scholar_id, article_id) if article_id else fields.get("html", "").strip()
     details: dict[str, int | str] = {}
     citation_count = parse_optional_int(fields.get("citation_count"))
+    citation_is_fresh = citation_count is not None
     external_url = preferred_external_url(fields, scholar_url)
     pdf_url = preferred_pdf_url(fields)
     preview_image = preferred_preview_image(fields)
@@ -869,13 +875,15 @@ def build_publication_record(
             DETAIL_FETCH_FAILURES += 1
             if isinstance(error, ScholarFetchError) or DETAIL_FETCH_FAILURES >= MAX_DETAIL_FETCH_FAILURES:
                 DETAIL_FETCH_DISABLED = True
+        else:
+            fresh_citation_count = parse_optional_int(details.get("citation_count"))
+            if fresh_citation_count is not None:
+                citation_count = fresh_citation_count
+                citation_is_fresh = True
 
     note = fields.get("note", "").strip()
     external_url = str(details.get("external_url") or "").strip() or external_url
     pdf_url = str(details.get("pdf_url") or "").strip() or pdf_url
-    citation_count = details.get("citation_count") or citation_count
-    if citation_count is None:
-        citation_count = None
 
     if previous_record:
         if citation_count is None:
@@ -899,6 +907,49 @@ def build_publication_record(
         "arxiv": fields.get("arxiv", "").strip(),
         "preview_image": preview_image,
         "google_scholar_id": article_id,
+        CITATION_FRESH_FIELD: citation_is_fresh,
+    }
+
+
+def derive_citation_metrics(publications: list[dict]) -> dict[str, int]:
+    if not publications:
+        raise ScholarFetchError("Cannot derive Scholar metrics without publications")
+
+    stale_publications = [
+        str(record.get("title") or record.get("key") or "Untitled")
+        for record in publications
+        if not record.get(CITATION_FRESH_FIELD)
+    ]
+    if stale_publications:
+        sample = ", ".join(stale_publications[:3])
+        raise ScholarFetchError(
+            f"Citation snapshot is incomplete for {len(stale_publications)} publication(s): {sample}"
+        )
+
+    citation_counts = [int(record.get("citation_count") or 0) for record in publications]
+    ranked_counts = sorted(citation_counts, reverse=True)
+    h_index = max(
+        (rank for rank, citations in enumerate(ranked_counts, start=1) if citations >= rank),
+        default=0,
+    )
+    return {
+        "citations": sum(citation_counts),
+        "h_index": h_index,
+        "i10_index": sum(citations >= 10 for citations in citation_counts),
+    }
+
+
+def fallback_profile_stats(previous_data: dict, publications: list[dict]) -> dict[str, int | str]:
+    previous_profile = previous_data.get("profile") or {}
+    previous_paper_count = parse_optional_int(previous_profile.get("papers"))
+    if previous_paper_count is None:
+        raise ScholarFetchError("Profile metrics are unavailable and no previous paper count exists")
+
+    return {
+        "papers": max(previous_paper_count, len(publications)),
+        **derive_citation_metrics(publications),
+        "metrics_source": "publication_citations",
+        "papers_source": "previous_profile",
     }
 
 
@@ -917,17 +968,31 @@ def build_scholar_data(
         publications.append(record)
 
     publications.sort(key=publication_sort_key, reverse=True)
+    citation_metrics = derive_citation_metrics(publications)
     top_publications: list[dict] = []
     for record in publications[:TOP_PUBLICATIONS_LIMIT]:
         previous_record = previous_by_key.get(record_lookup_key(record))
         enriched = dict(record)
+        enriched.pop(CITATION_FRESH_FIELD, None)
         enriched["preview_image"] = resolve_preview_image(record, previous_record)
         top_publications.append(enriched)
 
     try:
         profile = fetch_profile_stats(scholar_id)
-    except (requests.RequestException, ScholarFetchError):
-        profile = dict(previous_data.get("profile") or {})
+    except (requests.RequestException, ScholarFetchError) as error:
+        profile = fallback_profile_stats(previous_data, publications)
+        sys.stderr.write(f"Scholar profile metrics fetch failed; derived current citation metrics: {error}\n")
+    else:
+        if profile["citations"] != citation_metrics["citations"]:
+            sys.stderr.write(
+                "Scholar profile and publication citation totals differ; "
+                f"using profile total {profile['citations']} instead of {citation_metrics['citations']}\n"
+            )
+        profile["metrics_source"] = "scholar_profile"
+        profile["papers_source"] = "scholar_profile"
+
+    for record in publications:
+        record.pop(CITATION_FRESH_FIELD, None)
 
     profile["updated_at"] = datetime.now(UTC).replace(microsecond=0).isoformat().replace("+00:00", "Z")
 
@@ -958,7 +1023,12 @@ def main() -> None:
         existing_entries,
         prefer_existing=(source == "fallback"),
     )
-    scholar_data = build_scholar_data(merged_entries, scholar_id, previous_data)
+    try:
+        scholar_data = build_scholar_data(merged_entries, scholar_id, previous_data)
+    except (requests.RequestException, ScholarFetchError) as error:
+        print(f"Failed to update Scholar metrics: {error}")
+        raise SystemExit(1) from error
+
     write_bib(merged_entries)
     write_scholar_data(scholar_data)
     print(f"Updated {len(merged_entries)} publications from {source}")
