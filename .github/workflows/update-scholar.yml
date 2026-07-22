@@ -23,6 +23,7 @@ concurrency:
 
 env:
   PROFILE_UPDATE_EMAIL: ${{ vars.PROFILE_UPDATE_EMAIL || 'zk_1028@aliyun.com' }}
+  SERPAPI_KEY: ${{ secrets.SERPAPI_KEY }}
   SMTP_FROM: ${{ secrets.SMTP_FROM }}
   SMTP_HOST: ${{ secrets.SMTP_HOST }}
   SMTP_PASSWORD: ${{ secrets.SMTP_PASSWORD }}
