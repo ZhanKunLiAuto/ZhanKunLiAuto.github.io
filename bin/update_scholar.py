@@ -26,6 +26,9 @@ SCHOLAR_DATA_FILE = Path("_data/scholar.yml")
 PREVIEW_IMAGE_DIR = Path("assets/img/publication_preview")
 TOP_PUBLICATIONS_LIMIT = 10
 MAX_DETAIL_FETCH_FAILURES = 3
+SERPAPI_ENDPOINT = "https://serpapi.com/search.json"
+SERPAPI_PAGE_SIZE = 100
+SERPAPI_MAX_PAGES = 10
 
 SCHOLAR_URL = (
     "https://r.jina.ai/http://scholar.google.com/citations"
@@ -165,6 +168,123 @@ def fetch_publications_fallback() -> str:
     if not PUBLICATIONS_FALLBACK_URL:
         raise ScholarFetchError("No publications fallback URL configured")
     return http_get(PUBLICATIONS_FALLBACK_URL)
+
+
+def fetch_serpapi_page(scholar_id: str, api_key: str, start: int) -> dict:
+    try:
+        response = requests.get(
+            SERPAPI_ENDPOINT,
+            params={
+                "engine": "google_scholar_author",
+                "author_id": scholar_id,
+                "hl": "en",
+                "sort": "pubdate",
+                "num": SERPAPI_PAGE_SIZE,
+                "start": start,
+                "api_key": api_key,
+            },
+            timeout=REQUEST_TIMEOUT,
+            headers={"Accept": "application/json"},
+        )
+        response.raise_for_status()
+        payload = response.json()
+    except (requests.RequestException, ValueError) as error:
+        raise ScholarFetchError(f"SerpAPI request failed: {type(error).__name__}") from error
+
+    if not isinstance(payload, dict):
+        raise ScholarFetchError("SerpAPI returned an unexpected response")
+    if payload.get("error"):
+        raise ScholarFetchError("SerpAPI returned an error")
+
+    status = str((payload.get("search_metadata") or {}).get("status") or "")
+    if status and status != "Success":
+        raise ScholarFetchError(f"SerpAPI search did not complete successfully: {status}")
+    return payload
+
+
+def parse_serpapi_articles(payload: dict) -> list[BibEntry]:
+    publications: list[BibEntry] = []
+    for article in payload.get("articles") or []:
+        title = normalize_text(str(article.get("title") or ""))
+        citation_id = str(article.get("citation_id") or "").strip()
+        link = str(article.get("link") or "").strip()
+        article_id = citation_id.split(":", 1)[1] if ":" in citation_id else extract_scholar_id(link)
+        if not title or not article_id:
+            raise ScholarFetchError("SerpAPI article is missing a title or citation ID")
+
+        publication = normalize_text(str(article.get("publication") or ""))
+        year = str(article.get("year") or extract_year(publication)).strip()
+        citation_count = parse_optional_int((article.get("cited_by") or {}).get("value")) or 0
+        fields = {
+            "title": title,
+            "author": normalize_authors(str(article.get("authors") or "")),
+            "year": year,
+            "html": link or scholar_citation_url(citation_id.split(":", 1)[0], article_id),
+            "google_scholar_id": article_id,
+            "citation_count": str(citation_count),
+        }
+        note = normalize_venue(publication, year)
+        if note:
+            fields["note"] = note
+
+        publications.append(
+            BibEntry(
+                entry_type="misc",
+                key="",
+                fields=fields,
+                field_order=FIELD_ORDER.copy(),
+            )
+        )
+    return publications
+
+
+def parse_serpapi_profile_stats(payload: dict, paper_count: int) -> dict[str, int | str]:
+    metric_rows = (payload.get("cited_by") or {}).get("table") or []
+
+    def metric_value(name: str) -> int:
+        for row in metric_rows:
+            metric = row.get(name)
+            if isinstance(metric, dict):
+                value = parse_optional_int(metric.get("all"))
+                if value is not None:
+                    return value
+        raise ScholarFetchError(f"SerpAPI response is missing profile metric: {name}")
+
+    return {
+        "papers": paper_count,
+        "citations": metric_value("citations"),
+        "h_index": metric_value("h_index"),
+        "i10_index": metric_value("i10_index"),
+        "metrics_source": "serpapi",
+        "papers_source": "serpapi",
+    }
+
+
+def fetch_serpapi_snapshot(scholar_id: str, api_key: str) -> tuple[list[BibEntry], dict[str, int | str]]:
+    publications: list[BibEntry] = []
+    first_payload: dict | None = None
+    start = 0
+
+    for _ in range(SERPAPI_MAX_PAGES):
+        payload = fetch_serpapi_page(scholar_id, api_key, start)
+        if first_payload is None:
+            first_payload = payload
+
+        page_publications = parse_serpapi_articles(payload)
+        publications.extend(page_publications)
+        next_page = (payload.get("serpapi_pagination") or {}).get("next")
+        if not next_page:
+            break
+        if not page_publications:
+            raise ScholarFetchError("SerpAPI pagination did not advance")
+        start += len(page_publications)
+    else:
+        raise ScholarFetchError("SerpAPI pagination exceeded the safety limit")
+
+    if first_payload is None or not publications:
+        raise ScholarFetchError("SerpAPI returned no Scholar publications")
+    profile = parse_serpapi_profile_stats(first_payload, len(publications))
+    return publications, profile
 
 
 def fetch_profile_stats(scholar_id: str) -> dict[str, int | str]:
@@ -665,6 +785,19 @@ def load_publications(scholar_id: str) -> tuple[str, list[BibEntry]]:
         return "fallback", publications
 
 
+def load_scholar_snapshot(scholar_id: str) -> tuple[str, list[BibEntry], dict[str, int | str] | None]:
+    serpapi_key = os.getenv("SERPAPI_KEY", "").strip()
+    if serpapi_key:
+        try:
+            publications, profile = fetch_serpapi_snapshot(scholar_id, serpapi_key)
+            return "serpapi", publications, profile
+        except ScholarFetchError as error:
+            sys.stderr.write(f"SerpAPI Scholar fetch failed; trying direct sources: {error}\n")
+
+    source, publications = load_publications(scholar_id)
+    return source, publications, None
+
+
 def entry_lookup_key(fields: dict[str, str]) -> str:
     scholar_id = fields.get("google_scholar_id", "").strip()
     if scholar_id:
@@ -863,9 +996,7 @@ def build_publication_record(
     pdf_url = preferred_pdf_url(fields)
     preview_image = preferred_preview_image(fields)
 
-    needs_detail_fetch = article_id and not DETAIL_FETCH_DISABLED and (
-        citation_count is None or external_url == scholar_url or not pdf_url
-    )
+    needs_detail_fetch = article_id and not DETAIL_FETCH_DISABLED and citation_count is None
 
     if needs_detail_fetch:
         try:
@@ -957,6 +1088,7 @@ def build_scholar_data(
     entries: list[BibEntry],
     scholar_id: str,
     previous_data: dict | None = None,
+    profile_stats: dict[str, int | str] | None = None,
 ) -> dict:
     previous_data = previous_data or {}
     previous_publications = previous_data.get("publications") or []
@@ -977,19 +1109,23 @@ def build_scholar_data(
         enriched["preview_image"] = resolve_preview_image(record, previous_record)
         top_publications.append(enriched)
 
-    try:
-        profile = fetch_profile_stats(scholar_id)
-    except (requests.RequestException, ScholarFetchError) as error:
-        profile = fallback_profile_stats(previous_data, publications)
-        sys.stderr.write(f"Scholar profile metrics fetch failed; derived current citation metrics: {error}\n")
+    if profile_stats is not None:
+        profile = dict(profile_stats)
     else:
-        if profile["citations"] != citation_metrics["citations"]:
-            sys.stderr.write(
-                "Scholar profile and publication citation totals differ; "
-                f"using profile total {profile['citations']} instead of {citation_metrics['citations']}\n"
-            )
-        profile["metrics_source"] = "scholar_profile"
-        profile["papers_source"] = "scholar_profile"
+        try:
+            profile = fetch_profile_stats(scholar_id)
+        except (requests.RequestException, ScholarFetchError) as error:
+            profile = fallback_profile_stats(previous_data, publications)
+            sys.stderr.write(f"Scholar profile metrics fetch failed; derived current citation metrics: {error}\n")
+        else:
+            profile["metrics_source"] = "scholar_profile"
+            profile["papers_source"] = "scholar_profile"
+
+    if profile["citations"] != citation_metrics["citations"]:
+        sys.stderr.write(
+            "Scholar profile and publication citation totals differ; "
+            f"using profile total {profile['citations']} instead of {citation_metrics['citations']}\n"
+        )
 
     for record in publications:
         record.pop(CITATION_FRESH_FIELD, None)
@@ -1013,7 +1149,7 @@ def main() -> None:
     existing_entries = parse_existing_bib()
 
     try:
-        source, fetched_entries = load_publications(scholar_id)
+        source, fetched_entries, profile_stats = load_scholar_snapshot(scholar_id)
     except (requests.RequestException, ScholarFetchError) as error:
         print(f"Failed to update Scholar publications: {error}")
         raise SystemExit(1) from error
@@ -1024,7 +1160,7 @@ def main() -> None:
         prefer_existing=(source == "fallback"),
     )
     try:
-        scholar_data = build_scholar_data(merged_entries, scholar_id, previous_data)
+        scholar_data = build_scholar_data(merged_entries, scholar_id, previous_data, profile_stats)
     except (requests.RequestException, ScholarFetchError) as error:
         print(f"Failed to update Scholar metrics: {error}")
         raise SystemExit(1) from error

@@ -84,5 +84,6 @@ def test_workflow_formats_only_generated_scholar_data():
 
     assert "python bin/update_scholar.py" in workflow
     assert "npx prettier _data/scholar.yml --write" in workflow
+    assert "SERPAPI_KEY: ${{ secrets.SERPAPI_KEY }}" in workflow
     assert "update_progress" not in workflow
     assert "_data/progress.yml" not in workflow
