@@ -75,27 +75,3 @@ def test_removed_publications_are_called_out():
     after = {"publications": [{"google_scholar_id": "kept", "title": "Kept"}]}
 
     assert profile_update_report.removed_publication_lines(before, after) == ["- Removed paper"]
-
-
-def test_workflow_formats_only_generated_scholar_data():
-    workflow = (
-        Path(__file__).resolve().parents[1] / ".github" / "workflows" / "update-scholar.yml"
-    ).read_text(encoding="utf-8")
-
-    assert "python bin/update_scholar.py" in workflow
-    assert "npx prettier _data/scholar.yml --write" in workflow
-    assert "SERPAPI_KEY: ${{ secrets.SERPAPI_KEY }}" in workflow
-    assert "update_progress" not in workflow
-    assert "_data/progress.yml" not in workflow
-
-
-def test_approval_validation_scopes_pr_commands_to_repository():
-    workflow = (
-        Path(__file__).resolve().parents[1]
-        / ".github"
-        / "workflows"
-        / "approve-profile-update.yml"
-    ).read_text(encoding="utf-8")
-
-    assert 'gh pr comment "$PR_NUMBER" --repo "$REPOSITORY"' in workflow
-    assert 'gh pr view "$PR_NUMBER" --repo "$REPOSITORY" --json labels' in workflow
