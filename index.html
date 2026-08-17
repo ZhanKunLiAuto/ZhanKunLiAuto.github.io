@@ -1,0 +1,612 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="Kun Zhan leads foundation-model and autonomous-driving work at Li Auto, spanning VLA systems, world models, reinforcement learning, and production deployment."
+    />
+    <meta name="theme-color" content="#f4f1e9" />
+    <meta property="og:type" content="website" />
+    <meta
+      property="og:title"
+      content="Kun Zhan — Foundation Models &amp; Autonomous Driving"
+    />
+    <meta
+      property="og:description"
+      content="Building production intelligence that can perceive, reason, and act in the physical world."
+    />
+    <meta
+      property="og:image"
+      content="https://zhankunliauto.github.io/assets/img/og-kun-zhan.png"
+    />
+    <meta name="twitter:card" content="summary_large_image" />
+    <title>Kun Zhan — Foundation Models &amp; Autonomous Driving</title>
+    <link rel="icon" href="assets/img/portrait.webp" type="image/webp" />
+    <link rel="stylesheet" href="assets/css/site.css" />
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Kun Zhan",
+        "alternateName": "詹锟",
+        "jobTitle": "Head of Foundation Models and Autonomous Driving",
+        "worksFor": {
+          "@type": "Organization",
+          "name": "Li Auto",
+          "url": "https://www.lixiang.com/"
+        },
+        "url": "https://zhankunliauto.github.io/",
+        "sameAs": [
+          "https://github.com/ZhanKunLiAuto",
+          "https://www.linkedin.com/in/kunzhan",
+          "https://scholar.google.com/citations?user=1J061HIAAAAJ&hl=en",
+          "https://weibo.com/kunzhan1990",
+          "https://x.com/KevinZhan18",
+          "https://xhslink.cn/m/6XpPKycadDB"
+        ]
+      }
+    </script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+    <header class="site-header">
+      <div class="site-header__inner">
+        <a class="brand" href="./" aria-label="Kun Zhan homepage">
+          <span class="brand__mark">KZ</span>
+          <span class="brand__name">Kun Zhan</span>
+        </a>
+        <nav
+          class="site-nav"
+          data-navigation
+          data-open="false"
+          aria-label="Primary navigation"
+        >
+          <a href="#about">About</a>
+          <a href="#milestones">Milestones</a>
+          <a href="#experience">Experience</a>
+          <a href="#publications">Research</a>
+          <a href="#updates">Updates</a>
+        </nav>
+        <div class="header-actions">
+          <a class="language-link" href="zh/" lang="zh-CN">中文</a>
+          <button
+            class="icon-button"
+            type="button"
+            data-theme-toggle
+            aria-label="Change color theme"
+          ></button>
+          <button
+            class="menu-button"
+            type="button"
+            data-menu-toggle
+            aria-label="Open navigation"
+            aria-expanded="false"
+          ></button>
+        </div>
+      </div>
+    </header>
+
+    <main id="main">
+      <section class="hero" aria-labelledby="hero-title">
+        <div class="hero__content reveal">
+          <p class="eyebrow">Foundation models for embodied intelligence</p>
+          <h1 id="hero-title">
+            Intelligence that can <em>perceive</em>, reason &amp; act.
+          </h1>
+          <p class="hero__lede">
+            I am Kun Zhan, Head of Foundation Models and Autonomous Driving at
+            Li Auto. I build vehicle-scale AI systems that connect perception,
+            language, decision-making, and action—and carry them from frontier
+            research into production.
+          </p>
+          <div class="hero__actions">
+            <a class="button button--primary" href="mailto:zk_1028@aliyun.com"
+              >Start a conversation ↗</a
+            >
+            <a class="button" href="publications/">Explore publications</a>
+          </div>
+          <p class="hero__identity">
+            <span>Beijing / San Jose</span>
+            <span>Li Auto</span>
+            <span>Autonomous Driving · Foundation Models · Embodied AI</span>
+          </p>
+        </div>
+        <div class="hero__visual reveal">
+          <figure class="portrait-frame">
+            <img
+              src="assets/img/portrait.webp"
+              alt="Portrait of Kun Zhan"
+              width="1000"
+              height="1500"
+              fetchpriority="high"
+            />
+            <span class="signal-dot" aria-hidden="true"></span>
+            <figcaption class="portrait-caption">
+              <strong>Kun Zhan<br />詹锟</strong>
+              <span
+                >Building physical-world intelligence from research to
+                road</span
+              >
+            </figcaption>
+          </figure>
+        </div>
+      </section>
+
+      <section class="metrics" aria-label="Research profile snapshot">
+        <div class="metrics__grid">
+          <div class="metric metric--intro">
+            <span class="metric__label">Research snapshot · Jul 2026</span>
+            <strong
+              >Production research across autonomous driving, multimodal AI, and
+              world models.</strong
+            >
+          </div>
+          <div class="metric">
+            <span class="metric__label">Publications</span>
+            <strong>63</strong>
+          </div>
+          <div class="metric">
+            <span class="metric__label">Citations</span>
+            <strong>2,068</strong>
+          </div>
+          <div class="metric">
+            <span class="metric__label">h-index</span>
+            <strong>18</strong>
+          </div>
+          <div class="metric">
+            <span class="metric__label">i10-index</span>
+            <strong>29</strong>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="about" aria-labelledby="about-title">
+        <div class="section-header reveal">
+          <span class="section-number">01 / About</span>
+          <div>
+            <h2 class="section-title" id="about-title">
+              From machine intelligence to language intelligence—and back to
+              action.
+            </h2>
+            <p class="section-copy">
+              My work focuses on unifying the capabilities a physical agent
+              needs: understanding three-dimensional scenes, reasoning about
+              intent and risk, planning under uncertainty, and executing safely
+              in real time.
+            </p>
+          </div>
+        </div>
+        <div class="manifesto-grid">
+          <div class="manifesto reveal">
+            <span class="manifesto__label">Mission</span>
+            <blockquote>
+              Build physical-world AGI, starting with autonomous driving and
+              expanding toward robots and intelligent spaces.
+            </blockquote>
+          </div>
+          <div class="focus-stack">
+            <article class="focus-card reveal">
+              <span class="focus-card__index">A</span>
+              <div>
+                <h3>Vision–Language–Action</h3>
+                <p>
+                  Unified perception, reasoning, planning, and control for
+                  complex real-world environments.
+                </p>
+              </div>
+            </article>
+            <article class="focus-card reveal">
+              <span class="focus-card__index">B</span>
+              <div>
+                <h3>World models &amp; reinforcement learning</h3>
+                <p>
+                  Simulation, generative scene models, closed-loop evaluation,
+                  and learning from physical feedback.
+                </p>
+              </div>
+            </article>
+            <article class="focus-card reveal">
+              <span class="focus-card__index">C</span>
+              <div>
+                <h3>Model–system co-design</h3>
+                <p>
+                  On-vehicle inference, model–chip co-design, data engines, and
+                  reliable fleet-scale deployment.
+                </p>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section
+        class="section"
+        id="milestones"
+        aria-labelledby="milestones-title"
+      >
+        <div class="section-header reveal">
+          <span class="section-number">02 / Milestones</span>
+          <div>
+            <h2 class="section-title" id="milestones-title">
+              A path from prediction systems to vehicle-scale foundation models.
+            </h2>
+            <p class="section-copy">
+              Selected moments across leadership, production systems, model
+              releases, and research.
+            </p>
+          </div>
+        </div>
+        <div class="milestone-list">
+          <article class="milestone reveal">
+            <time datetime="2026">2026</time>
+            <h3>Foundation-model leadership</h3>
+            <p>
+              Leading Li Auto's unified foundation-model and autonomous-driving
+              agenda across Mach VLA, Mach Mind, world models, reinforcement
+              learning, infrastructure, and deployment.
+            </p>
+          </article>
+          <article class="milestone reveal">
+            <time datetime="2026-06">2026.06</time>
+            <h3>Livis Day keynote</h3>
+            <p>
+              Presented Li Auto's software and embodied-intelligence roadmap,
+              connecting intelligent vehicles with a broader physical-world AI
+              stack.
+            </p>
+          </article>
+          <article class="milestone reveal">
+            <time datetime="2025">2025</time>
+            <h3>World models &amp; CVPR research</h3>
+            <p>
+              Contributed to ReconDreamer, StreetCrafter, and
+              DrivingSphere—advancing reconstruction, controllable scene
+              generation, and closed-loop 4D simulation for autonomous driving.
+            </p>
+          </article>
+          <article class="milestone reveal">
+            <time datetime="2024">2024</time>
+            <h3>DriveVLM &amp; ECCV research</h3>
+            <p>
+              Released DriveVLM and contributed to Street Gaussians and
+              TOD3Cap—bridging multimodal reasoning, dynamic urban
+              reconstruction, and 3D scene understanding.
+            </p>
+          </article>
+          <article class="milestone reveal">
+            <time datetime="2021">2021</time>
+            <h3>Joined Li Auto</h3>
+            <p>
+              Helped evolve the driving stack from Highway NoA and City NoA
+              through end-to-end, VLM-assisted, and VLA-based architectures
+              running across production vehicles.
+            </p>
+          </article>
+          <article class="milestone reveal">
+            <time datetime="2016">2016</time>
+            <h3>Baidu Apollo</h3>
+            <p>
+              Led L4 prediction and pre-decision algorithms for robo-taxi pilots
+              and production-oriented autonomous-driving systems.
+            </p>
+          </article>
+        </div>
+      </section>
+
+      <section
+        class="section"
+        id="experience"
+        aria-labelledby="experience-title"
+      >
+        <div class="section-header reveal">
+          <span class="section-number">03 / Experience</span>
+          <div>
+            <h2 class="section-title" id="experience-title">
+              Research leadership grounded in shipping real systems.
+            </h2>
+          </div>
+        </div>
+        <div class="experience-grid">
+          <aside class="experience-nav reveal">
+            <p>Career span</p>
+            <strong>2009—Now</strong>
+          </aside>
+          <div class="experience-list">
+            <article class="experience-item reveal">
+              <div class="experience-item__head">
+                <h3>Li Auto</h3>
+                <span class="experience-item__period"
+                  >Apr 2021 — Present · Beijing / San Jose</span
+                >
+              </div>
+              <p class="experience-role">
+                Head of Foundation Models &amp; Autonomous Driving
+              </p>
+              <ul>
+                <li>
+                  Lead foundation-model and autonomous-driving teams spanning
+                  VLA, agentic LLM/VLM systems, world models, reinforcement
+                  learning, data infrastructure, and on-vehicle deployment.
+                </li>
+                <li>
+                  Drive model–chip–OS–controller co-design and production
+                  integration across Li Auto's full-stack AI platform.
+                </li>
+                <li>
+                  Guide a 100+ person organization across perception, planning,
+                  foundation models, simulation, data, and deployment.
+                </li>
+              </ul>
+              <p class="experience-role">Site Manager, U.S. R&amp;D Center</p>
+              <ul>
+                <li>
+                  Launched Li Auto's overseas research hub and connected Silicon
+                  Valley research with Beijing execution.
+                </li>
+              </ul>
+            </article>
+            <article class="experience-item reveal">
+              <div class="experience-item__head">
+                <h3>Baidu Apollo</h3>
+                <span class="experience-item__period"
+                  >Apr 2016 — Mar 2021 · Beijing</span
+                >
+              </div>
+              <p class="experience-role">
+                Algorithm Lead, L4 Prediction &amp; Planning
+              </p>
+              <ul>
+                <li>
+                  Led prediction and pre-decision algorithms for L4 robo-taxi
+                  pilots in complex urban traffic.
+                </li>
+                <li>
+                  Delivered planning-and-control modules and onboard
+                  deep-learning components for fleets in Beijing and Guangzhou.
+                </li>
+              </ul>
+            </article>
+            <article class="experience-item reveal">
+              <div class="experience-item__head">
+                <h3>Education</h3>
+                <span class="experience-item__period">2009 — 2016</span>
+              </div>
+              <p class="experience-role">
+                Beihang University · M.S. in Navigation, Guidance and Control
+              </p>
+              <p>Research focused on object recognition and tracking.</p>
+              <p class="experience-role">
+                University of Science and Technology Beijing · B.Eng. in
+                Automation
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section
+        class="section"
+        id="publications"
+        aria-labelledby="publications-title"
+      >
+        <div class="section-header reveal">
+          <span class="section-number">04 / Selected research</span>
+          <div>
+            <h2 class="section-title" id="publications-title">
+              Research that expands how vehicles see, imagine, and decide.
+            </h2>
+            <p class="section-copy">
+              Selected work across VLM/VLA systems, world models, 3D
+              reconstruction, planning, and simulation.
+            </p>
+          </div>
+        </div>
+        <div class="publication-feature-grid">
+          <a
+            class="paper-card reveal"
+            href="https://arxiv.org/abs/2402.12289"
+            target="_blank"
+            rel="noreferrer"
+          >
+            <div class="paper-card__visual">
+              <img
+                src="assets/img/publications/drivevlm2024.webp"
+                alt="DriveVLM paper preview"
+                loading="lazy"
+              />
+              <span class="paper-card__tag">VLM · 2024</span>
+            </div>
+            <div class="paper-card__body">
+              <h3>
+                DriveVLM: The Convergence of Autonomous Driving and Large
+                Vision-Language Models
+              </h3>
+              <p>
+                Combining multimodal reasoning with driving perception,
+                planning, and interaction.
+              </p>
+              <span class="paper-card__footer"
+                ><span>714 citations</span><span>Open paper ↗</span></span
+              >
+            </div>
+          </a>
+          <a
+            class="paper-card reveal"
+            href="https://link.springer.com/chapter/10.1007/978-3-031-73464-9_10"
+            target="_blank"
+            rel="noreferrer"
+          >
+            <div class="paper-card__visual">
+              <img
+                src="assets/img/publications/street2024-preview.webp"
+                alt="Street Gaussians paper preview"
+                loading="lazy"
+              />
+              <span class="paper-card__tag">3DGS · ECCV 2024</span>
+            </div>
+            <div class="paper-card__body">
+              <h3>Street Gaussians</h3>
+              <p>Modeling dynamic urban scenes with Gaussian splatting.</p>
+              <span class="paper-card__footer"
+                ><span>488 citations</span><span>Open paper ↗</span></span
+              >
+            </div>
+          </a>
+          <a
+            class="paper-card reveal"
+            href="https://openaccess.thecvf.com/content/CVPR2025/html/Ni_ReconDreamer_Crafting_World_Models_for_Driving_Scene_Reconstruction_via_Online_CVPR_2025_paper.html"
+            target="_blank"
+            rel="noreferrer"
+          >
+            <div class="paper-card__visual">
+              <img
+                src="assets/img/publications/recondreamer2025-pdf-preview.webp"
+                alt="ReconDreamer paper preview"
+                loading="lazy"
+              />
+              <span class="paper-card__tag">World model · CVPR 2025</span>
+            </div>
+            <div class="paper-card__body">
+              <h3>ReconDreamer</h3>
+              <p>
+                Crafting world models for driving-scene reconstruction via
+                online restoration.
+              </p>
+              <span class="paper-card__footer"
+                ><span>106 citations</span><span>Open paper ↗</span></span
+              >
+            </div>
+          </a>
+          <a
+            class="paper-card reveal"
+            href="https://openaccess.thecvf.com/content/CVPR2025/html/Yan_StreetCrafter_Street_View_Synthesis_with_Controllable_Video_Diffusion_Models_CVPR_2025_paper.html"
+            target="_blank"
+            rel="noreferrer"
+          >
+            <div class="paper-card__visual">
+              <img
+                src="assets/img/publications/streetcrafter2025-pdf-preview.webp"
+                alt="StreetCrafter paper preview"
+                loading="lazy"
+              />
+              <span class="paper-card__tag">Video diffusion · CVPR 2025</span>
+            </div>
+            <div class="paper-card__body">
+              <h3>StreetCrafter</h3>
+              <p>
+                Street-view synthesis with controllable video diffusion models.
+              </p>
+              <span class="paper-card__footer"
+                ><span>52 citations</span><span>Open paper ↗</span></span
+              >
+            </div>
+          </a>
+          <a
+            class="paper-card reveal"
+            href="https://openaccess.thecvf.com/content/CVPR2025/html/Yan_DrivingSphere_Building_a_High-fidelity_4D_World_for_Closed-loop_Simulation_CVPR_2025_paper.html"
+            target="_blank"
+            rel="noreferrer"
+          >
+            <div class="paper-card__visual">
+              <img
+                src="assets/img/publications/drivingsphere2025-pdf-preview.webp"
+                alt="DrivingSphere paper preview"
+                loading="lazy"
+              />
+              <span class="paper-card__tag">4D simulation · CVPR 2025</span>
+            </div>
+            <div class="paper-card__body">
+              <h3>DrivingSphere</h3>
+              <p>
+                Building a high-fidelity 4D world for closed-loop simulation.
+              </p>
+              <span class="paper-card__footer"
+                ><span>40 citations</span><span>Open paper ↗</span></span
+              >
+            </div>
+          </a>
+        </div>
+        <div class="section-footer">
+          <a class="button" href="publications/"
+            >Browse the complete publication index</a
+          >
+        </div>
+      </section>
+
+      <section class="section" id="updates" aria-labelledby="updates-title">
+        <div class="section-header reveal">
+          <span class="section-number">05 / Updates</span>
+          <div>
+            <h2 class="section-title" id="updates-title">
+              A living window into current work.
+            </h2>
+            <p class="section-copy">
+              Short notes for model releases, talks, research, and
+              milestones—without the overhead of a full blog.
+            </p>
+          </div>
+        </div>
+        <div
+          class="updates-grid"
+          data-updates
+          data-limit="3"
+          aria-live="polite"
+        ></div>
+        <div class="section-footer">
+          <a class="button" href="updates/">View all updates</a>
+        </div>
+      </section>
+
+      <section class="section" id="contact" aria-labelledby="contact-title">
+        <div class="contact-panel reveal">
+          <h2 id="contact-title">
+            Let’s build what moves intelligence forward.
+          </h2>
+          <div class="contact-panel__aside">
+            <p>
+              For research conversations, speaking, advisory work, or
+              collaboration, reach out directly.
+            </p>
+            <div class="social-links">
+              <a class="social-link" href="mailto:zk_1028@aliyun.com"
+                >Email ↗</a
+              >
+              <a
+                class="social-link"
+                href="https://scholar.google.com/citations?user=1J061HIAAAAJ&amp;hl=en"
+                target="_blank"
+                rel="noreferrer"
+                >Scholar ↗</a
+              >
+              <a
+                class="social-link"
+                href="https://github.com/ZhanKunLiAuto"
+                target="_blank"
+                rel="me noreferrer"
+                >GitHub ↗</a
+              >
+              <a
+                class="social-link"
+                href="https://www.linkedin.com/in/kunzhan"
+                target="_blank"
+                rel="me noreferrer"
+                >LinkedIn ↗</a
+              >
+              <span data-optional-socials hidden></span>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <span>© 2026 Kun Zhan. Built as a lightweight static site.</span>
+      <a href="mailto:zk_1028@aliyun.com">zk_1028@aliyun.com</a>
+    </footer>
+
+    <script src="assets/js/content.js"></script>
+    <script src="assets/js/site.js"></script>
+  </body>
+</html>

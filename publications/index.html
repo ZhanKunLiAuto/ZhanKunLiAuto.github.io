@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="Publications by Kun Zhan across autonomous driving, multimodal AI, world models, 3D vision, planning, and simulation."
+    />
+    <meta name="theme-color" content="#f4f1e9" />
+    <title>Publications — Kun Zhan</title>
+    <link rel="icon" href="../assets/img/portrait.webp" type="image/webp" />
+    <link rel="stylesheet" href="../assets/css/site.css" />
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+    <header class="site-header">
+      <div class="site-header__inner">
+        <a class="brand" href="../"
+          ><span class="brand__mark">KZ</span
+          ><span class="brand__name">Kun Zhan</span></a
+        >
+        <nav
+          class="site-nav"
+          data-navigation
+          data-open="false"
+          aria-label="Primary navigation"
+        >
+          <a href="../#about">About</a>
+          <a href="../#milestones">Milestones</a>
+          <a href="../#experience">Experience</a>
+          <a href="./" aria-current="page">Research</a>
+          <a href="../updates/">Updates</a>
+        </nav>
+        <div class="header-actions">
+          <a class="language-link" href="../zh/publications/" lang="zh-CN"
+            >中文</a
+          >
+          <button
+            class="icon-button"
+            type="button"
+            data-theme-toggle
+            aria-label="Change color theme"
+          ></button>
+          <button
+            class="menu-button"
+            type="button"
+            data-menu-toggle
+            aria-label="Open navigation"
+            aria-expanded="false"
+          ></button>
+        </div>
+      </div>
+    </header>
+
+    <main id="main">
+      <header class="page-hero reveal">
+        <p class="eyebrow">Research archive · 2014—2026</p>
+        <h1>Publications</h1>
+        <div class="page-hero__footer">
+          <p>
+            A complete, searchable snapshot of research across foundation
+            models, autonomous driving, world models, multimodal learning, 3D
+            vision, planning, and simulation.
+          </p>
+          <a
+            class="text-link"
+            href="https://scholar.google.com/citations?user=1J061HIAAAAJ&amp;hl=en"
+            target="_blank"
+            rel="noreferrer"
+            >Google Scholar ↗</a
+          >
+        </div>
+      </header>
+
+      <section class="publication-tools" aria-label="Publication filters">
+        <label>
+          <span class="skip-link">Search publications</span>
+          <input
+            type="search"
+            data-publication-search
+            placeholder="Search title, author, or venue"
+            autocomplete="off"
+          />
+        </label>
+        <label>
+          <span class="skip-link">Filter by year</span>
+          <select data-publication-year></select>
+        </label>
+        <span class="publication-tools__count" data-publication-count
+          >Loading publications…</span
+        >
+      </section>
+
+      <section
+        class="publication-list"
+        data-publication-list
+        data-source="../data/publications.json"
+        aria-live="polite"
+      >
+        <p class="empty-state">Loading publications…</p>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <span>© 2026 Kun Zhan</span>
+      <a href="../">Return home</a>
+    </footer>
+
+    <script src="../assets/js/content.js"></script>
+    <script src="../assets/js/site.js"></script>
+    <script src="../assets/js/publications.js"></script>
+  </body>
+</html>
