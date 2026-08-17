@@ -1,0 +1,527 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="詹锟负责理想汽车基座模型与自动驾驶工作，研究方向覆盖 VLA、世界模型、强化学习、模型与芯片协同设计及量产部署。"
+    />
+    <meta name="theme-color" content="#f4f1e9" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="詹锟 — 基座模型与自动驾驶" />
+    <meta
+      property="og:description"
+      content="构建能够在物理世界中感知、推理与行动的量产级智能系统。"
+    />
+    <meta
+      property="og:image"
+      content="https://zhankunliauto.github.io/assets/img/og-kun-zhan.png"
+    />
+    <meta name="twitter:card" content="summary_large_image" />
+    <title>詹锟 — 基座模型与自动驾驶</title>
+    <link rel="icon" href="../assets/img/portrait.webp" type="image/webp" />
+    <link rel="stylesheet" href="../assets/css/site.css" />
+  </head>
+  <body>
+    <a class="skip-link" href="#main">跳转到正文</a>
+    <header class="site-header">
+      <div class="site-header__inner">
+        <a class="brand" href="./" aria-label="詹锟个人主页">
+          <span class="brand__mark">KZ</span>
+          <span class="brand__name">詹锟 · Kun Zhan</span>
+        </a>
+        <nav
+          class="site-nav"
+          data-navigation
+          data-open="false"
+          aria-label="主导航"
+        >
+          <a href="#about">个人介绍</a>
+          <a href="#milestones">重要事件</a>
+          <a href="#experience">个人经历</a>
+          <a href="#publications">研究论文</a>
+          <a href="#updates">最新动态</a>
+        </nav>
+        <div class="header-actions">
+          <a class="language-link" href="../" lang="en">EN</a>
+          <button
+            class="icon-button"
+            type="button"
+            data-theme-toggle
+            aria-label="切换配色"
+          ></button>
+          <button
+            class="menu-button"
+            type="button"
+            data-menu-toggle
+            aria-label="打开导航"
+            aria-expanded="false"
+          ></button>
+        </div>
+      </div>
+    </header>
+
+    <main id="main">
+      <section class="hero" aria-labelledby="hero-title">
+        <div class="hero__content reveal">
+          <p class="eyebrow">面向具身智能的基座模型</p>
+          <h1 id="hero-title">让智能能够<em>感知</em>、推理与行动。</h1>
+          <p class="hero__lede">
+            我是詹锟，现任理想汽车基座模型与自动驾驶负责人。我致力于构建连接感知、语言、决策与行动的整车级
+            AI 系统，并推动前沿研究真正走向量产。
+          </p>
+          <div class="hero__actions">
+            <a class="button button--primary" href="mailto:zk_1028@aliyun.com"
+              >联系交流 ↗</a
+            >
+            <a class="button" href="publications/">浏览研究论文</a>
+          </div>
+          <p class="hero__identity">
+            <span>北京 / 圣何塞</span>
+            <span>理想汽车</span>
+            <span>自动驾驶 · 基座模型 · 具身智能</span>
+          </p>
+        </div>
+        <div class="hero__visual reveal">
+          <figure class="portrait-frame">
+            <img
+              src="../assets/img/portrait.webp"
+              alt="詹锟个人照片"
+              width="1000"
+              height="1500"
+              fetchpriority="high"
+            />
+            <span class="signal-dot" aria-hidden="true"></span>
+            <figcaption class="portrait-caption">
+              <strong>詹锟<br />Kun Zhan</strong>
+              <span>从前沿研究到真实道路，构建物理世界智能</span>
+            </figcaption>
+          </figure>
+        </div>
+      </section>
+
+      <section class="metrics" aria-label="学术数据概览">
+        <div class="metrics__grid">
+          <div class="metric metric--intro">
+            <span class="metric__label">研究数据 · 2026 年 7 月</span>
+            <strong>贯穿自动驾驶、多模态 AI 与世界模型的量产研究。</strong>
+          </div>
+          <div class="metric">
+            <span class="metric__label">论文</span>
+            <strong>63</strong>
+          </div>
+          <div class="metric">
+            <span class="metric__label">引用</span>
+            <strong>2,068</strong>
+          </div>
+          <div class="metric">
+            <span class="metric__label">h-index</span>
+            <strong>18</strong>
+          </div>
+          <div class="metric">
+            <span class="metric__label">i10-index</span>
+            <strong>29</strong>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="about" aria-labelledby="about-title">
+        <div class="section-header reveal">
+          <span class="section-number">01 / 个人介绍</span>
+          <div>
+            <h2 class="section-title" id="about-title">
+              从机器智能走向语言智能，再回到真实行动。
+            </h2>
+            <p class="section-copy">
+              我的工作聚焦于统一物理智能体需要的关键能力：理解三维场景、推理意图与风险、在不确定环境中规划，并以实时、可靠的方式执行。
+            </p>
+          </div>
+        </div>
+        <div class="manifesto-grid">
+          <div class="manifesto reveal">
+            <span class="manifesto__label">使命</span>
+            <blockquote>
+              打造物理世界 AGI，以自动驾驶为起点，逐步拓展至机器人与智能空间。
+            </blockquote>
+          </div>
+          <div class="focus-stack">
+            <article class="focus-card reveal">
+              <span class="focus-card__index">A</span>
+              <div>
+                <h3>视觉—语言—行动</h3>
+                <p>面向复杂真实环境，统一感知、推理、规划与控制。</p>
+              </div>
+            </article>
+            <article class="focus-card reveal">
+              <span class="focus-card__index">B</span>
+              <div>
+                <h3>世界模型与强化学习</h3>
+                <p>仿真、生成式场景模型、闭环评测，以及从物理反馈中学习。</p>
+              </div>
+            </article>
+            <article class="focus-card reveal">
+              <span class="focus-card__index">C</span>
+              <div>
+                <h3>模型与系统协同设计</h3>
+                <p>车端推理、模型与芯片协同、数据引擎及车队规模的可靠部署。</p>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section
+        class="section"
+        id="milestones"
+        aria-labelledby="milestones-title"
+      >
+        <div class="section-header reveal">
+          <span class="section-number">02 / 重要事件</span>
+          <div>
+            <h2 class="section-title" id="milestones-title">
+              从预测系统到整车级基座模型。
+            </h2>
+            <p class="section-copy">
+              关于团队领导、量产系统、模型发布与研究成果的部分关键节点。
+            </p>
+          </div>
+        </div>
+        <div class="milestone-list">
+          <article class="milestone reveal">
+            <time datetime="2026">2026</time>
+            <h3>统一基座模型与自动驾驶业务</h3>
+            <p>
+              负责理想汽车基座模型与自动驾驶路线图，覆盖理想同学 VLA、Mind
+              GPT、世界模型、强化学习、基础设施与车端部署。
+            </p>
+          </article>
+          <article class="milestone reveal">
+            <time datetime="2026-06">2026.06</time>
+            <h3>Livis 发布会主题演讲</h3>
+            <p>
+              发布理想汽车软件与具身智能路线图，将智能汽车能力与更广阔的物理世界
+              AI 技术栈连接起来。
+            </p>
+          </article>
+          <article class="milestone reveal">
+            <time datetime="2025">2025</time>
+            <h3>世界模型与 CVPR 研究成果</h3>
+            <p>
+              参与 ReconDreamer、StreetCrafter 与
+              DrivingSphere，推进自动驾驶场景重建、可控生成和闭环四维仿真。
+            </p>
+          </article>
+          <article class="milestone reveal">
+            <time datetime="2024">2024</time>
+            <h3>DriveVLM 与 ECCV 研究成果</h3>
+            <p>
+              发布 DriveVLM，并参与 Street Gaussians 与
+              TOD3Cap，连接多模态推理、动态城市重建和三维场景理解。
+            </p>
+          </article>
+          <article class="milestone reveal">
+            <time datetime="2021">2021</time>
+            <h3>加入理想汽车</h3>
+            <p>
+              推动自动驾驶技术栈从高速 NoA、城市 NoA，演进至端到端、VLM 辅助和
+              VLA 架构，并部署于量产车辆。
+            </p>
+          </article>
+          <article class="milestone reveal">
+            <time datetime="2016">2016</time>
+            <h3>百度 Apollo</h3>
+            <p>
+              负责 L4 RoboTaxi
+              项目的预测与前决策算法，以及面向量产的自动驾驶系统研发。
+            </p>
+          </article>
+        </div>
+      </section>
+
+      <section
+        class="section"
+        id="experience"
+        aria-labelledby="experience-title"
+      >
+        <div class="section-header reveal">
+          <span class="section-number">03 / 个人经历</span>
+          <div>
+            <h2 class="section-title" id="experience-title">
+              立足真实系统交付的研究领导力。
+            </h2>
+          </div>
+        </div>
+        <div class="experience-grid">
+          <aside class="experience-nav reveal">
+            <p>经历跨度</p>
+            <strong>2009—至今</strong>
+          </aside>
+          <div class="experience-list">
+            <article class="experience-item reveal">
+              <div class="experience-item__head">
+                <h3>理想汽车</h3>
+                <span class="experience-item__period"
+                  >2021 年 4 月—至今 · 北京 / 圣何塞</span
+                >
+              </div>
+              <p class="experience-role">基座模型与自动驾驶负责人</p>
+              <ul>
+                <li>
+                  负责覆盖 VLA、Agent LLM/VLM
+                  系统、世界模型、强化学习、数据基础设施和车端部署的基座模型与自动驾驶团队。
+                </li>
+                <li>
+                  推动模型、芯片、操作系统与域控制器协同设计，以及理想汽车全栈
+                  AI 平台的量产集成。
+                </li>
+                <li>
+                  指导由感知、规划、基座模型、仿真、数据和部署等方向组成的 100+
+                  人团队。
+                </li>
+              </ul>
+              <p class="experience-role">美国研发中心负责人</p>
+              <ul>
+                <li>
+                  从零建立理想汽车海外研发中心，连接硅谷前沿研究与北京的工程执行。
+                </li>
+              </ul>
+            </article>
+            <article class="experience-item reveal">
+              <div class="experience-item__head">
+                <h3>百度 Apollo</h3>
+                <span class="experience-item__period"
+                  >2016 年 4 月—2021 年 3 月 · 北京</span
+                >
+              </div>
+              <p class="experience-role">L4 预测与规划算法负责人</p>
+              <ul>
+                <li>
+                  负责复杂城市交通环境下 L4 RoboTaxi
+                  试点项目的预测与前决策算法。
+                </li>
+                <li>
+                  交付规划控制模块与深度学习车端组件，支持自动驾驶车队在北京和广州运行。
+                </li>
+              </ul>
+            </article>
+            <article class="experience-item reveal">
+              <div class="experience-item__head">
+                <h3>教育经历</h3>
+                <span class="experience-item__period">2009—2016</span>
+              </div>
+              <p class="experience-role">
+                北京航空航天大学 · 导航、制导与控制硕士
+              </p>
+              <p>研究方向聚焦于目标识别与跟踪。</p>
+              <p class="experience-role">北京科技大学 · 自动化学士</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section
+        class="section"
+        id="publications"
+        aria-labelledby="publications-title"
+      >
+        <div class="section-header reveal">
+          <span class="section-number">04 / 代表研究</span>
+          <div>
+            <h2 class="section-title" id="publications-title">
+              拓展车辆观察、想象与决策的边界。
+            </h2>
+            <p class="section-copy">
+              代表研究覆盖 VLM/VLA、世界模型、三维重建、规划与仿真。
+            </p>
+          </div>
+        </div>
+        <div class="publication-feature-grid">
+          <a
+            class="paper-card reveal"
+            href="https://arxiv.org/abs/2402.12289"
+            target="_blank"
+            rel="noreferrer"
+          >
+            <div class="paper-card__visual">
+              <img
+                src="../assets/img/publications/drivevlm2024.webp"
+                alt="DriveVLM 论文预览"
+                loading="lazy"
+              />
+              <span class="paper-card__tag">VLM · 2024</span>
+            </div>
+            <div class="paper-card__body">
+              <h3>
+                DriveVLM: The Convergence of Autonomous Driving and Large
+                Vision-Language Models
+              </h3>
+              <p>将多模态推理与自动驾驶感知、规划和交互相结合。</p>
+              <span class="paper-card__footer"
+                ><span>714 次引用</span><span>打开论文 ↗</span></span
+              >
+            </div>
+          </a>
+          <a
+            class="paper-card reveal"
+            href="https://link.springer.com/chapter/10.1007/978-3-031-73464-9_10"
+            target="_blank"
+            rel="noreferrer"
+          >
+            <div class="paper-card__visual">
+              <img
+                src="../assets/img/publications/street2024-preview.webp"
+                alt="Street Gaussians 论文预览"
+                loading="lazy"
+              />
+              <span class="paper-card__tag">3DGS · ECCV 2024</span>
+            </div>
+            <div class="paper-card__body">
+              <h3>Street Gaussians</h3>
+              <p>使用 Gaussian Splatting 建模动态城市场景。</p>
+              <span class="paper-card__footer"
+                ><span>488 次引用</span><span>打开论文 ↗</span></span
+              >
+            </div>
+          </a>
+          <a
+            class="paper-card reveal"
+            href="https://openaccess.thecvf.com/content/CVPR2025/html/Ni_ReconDreamer_Crafting_World_Models_for_Driving_Scene_Reconstruction_via_Online_CVPR_2025_paper.html"
+            target="_blank"
+            rel="noreferrer"
+          >
+            <div class="paper-card__visual">
+              <img
+                src="../assets/img/publications/recondreamer2025-pdf-preview.webp"
+                alt="ReconDreamer 论文预览"
+                loading="lazy"
+              />
+              <span class="paper-card__tag">世界模型 · CVPR 2025</span>
+            </div>
+            <div class="paper-card__body">
+              <h3>ReconDreamer</h3>
+              <p>通过在线修复构建驾驶场景重建世界模型。</p>
+              <span class="paper-card__footer"
+                ><span>106 次引用</span><span>打开论文 ↗</span></span
+              >
+            </div>
+          </a>
+          <a
+            class="paper-card reveal"
+            href="https://openaccess.thecvf.com/content/CVPR2025/html/Yan_StreetCrafter_Street_View_Synthesis_with_Controllable_Video_Diffusion_Models_CVPR_2025_paper.html"
+            target="_blank"
+            rel="noreferrer"
+          >
+            <div class="paper-card__visual">
+              <img
+                src="../assets/img/publications/streetcrafter2025-pdf-preview.webp"
+                alt="StreetCrafter 论文预览"
+                loading="lazy"
+              />
+              <span class="paper-card__tag">视频扩散 · CVPR 2025</span>
+            </div>
+            <div class="paper-card__body">
+              <h3>StreetCrafter</h3>
+              <p>基于可控视频扩散模型的街景合成。</p>
+              <span class="paper-card__footer"
+                ><span>52 次引用</span><span>打开论文 ↗</span></span
+              >
+            </div>
+          </a>
+          <a
+            class="paper-card reveal"
+            href="https://openaccess.thecvf.com/content/CVPR2025/html/Yan_DrivingSphere_Building_a_High-fidelity_4D_World_for_Closed-loop_Simulation_CVPR_2025_paper.html"
+            target="_blank"
+            rel="noreferrer"
+          >
+            <div class="paper-card__visual">
+              <img
+                src="../assets/img/publications/drivingsphere2025-pdf-preview.webp"
+                alt="DrivingSphere 论文预览"
+                loading="lazy"
+              />
+              <span class="paper-card__tag">4D 仿真 · CVPR 2025</span>
+            </div>
+            <div class="paper-card__body">
+              <h3>DrivingSphere</h3>
+              <p>构建面向闭环仿真的高保真四维世界。</p>
+              <span class="paper-card__footer"
+                ><span>40 次引用</span><span>打开论文 ↗</span></span
+              >
+            </div>
+          </a>
+        </div>
+        <div class="section-footer">
+          <a class="button" href="publications/">浏览完整论文索引</a>
+        </div>
+      </section>
+
+      <section class="section" id="updates" aria-labelledby="updates-title">
+        <div class="section-header reveal">
+          <span class="section-number">05 / 最新动态</span>
+          <div>
+            <h2 class="section-title" id="updates-title">
+              持续更新当前工作的窗口。
+            </h2>
+            <p class="section-copy">
+              用于记录模型发布、公开演讲、研究成果和重要节点，不需要维护完整博客。
+            </p>
+          </div>
+        </div>
+        <div
+          class="updates-grid"
+          data-updates
+          data-limit="3"
+          aria-live="polite"
+        ></div>
+        <div class="section-footer">
+          <a class="button" href="updates/">查看全部动态</a>
+        </div>
+      </section>
+
+      <section class="section" id="contact" aria-labelledby="contact-title">
+        <div class="contact-panel reveal">
+          <h2 id="contact-title">一起推动智能继续向前。</h2>
+          <div class="contact-panel__aside">
+            <p>欢迎就研究交流、公开演讲、技术顾问或合作机会直接联系。</p>
+            <div class="social-links">
+              <a class="social-link" href="mailto:zk_1028@aliyun.com"
+                >Email ↗</a
+              >
+              <a
+                class="social-link"
+                href="https://scholar.google.com/citations?user=1J061HIAAAAJ&amp;hl=en"
+                target="_blank"
+                rel="noreferrer"
+                >Scholar ↗</a
+              >
+              <a
+                class="social-link"
+                href="https://github.com/ZhanKunLiAuto"
+                target="_blank"
+                rel="me noreferrer"
+                >GitHub ↗</a
+              >
+              <a
+                class="social-link"
+                href="https://www.linkedin.com/in/kunzhan"
+                target="_blank"
+                rel="me noreferrer"
+                >LinkedIn ↗</a
+              >
+              <span data-optional-socials hidden></span>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <span>© 2026 詹锟。轻量静态网站。</span>
+      <a href="mailto:zk_1028@aliyun.com">zk_1028@aliyun.com</a>
+    </footer>
+
+    <script src="../assets/js/content.js"></script>
+    <script src="../assets/js/site.js"></script>
+  </body>
+</html>
