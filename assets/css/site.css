@@ -1200,7 +1200,7 @@ a {
   }
 
   .milestone {
-    grid-template-columns: 74px 1fr;
+    grid-template-columns: minmax(6.5rem, max-content) minmax(0, 1fr);
     gap: 18px;
   }
 
