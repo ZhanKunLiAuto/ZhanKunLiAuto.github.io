@@ -432,6 +432,21 @@ a {
   line-height: 1.45;
 }
 
+.metric__detail {
+  display: block;
+  margin-top: 12px;
+  color: var(--ink-muted);
+  font-size: 0.72rem;
+}
+
+.metrics__source {
+  margin: 0;
+  padding: 14px 24px;
+  border-top: 1px solid var(--line);
+  color: var(--ink-muted);
+  font-size: 0.74rem;
+}
+
 .section {
   width: var(--content);
   margin: 0 auto;
@@ -471,6 +486,112 @@ a {
   margin: 22px 0 0;
   color: var(--ink-muted);
   font-size: 1.05rem;
+}
+
+.principles-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.2fr);
+  align-items: start;
+  gap: clamp(32px, 5vw, 72px);
+}
+
+.principles-intro {
+  padding: clamp(24px, 3vw, 38px);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-md);
+  background: var(--surface);
+}
+
+.principles-intro blockquote {
+  margin: 0 0 28px;
+  font-family: var(--serif);
+  font-size: clamp(1.7rem, 2.8vw, 2.7rem);
+  font-weight: 500;
+  letter-spacing: -0.035em;
+  line-height: 1.4;
+}
+
+.principles-intro blockquote span {
+  display: block;
+}
+
+.principles-intro p {
+  margin: 18px 0 0;
+  color: var(--ink-muted);
+  font-size: 0.93rem;
+}
+
+.principles-list {
+  border-top: 1px solid var(--line-strong);
+}
+
+.principle {
+  border-bottom: 1px solid var(--line);
+}
+
+.principle summary {
+  display: grid;
+  grid-template-columns: 30px minmax(0, 1fr) 18px;
+  align-items: baseline;
+  gap: 16px;
+  padding: 24px 0;
+  cursor: pointer;
+  list-style: none;
+}
+
+.principle summary::-webkit-details-marker {
+  display: none;
+}
+
+.principle summary::after {
+  color: var(--accent);
+  font-size: 1.2rem;
+  line-height: 1;
+  text-align: center;
+  content: "+";
+}
+
+.principle[open] summary::after {
+  content: "−";
+}
+
+.principle summary:hover h3 {
+  color: var(--accent);
+}
+
+.principle__number {
+  color: var(--accent);
+  font-family: var(--serif);
+  font-size: 1.15rem;
+}
+
+.principle h3 {
+  margin: 0;
+  font-size: 1.05rem;
+  font-weight: 650;
+  line-height: 1.65;
+}
+
+.principle__body {
+  padding: 0 34px 26px 46px;
+  color: var(--ink-muted);
+  font-size: 0.93rem;
+}
+
+.principle__body p {
+  margin: 0 0 16px;
+}
+
+.principle__body p:last-child {
+  margin-bottom: 0;
+}
+
+.principles-closing {
+  margin: 36px 0 0;
+  color: var(--accent);
+  font-family: var(--serif);
+  font-size: clamp(1.15rem, 2vw, 1.5rem);
+  font-weight: 500;
 }
 
 .manifesto-grid {
@@ -1108,6 +1229,7 @@ a {
 
   .section-header,
   .manifesto-grid,
+  .principles-layout,
   .contact-panel {
     grid-template-columns: 1fr;
   }

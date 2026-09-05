@@ -22,6 +22,16 @@ Then open `http://localhost:8080/`.
 - `data/publications.json` — publication snapshot
 - `assets/img/` — portrait, paper previews, and social preview image
 
+## Homepage principles
+
+The `#principles` section in both homepages contains eight personal principles for the age of AI, after About and before Milestones. The Chinese copy preserves the supplied essay; the English page contains a translation. Each principle uses native `<details>` / `<summary>` markup, so it can be expanded with a mouse or keyboard without JavaScript. The first principle is open by default.
+
+## Update research metrics
+
+The homepage metrics are static HTML so they remain visible without JavaScript. Update both `index.html` and `zh/index.html`, as well as the `profile` object in `data/publications.json`, when refreshing the figures.
+
+The September 5, 2026 update uses the supplied Google Scholar screenshot: 2,217 citations, h-index 19, and i10-index 28 overall; 2,195, 19, and 26 respectively since 2021. `metrics_updated_at` records this site update, not the screenshot capture date. The publication count, list, and individual citation counts remain from the July 22, 2026 snapshot (`papers_updated_at`); they were not re-fetched. Keep these dates distinct in the homepage source note and on the publication pages.
+
 ## Add an update
 
 Edit `assets/js/content.js` and add one object to `siteContent.updates`. Each update has one date, an optional URL, and English/Chinese title and summary fields. The homepage automatically shows the latest three; the Updates page shows all entries.
