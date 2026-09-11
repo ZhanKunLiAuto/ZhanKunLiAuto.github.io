@@ -298,6 +298,12 @@ a {
   color: var(--page);
 }
 
+.button--accent {
+  border-color: var(--accent);
+  background: var(--accent);
+  color: var(--page);
+}
+
 .button:hover {
   transform: translateY(-2px);
 }
