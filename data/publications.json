@@ -1,17 +1,17 @@
 {
   "profile": {
     "papers": 63,
-    "citations": 2217,
+    "citations": 2252,
     "h_index": 19,
     "i10_index": 28,
     "metrics_source": "google_scholar_user_screenshot",
     "papers_source": "serpapi",
-    "updated_at": "2026-09-05",
+    "updated_at": "2026-09-14",
     "metrics_source_url": "https://scholar.google.com/citations?user=1J061HIAAAAJ&hl=en",
-    "metrics_updated_at": "2026-09-05",
+    "metrics_updated_at": "2026-09-14",
     "papers_updated_at": "2026-07-22T05:27:23Z",
     "since_2021": {
-      "citations": 2195,
+      "citations": 2230,
       "h_index": 19,
       "i10_index": 26
     }

@@ -10,6 +10,19 @@ window.siteContent = Object.freeze({
   }),
   updates: Object.freeze([
     Object.freeze({
+      date: "2026-09-10",
+      category: Object.freeze({ en: "Production deployment", zh: "量产落地" }),
+      title: Object.freeze({
+        en: "OTA 8.6 brings Mach VLA 2.0 to Orin and Thor",
+        zh: "OTA 8.6：马赫 VLA 2.0 下放 Orin 与 Thor 平台",
+      }),
+      summary: Object.freeze({
+        en: "Through model distillation, platform adaptation, and multiple rounds of validation, Mach VLA 2.0 began rolling out to existing AD Max vehicles, bringing new driving capabilities to nearly one million owners.",
+        zh: "通过模型蒸馏、平台适配与多轮验证，马赫 VLA 2.0 开始向已交付的 AD Max 车型陆续推送，将新的辅助驾驶能力带给近百万车主。",
+      }),
+      url: "https://jingxuan.douyin.com/m/video/7684241135623015723",
+    }),
+    Object.freeze({
       date: "2026-06-16",
       category: Object.freeze({ en: "Model release", zh: "模型发布" }),
       title: Object.freeze({

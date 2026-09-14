@@ -30,9 +30,11 @@ The `#principles` section in both homepages contains eight personal principles f
 
 The homepage metrics are static HTML so they remain visible without JavaScript. Update both `index.html` and `zh/index.html`, as well as the `profile` object in `data/publications.json`, when refreshing the figures.
 
-The September 5, 2026 update uses the supplied Google Scholar screenshot: 2,217 citations, h-index 19, and i10-index 28 overall; 2,195, 19, and 26 respectively since 2021. `metrics_updated_at` records this site update, not the screenshot capture date. The publication count, list, and individual citation counts remain from the July 22, 2026 snapshot (`papers_updated_at`); they were not re-fetched. Keep these dates distinct in the homepage source note and on the publication pages.
+The September 14, 2026 update uses the supplied Google Scholar screenshot: 2,252 citations, h-index 19, and i10-index 28 overall; 2,230, 19, and 26 respectively since 2021. `metrics_updated_at` records this site update, not the screenshot capture date. The publication count, list, and individual citation counts remain from the July 22, 2026 snapshot (`papers_updated_at`); they were not re-fetched. Keep these dates distinct in the homepage source note and on the publication pages.
 
 ## Add an update
+
+The September 10, 2026 milestone and update cover the OTA 8.6 rollout of distilled Mach VLA 2.0 models to NVIDIA Orin and Thor platforms in existing AD Max vehicles, targeting nearly one million owners. The wording describes a rollout that has begun, rather than a completed fleet-wide update. Sources: [Li Auto's technical overview featuring Kun Zhan, published September 11](https://jingxuan.douyin.com/m/video/7684241135623015723) and [September 10 rollout announcement reported by IT Home](https://www.ithome.com/0/1000/955.htm).
 
 Edit `assets/js/content.js` and add one object to `siteContent.updates`. Each update has one date, an optional URL, and English/Chinese title and summary fields. The homepage automatically shows the latest three; the Updates page shows all entries.
 
