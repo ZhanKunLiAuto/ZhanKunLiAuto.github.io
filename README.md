@@ -30,7 +30,9 @@ The `#principles` section in both homepages contains eight personal principles f
 
 The homepage metrics are static HTML so they remain visible without JavaScript. Update both `index.html` and `zh/index.html`, as well as the `profile` object in `data/publications.json`, when refreshing the figures.
 
-The September 14, 2026 update uses the supplied Google Scholar screenshot: 2,252 citations, h-index 19, and i10-index 28 overall; 2,230, 19, and 26 respectively since 2021. `metrics_updated_at` records this site update, not the screenshot capture date. The publication count, list, and individual citation counts remain from the July 22, 2026 snapshot (`papers_updated_at`); they were not re-fetched. Keep these dates distinct in the homepage source note and on the publication pages.
+The September 29, 2026 update uses the supplied Google Scholar screenshot: 2,340 citations, h-index 19, and i10-index 28 overall; 2,318, 19, and 26 respectively since 2021. The screenshot also supplies updated citation counts for DriveVLM (818), Street Gaussians (530), ReconDreamer (119), PlanAgent (84), and StreetCrafter (63). These five entries have `citationUpdatedAt` and `citationSource` fields, and the four matching homepage cards use the same counts.
+
+`metrics_updated_at` and each `citationUpdatedAt` record this site update, not the screenshot capture date. The publication count, list, and all other citation counts remain from the July 22, 2026 snapshot (`papers_updated_at`); they were not re-fetched. Keep these dates and the partial update scope distinct in the homepage source note and on the publication pages.
 
 ## Add an update
 
