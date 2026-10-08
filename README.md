@@ -36,9 +36,29 @@ The September 29, 2026 update uses the supplied Google Scholar screenshot: 2,340
 
 ## Add an update
 
-The September 10, 2026 milestone and update cover the OTA 8.6 rollout of distilled Mach VLA 2.0 models to NVIDIA Orin and Thor platforms in existing AD Max vehicles, targeting nearly one million owners. The wording describes a rollout that has begun, rather than a completed fleet-wide update. Sources: [Li Auto's technical overview featuring Kun Zhan, published September 11](https://jingxuan.douyin.com/m/video/7684241135623015723) and [September 10 rollout announcement reported by IT Home](https://www.ithome.com/0/1000/955.htm).
+The September 10, 2026 milestone and update cover the OTA 8.6 rollout of distilled Mach VLA 2.0 models to NVIDIA Orin and Thor platforms in existing AD Max vehicles, targeting nearly one million owners. The wording describes a rollout that has begun, rather than a completed fleet-wide update. Sources: [Xiang Li's September 10 video on model distillation, platform adaptation, and rollout](https://www.bilibili.com/video/BV1aXYu6eE3Q/) and [September 10 rollout announcement reported by IT Home](https://www.ithome.com/0/1000/955.htm).
 
 Edit `assets/js/content.js` and add one object to `siteContent.updates`. Each update has one date, an optional URL, and English/Chinese title and summary fields. The homepage automatically shows the latest three; the Updates page shows all entries.
+
+## Milestone sources
+
+The production milestones in both homepages were expanded on October 9, 2026. The project-lead role for Mach VLA 2.0 and the internal name VLA 1.0 were supplied by Kun Zhan. Public sources support the release context:
+
+- **2026.05 — Mach VLA 2.0:** Li Auto distinguishes the [April Beijing Auto Show debut](https://ir.lixiang.com/news-releases/news-release-details/li-auto-inc-april-2026-delivery-update) from the [May 15 official L9 launch](https://ir.lixiang.com/news-releases/news-release-details/li-auto-inc-launches-all-new-li-l9-pioneering-embodied-ai/). The milestone uses May for production delivery. Its [Q1 2026 results](https://ir.lixiang.com/news-releases/news-release-details/li-auto-inc-announces-unaudited-first-quarter-2026-financial/) confirm integrated deployment of the proprietary M100 chip and VLA model. The supplied full-stack scope is also described in [coverage of Livis Day](https://www.leiphone.com/category/transportation/iKKAYzqzrW0294JG.html).
+- **2025.08 — VLA 1.0:** The [official i8 announcement](https://www.lixiang.com/news/136.html) is dated July 29 and specifies August 20 deliveries. August refers to first customer deliveries, not the announcement date. [August 29 reporting](https://finance.sina.com.cn/stock/t/2025-08-29/doc-infnrnmf4164850.shtml) identifies the VLA architecture as the industry's first delivered in production vehicles. The first-production claim applies to the driving model, not all VLA research.
+- **2024.10 — E2E + VLM:** The [Q3 2024 results](https://ir.lixiang.com/news-releases/news-release-details/li-auto-inc-announces-unaudited-third-quarter-2024-financial) confirm the OTA 6.4 rollout to more than 320,000 AD Max users. The [2024 ESG report](https://ir.lixiang.com/static-files/756c207b-c016-4b5c-94e4-4eef9da91940), page 26, describes the world's first E2E + VLM dual-system architecture, announced in July and fully rolled out in October. The [official i8 announcement](https://www.lixiang.com/news/136.html) also describes Li Auto as the first company to deliver end-to-end advanced assisted driving; the homepage scopes that claim to China. [October 23 coverage](https://www.eeo.com.cn/2024/1023/692871.shtml) supplies the exact rollout date.
+
+The visible milestone links now point to related videos. Titles, upload dates, and descriptions were checked on Bilibili on October 9, 2026:
+
+| Milestone | Video | Publisher / upload date |
+| --- | --- | --- |
+| 2026.09 | [Mach VLA 2.0 rollout overview](https://www.bilibili.com/video/BV1aXYu6eE3Q/) | Xiang Li / September 10, 2026 |
+| 2026.06 | [Livis Day full replay with subtitles](https://www.bilibili.com/video/BV14njP6AEHi/) | 理想TOP2 / June 16, 2026 |
+| 2026.05 | [Kun Zhan interview on Mach M100 and L9 Livis](https://www.bilibili.com/video/BV1riLw6nEfe/) | 影总聊智驾 / May 18, 2026 |
+| 2025.08 | [Li i8 launch event, full replay](https://www.bilibili.com/video/BV1kh8ozWEKq/) | 德发频道 / July 29, 2025 |
+| 2024.10 | [E2E + VLM architecture at the 2024 summer driving event](https://www.bilibili.com/video/BV1A4421U7rW/) | Li Auto / July 5, 2024 |
+
+Video dates describe the related presentation or interview; milestone dates describe the production event. In particular, the July 2025 i8 launch precedes August deliveries, and the July 2024 architecture presentation precedes the October rollout. The previous Livis Day YouTube video (`E8DX3SZcUfA`) showed “removed by the uploader”; its update entries now use the Bilibili replay above. The September rollout update uses the same video as its milestone.
 
 ## Update social profiles
 

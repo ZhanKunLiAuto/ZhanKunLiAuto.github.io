@@ -20,7 +20,7 @@ window.siteContent = Object.freeze({
         en: "Through model distillation, platform adaptation, and multiple rounds of validation, Mach VLA 2.0 began rolling out to existing AD Max vehicles, bringing new driving capabilities to nearly one million owners.",
         zh: "通过模型蒸馏、平台适配与多轮验证，马赫 VLA 2.0 开始向已交付的 AD Max 车型陆续推送，将新的辅助驾驶能力带给近百万车主。",
       }),
-      url: "https://jingxuan.douyin.com/m/video/7684241135623015723",
+      url: "https://www.bilibili.com/video/BV1aXYu6eE3Q/",
     }),
     Object.freeze({
       date: "2026-06-16",
@@ -46,7 +46,7 @@ window.siteContent = Object.freeze({
         en: "Presented Li Auto's foundation-model stack and the path from production vehicles toward broader physical-world intelligence.",
         zh: "系统介绍理想汽车基座模型技术栈，以及从量产智能汽车走向更广阔物理世界智能的路径。",
       }),
-      url: "https://www.youtube.com/watch?v=E8DX3SZcUfA",
+      url: "https://www.bilibili.com/video/BV14njP6AEHi/",
     }),
     Object.freeze({
       date: "2026-03-17",
@@ -72,7 +72,7 @@ window.siteContent = Object.freeze({
         en: "Outlined the next phase of Li Auto's VLA architecture through larger-scale imitation learning, reinforcement learning, and model-compute co-design.",
         zh: "通过更大规模的模仿学习、强化学习，以及模型与算力协同设计，公布理想汽车 VLA 架构的下一阶段路线。",
       }),
-      url: "https://www.ithome.com/0/964/508.htm",
+      url: "https://www.bilibili.com/video/BV14njP6AEHi/",
     }),
     Object.freeze({
       date: "2024-05-15",
