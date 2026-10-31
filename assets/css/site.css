@@ -778,6 +778,10 @@ a {
   gap: 18px;
 }
 
+.research-highlights {
+  margin-bottom: 32px;
+}
+
 .paper-card {
   position: relative;
   display: flex;

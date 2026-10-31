@@ -10,6 +10,19 @@ window.siteContent = Object.freeze({
   }),
   updates: Object.freeze([
     Object.freeze({
+      date: "2026-10-31",
+      category: Object.freeze({ en: "Research roundup", zh: "研究进展" }),
+      title: Object.freeze({
+        en: "Recent research: EMNLP, ECCV, and embodied foundation models",
+        zh: "近期研究：EMNLP、ECCV 与具身智能基座模型",
+      }),
+      summary: Object.freeze({
+        en: "The publication index now includes ProbeTQA and HMPO at EMNLP 2026, LIRQuant in Findings of EMNLP, LiSTAR and OccDirector at ECCV 2026, and the MachEmbodied-U0 and BrainWAM preprints.",
+        zh: "论文目录新增 EMNLP 2026 的 ProbeTQA、HMPO，Findings of EMNLP 的 LIRQuant，ECCV 2026 的 LiSTAR、OccDirector，以及 MachEmbodied-U0 和 BrainWAM 预印本。",
+      }),
+      url: "https://scholar.google.com/citations?user=1J061HIAAAAJ&hl=en&sortby=pubdate",
+    }),
+    Object.freeze({
       date: "2026-09-10",
       category: Object.freeze({ en: "Production deployment", zh: "量产落地" }),
       title: Object.freeze({

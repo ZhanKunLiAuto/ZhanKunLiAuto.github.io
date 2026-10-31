@@ -20,7 +20,7 @@
       error:
         "The publication list could not be loaded. Please use Google Scholar.",
       allYears: "All years",
-      shown: "publications shown",
+      shown: "records shown",
     },
     zh: {
       citation: "次引用",
@@ -30,7 +30,7 @@
       empty: "没有符合当前条件的论文。",
       error: "论文列表暂时无法载入，请前往 Google Scholar 查看。",
       allYears: "全部年份",
-      shown: "篇论文",
+      shown: "条成果记录",
     },
   }[language];
 
@@ -94,7 +94,7 @@
     const selectedYear = yearSelect?.value ?? "";
     const filtered = publications.filter(function matches(publication) {
       const searchable =
-        `${publication.title} ${publication.authors} ${publication.venue}`.toLocaleLowerCase();
+        `${publication.title} ${(publication.alternateTitles ?? []).join(" ")} ${publication.authors} ${publication.venue}`.toLocaleLowerCase();
       const matchesQuery = !query || searchable.includes(query);
       const matchesYear = !selectedYear || publication.year === selectedYear;
       return matchesQuery && matchesYear;

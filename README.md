@@ -30,9 +30,15 @@ The `#principles` section in both homepages contains eight personal principles f
 
 The homepage metrics are static HTML so they remain visible without JavaScript. Update both `index.html` and `zh/index.html`, as well as the `profile` object in `data/publications.json`, when refreshing the figures.
 
-The September 29, 2026 update uses the supplied Google Scholar screenshot: 2,340 citations, h-index 19, and i10-index 28 overall; 2,318, 19, and 26 respectively since 2021. The screenshot also supplies updated citation counts for DriveVLM (818), Street Gaussians (530), ReconDreamer (119), PlanAgent (84), and StreetCrafter (63). These five entries have `citationUpdatedAt` and `citationSource` fields, and the four matching homepage cards use the same counts.
+The October 31, 2026 refresh reads the public [Google Scholar profile](https://scholar.google.com/citations?user=1J061HIAAAAJ&hl=en&cstart=0&pagesize=100&sortby=pubdate): **2,546 citations, h-index 20, i10-index 30**; since 2021: **2,523 / 20 / 28**. All displayed citation counts, the five selected-paper cards, and both language versions use this snapshot. The raw public bibliography and metrics are saved in `data/sources/scholar-2026-10-31.json`.
 
-`metrics_updated_at` and each `citationUpdatedAt` record this site update, not the screenshot capture date. The publication count, list, and all other citation counts remain from the July 22, 2026 snapshot (`papers_updated_at`); they were not re-fetched. Keep these dates and the partial update scope distinct in the homepage source note and on the publication pages.
+The profile contains 81 records. The site displays **78 indexed works**, excluding three standalone supplementary-material records. This is a record count, not a count of unique papers: patents and separately indexed versions remain included. Compared with the previous 60-row site index, this refresh adds 16 research records (including an ICLR 2025 workshop paper) and 3 patents. The old `finetuning2025` row is no longer separately listed on Scholar and shares arXiv:2503.10434 with `learningpersonalized2025`; its title remains searchable as an `alternateTitles` entry. Citation counts are taken from the current Scholar records, not summed across versions.
+
+Recent additions include ProbeTQA, HMPO, LIRQuant, MachEmbodied-U0, Information-Time PPO, What Makes an Efficient VLA?, LiSTAR, OccDirector, BrainWAM, RISE-RL, RoadVGGT, OpenSkillRisk, VLAFlow, RGS, and STT-Arena. The homepage highlights LIRQuant, MachEmbodied-U0, and BrainWAM above the existing selected papers.
+
+Publication details were checked against [ACL Anthology](https://aclanthology.org/2026.emnlp-main.900/) for ProbeTQA, [HMPO](https://aclanthology.org/2026.emnlp-main.885/), and [LIRQuant](https://aclanthology.org/2026.findings-emnlp.1589/); Springer for [LiSTAR](https://link.springer.com/chapter/10.1007/978-3-032-37419-6_8), [OccDirector](https://link.springer.com/chapter/10.1007/978-3-032-37196-6_3), and [StreetForward](https://link.springer.com/chapter/10.1007/978-3-032-37359-5_34); and the linked arXiv records for new preprints. CVF proceedings take precedence over Scholar's preprint labels for LinkVLA and DriveCombo. AD-R1 links to the CVPR Findings 2026 proceedings and is labeled accordingly. ICLR 2026 status was confirmed through the official DriveAgent-R1 proceedings and ReflectDrive paper; Scholar supplies the updated ICRA 2026 venue records. Publisher and arXiv author lists can differ between versions; the displayed author list follows the linked publication version.
+
+`metrics_updated_at`, `papers_updated_at`, and each `citationUpdatedAt` now use October 31, 2026. Keep the snapshot date and count scope consistent across `data/publications.json`, both homepages, and both publication pages in future refreshes.
 
 ## Add an update
 
@@ -74,10 +80,10 @@ Empty values are intentionally hidden from the published site.
 
 ## Refresh publications
 
-The current snapshot was imported from the previous site's Scholar data. To import a newer compatible YAML snapshot:
+The original snapshot was imported from the previous site's Scholar data; the October 2026 refresh is documented above. To import a compatible YAML snapshot:
 
 ```bash
 python3 scripts/import_publications.py /path/to/scholar.yml data/publications.json
 ```
 
-This helper requires PyYAML. The website itself has no Python or JavaScript package dependency.
+This legacy helper requires PyYAML and replaces the JSON file; it does not preserve later manual metadata, source fields, or alternate titles. Review its output before using it for a future refresh. The website itself has no Python or JavaScript package dependency.

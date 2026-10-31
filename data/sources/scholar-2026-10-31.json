@@ -1,0 +1,664 @@
+{
+  "retrievedAt": "2026-10-31",
+  "sourceUrl": "https://scholar.google.com/citations?user=1J061HIAAAAJ&hl=en&cstart=0&pagesize=100&sortby=pubdate",
+  "metrics": {
+    "citations": 2546,
+    "hIndex": 20,
+    "i10Index": 30,
+    "since2021": {
+      "citations": 2523,
+      "h_index": 20,
+      "i10_index": 28
+    }
+  },
+  "entries": [
+    {
+      "title": "ProbeTQA: Verifiable Table Question Answering via Multi-Round Executable Probing",
+      "authors": "Y Liang, H Ren, X Zhang, H Xin, W Huo, Y Guo, J Zheng, K Zhang, ...",
+      "venue": "Proceedings of the 2026 Conference on Empirical Methods in Natural Language …",
+      "year": "2026",
+      "citationCount": 0,
+      "scholarUrl": "https://scholar.google.com/citations?view_op=view_citation&hl=en&oe=ASCII&user=1J061HIAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=1J061HIAAAAJ:M05iB0D1s5AC"
+    },
+    {
+      "title": "LIRQuant: An Efficient Locally Isolated Rotation Quantization Method for Large Language Models",
+      "authors": "D Xu, H Li, T Song, Z Zhao, K Zhan",
+      "venue": "Findings of the Association for Computational Linguistics: EMNLP 2026, 33835 …",
+      "year": "2026",
+      "citationCount": 0,
+      "scholarUrl": "https://scholar.google.com/citations?view_op=view_citation&hl=en&oe=ASCII&user=1J061HIAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=1J061HIAAAAJ:ldfaerwXgEUC"
+    },
+    {
+      "title": "HMPO: Hybrid Median-length Policy Optimization for Chain-of-Thought Compression",
+      "authors": "M Zheng, H Chen, H Ren, H Xin, X Qu, Z Wang, S Yang, Z Peng, K Zhang, ...",
+      "venue": "Proceedings of the 2026 Conference on Empirical Methods in Natural Language …",
+      "year": "2026",
+      "citationCount": 0,
+      "scholarUrl": "https://scholar.google.com/citations?view_op=view_citation&hl=en&oe=ASCII&user=1J061HIAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=1J061HIAAAAJ:ns9cj8rnVeAC"
+    },
+    {
+      "title": "MachEmbodied-U0: Unified Understanding and Generation Model for Embodied Intelligence",
+      "authors": "H Wen, W Wang, K Shi, J Wang, W Feng, Y Zhang, Y Zhao, X Zhang, ...",
+      "venue": "arXiv preprint arXiv:2609.25627",
+      "year": "2026",
+      "citationCount": 1,
+      "scholarUrl": "https://scholar.google.com/citations?view_op=view_citation&hl=en&oe=ASCII&user=1J061HIAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=1J061HIAAAAJ:NaGl4SEjCO4C"
+    },
+    {
+      "title": "Information-Time Proximal Policy Optimization",
+      "authors": "Y Zeng, X Cui, Y Song, G Liu, H Xin, K Zhang, C Deng, K Zhan, J Ying, ...",
+      "venue": "arXiv preprint arXiv:2609.24380",
+      "year": "2026",
+      "citationCount": 0,
+      "scholarUrl": "https://scholar.google.com/citations?view_op=view_citation&hl=en&oe=ASCII&user=1J061HIAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=1J061HIAAAAJ:J_g5lzvAfSwC"
+    },
+    {
+      "title": "What Makes an Efficient VLA? Navigating Action-Head Design, Scaling, and Latency",
+      "authors": "L Sun, G Xia, F Li, L Ren, X Cui, H Zhang, F Feng, K Zhang, K Zhan, Y Xie, ...",
+      "venue": "arXiv preprint arXiv:2609.13984",
+      "year": "2026",
+      "citationCount": 0,
+      "scholarUrl": "https://scholar.google.com/citations?view_op=view_citation&hl=en&oe=ASCII&user=1J061HIAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=1J061HIAAAAJ:RGFaLdJalmkC"
+    },
+    {
+      "title": "Listar: Ray-centric world models for 4d lidar sequences in autonomous driving",
+      "authors": "P Liu, S Wang, L Zhang, X Peng, Y Lyu, J Deng, S Lu, W Ma, X Zhang, ...",
+      "venue": "European Conference on Computer Vision, 136-154",
+      "year": "2026",
+      "citationCount": 1,
+      "scholarUrl": "https://scholar.google.com/citations?view_op=view_citation&hl=en&oe=ASCII&user=1J061HIAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=1J061HIAAAAJ:35N4QoGY0k4C"
+    },
+    {
+      "title": "OccDirector: Language-guided behavior and interaction generation in 4D occupancy space",
+      "authors": "Z Liang, T Yan, D Chen, J Zheng, H Zheng, C Xu, Y Wang, K Zhan, ...",
+      "venue": "European Conference on Computer Vision, 37-54",
+      "year": "2026",
+      "citationCount": 1,
+      "scholarUrl": "https://scholar.google.com/citations?view_op=view_citation&hl=en&oe=ASCII&user=1J061HIAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=1J061HIAAAAJ:BqipwSGYUEgC"
+    },
+    {
+      "title": "StreetForward: Perceiving dynamic street with feedforward causal attention",
+      "authors": "Z Yu, Z Wang, Y Wang, X Zhang, Y Zhan, K Zhan",
+      "venue": "European Conference on Computer Vision, 614-632",
+      "year": "2026",
+      "citationCount": 7,
+      "scholarUrl": "https://scholar.google.com/citations?view_op=view_citation&hl=en&oe=ASCII&user=1J061HIAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=1J061HIAAAAJ:j3f4tGmQtD8C"
+    },
+    {
+      "title": "Brainwam: Action-space coordination of semantic priors and predictive dynamics for autonomous driving",
+      "authors": "B Zhan, S Shang, S Lu, Y Xu, Z Wang, Y Wang, X Zhang, K Zhan, J Gu",
+      "venue": "arXiv preprint arXiv:2608.12854",
+      "year": "2026",
+      "citationCount": 1,
+      "scholarUrl": "https://scholar.google.com/citations?view_op=view_citation&hl=en&oe=ASCII&user=1J061HIAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=1J061HIAAAAJ:NMxIlDl6LWMC"
+    },
+    {
+      "title": "RISE-RL: Rubric-Informed Selective Exploration for Open-Ended Reinforcement Learning",
+      "authors": "J Hou, Z Liu, H Ren, H Xin, P Zhou, K Zhan",
+      "venue": "arXiv preprint arXiv:2608.09123",
+      "year": "2026",
+      "citationCount": 3,
+      "scholarUrl": "https://scholar.google.com/citations?view_op=view_citation&hl=en&oe=ASCII&user=1J061HIAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=1J061HIAAAAJ:vV6vV6tmYwMC"
+    },
+    {
+      "title": "RoadVGGT: Road-Structure-Aware Feed-Forward Road Surface Reconstruction",
+      "authors": "H Jiao, C Liu, J Sun, Z Zhang, M Yang, Y Li, M Zhou, K Zhan, L Zhao",
+      "venue": "arXiv preprint arXiv:2607.23758",
+      "year": "2026",
+      "citationCount": 0,
+      "scholarUrl": "https://scholar.google.com/citations?view_op=view_citation&hl=en&oe=ASCII&user=1J061HIAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=1J061HIAAAAJ:JV2RwH3_ST0C"
+    },
+    {
+      "title": "OpenSkillRisk: Benchmarking Agent Safety When Using Real-World Risky Third-Party Skills",
+      "authors": "Q Liu, T Hui, K Zhan, K Zhang, N Miao",
+      "venue": "arXiv preprint arXiv:2607.20121",
+      "year": "2026",
+      "citationCount": 3,
+      "scholarUrl": "https://scholar.google.com/citations?view_op=view_citation&hl=en&oe=ASCII&user=1J061HIAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=1J061HIAAAAJ:RYcK_YlVTxYC"
+    },
+    {
+      "title": "Method and apparatus for determining image and training model, device, medium and program product",
+      "authors": "Y Wang, K Zhan, T Tang, D WEI, Z Jia, T Gao",
+      "venue": "US Patent App. 19/077,088",
+      "year": "2026",
+      "citationCount": 0,
+      "scholarUrl": "https://scholar.google.com/citations?view_op=view_citation&hl=en&oe=ASCII&user=1J061HIAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=1J061HIAAAAJ:2P1L_qKh6hAC"
+    },
+    {
+      "title": "FoMoVLA: Bridging Visual Foresight and Motion Guidance for Vision-Language-Action Models",
+      "authors": "W Li, P Jia, Y Ma, X Jiang, T Jiang, S Sun, Y Li, X Wen, H Hong, Z Liu, B Li, ...",
+      "venue": "arXiv preprint arXiv:2607.14739",
+      "year": "2026",
+      "citationCount": 2,
+      "scholarUrl": "https://scholar.google.com/citations?view_op=view_citation&hl=en&oe=ASCII&user=1J061HIAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=1J061HIAAAAJ:M3NEmzRMIkIC"
+    },
+    {
+      "title": "Dive: Efficient multi-view driving scenes generation based on video diffusion transformer",
+      "authors": "J Jiang, G Hong, M Zhang, H Hu, K Zhan, R Shao, L Nie",
+      "venue": "IEEE Transactions on Multimedia",
+      "year": "2026",
+      "citationCount": 14,
+      "scholarUrl": "https://scholar.google.com/citations?view_op=view_citation&hl=en&oe=ASCII&user=1J061HIAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=1J061HIAAAAJ:3fE2CSJIrl8C"
+    },
+    {
+      "title": "VLAFlow: A Unified Training Framework for Vision-Language-Action Models via Co-training and Future Latent Alignment",
+      "authors": "G Xia, F Li, H Ji, L Ren, F Feng, K Zhan, Y Xie",
+      "venue": "arXiv preprint arXiv:2607.01586",
+      "year": "2026",
+      "citationCount": 1,
+      "scholarUrl": "https://scholar.google.com/citations?view_op=view_citation&hl=en&oe=ASCII&user=1J061HIAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=1J061HIAAAAJ:blknAaTinKkC"
+    },
+    {
+      "title": "Method and apparatus for generating multi-view video",
+      "authors": "HU Hengtong, J JIANG, H Gangyi, X Zhou, J Xiang, X Zhang, K Zhan, ...",
+      "venue": "US Patent App. 19/098,158",
+      "year": "2026",
+      "citationCount": 0,
+      "scholarUrl": "https://scholar.google.com/citations?view_op=view_citation&hl=en&oe=ASCII&user=1J061HIAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=1J061HIAAAAJ:70eg2SAEIzsC"
+    },
+    {
+      "title": "Metis: A Generalizable and Efficient World-Action Model for Autonomous Driving and Urban Navigation",
+      "authors": "J Li, Z Liu, D Hu, J Wu, Z Ma, W Wu, C Han, Z Hao, Z Liu, K Zhan, J Deng, ...",
+      "venue": "arXiv preprint arXiv:2606.15869",
+      "year": "2026",
+      "citationCount": 8,
+      "scholarUrl": "https://scholar.google.com/citations?view_op=view_citation&hl=en&oe=ASCII&user=1J061HIAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=1J061HIAAAAJ:maZDTaKrznsC"
+    },
+    {
+      "title": "LiAuto-GeoX: Efficient Grounded Driving Transformer",
+      "authors": "J Lian, H Sun, Y Wu, L Mu, S Wang, L Hui, N Mao, T Wei, P Zhou, K Zhan, ...",
+      "venue": "arXiv preprint arXiv:2606.05774",
+      "year": "2026",
+      "citationCount": 0,
+      "scholarUrl": "https://scholar.google.com/citations?view_op=view_citation&hl=en&oe=ASCII&user=1J061HIAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=1J061HIAAAAJ:k_IJM867U9cC"
+    },
+    {
+      "title": "RGS: Reflection-aware Gaussian Splatting via Learning Geometry Continuity for Reflective Objects",
+      "authors": "X Du, Y Wang, C Bi, K Zhan, X Yu",
+      "venue": "2026 IEEE International Conference on Robotics and Automation (ICRA), 22079 …",
+      "year": "2026",
+      "citationCount": 0,
+      "scholarUrl": "https://scholar.google.com/citations?view_op=view_citation&hl=en&oe=ASCII&user=1J061HIAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=1J061HIAAAAJ:GnPB-g6toBAC"
+    },
+    {
+      "title": "Transdiffuser: Diverse trajectory generation with decorrelated multi-modal representation for end-to-end autonomous driving",
+      "authors": "X Jiang, Y Ma, P Li, L Xu, X Wen, K Zhan, Z Xia, P Jia, X Lang, S Sun",
+      "venue": "2026 IEEE International Conference on Robotics and Automation (ICRA), 23708 …",
+      "year": "2026",
+      "citationCount": 7,
+      "scholarUrl": "https://scholar.google.com/citations?view_op=view_citation&hl=en&oe=ASCII&user=1J061HIAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=1J061HIAAAAJ:HDshCWvjkbEC"
+    },
+    {
+      "title": "The better you learn, the smarter you prune: Towards efficient vision-language-action models via differentiable token pruning",
+      "authors": "T Jiang, X Jiang, Y Ma, X Wen, B Li, K Zhan, P Jia, Y Liu, S Sun, X Lang",
+      "venue": "2026 IEEE International Conference on Robotics and Automation (ICRA), 20645 …",
+      "year": "2026",
+      "citationCount": 57,
+      "scholarUrl": "https://scholar.google.com/citations?view_op=view_citation&hl=en&oe=ASCII&user=1J061HIAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=1J061HIAAAAJ:aqlVkmm33-oC"
+    },
+    {
+      "title": "Geodrive: 3d geometry-informed driving world model with precise action control",
+      "authors": "A Chen, W Zheng, Y Wang, X Zhang, K Zhan, P Jia, K Keutzer, S Zhang",
+      "venue": "2026 IEEE International Conference on Robotics and Automation (ICRA), 14624 …",
+      "year": "2026",
+      "citationCount": 28,
+      "scholarUrl": "https://scholar.google.com/citations?view_op=view_citation&hl=en&oe=ASCII&user=1J061HIAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=1J061HIAAAAJ:YOwf2qJgpHMC"
+    },
+    {
+      "title": "Closed Loop Dynamic Driving Data Mixture for Real-Synthetic Co-Training",
+      "authors": "H Ruan, P Liu, W Ma, Z Li, X Zhang, J Ma, D Xu, K Zhan",
+      "venue": "arXiv preprint arXiv:2605.21372",
+      "year": "2026",
+      "citationCount": 0,
+      "scholarUrl": "https://scholar.google.com/citations?view_op=view_citation&hl=en&oe=ASCII&user=1J061HIAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=1J061HIAAAAJ:TFP_iSt0sucC"
+    },
+    {
+      "title": "STT-Arena: A More Realistic Environment for Tool-Using with Spatio-Temporal Dynamics",
+      "authors": "T Hui, H Xu, P Zhu, H Xin, K Zhan, S Su, C Liu, N Miao",
+      "venue": "arXiv preprint arXiv:2605.18548",
+      "year": "2026",
+      "citationCount": 1,
+      "scholarUrl": "https://scholar.google.com/citations?view_op=view_citation&hl=en&oe=ASCII&user=1J061HIAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=1J061HIAAAAJ:lSLTfruPkqcC"
+    },
+    {
+      "title": "M2A: Synergizing Mathematical and Agentic Reasoning in Large Language Models",
+      "authors": "J Wang, X Zhou, Q Xu, K Zhan",
+      "venue": "arXiv preprint arXiv:2605.09879",
+      "year": "2026",
+      "citationCount": 1,
+      "scholarUrl": "https://scholar.google.com/citations?view_op=view_citation&hl=en&oe=ASCII&user=1J061HIAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=1J061HIAAAAJ:iH-uZ7U-co4C"
+    },
+    {
+      "title": "ReflectDrive-2: Reinforcement-Learning-Aligned Self-Editing for Discrete Diffusion Driving",
+      "authors": "H Wang, Y Wang, B Cui, P Li, B Lu, M Wang, T Wang, C Tang, T Zhang, ...",
+      "venue": "arXiv preprint arXiv:2605.04647",
+      "year": "2026",
+      "citationCount": 3,
+      "scholarUrl": "https://scholar.google.com/citations?view_op=view_citation&hl=en&oe=ASCII&user=1J061HIAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=1J061HIAAAAJ:bEWYMUwI8FkC"
+    },
+    {
+      "title": "Rlgf: Reinforcement learning with geometric feedback for autonomous driving video generation",
+      "authors": "T Yan, W Han, X Zhang, K Zhan, CZ Xu, J Shen",
+      "venue": "Advances in Neural Information Processing Systems 38, 128659-128684",
+      "year": "2026",
+      "citationCount": 14,
+      "scholarUrl": "https://scholar.google.com/citations?view_op=view_citation&hl=en&oe=ASCII&user=1J061HIAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=1J061HIAAAAJ:4DMP91E08xMC"
+    },
+    {
+      "title": "Driveagent-r1: Advancing vlm-based autonomous driving with active perception and hybrid thinking",
+      "authors": "W Zheng, X Mao, N Ye, P Li, K Zhan, X Lang, H Zhao",
+      "venue": "International Conference on Learning Representations 2026, 125576-125610",
+      "year": "2026",
+      "citationCount": 22,
+      "scholarUrl": "https://scholar.google.com/citations?view_op=view_citation&hl=en&oe=ASCII&user=1J061HIAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=1J061HIAAAAJ:dhFuZR0502QC"
+    },
+    {
+      "title": "Discrete diffusion for reflective vision-language-action models in autonomous driving",
+      "authors": "P Li, Y Zheng, Y Wang, H Wang, H Zhao, J Liu, X Zhan, K Zhan, X Lang",
+      "venue": "International Conference on Learning Representations 2026, 14647-14666",
+      "year": "2026",
+      "citationCount": 29,
+      "scholarUrl": "https://scholar.google.com/citations?view_op=view_citation&hl=en&oe=ASCII&user=1J061HIAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=1J061HIAAAAJ:Wp0gIr-vW9MC"
+    },
+    {
+      "title": "FAAR: Format-Aware Adaptive Rounding for NVFP4",
+      "authors": "H Li, S Tian, C Lin, Z Zhao, K Zhan",
+      "venue": "arXiv preprint arXiv:2603.22370",
+      "year": "2026",
+      "citationCount": 4,
+      "scholarUrl": "https://scholar.google.com/citations?view_op=view_citation&hl=en&oe=ASCII&user=1J061HIAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=1J061HIAAAAJ:4JMBOYKVnBMC"
+    },
+    {
+      "title": "Streamingclaw technical report",
+      "authors": "J Chen, Z Chen, C Du, M He, W He, H Li, Q Li, Z Liu, H Ma, X Pan, C Ren, ...",
+      "venue": "arXiv preprint arXiv:2603.22120",
+      "year": "2026",
+      "citationCount": 3,
+      "scholarUrl": "https://scholar.google.com/citations?view_op=view_citation&hl=en&oe=ASCII&user=1J061HIAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=1J061HIAAAAJ:RHpTSmoSYBkC"
+    },
+    {
+      "title": "Worldrft: Latent world model planning with reinforcement fine-tuning for autonomous driving",
+      "authors": "P Yang, B Lu, Z Xia, C Han, Y Gao, T Zhang, K Zhan, XP Lang, Y Zheng, ...",
+      "venue": "Proceedings of the AAAI Conference on Artificial Intelligence 40 (14), 11649 …",
+      "year": "2026",
+      "citationCount": 40,
+      "scholarUrl": "https://scholar.google.com/citations?view_op=view_citation&hl=en&oe=ASCII&user=1J061HIAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=1J061HIAAAAJ:hC7cP41nSMkC"
+    },
+    {
+      "title": "DriveLiDAR4D: Sequential and Controllable LiDAR Scene Generation for Autonomous Driving",
+      "authors": "K Cai, X Liu, X Zhou, H Hu, J Xiang, L Zhang, X Zhang, K Zhan, Y Zhan, ...",
+      "venue": "Proceedings of the AAAI Conference on Artificial Intelligence 40 (4), 2525-2533",
+      "year": "2026",
+      "citationCount": 2,
+      "scholarUrl": "https://scholar.google.com/citations?view_op=view_citation&hl=en&oe=ASCII&user=1J061HIAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=1J061HIAAAAJ:ZeXyd9-uunAC"
+    },
+    {
+      "title": "Correctad: A self-correcting agentic system to improve end-to-end planning in autonomous driving",
+      "authors": "E Ma, L Zhou, T Tang, J Zhang, J Jiang, Z Zhang, D Han, K Zhan, X Zhang, ...",
+      "venue": "Proceedings of the AAAI Conference on Artificial Intelligence 40 (10), 7755-7763",
+      "year": "2026",
+      "citationCount": 2,
+      "scholarUrl": "https://scholar.google.com/citations?view_op=view_citation&hl=en&oe=ASCII&user=1J061HIAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=1J061HIAAAAJ:7PzlFSSx8tAC"
+    },
+    {
+      "title": "Evaluating the Search Agent in a Parallel World",
+      "authors": "J Chen, X Shen, L Zheng, L Mu, H Sun, N Mao, H Ma, T Wei, P Zhou, ...",
+      "venue": "arXiv preprint arXiv:2603.04751",
+      "year": "2026",
+      "citationCount": 0,
+      "scholarUrl": "https://scholar.google.com/citations?view_op=view_citation&hl=en&oe=ASCII&user=1J061HIAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=1J061HIAAAAJ:_Qo2XoVZTnwC"
+    },
+    {
+      "title": "Unifying language-action understanding and generation for autonomous driving",
+      "authors": "X Wang, Q Liu, W Ding, Z Yang, W Li, C Liu, B Li, K Zhan, X Lang, ...",
+      "venue": "arXiv preprint arXiv:2603.01441",
+      "year": "2026",
+      "citationCount": 10,
+      "scholarUrl": "https://scholar.google.com/citations?view_op=view_citation&hl=en&oe=ASCII&user=1J061HIAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=1J061HIAAAAJ:e5wmG9Sq2KIC"
+    },
+    {
+      "title": "DriveCombo: Benchmarking Compositional Traffic Rule Reasoning in Autonomous Driving",
+      "authors": "E Ma, J Zhang, G Zheng, T Tang, SE Li, Y Lu, X Zhou, X Zhang, Y Zhan, ...",
+      "venue": "arXiv preprint arXiv:2603.01637",
+      "year": "2026",
+      "citationCount": 4,
+      "scholarUrl": "https://scholar.google.com/citations?view_op=view_citation&hl=en&oe=ASCII&user=1J061HIAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=1J061HIAAAAJ:R3hNpaxXUhUC"
+    },
+    {
+      "title": "Planagent: A multi-modal large language agent for closed-loop vehicle motion planning",
+      "authors": "Y Zheng, Z Xing, Q Zhang, B Jin, P Li, Y Zheng, Z Xia, Y Chen, D Zhao",
+      "venue": "IEEE Transactions on Cognitive and Developmental Systems",
+      "year": "2026",
+      "citationCount": 89,
+      "scholarUrl": "https://scholar.google.com/citations?view_op=view_citation&hl=en&oe=ASCII&user=1J061HIAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=1J061HIAAAAJ:Tyk-4Ss8FVUC"
+    },
+    {
+      "title": "Hardware co-design scaling laws via roofline modelling for on-device llms",
+      "authors": "L Sun, J Jiang, Y Ding, F Li, Y Song, H Zhang, J Ying, L Ren, K Zhan, ...",
+      "venue": "arXiv preprint arXiv:2602.10377",
+      "year": "2026",
+      "citationCount": 6,
+      "scholarUrl": "https://scholar.google.com/citations?view_op=view_citation&hl=en&oe=ASCII&user=1J061HIAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=1J061HIAAAAJ:r0BpntZqJG4C"
+    },
+    {
+      "title": "Evolving from tool user to creator via training-free experience reuse in multimodal reasoning",
+      "authors": "X Shen, J Chen, L Zheng, H Ma, T Wei, K Zhan",
+      "venue": "arXiv preprint arXiv:2602.01983",
+      "year": "2026",
+      "citationCount": 8,
+      "scholarUrl": "https://scholar.google.com/citations?view_op=view_citation&hl=en&oe=ASCII&user=1J061HIAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=1J061HIAAAAJ:hFOr9nPyWt4C"
+    },
+    {
+      "title": "Method for information processing, apparatus, device, computer-readable storage medium, and computer program product",
+      "authors": "J Guo, Z Feng, J Zhou, Y Zhao, S Xu, F LIU, H SUN, K Zhan, C Liu, C Bi, ...",
+      "venue": "US Patent App. 19/017,367",
+      "year": "2026",
+      "citationCount": 1,
+      "scholarUrl": "https://scholar.google.com/citations?view_op=view_citation&hl=en&oe=ASCII&user=1J061HIAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=1J061HIAAAAJ:O3NaXMp0MMsC"
+    },
+    {
+      "title": "Method and apparatus for generating trajectory, electronic device, storage medium",
+      "authors": "B Li, K Zhan, P Jia, X Lang, Y Wang, J GU, Y Jiang, Q Jiang, S Zhao, ...",
+      "venue": "US Patent App. 19/037,583",
+      "year": "2026",
+      "citationCount": 0,
+      "scholarUrl": "https://scholar.google.com/citations?view_op=view_citation&hl=en&oe=ASCII&user=1J061HIAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=1J061HIAAAAJ:-f6ydRqryjwC"
+    },
+    {
+      "title": "Sparseworld-tc: Trajectory-conditioned sparse occupancy world model",
+      "authors": "J Du, Y Zhao, Z Guo, Y Pan, W Hou, Z Hao, K Zhan, Q Chen",
+      "venue": "Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern …",
+      "year": "2026",
+      "citationCount": 5,
+      "scholarUrl": "https://scholar.google.com/citations?view_op=view_citation&hl=en&oe=ASCII&user=1J061HIAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=1J061HIAAAAJ:qUcmZB5y_30C"
+    },
+    {
+      "title": "Ad-r1: Closed-loop reinforcement learning for end-to-end autonomous driving with impartial world models",
+      "authors": "T Yan, T Tang, X Gui, Y Li, J Zheng, W Huang, L Kong, W Han, X Zhou, ...",
+      "venue": "Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern …",
+      "year": "2026",
+      "citationCount": 13,
+      "scholarUrl": "https://scholar.google.com/citations?view_op=view_citation&hl=en&oe=ASCII&user=1J061HIAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=1J061HIAAAAJ:IWHjjKOFINEC"
+    },
+    {
+      "title": "Street Gaussians: Modeling Dynamic Urban Scenes With Gaussian Primitives",
+      "authors": "S Peng, Y Long, Y Yan, H Lin, C Zhou, H Sun, K Zhan, X Lang, H Bao, ...",
+      "venue": "IEEE transactions on pattern analysis and machine intelligence",
+      "year": "2025",
+      "citationCount": 1,
+      "scholarUrl": "https://scholar.google.com/citations?view_op=view_citation&hl=en&oe=ASCII&user=1J061HIAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=1J061HIAAAAJ:L8Ckcad2t8MC"
+    },
+    {
+      "title": "Omnigen: Unified multimodal sensor generation for autonomous driving",
+      "authors": "T Tang, E Ma, X Zhou, L Wang, T Yan, X Zhang, K Zhan, P Jia, X Lang, ...",
+      "venue": "Proceedings of the 33rd ACM International Conference on Multimedia, 9365-9374",
+      "year": "2025",
+      "citationCount": 10,
+      "scholarUrl": "https://scholar.google.com/citations?view_op=view_citation&hl=en&oe=ASCII&user=1J061HIAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=1J061HIAAAAJ:mVmsd5A6BfQC"
+    },
+    {
+      "title": "Hierarchy UGP: Hierarchy Unified Gaussian Primitive for Large-Scale Dynamic Scene Reconstruction",
+      "authors": "H Sun, Q Yang, J Wang, Z Xu, C Liu, Y Wang, K Zhan, H Bao, X Zhou, ...",
+      "venue": "2025 IEEE/CVF International Conference on Computer Vision (ICCV), 26252-26262",
+      "year": "2025",
+      "citationCount": 1,
+      "scholarUrl": "https://scholar.google.com/citations?view_op=view_citation&hl=en&oe=ASCII&user=1J061HIAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=1J061HIAAAAJ:QIV2ME_5wuYC"
+    },
+    {
+      "title": "HiNeuS: High-fidelity Neural Surface Mitigating Low-texture and Reflective Ambiguity",
+      "authors": "Y Wang, X Zhang, K Zhan, P Jia, X Lang",
+      "venue": "2025 IEEE/CVF International Conference on Computer Vision (ICCV), 25746-25755",
+      "year": "2025",
+      "citationCount": 1,
+      "scholarUrl": "https://scholar.google.com/citations?view_op=view_citation&hl=en&oe=ASCII&user=1J061HIAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=1J061HIAAAAJ:4TOpqqG69KYC"
+    },
+    {
+      "title": "RoboPearls: editable video simulation for robot manipulation",
+      "authors": "T Tao, L Zhang, Y Wen, K Zhang, JW Bian, X Zhou, T Yan, K Zhan, P Jia, ...",
+      "venue": "2025 IEEE/CVF International Conference on Computer Vision (ICCV), 1-12",
+      "year": "2025",
+      "citationCount": 6,
+      "scholarUrl": "https://scholar.google.com/citations?view_op=view_citation&hl=en&oe=ASCII&user=1J061HIAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=1J061HIAAAAJ:_kc_bZDykSQC"
+    },
+    {
+      "title": "PosePilot: Steering camera pose for generative world models with self-supervised depth",
+      "authors": "B Jin, W Li, B Yang, Z Zhu, J Jiang, H Gao, H Sun, K Zhan, H Hu, X Zhang, ...",
+      "venue": "2025 IEEE/RSJ International Conference on Intelligent Robots and Systems …",
+      "year": "2025",
+      "citationCount": 5,
+      "scholarUrl": "https://scholar.google.com/citations?view_op=view_citation&hl=en&oe=ASCII&user=1J061HIAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=1J061HIAAAAJ:kNdYIx-mwKoC"
+    },
+    {
+      "title": "3drealcar: An in-the-wild rgb-d car dataset with 360-degree views",
+      "authors": "X Du, Y Wang, H Sun, Z Wu, H Sheng, S Wang, J Ying, M Lu, T Zhu, ...",
+      "venue": "2025 IEEE/CVF International Conference on Computer Vision (ICCV), 26488-26498",
+      "year": "2025",
+      "citationCount": 47,
+      "scholarUrl": "https://scholar.google.com/citations?view_op=view_citation&hl=en&oe=ASCII&user=1J061HIAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=1J061HIAAAAJ:Y0pCki6q_DkC"
+    },
+    {
+      "title": "Driveagent-r1: Advancing vlm-based autonomous driving with hybrid thinking and active perception",
+      "authors": "W Zheng, X Mao, N Ye, P Li, K Zhan, X Lang, H Zhao",
+      "venue": "arXiv e-prints, arXiv: 2507.20879",
+      "year": "2025",
+      "citationCount": 12,
+      "scholarUrl": "https://scholar.google.com/citations?view_op=view_citation&hl=en&oe=ASCII&user=1J061HIAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=1J061HIAAAAJ:qxL8FJ1GzNcC"
+    },
+    {
+      "title": "Drivingsphere: Building a high-fidelity 4d world for closed-loop simulation",
+      "authors": "T Yan, D Wu, W Han, J Jiang, X Zhou, K Zhan, C Xu, J Shen",
+      "venue": "2025 IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR …",
+      "year": "2025",
+      "citationCount": 56,
+      "scholarUrl": "https://scholar.google.com/citations?view_op=view_citation&hl=en&oe=ASCII&user=1J061HIAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=1J061HIAAAAJ:UebtZRa9Y70C"
+    },
+    {
+      "title": "Streetcrafter: Street view synthesis with controllable video diffusion models",
+      "authors": "Y Yan, Z Xu, H Lin, H Jin, H Guo, Y Wang, K Zhan, X Lang, H Bao, X Zhou, ...",
+      "venue": "2025 IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR …",
+      "year": "2025",
+      "citationCount": 66,
+      "scholarUrl": "https://scholar.google.com/citations?view_op=view_citation&hl=en&oe=ASCII&user=1J061HIAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=1J061HIAAAAJ:Se3iqnhoufwC"
+    },
+    {
+      "title": "Recondreamer: Crafting world models for driving scene reconstruction via online restoration",
+      "authors": "C Ni, G Zhao, X Wang, Z Zhu, W Qin, G Huang, C Liu, Y Chen, Y Wang, ...",
+      "venue": "2025 IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR …",
+      "year": "2025",
+      "citationCount": 125,
+      "scholarUrl": "https://scholar.google.com/citations?view_op=view_citation&hl=en&oe=ASCII&user=1J061HIAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=1J061HIAAAAJ:LkGwnXOMwfcC"
+    },
+    {
+      "title": "Generalizing motion planners with mixture of experts for autonomous driving",
+      "authors": "Q Sun, H Wang, J Zhan, F Nie, X Wen, L Xu, K Zhan, P Jia, X Lang, ...",
+      "venue": "2025 IEEE International Conference on Robotics and Automation (ICRA), 6033-6039",
+      "year": "2025",
+      "citationCount": 37,
+      "scholarUrl": "https://scholar.google.com/citations?view_op=view_citation&hl=en&oe=ASCII&user=1J061HIAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=1J061HIAAAAJ:_FxGoFyzp5QC"
+    },
+    {
+      "title": "Transdiffuser: End-to-end trajectory generation with decorrelated multi-modal representation for autonomous driving",
+      "authors": "X Jiang, Y Ma, P Li, L Xu, X Wen, K Zhan, Z Xia, P Jia, XP Lang, S Sun",
+      "venue": "arXiv e-prints, arXiv: 2505.09315",
+      "year": "2025",
+      "citationCount": 26,
+      "scholarUrl": "https://scholar.google.com/citations?view_op=view_citation&hl=en&oe=ASCII&user=1J061HIAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=1J061HIAAAAJ:Zph67rFs4hoC"
+    },
+    {
+      "title": "Bev-tsr: Text-scene retrieval in bev space for autonomous driving",
+      "authors": "T Tang, D Wei, Z Jia, T Gao, C Cai, C Hou, P Jia, K Zhan, H Sun, ...",
+      "venue": "Proceedings of the AAAI Conference on Artificial Intelligence 39 (7), 7275-7283",
+      "year": "2025",
+      "citationCount": 23,
+      "scholarUrl": "https://scholar.google.com/citations?view_op=view_citation&hl=en&oe=ASCII&user=1J061HIAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=1J061HIAAAAJ:eQOLeE2rZwMC"
+    },
+    {
+      "title": "StyledStreets: Multi-style Street Simulator with Spatial and Temporal Consistency",
+      "authors": "Y Chen, Y Wang, X Zhang, K Zhan, P Jia, Y Zhan, X Lang",
+      "venue": "arXiv preprint arXiv:2503.21104",
+      "year": "2025",
+      "citationCount": 1,
+      "scholarUrl": "https://scholar.google.com/citations?view_op=view_citation&hl=en&oe=ASCII&user=1J061HIAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=1J061HIAAAAJ:hqOjcs7Dif8C"
+    },
+    {
+      "title": "Learning personalized driving styles via reinforcement learning from human feedback",
+      "authors": "D Li, C Li, Y Wang, J Ren, X Wen, P Li, L Xu, K Zhan, P Jia, X Lang, N Xu, ...",
+      "venue": "arXiv preprint arXiv:2503.10434",
+      "year": "2025",
+      "citationCount": 9,
+      "scholarUrl": "https://scholar.google.com/citations?view_op=view_citation&hl=en&oe=ASCII&user=1J061HIAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=1J061HIAAAAJ:mB3voiENLucC"
+    },
+    {
+      "title": "Efficient multi-view driving scenes generation based on video diffusion transformer",
+      "authors": "J Jiang, G Hong, H Hu, L Zhou, T Yan, Y Wang, K Zhan, P Jia, XP Lang, ...",
+      "venue": "ICLR 2025 Workshop on Deep Generative Model in Machine Learning: Theory …",
+      "year": "2025",
+      "citationCount": 1,
+      "scholarUrl": "https://scholar.google.com/citations?view_op=view_citation&hl=en&oe=ASCII&user=1J061HIAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=1J061HIAAAAJ:hMod-77fHWUC"
+    },
+    {
+      "title": "Balanced 3DGS: Gaussian-wise parallelism rendering with fine-grained tiling",
+      "authors": "H Gui, L Hu, R Chen, M Huang, Y Yin, J Yang, Y Wu, C Liu, Z Sun, ...",
+      "venue": "arXiv preprint arXiv:2412.17378",
+      "year": "2024",
+      "citationCount": 23,
+      "scholarUrl": "https://scholar.google.com/citations?view_op=view_citation&hl=en&oe=ASCII&user=1J061HIAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=1J061HIAAAAJ:roLk4NBRz8UC"
+    },
+    {
+      "title": "Tod3cap: Towards 3d dense captioning in outdoor scenes",
+      "authors": "B Jin, Y Zheng, P Li, W Li, Y Zheng, S Hu, X Liu, J Zhu, Z Yan, H Sun, ...",
+      "venue": "European Conference on Computer Vision, 367-384",
+      "year": "2024",
+      "citationCount": 56,
+      "scholarUrl": "https://scholar.google.com/citations?view_op=view_citation&hl=en&oe=ASCII&user=1J061HIAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=1J061HIAAAAJ:ufrVoPGSRksC"
+    },
+    {
+      "title": "Street gaussians: Modeling dynamic urban scenes with gaussian splatting",
+      "authors": "Y Yan, H Lin, C Zhou, W Wang, H Sun, K Zhan, X Lang, X Zhou, S Peng",
+      "venue": "European Conference on Computer Vision, 156-173",
+      "year": "2024",
+      "citationCount": 568,
+      "scholarUrl": "https://scholar.google.com/citations?view_op=view_citation&hl=en&oe=ASCII&user=1J061HIAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=1J061HIAAAAJ:IjCSPb-OGe4C"
+    },
+    {
+      "title": "Dive: Dit-based video generation with enhanced control",
+      "authors": "J Jiang, G Hong, L Zhou, E Ma, H Hu, X Zhou, J Xiang, F Liu, K Yu, H Sun, ...",
+      "venue": "arXiv preprint arXiv:2409.01595",
+      "year": "2024",
+      "citationCount": 39,
+      "scholarUrl": "https://scholar.google.com/citations?view_op=view_citation&hl=en&oe=ASCII&user=1J061HIAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=1J061HIAAAAJ:YsMSGLbcyi4C"
+    },
+    {
+      "title": "S2-track: A simple yet strong approach for end-to-end 3d multi-object tracking",
+      "authors": "T Tang, L Zhou, P Hao, Z He, K Ho, S Gu, Z Hao, H Sun, K Zhan, P Jia, ...",
+      "venue": "arXiv preprint arXiv:2406.02147",
+      "year": "2024",
+      "citationCount": 9,
+      "scholarUrl": "https://scholar.google.com/citations?view_op=view_citation&hl=en&oe=ASCII&user=1J061HIAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=1J061HIAAAAJ:ULOm3_A8WrAC"
+    },
+    {
+      "title": "Unleashing generalization of end-to-end autonomous driving with controllable long video generation",
+      "authors": "E Ma, L Zhou, T Tang, Z Zhang, D Han, J Jiang, K Zhan, P Jia, X Lang, ...",
+      "venue": "arXiv preprint arXiv:2406.01349",
+      "year": "2024",
+      "citationCount": 60,
+      "scholarUrl": "https://scholar.google.com/citations?view_op=view_citation&hl=en&oe=ASCII&user=1J061HIAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=1J061HIAAAAJ:W7OEmFMy1HYC"
+    },
+    {
+      "title": "Ua-track: Uncertainty-aware end-to-end 3d multi-object tracking",
+      "authors": "L Zhou, T Tang, P Hao, Z He, K Ho, S Gu, W Hou, Z Hao, H Sun, K Zhan, ...",
+      "venue": "arXiv e-prints, arXiv: 2406.02147",
+      "year": "2024",
+      "citationCount": 12,
+      "scholarUrl": "https://scholar.google.com/citations?view_op=view_citation&hl=en&oe=ASCII&user=1J061HIAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=1J061HIAAAAJ:WF5omc3nYNoC"
+    },
+    {
+      "title": "Drivevlm: The convergence of autonomous driving and large vision-language models",
+      "authors": "X Tian, J Gu, B Li, Y Liu, Y Wang, Z Zhao, K Zhan, P Jia, X Lang, H Zhao",
+      "venue": "arXiv preprint arXiv:2402.12289",
+      "year": "2024",
+      "citationCount": 876,
+      "scholarUrl": "https://scholar.google.com/citations?view_op=view_citation&hl=en&oe=ASCII&user=1J061HIAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=1J061HIAAAAJ:zYLM7Y9cAGgC"
+    },
+    {
+      "title": "Xiaoxiao Long, Yilun Chen, and Hao Zhao. Tod3cap: Towards 3d dense captioning in outdoor scenes",
+      "authors": "B Jin, Y Zheng, P Li, W Li, Y Zheng, S Hu, X Liu, J Zhu, Z Yan, H Sun, ...",
+      "venue": "Computer Vision–ECCV, 367-384",
+      "year": "2024",
+      "citationCount": 6,
+      "scholarUrl": "https://scholar.google.com/citations?view_op=view_citation&hl=en&oe=ASCII&user=1J061HIAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=1J061HIAAAAJ:M3ejUd6NZC8C"
+    },
+    {
+      "title": "Bev-clip: Multi-modal bev retrieval methodology for complex scene in autonomous driving",
+      "authors": "Z Jia, T Gao, C Cai, C Hou, P Jia, F JingChen, Y ZHAO, K Zhan, FU LIU, ...",
+      "venue": "",
+      "year": "2024",
+      "citationCount": 25,
+      "scholarUrl": "https://scholar.google.com/citations?view_op=view_citation&hl=en&oe=ASCII&user=1J061HIAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=1J061HIAAAAJ:0EnyYjriUFMC"
+    },
+    {
+      "title": "Street gaussians for modeling dynamic urban scenes.(2023)",
+      "authors": "Y Yan, H Lin, C Zhou, W Wang, H Sun, K Zhan, X Lang, X Zhou, S Peng",
+      "venue": "arXiv preprint arXiv:2401.01339",
+      "year": "2023",
+      "citationCount": 14,
+      "scholarUrl": "https://scholar.google.com/citations?view_op=view_citation&hl=en&oe=ASCII&user=1J061HIAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=1J061HIAAAAJ:5nxA0vEk-isC"
+    },
+    {
+      "title": "Joint tracking and classification with constraints and reassignment by radar and ESM",
+      "authors": "H Jiang, K Zhan, L Xu",
+      "venue": "Digital Signal Processing 40, 213-223",
+      "year": "2015",
+      "citationCount": 17,
+      "scholarUrl": "https://scholar.google.com/citations?view_op=view_citation&hl=en&oe=ASCII&user=1J061HIAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=1J061HIAAAAJ:2osOgNQ5qMEC"
+    },
+    {
+      "title": "Joint tracking and classification based on aerodynamic model and radar cross section",
+      "authors": "H Jiang, L Xu, K Zhan",
+      "venue": "Pattern recognition 47 (9), 3096-3105",
+      "year": "2014",
+      "citationCount": 14,
+      "scholarUrl": "https://scholar.google.com/citations?view_op=view_citation&hl=en&oe=ASCII&user=1J061HIAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=1J061HIAAAAJ:qjMakFHDy7sC"
+    },
+    {
+      "title": "Particle filter based joint tracking and classification",
+      "authors": "K Zhan, L Xu, H Jiang, L Bai, M Wu",
+      "venue": "Proceedings of 2014 IEEE Chinese Guidance, Navigation and Control Conference …",
+      "year": "2014",
+      "citationCount": 3,
+      "scholarUrl": "https://scholar.google.com/citations?view_op=view_citation&hl=en&oe=ASCII&user=1J061HIAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=1J061HIAAAAJ:UeHWp8X0CEIC"
+    },
+    {
+      "title": "Joint tracking and classification on aerodynamic model and RCS by ground-based passive radar",
+      "authors": "L Xu, K Zhan, H Jiang, L Bai, M Wu",
+      "venue": "Proceedings of 2014 IEEE Chinese Guidance, Navigation and Control Conference …",
+      "year": "2014",
+      "citationCount": 6,
+      "scholarUrl": "https://scholar.google.com/citations?view_op=view_citation&hl=en&oe=ASCII&user=1J061HIAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=1J061HIAAAAJ:9yKSN-GCB0IC"
+    },
+    {
+      "title": "Supplementary Material for DriveCombo: Benchmarking Compositional Traffic Rule Reasoning in Autonomous Driving",
+      "authors": "E Ma, J Zhang, G Zheng, T Tang, SE Li, Y Lu, X Zhou, X Zhang, Y Zhan, ...",
+      "venue": "",
+      "year": "",
+      "citationCount": 0,
+      "scholarUrl": "https://scholar.google.com/citations?view_op=view_citation&hl=en&oe=ASCII&user=1J061HIAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=1J061HIAAAAJ:isC4tDSrTZIC"
+    },
+    {
+      "title": "Supplementary Material: 3DRealCar: An In-the-wild RGB-D Car Dataset with 360-degree Views",
+      "authors": "X Du, Y Wang, H Sun, Z Wu, H Sheng, S Wang, J Ying, M Lu, T Zhu, ...",
+      "venue": "",
+      "year": "",
+      "citationCount": 0,
+      "scholarUrl": "https://scholar.google.com/citations?view_op=view_citation&hl=en&oe=ASCII&user=1J061HIAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=1J061HIAAAAJ:9ZlFYXVOiuMC"
+    },
+    {
+      "title": "Supplementary Materials of TOD3Cap",
+      "authors": "B Jin, Y Zheng, P Li, W Li, Y Zheng, S Hu, X Liu, J Zhu, Z Yan, H Sun, ...",
+      "venue": "",
+      "year": "",
+      "citationCount": 0,
+      "scholarUrl": "https://scholar.google.com/citations?view_op=view_citation&hl=en&oe=ASCII&user=1J061HIAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=1J061HIAAAAJ:KlAtU1dfN6UC"
+    }
+  ]
+}
