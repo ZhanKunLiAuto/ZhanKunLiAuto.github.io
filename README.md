@@ -58,6 +58,7 @@ The visible milestone links now point to related videos. Titles, upload dates, a
 
 | Milestone | Video | Publisher / upload date |
 | --- | --- | --- |
+| 2026.11 | [OTA 9.2 demo with the 3D ViT perception model](https://www.bilibili.com/video/BV1p24Y6NEzm/) | Li Auto / November 6, 2026 |
 | 2026.09 | [Mach VLA 2.0 rollout overview](https://www.bilibili.com/video/BV1aXYu6eE3Q/) | Xiang Li / September 10, 2026 |
 | 2026.06 | [Livis Day full replay with subtitles](https://www.bilibili.com/video/BV14njP6AEHi/) | 理想TOP2 / June 16, 2026 |
 | 2026.05 | [Kun Zhan interview on Mach M100 and L9 Livis](https://www.bilibili.com/video/BV1riLw6nEfe/) | 影总聊智驾 / May 18, 2026 |
@@ -65,6 +66,10 @@ The visible milestone links now point to related videos. Titles, upload dates, a
 | 2024.10 | [E2E + VLM architecture at the 2024 summer driving event](https://www.bilibili.com/video/BV1A4421U7rW/) | Li Auto / July 5, 2024 |
 
 Video dates describe the related presentation or interview; milestone dates describe the production event. In particular, the July 2025 i8 launch precedes August deliveries, and the July 2024 architecture presentation precedes the October rollout. The previous Livis Day YouTube video (`E8DX3SZcUfA`) showed “removed by the uploader”; its update entries now use the Bilibili replay above. The September rollout update uses the same video as its milestone.
+
+Li Auto’s November 6 announcement identifies the vehicles receiving MACH VLA 2.5 with OTA 9.2. The release notes describe reversing to yield on narrow roads and retrying a blocked parking maneuver in an adjacent space. [Rollout announcement](https://www.sina.cn/news/detail/5362195107945236.html) · [OTA 9.2.0 release notes by model](https://www.ithome.com/1/023/125.htm)
+
+On November 17, Li Auto reported a forward perception range of 300 meters for the 3D ViT model running on its MACH M100 chip. [Li Auto’s technical update from the TSMC OIP forum](https://m.weibo.cn/2/detail/5366335346319991)
 
 ## Update social profiles
 

@@ -10,6 +10,19 @@ window.siteContent = Object.freeze({
   }),
   updates: Object.freeze([
     Object.freeze({
+      date: "2026-11-06",
+      category: Object.freeze({ en: "Production deployment", zh: "量产落地" }),
+      title: Object.freeze({
+        en: "MACH VLA 2.5 starts rolling out with OTA 9.2",
+        zh: "马赫 VLA 2.5 随 OTA 9.2 开始推送",
+      }),
+      summary: Object.freeze({
+        en: "The rollout covers the new L series, i9, and MEGA, as well as the 2026 i6. The driving assistant can now reverse to yield on narrow roads and try an adjacent parking space if the first is blocked.",
+        zh: "本次推送面向全新理想 L 系列、全新 i9、2026 款 i6 和新一代 MEGA。辅助驾驶新增窄路会车倒车让行，泊车受阻时也可以尝试相邻车位。",
+      }),
+      url: "https://www.sina.cn/news/detail/5362195107945236.html",
+    }),
+    Object.freeze({
       date: "2026-10-31",
       category: Object.freeze({ en: "Research roundup", zh: "研究进展" }),
       title: Object.freeze({
